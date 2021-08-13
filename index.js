@@ -30,7 +30,7 @@ const ActionType = require('./ActionType');
 
 client.once('ready', async () => {
 	await ReactionCollector.init(client);
-	const job = new CronJob('0 0 * * * *', function() {
+	const job = new CronJob('0 * * * * *', function() {
 		RequestDeletion(client);
 	}, null, true, 'Europe/London');
 	job.start();

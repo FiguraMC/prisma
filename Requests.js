@@ -132,12 +132,14 @@ function handle(client, message) {
                     value: state.items.find(item => item.name == 'tags').value.join('\n')
                 }
             ]);
+            embed.setColor('2aacf7'); // blue
             requests.delete(message.author.id);
             Actions.delete(message.author.id);
             client.channels.fetch(process.env.REQUESTS_CHANNEL)
                 .then(channel => {
                     channel.send({ embeds: [embed] })
                         .then(msg => {
+                            msg.react('✅').then(()=>msg.react('❌').then(()=>msg.react('📝')));
                             msg.startThread({name: state.items.find(item => item.name == 'title').value, autoArchiveDuration: 'MAX'})
                                 .then(thread=>{
                                     const element = {message:msg.id, user:message.author.id, timestamp: Date.now(), locked:false, thread: thread.id};
@@ -150,6 +152,7 @@ function handle(client, message) {
                             embed.setImage(undefined);
                             channel.send({ embeds: [embed] }).catch(console.error)
                                 .then(msg => {
+                                    msg.react('✅').then(()=>msg.react('❌').then(()=>msg.react('📝')));
                                     msg.startThread({name: state.items.find(item => item.name == 'title').value, autoArchiveDuration: 'MAX'})
                                         .then(thread=>{
                                             const element = {message:msg.id, user:message.author.id, timestamp: Date.now(), locked:false, thread: thread.id};

@@ -28,6 +28,9 @@ async function handle(client, message) {
 }
 
 function Archive(client, message, thread) {
+    message.embeds.forEach(embed => {
+        embed.color = '202225'; // gray
+    });
     client.channels.fetch(process.env.REQUESTS_ARCHIVE_CHANNEL)
         .then(channel => channel.send({embeds:message.embeds}).catch(console.error))
         .catch(console.error);
@@ -35,6 +38,9 @@ function Archive(client, message, thread) {
     thread.setArchived(true).catch(console.error);
 }
 function ArchiveWithFile(client, message, thread, file) {
+    message.embeds.forEach(embed => {
+        embed.color = '77b255'; // green
+    });
     client.channels.fetch(process.env.REQUESTS_ARCHIVE_CHANNEL)
         .then(channel => channel.send({embeds:message.embeds, files:[file]}).catch(console.error))
         .catch(console.error);
