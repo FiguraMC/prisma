@@ -19,7 +19,7 @@ async function init(client) {
 
 async function createCollector(msg, element) {
     collector = msg.createReactionCollector({ dispose: true });
-
+    
     collector.on('collect', async (reaction, user) => {
         if (user.bot) return;
 
@@ -58,11 +58,11 @@ async function createCollector(msg, element) {
             }
         }
         else if (reaction.emoji.name == '⚙️') {
-            //if (user.id == element.user) return reaction.message.reactions.cache.get('⚙️').users.remove(user.id); // the author cannot lock it themselves
+            if (user.id == element.user) return reaction.message.reactions.cache.get('⚙️').users.remove(user.id); // the author cannot lock it themselves
 
             element.locked = true;
             DataStorage.save();
-            reaction.message.react('⚙️'); // show the user, that the bot locked it
+            // show the user, that the bot locked it
             reaction.message.embeds.forEach(embed => {
                 embed.color = 'f28a2e'; // orange
             });
@@ -71,9 +71,8 @@ async function createCollector(msg, element) {
     });
 
     collector.on('remove', (reaction, user) => {
-        if (reaction.emoji.name == '⚙️' /*&& user.id != element.user*/) {
-            if (reaction.count == 1) { // if only the bots reaction is there, remove reaction and unlock
-                reaction.message.reactions.cache.get('⚙️').remove().catch(console.error);
+        if (reaction.emoji.name == '⚙️' && user.id != element.user) {
+            if (reaction.count == 1) { // if only the bots reaction is there, unlock
                 element.locked = false;
                 DataStorage.save();
                 if (element.timestamp + 1000*60*60*24 < Date.now()) {

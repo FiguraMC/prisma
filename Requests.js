@@ -13,7 +13,7 @@ const tags = new Discord.MessageActionRow()
     .setCustomId('tags')
     .setPlaceholder('Nothing selected')
     .setMinValues(1)
-    .setMaxValues(6)
+    .setMaxValues(9)
     .addOptions([
         {
             label: 'Full Avatar',
@@ -139,7 +139,7 @@ function handle(client, message) {
                 .then(channel => {
                     channel.send({ embeds: [embed] })
                         .then(msg => {
-                            msg.react('✅').then(()=>msg.react('❌').then(()=>msg.react('📝')));
+                            msg.react('✅').then(()=>msg.react('❌').then(()=>msg.react('📝').then(()=>msg.react('⚙️'))));
                             msg.startThread({name: state.items.find(item => item.name == 'title').value, autoArchiveDuration: 'MAX'})
                                 .then(thread=>{
                                     const element = {message:msg.id, user:message.author.id, timestamp: Date.now(), locked:false, thread: thread.id};
@@ -152,7 +152,7 @@ function handle(client, message) {
                             embed.setImage(undefined);
                             channel.send({ embeds: [embed] }).catch(console.error)
                                 .then(msg => {
-                                    msg.react('✅').then(()=>msg.react('❌').then(()=>msg.react('📝')));
+                                    msg.react('✅').then(()=>msg.react('❌').then(()=>msg.react('📝').then(()=>msg.react('⚙️'))));
                                     msg.startThread({name: state.items.find(item => item.name == 'title').value, autoArchiveDuration: 'MAX'})
                                         .then(thread=>{
                                             const element = {message:msg.id, user:message.author.id, timestamp: Date.now(), locked:false, thread: thread.id};
@@ -261,9 +261,25 @@ function handleEdit(client, message) {
                 value: state.items.find(item => item.name == 'tags').value.join('\n')
             }
         ]);
+        
         const messageToEdit = Actions.get(message.author.id).data;
+
+        const element = DataStorage.storage.avatar_requests.find(x=>x.message==messageToEdit.id);
+        if (element != undefined) {
+            if (element.timestamp + 1000*60*60*24 < Date.now()) {
+                embed.setColor('202225'); // older than 24h gray
+            }
+            else {
+                embed.setColor('2aacf7'); // newer than 24h blue
+            }
+        }
+        else {
+            embed.setColor('202225'); // default gray
+        }
+        
         requests.delete(message.author.id);
         Actions.delete(message.author.id);
+
         messageToEdit.edit({ embeds: [embed] }).catch(err => {
             embed.setImage(undefined);
             messageToEdit.edit({ embeds: [embed] }).catch(console.error);
