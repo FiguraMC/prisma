@@ -12,7 +12,7 @@ async function handle(client, message) {
         Actions.delete(message.author.id);
     }
     else if (message.content.toLowerCase() == 'abort') {
-        message.author.send({embeds:[new Discord.MessageEmbed({description:'Action aborted.'})]}).catch(console.error);
+        message.author.send({embeds:[new Discord.MessageEmbed({description:'Action canceled.'})]}).catch(console.error);
         Actions.delete(message.author.id);
     }
     else {

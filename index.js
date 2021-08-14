@@ -57,6 +57,9 @@ client.on('messageCreate', async message => {
 				else if (Actions.get(message.author.id).type == ActionType.EDIT_REQUEST) {
 					Requests.handleEdit(client, message);
 				}
+				else if (Actions.get(message.author.id).type == ActionType.DELETE_REQUEST) {
+					Requests.handleDelete(client, message);
+				}
 			}
 			else {
 				Requests.handle(client, message);

@@ -69,7 +69,7 @@ function handle(client, message) {
     if (message.content.toLowerCase() == 'abort') {
         requests.delete(message.author.id);
         Actions.delete(message.author.id);
-        message.author.send({embeds:[new Discord.MessageEmbed({description:'Action aborted.'})]}).catch(console.error);
+        message.author.send({embeds:[new Discord.MessageEmbed({description:'Action canceled.'})]}).catch(console.error);
     }
     if (!requests.has(message.author.id)) {
         if (message.content.toLowerCase() == 'request') {
@@ -148,7 +148,7 @@ function handle(client, message) {
                     embeds: [
                         new Discord.MessageEmbed({
                             title: 'Done!',
-                            description: 'The request is now completed!\nTip: You can react to your request\'s message for some actions.\n✅ Accept/Archive request\n❌ Delete request\n📝 Edit request'
+                            description: 'The request is now completed!\n\nYou can react to your request\'s message for some actions.\n✅ Accept/Archive request\n❌ Delete request\n📝 Edit request\n\nOthers can react with ⚙️ to show that they are working on your request.'
                         })
                     ]
                 }).catch(console.error);
@@ -244,7 +244,7 @@ function handleEdit(client, message) {
     if (message.content.toLowerCase() == 'abort') {
         requests.delete(message.author.id);
         Actions.delete(message.author.id);
-        message.author.send({embeds:[new Discord.MessageEmbed({description:'Action aborted.'})]}).catch(console.error);
+        message.author.send({embeds:[new Discord.MessageEmbed({description:'Action canceled.'})]}).catch(console.error);
     }
     if (!requests.has(message.author.id)) {
         requests.set(message.author.id, new RequestBuilder([
@@ -268,7 +268,7 @@ function handleEdit(client, message) {
             embeds: [
                 new Discord.MessageEmbed({
                     title: 'Done!',
-                    description: 'The request is now updated!\nTip: You can react to your request\'s message for some actions.\n✅ Accept/Archive request\n❌ Delete request\n📝 Edit request'
+                    description: 'The request is now updated!\n\nYou can react to your request\'s message for some actions.\n✅ Accept/Archive request\n❌ Delete request\n📝 Edit request\n\nOthers can react with ⚙️ to show that they are working on your request.'
                 })
             ]
         }).catch(console.error);
@@ -321,4 +321,25 @@ function handleEdit(client, message) {
     }
 }
 
-module.exports = { handle, onInteract, handleEdit }
+async function handleDelete(client, message) {
+    if (message.content.toLowerCase() == 'abort') {
+        message.author.send({embeds:[new Discord.MessageEmbed({description:'Action canceled.'})]}).catch(console.error);
+        Actions.delete(message.author.id);
+    }
+    else if (message.content.toLowerCase() == 'confirm') {
+        const msg = Actions.get(message.author.id).data;
+        const element = DataStorage.storage.avatar_requests.find(x=>x.message==msg.id);
+        msg.delete().catch(console.error);
+        const thread = await msg.channel.threads.fetch(element.thread).catch(console.error);
+        thread.setArchived(true).catch(console.error);
+        DataStorage.deleteFromArray(DataStorage.storage.avatar_requests, element);
+        DataStorage.save();
+        message.author.send({embeds:[new Discord.MessageEmbed({description:'Request deleted.'})]}).catch(console.error);
+        Actions.delete(message.author.id);
+    }
+    else {
+        message.author.send({embeds:[new Discord.MessageEmbed({description:'Please send either "confirm" or "abort".'})]}).catch(console.error);
+    }
+}
+
+module.exports = { handle, onInteract, handleEdit, handleDelete }

@@ -24,13 +24,12 @@ async function createCollector(msg, element) {
         if (user.bot) return;
 
         if (reaction.emoji.name == '❌') {
-            if (user.id != element.user) return reaction.message.reactions.cache.get('❌').users.remove(user.id); // only the author can delete
+            reaction.message.reactions.cache.get('❌').users.remove(user.id);
+            if (user.id != element.user) return; // only the author can delete
             
-            msg.delete();
-            const thread = await msg.channel.threads.fetch(element.thread).catch(console.error);
-            thread.setArchived(true).catch(console.error);
-            DataStorage.deleteFromArray(DataStorage.storage.avatar_requests, element);
-            DataStorage.save();
+            if (Actions.set(user.id, {type:ActionType.DELETE_REQUEST, data:reaction.message})) {
+                user.send({embeds:[new Discord.MessageEmbed({title:'Request Deletion', description:'Are you sure you want to delete this request? Type "confirm" to delete, or "abort" to cancel.'})]}).catch(console.error);
+            }
         }
         else if (reaction.emoji.name == '✅') {
             reaction.message.reactions.cache.get('✅').users.remove(user.id);
