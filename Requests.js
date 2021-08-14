@@ -13,18 +13,8 @@ const tags = new Discord.MessageActionRow()
     .setCustomId('tags')
     .setPlaceholder('Nothing selected')
     .setMinValues(1)
-    .setMaxValues(9)
+    .setMaxValues(7)
     .addOptions([
-        {
-            label: 'Full Avatar',
-            description: 'A full character as an avatar.',
-            value: '[Full Avatar]',
-        },
-        {
-            label: 'Accessory',
-            description: 'Something that could be worn or equipped.',
-            value: '[Accessory]',
-        },
         {
             label: 'Texture',
             description: 'A texture is needed.',
@@ -59,7 +49,41 @@ const tags = new Discord.MessageActionRow()
             label: 'Advanced',
             description: 'This request is difficult to complete.',
             value: '[Advanced]',
+        }
+    ]),
+);
+
+const types = new Discord.MessageActionRow()
+.addComponents(
+    new Discord.MessageSelectMenu()
+    .setCustomId('types')
+    .setPlaceholder('Nothing selected')
+    .addOptions([
+        {
+            label: 'Full Avatar',
+            description: 'A full character as an avatar.',
+            value: '[Full Avatar]',
         },
+        {
+            label: 'Accessory',
+            description: 'Something that could be worn or equipped.',
+            value: '[Accessory]',
+        },
+        {
+            label: 'Texture',
+            description: 'A texture is needed.',
+            value: '[Texture]',
+        },
+        {
+            label: 'Model',
+            description: 'A model is needed.',
+            value: '[Model]',
+        },
+        {
+            label: 'Script',
+            description: 'A script is needed.',
+            value: '[Script]',
+        }
     ]),
 );
 
@@ -76,10 +100,11 @@ function handle(client, message) {
         if (message.content.toLowerCase() == 'request') {
             if (!Actions.set(message.author.id, {type:ActionType.BUILD_REQUEST})) return;
             requests.set(message.author.id, new RequestBuilder([
-                new RequestItem('title', 'Title (1/4)', 'The title of your request. Should only be 1-5 words. Just start typing below and send the message:', [], RequestItemType.TEXT),
-                new RequestItem('description', 'Description (2/4)', 'Explain what exactly you need, what requirements it should have, any important details, style, whatever you can think of that might be useful for others to know.', [], RequestItemType.TEXT),
-                new RequestItem('tags', 'Tags (3/4)', 'Select the tags that fit your request.', [tags], RequestItemType.TAGS),
-                new RequestItem('image', 'Reference Image (4/4)', 'We highly recommend adding an image to your request, so that people can more easily make your request. If you dont want an image, just type "skip".', [], RequestItemType.IMAGE)
+                new RequestItem('title', 'Title (1/5)', 'The title of your request. Should only be 1-5 words. Just start typing below and send the message:', [], RequestItemType.TEXT),
+                new RequestItem('description', 'Description (2/5)', 'Explain what exactly you need, what requirements it should have, any important details, style, whatever you can think of that might be useful for others to know.', [], RequestItemType.TEXT),
+                new RequestItem('type', 'Type (3/5)', 'Select the type of request.', [types], RequestItemType.TAGS),
+                new RequestItem('tags', 'Tags (4/5)', 'Select the tags that fit your request.', [tags], RequestItemType.TAGS),
+                new RequestItem('image', 'Reference Image (5/5)', 'We highly recommend adding an image to your request, so that people can more easily make your request. If you dont want an image, just type "skip".', [], RequestItemType.IMAGE)
             ]));
             message.author.send({
                 embeds: [
@@ -122,7 +147,13 @@ function handle(client, message) {
             embed.setFields([
                 {
                     name: 'Tags',
-                    value: state.items.find(item => item.name == 'tags').value.join('\n')
+                    value: state.items.find(item => item.name == 'tags').value.join('\n'),
+                    inline: true
+                },
+                {
+                    name: 'Type',
+                    value: state.items.find(item => item.name == 'type').value[0],
+                    inline: true
                 }
             ]);
             embed.setColor('2aacf7'); // blue
@@ -239,6 +270,39 @@ function onInteract(interaction) {
             });
         }
     }
+    else if (interaction.customId == 'types') {
+        if (requests.has(interaction.user.id)) {
+
+            // check for the type first
+            const request = requests.get(interaction.user.id);
+            let state = request.getState();
+            if (state.next?.type != RequestItemType.TAGS) return;
+
+            // input the selected tags
+            request.input(interaction.values);
+            state = request.getState();
+
+            // edit the message, remove the components
+            interaction.update({
+                embeds: [
+                    new Discord.MessageEmbed({
+                        description: 'Type saved.'
+                    })
+                ], components: []
+            });
+
+            // send next step
+            interaction.user.send({
+                embeds: [
+                    new Discord.MessageEmbed({
+                        title: state.next.heading,
+                        description: state.next.instructions
+                    })
+                ],
+                components: state.next?.components
+            });
+        }
+    }
 }
 
 function handleEdit(client, message) {
@@ -251,9 +315,10 @@ function handleEdit(client, message) {
     if (!requests.has(message.author.id)) {
         requests.set(message.author.id, new RequestBuilder([
             new RequestItem('title', '', '', [], RequestItemType.TEXT),
-            new RequestItem('description', 'Description (2/4)', 'Explain what exactly you need, what requirements it should have, any important details, style, whatever you can think of that might be useful for others to know.', [], RequestItemType.TEXT),
-            new RequestItem('tags', 'Tags (3/4)', 'Select the tags that fit your request.', [tags], RequestItemType.TAGS),
-            new RequestItem('image', 'Reference Image (4/4)', 'We highly recommend adding an image to your request, so that people can more easily make your request. If you dont want an image, just type "skip".', [], RequestItemType.IMAGE)
+            new RequestItem('description', 'Description (2/5)', 'Explain what exactly you need, what requirements it should have, any important details, style, whatever you can think of that might be useful for others to know.', [], RequestItemType.TEXT),
+            new RequestItem('type', 'Type (3/5)', 'Select the type of request.', [types], RequestItemType.TAGS),
+            new RequestItem('tags', 'Tags (4/5)', 'Select the tags that fit your request.', [tags], RequestItemType.TAGS),
+            new RequestItem('image', 'Reference Image (5/5)', 'We highly recommend adding an image to your request, so that people can more easily make your request. If you dont want an image, just type "skip".', [], RequestItemType.IMAGE)
         ]));
     }
     
@@ -292,14 +357,21 @@ function handleEdit(client, message) {
         if (description != 'skip') messageToEdit.embeds[0].setDescription(description);
         const image = state.items.find(item => item.name == 'image').value;
         if (image != 'skip') messageToEdit.embeds[0].setImage(image);
-        const fields = state.items.find(item => item.name == 'tags').value;
-        if (fields != 'skip') messageToEdit.embeds[0].setFields([
+        const _tags = state.items.find(item => item.name == 'tags').value.join('\n');
+        const _type = state.items.find(item => item.name == 'type').value[0];
+        // tags and type are unskippable, so no check necessary
+        messageToEdit.embeds[0].setFields([
             {
                 name: 'Tags',
-                value: fields.join('\n')
+                value: _tags,
+                inline: true
+            },
+            {
+                name: 'Type',
+                value: _type,
+                inline: true
             }
         ]);
-
         const element = DataStorage.storage.avatar_requests.find(x=>x.message==messageToEdit.id);
         if (element != undefined) {
             if (element.timestamp + 1000*60*60*24 < Date.now()) {

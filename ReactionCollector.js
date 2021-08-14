@@ -44,11 +44,11 @@ async function createCollector(msg, element) {
             if (user.id != element.user) return;// only the author can edit
             
             if (Actions.set(user.id, {type:ActionType.EDIT_REQUEST, data:reaction.message})) {
-                await user.send({embeds:[new Discord.MessageEmbed({title:'Edit Avatar Request!', description:'We will now update the details of the request.'})]}).catch(console.error);
+                await user.send({embeds:[new Discord.MessageEmbed({title:'Edit Avatar Request!', description:'We will now update the details of the request. You can cancel this at any point by typing "abort".'})]}).catch(console.error);
                 user.send({
                     embeds: [
                         new Discord.MessageEmbed({
-                            title: 'Title (1/4)',
+                            title: 'Title (1/5)',
                             description: 'The title of your request. Should only be 1-5 words. Just start typing below and send the message:'
                         })
                     ],
