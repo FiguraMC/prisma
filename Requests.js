@@ -84,7 +84,7 @@ function handle(client, message) {
                 embeds: [
                     new Discord.MessageEmbed({
                         title: 'New Avatar Request',
-                        description: 'We will now fill in the details of the request. Take your time to read the descriptions to ensure to make a high quality request. Low quality ones might get deleted by a moderator.'
+                        description: 'We will now fill in the details of the request. Take your time to read the descriptions to ensure to make a high quality request. Low quality ones might get deleted by a moderator. You can type "abort" at any point if you make a mistake.'
                     })
                 ]
             }).catch(console.error)
@@ -106,21 +106,13 @@ function handle(client, message) {
         // check for the type first
         const request = requests.get(message.author.id);
         let state = request.getState();
-        if (state.next.type == RequestItemType.TAGS) return;
+        if (state.next?.type == RequestItemType.TAGS) return;
 
         // then use the text message
         request.input(message);
         state = request.getState();
 
         if (state.status == 'done') {
-            message.author.send({
-                embeds: [
-                    new Discord.MessageEmbed({
-                        title: 'Done!',
-                        description: 'The request is now completed!\nTip: You can react to your request\'s message for some actions.\n✅ Accept/Archive request\n❌ Delete request\n📝 Edit request'
-                    })
-                ]
-            }).catch(console.error);
             let embed = new Discord.MessageEmbed();
             embed.setTitle(state.items.find(item => item.name == 'title').value);
             embed.setDescription(state.items.find(item => item.name == 'description').value);
@@ -133,9 +125,38 @@ function handle(client, message) {
                 }
             ]);
             embed.setColor('2aacf7'); // blue
-            requests.delete(message.author.id);
-            Actions.delete(message.author.id);
-            client.channels.fetch(process.env.REQUESTS_CHANNEL)
+
+            if (message.content != 'confirm') {
+                // send preview
+                message.author.send({
+                    embeds: [
+                        new Discord.MessageEmbed({
+                            title: 'Preview',
+                            description: 'Here is a preview of your request. If you are happy with it, type "confirm". If you want to try again, type "abort".'
+                        })
+                    ]
+                }).catch(console.error);
+                message.author.send({ embeds: [embed] }).catch(err => {
+                    embed.setImage(undefined);
+                    message.author.send({ embeds: [embed] }).catch(console.error);
+                });
+            }
+            else { // if (message.content == 'confirm')
+                // send actual
+
+                message.author.send({
+                    embeds: [
+                        new Discord.MessageEmbed({
+                            title: 'Done!',
+                            description: 'The request is now completed!\nTip: You can react to your request\'s message for some actions.\n✅ Accept/Archive request\n❌ Delete request\n📝 Edit request'
+                        })
+                    ]
+                }).catch(console.error);
+
+                requests.delete(message.author.id);
+                Actions.delete(message.author.id);
+                
+                client.channels.fetch(process.env.REQUESTS_CHANNEL)
                 .then(channel => {
                     channel.send({ embeds: [embed] })
                         .then(msg => {
@@ -164,6 +185,7 @@ function handle(client, message) {
                         });
                 })
                 .catch(console.error);
+            }
         }
         else {
             // request build not done yet, send next step

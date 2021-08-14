@@ -7,7 +7,7 @@ class RequestBuilder {
         this.status = 'progress'
     }
     input(input) {
-        if (this.items[this.index].type == RequestItemType.IMAGE) {
+        if (this.items[this.index]?.type == RequestItemType.IMAGE) {
             let attachment = input.attachments.values().next().value; // first attachment
             if (attachment != undefined) {
                 // if there is an attachment, use it
@@ -18,15 +18,15 @@ class RequestBuilder {
                 this.items[this.index].value = input.content;
             }
         }
-        else if (this.items[this.index].type == RequestItemType.TEXT) {
+        else if (this.items[this.index]?.type == RequestItemType.TEXT) {
             this.items[this.index].value = input.content;
         }
-        else if (this.items[this.index].type == RequestItemType.TAGS) {
+        else if (this.items[this.index]?.type == RequestItemType.TAGS) {
             let tags = input;
             this.items[this.index].value = tags;
         }
         this.index++;
-        if (this.index == this.items.length) {
+        if (this.index >= this.items.length) {
             this.status = 'done'
         }
     }
