@@ -70,6 +70,7 @@ function handle(client, message) {
         requests.delete(message.author.id);
         Actions.delete(message.author.id);
         message.author.send({embeds:[new Discord.MessageEmbed({description:'Action canceled.'})]}).catch(console.error);
+        return;
     }
     if (!requests.has(message.author.id)) {
         if (message.content.toLowerCase() == 'request') {
@@ -106,7 +107,7 @@ function handle(client, message) {
         // check for the type first
         const request = requests.get(message.author.id);
         let state = request.getState();
-        if (state.next?.type == RequestItemType.TAGS) return;
+        if (state.next?.type == RequestItemType.TAGS) return message.author.send({embeds:[new Discord.MessageEmbed({description:'Please select tags.'})]}).catch(console.error);
 
         // then use the text message
         request.input(message);
@@ -211,7 +212,7 @@ function onInteract(interaction) {
             // check for the type first
             const request = requests.get(interaction.user.id);
             let state = request.getState();
-            if (state.next.type != RequestItemType.TAGS) return;
+            if (state.next?.type != RequestItemType.TAGS) return;
 
             // input the selected tags
             request.input(interaction.values);
@@ -245,6 +246,7 @@ function handleEdit(client, message) {
         requests.delete(message.author.id);
         Actions.delete(message.author.id);
         message.author.send({embeds:[new Discord.MessageEmbed({description:'Action canceled.'})]}).catch(console.error);
+        return;
     }
     if (!requests.has(message.author.id)) {
         requests.set(message.author.id, new RequestBuilder([
@@ -254,13 +256,20 @@ function handleEdit(client, message) {
             new RequestItem('image', 'Reference Image (4/4)', 'We highly recommend adding an image to your request, so that people can more easily make your request. If you dont want an image, just type "skip".', [], RequestItemType.IMAGE)
         ]));
     }
+    
     // check for the type first
     const request = requests.get(message.author.id);
     let state = request.getState();
-    if (state.next.type == RequestItemType.TAGS) return;
 
     // then use the text message
-    request.input(message);
+    if (message.content.toLowerCase() == 'skip') {
+        if (state.next?.type == RequestItemType.TAGS) return message.author.send({embeds:[new Discord.MessageEmbed({description:'Sorry, you can\'t skip this step.'})]}).catch(console.error);
+        request.input('skip');
+    }
+    else {
+        if (state.next?.type == RequestItemType.TAGS) return message.author.send({embeds:[new Discord.MessageEmbed({description:'Please select tags.'})]}).catch(console.error);
+        request.input(message);
+    }
     state = request.getState();
 
     if (state.status == 'done') {
@@ -272,39 +281,44 @@ function handleEdit(client, message) {
                 })
             ]
         }).catch(console.error);
-        let embed = new Discord.MessageEmbed();
-        embed.setTitle(state.items.find(item => item.name == 'title').value);
-        embed.setDescription(state.items.find(item => item.name == 'description').value);
-        embed.setAuthor(message.author.username, message.author.avatarURL());
-        embed.setImage(state.items.find(item => item.name == 'image').value);
-        embed.setFields([
-            {
-                name: 'Tags',
-                value: state.items.find(item => item.name == 'tags').value.join('\n')
-            }
-        ]);
         
         const messageToEdit = Actions.get(message.author.id).data;
+
+        if (messageToEdit.embeds.length != 1) return;
+
+        const title = state.items.find(item => item.name == 'title').value;
+        if (title != 'skip') messageToEdit.embeds[0].setTitle(title);
+        const description = state.items.find(item => item.name == 'description').value;
+        if (description != 'skip') messageToEdit.embeds[0].setDescription(description);
+        const image = state.items.find(item => item.name == 'image').value;
+        if (image != 'skip') messageToEdit.embeds[0].setImage(image);
+        const fields = state.items.find(item => item.name == 'tags').value;
+        if (fields != 'skip') messageToEdit.embeds[0].setFields([
+            {
+                name: 'Tags',
+                value: fields.join('\n')
+            }
+        ]);
 
         const element = DataStorage.storage.avatar_requests.find(x=>x.message==messageToEdit.id);
         if (element != undefined) {
             if (element.timestamp + 1000*60*60*24 < Date.now()) {
-                embed.setColor('202225'); // older than 24h gray
+                messageToEdit.embeds[0].setColor('202225'); // older than 24h gray
             }
             else {
-                embed.setColor('2aacf7'); // newer than 24h blue
+                messageToEdit.embeds[0].setColor('2aacf7'); // newer than 24h blue
             }
         }
         else {
-            embed.setColor('202225'); // default gray
+            messageToEdit.embeds[0].setColor('202225'); // default gray
         }
         
         requests.delete(message.author.id);
         Actions.delete(message.author.id);
 
-        messageToEdit.edit({ embeds: [embed] }).catch(err => {
-            embed.setImage(undefined);
-            messageToEdit.edit({ embeds: [embed] }).catch(console.error);
+        messageToEdit.edit({embeds:messageToEdit.embeds}).catch(err => {
+            messageToEdit.embeds[0].setImage(undefined);
+            messageToEdit.edit({embeds:messageToEdit.embeds}).catch(console.error);
         });
     }
     else {
@@ -325,6 +339,7 @@ async function handleDelete(client, message) {
     if (message.content.toLowerCase() == 'abort') {
         message.author.send({embeds:[new Discord.MessageEmbed({description:'Action canceled.'})]}).catch(console.error);
         Actions.delete(message.author.id);
+        return;
     }
     else if (message.content.toLowerCase() == 'confirm') {
         const msg = Actions.get(message.author.id).data;

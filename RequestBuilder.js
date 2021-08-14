@@ -7,23 +7,28 @@ class RequestBuilder {
         this.status = 'progress'
     }
     input(input) {
-        if (this.items[this.index]?.type == RequestItemType.IMAGE) {
-            let attachment = input.attachments.values().next().value; // first attachment
-            if (attachment != undefined) {
-                // if there is an attachment, use it
-                this.items[this.index].value = attachment.url;
+        if (input == 'skip') {
+            this.items[this.index].value = input;
+        }
+        else {
+            if (this.items[this.index]?.type == RequestItemType.IMAGE) {
+                let attachment = input.attachments.values().next().value; // first attachment
+                if (attachment != undefined) {
+                    // if there is an attachment, use it
+                    this.items[this.index].value = attachment.url;
+                }
+                else {
+                    // otherwise use message content, could be a link to an image for example
+                    this.items[this.index].value = input.content;
+                }
             }
-            else {
-                // otherwise use message content, could be a link to an image for example
+            else if (this.items[this.index]?.type == RequestItemType.TEXT) {
                 this.items[this.index].value = input.content;
             }
-        }
-        else if (this.items[this.index]?.type == RequestItemType.TEXT) {
-            this.items[this.index].value = input.content;
-        }
-        else if (this.items[this.index]?.type == RequestItemType.TAGS) {
-            let tags = input;
-            this.items[this.index].value = tags;
+            else if (this.items[this.index]?.type == RequestItemType.TAGS) {
+                let tags = input;
+                this.items[this.index].value = tags;
+            }
         }
         this.index++;
         if (this.index >= this.items.length) {
