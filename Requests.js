@@ -87,7 +87,74 @@ const types = new Discord.MessageActionRow()
     ]),
 );
 
+const new_request_button = {
+    content:'\u200b\n\u200b',
+    components:[new Discord.MessageActionRow()
+        .addComponents(
+            new Discord.MessageButton()
+            .setCustomId('new_avatar_request')
+            .setStyle('SUCCESS')
+            .setLabel('New Request')
+        )
+    ],
+    embeds:[new Discord.MessageEmbed()
+        .setDescription('Create your own request by clicking this button!')
+        .setColor('3ba55d')
+    ]
+}
+
+function bringNewRequestButtonToTheBottom(client) {
+    client.channels.fetch(process.env.REQUESTS_CHANNEL)
+    .then(channel => {
+        channel.send(new_request_button)
+        .then(msg => {
+            if (DataStorage.storage.new_request_button != undefined) {
+                channel.messages.fetch(DataStorage.storage.new_request_button)
+                .then(oldmsg => {
+                    oldmsg.delete().catch(console.error);
+                })
+                .catch(console.error);
+            }
+            DataStorage.storage.new_request_button = msg.id;
+            DataStorage.save();
+        });
+    })
+    .catch(console.error);
+}
+
 let requests = new Map();
+
+function startRequest(author) {
+    if (!Actions.set(author.id, {type:ActionType.BUILD_REQUEST})) return;
+
+    requests.set(author.id, new RequestBuilder([
+        new RequestItem('title', 'Title (1/5)', 'The title of your request. Should only be 1-5 words. Just start typing below and send the message:', [], RequestItemType.TEXT),
+        new RequestItem('description', 'Description (2/5)', 'Explain what exactly you need, what requirements it should have, any important details, style, whatever you can think of that might be useful for others to know.', [], RequestItemType.TEXT),
+        new RequestItem('type', 'Type (3/5)', 'Select the type of request.', [types], RequestItemType.TAGS),
+        new RequestItem('tags', 'Tags (4/5)', 'Select the tags that fit your request.', [tags], RequestItemType.TAGS),
+        new RequestItem('image', 'Reference Image (5/5)', 'We highly recommend adding an image to your request, so that people can more easily make your request. If you dont want an image, just type "skip".', [], RequestItemType.IMAGE)
+    ]));
+    author.send({
+        embeds: [
+            new Discord.MessageEmbed({
+                title: 'New Avatar Request',
+                description: 'We will now fill in the details of the request. Take your time to read the descriptions to ensure to make a high quality request. Low quality ones might get deleted by a moderator. You can type "abort" at any point if you make a mistake.'
+            })
+        ]
+    }).catch(console.error)
+    .then(() => {
+        let state = requests.get(author.id).getState();
+        author.send({
+            embeds: [
+                new Discord.MessageEmbed({
+                    title: state.next.heading,
+                    description: state.next.instructions
+                })
+            ],
+            components: state.next?.components
+        }).catch(console.error);
+    });
+}
 
 function handle(client, message) {
     if (message.content.toLowerCase() == 'abort') {
@@ -98,34 +165,15 @@ function handle(client, message) {
     }
     if (!requests.has(message.author.id)) {
         if (message.content.toLowerCase() == 'request') {
-            if (!Actions.set(message.author.id, {type:ActionType.BUILD_REQUEST})) return;
-            requests.set(message.author.id, new RequestBuilder([
-                new RequestItem('title', 'Title (1/5)', 'The title of your request. Should only be 1-5 words. Just start typing below and send the message:', [], RequestItemType.TEXT),
-                new RequestItem('description', 'Description (2/5)', 'Explain what exactly you need, what requirements it should have, any important details, style, whatever you can think of that might be useful for others to know.', [], RequestItemType.TEXT),
-                new RequestItem('type', 'Type (3/5)', 'Select the type of request.', [types], RequestItemType.TAGS),
-                new RequestItem('tags', 'Tags (4/5)', 'Select the tags that fit your request.', [tags], RequestItemType.TAGS),
-                new RequestItem('image', 'Reference Image (5/5)', 'We highly recommend adding an image to your request, so that people can more easily make your request. If you dont want an image, just type "skip".', [], RequestItemType.IMAGE)
-            ]));
-            message.author.send({
-                embeds: [
-                    new Discord.MessageEmbed({
-                        title: 'New Avatar Request',
-                        description: 'We will now fill in the details of the request. Take your time to read the descriptions to ensure to make a high quality request. Low quality ones might get deleted by a moderator. You can type "abort" at any point if you make a mistake.'
-                    })
-                ]
-            }).catch(console.error)
-            .then(() => {
-                let state = requests.get(message.author.id).getState();
-                message.author.send({
-                    embeds: [
-                        new Discord.MessageEmbed({
-                            title: state.next.heading,
-                            description: state.next.instructions
-                        })
-                    ],
-                    components: state.next?.components
-                }).catch(console.error);
-            });
+            startRequest(message.author);
+        }
+        else {
+            message.author.send({embeds: [new Discord.MessageEmbed({
+				title: 'Hello there!',
+				description: 'If you want to create an avatar request, send "request" in my DMs here.'+
+							 '\n\n'+
+							 'If you want to respond to an existing request, please do so in the corresponding thread.'
+			})]}).catch(console.error);
         }
     }
     else {
@@ -158,7 +206,7 @@ function handle(client, message) {
             ]);
             embed.setColor('2aacf7'); // blue
 
-            if (message.content != 'confirm') {
+            if (message.content.toLowerCase() != 'confirm') {
                 // send preview
                 message.author.send({
                     embeds: [
@@ -173,14 +221,14 @@ function handle(client, message) {
                     message.author.send({ embeds: [embed] }).catch(console.error);
                 });
             }
-            else { // if (message.content == 'confirm')
+            else { // if (message.content.toLowerCase() == 'confirm')
                 // send actual
 
                 message.author.send({
                     embeds: [
                         new Discord.MessageEmbed({
                             title: 'Done!',
-                            description: 'The request is now completed!\n\nYou can react to your request\'s message for some actions.\n✅ Accept/Archive request\n❌ Delete request\n📝 Edit request\n\nOthers can react with ⚙️ to show that they are working on your request.'
+                            description: 'The request is now completed!\n\nYou can react to your request\'s message for some actions.\n✅ Archive request when completed\n❌ Delete request\n📝 Edit request\n\nOthers can react with ⚙️ to show that they are working on your request.'
                         })
                     ]
                 }).catch(console.error);
@@ -192,6 +240,7 @@ function handle(client, message) {
                 .then(channel => {
                     channel.send({ embeds: [embed] })
                         .then(msg => {
+                            bringNewRequestButtonToTheBottom(client);
                             msg.react('✅').then(()=>msg.react('❌').then(()=>msg.react('📝').then(()=>msg.react('⚙️'))));
                             msg.startThread({name: state.items.find(item => item.name == 'title').value, autoArchiveDuration: 'MAX'})
                                 .then(thread=>{
@@ -205,6 +254,7 @@ function handle(client, message) {
                             embed.setImage(undefined);
                             channel.send({ embeds: [embed] }).catch(console.error)
                                 .then(msg => {
+                                    bringNewRequestButtonToTheBottom(client);
                                     msg.react('✅').then(()=>msg.react('❌').then(()=>msg.react('📝').then(()=>msg.react('⚙️'))));
                                     msg.startThread({name: state.items.find(item => item.name == 'title').value, autoArchiveDuration: 'MAX'})
                                         .then(thread=>{
@@ -235,72 +285,78 @@ function handle(client, message) {
 }
 
 function onInteract(interaction) {
-    if (!interaction.isSelectMenu()) return;
-
-    if (interaction.customId == 'tags') {
-        if (requests.has(interaction.user.id)) {
-
-            // check for the type first
-            const request = requests.get(interaction.user.id);
-            let state = request.getState();
-            if (state.next?.type != RequestItemType.TAGS) return;
-
-            // input the selected tags
-            request.input(interaction.values);
-            state = request.getState();
-
-            // edit the message, remove the components
-            interaction.update({
-                embeds: [
-                    new Discord.MessageEmbed({
-                        description: 'Tags saved.'
-                    })
-                ], components: []
-            });
-
-            // send next step
-            interaction.user.send({
-                embeds: [
-                    new Discord.MessageEmbed({
-                        title: state.next.heading,
-                        description: state.next.instructions
-                    })
-                ],
-                components: state.next?.components
-            });
+    if (interaction.isSelectMenu()){
+        if (interaction.customId == 'tags') {
+            if (requests.has(interaction.user.id)) {
+    
+                // check for the type first
+                const request = requests.get(interaction.user.id);
+                let state = request.getState();
+                if (state.next?.type != RequestItemType.TAGS) return;
+    
+                // input the selected tags
+                request.input(interaction.values);
+                state = request.getState();
+    
+                // edit the message, remove the components
+                interaction.update({
+                    embeds: [
+                        new Discord.MessageEmbed({
+                            description: 'Tags saved.'
+                        })
+                    ], components: []
+                });
+    
+                // send next step
+                interaction.user.send({
+                    embeds: [
+                        new Discord.MessageEmbed({
+                            title: state.next.heading,
+                            description: state.next.instructions
+                        })
+                    ],
+                    components: state.next?.components
+                });
+            }
+        }
+        else if (interaction.customId == 'types') {
+            if (requests.has(interaction.user.id)) {
+    
+                // check for the type first
+                const request = requests.get(interaction.user.id);
+                let state = request.getState();
+                if (state.next?.type != RequestItemType.TAGS) return;
+    
+                // input the selected tags
+                request.input(interaction.values);
+                state = request.getState();
+    
+                // edit the message, remove the components
+                interaction.update({
+                    embeds: [
+                        new Discord.MessageEmbed({
+                            description: 'Type saved.'
+                        })
+                    ], components: []
+                });
+    
+                // send next step
+                interaction.user.send({
+                    embeds: [
+                        new Discord.MessageEmbed({
+                            title: state.next.heading,
+                            description: state.next.instructions
+                        })
+                    ],
+                    components: state.next?.components
+                });
+            }
         }
     }
-    else if (interaction.customId == 'types') {
-        if (requests.has(interaction.user.id)) {
-
-            // check for the type first
-            const request = requests.get(interaction.user.id);
-            let state = request.getState();
-            if (state.next?.type != RequestItemType.TAGS) return;
-
-            // input the selected tags
-            request.input(interaction.values);
-            state = request.getState();
-
-            // edit the message, remove the components
-            interaction.update({
-                embeds: [
-                    new Discord.MessageEmbed({
-                        description: 'Type saved.'
-                    })
-                ], components: []
-            });
-
-            // send next step
-            interaction.user.send({
-                embeds: [
-                    new Discord.MessageEmbed({
-                        title: state.next.heading,
-                        description: state.next.instructions
-                    })
-                ],
-                components: state.next?.components
-            });
+    else if (interaction.isButton()) {
+        if (interaction.customId == 'new_avatar_request') {
+            interaction.deferUpdate();
+            startRequest(interaction.user);
         }
     }
 }
@@ -342,7 +398,7 @@ function handleEdit(client, message) {
             embeds: [
                 new Discord.MessageEmbed({
                     title: 'Done!',
-                    description: 'The request is now updated!\n\nYou can react to your request\'s message for some actions.\n✅ Accept/Archive request\n❌ Delete request\n📝 Edit request\n\nOthers can react with ⚙️ to show that they are working on your request.'
+                    description: 'The request is now updated!\n\nYou can react to your request\'s message for some actions.\n✅ Archive request when completed\n❌ Delete request\n📝 Edit request\n\nOthers can react with ⚙️ to show that they are working on your request.'
                 })
             ]
         }).catch(console.error);

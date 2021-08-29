@@ -17,6 +17,13 @@ async function init(client) {
     });
 }
 
+// checks if user has moderator role, uses msg to get the guild member of the user
+async function isModerator(user, msg) {
+    const member = await msg.guild.members.fetch(user.id);
+    const userIsModerator = await member.roles.cache.some(r => r.id == process.env.MODERATOR_ROLE);
+    return userIsModerator;
+}
+
 async function createCollector(msg, element) {
     collector = msg.createReactionCollector({ dispose: true });
     
@@ -25,7 +32,9 @@ async function createCollector(msg, element) {
 
         if (reaction.emoji.name == '❌') {
             reaction.message.reactions.cache.get('❌').users.remove(user.id);
-            if (user.id != element.user) return; // only the author can delete
+            
+            let userIsModerator = await isModerator(user, msg);
+            if (user.id != element.user && !userIsModerator) return; // only the author or a moderator can delete
             
             if (Actions.set(user.id, {type:ActionType.DELETE_REQUEST, data:reaction.message})) {
                 user.send({embeds:[new Discord.MessageEmbed({title:'Request Deletion', description:'Are you sure you want to delete this request? Type "confirm" to delete, or "abort" to cancel.'})]}).catch(console.error);
@@ -33,15 +42,19 @@ async function createCollector(msg, element) {
         }
         else if (reaction.emoji.name == '✅') {
             reaction.message.reactions.cache.get('✅').users.remove(user.id);
-            if (user.id != element.user) return;// only the author can accept
+            
+            let userIsModerator = await isModerator(user, msg);
+            if (user.id != element.user && !userIsModerator) return;// only the author or a moderator can archive
 
             if (Actions.set(user.id, {type:ActionType.ACCEPT_REQUEST, data:reaction.message})) {
-                user.send({embeds:[new Discord.MessageEmbed({title:'Avatar request fullfilled!', description:'It will now be archived. If you want, you can now send the finished request as a zip file, to attach it to the archive. If you don\' want that, just type "skip".'})]}).catch(console.error);
+                user.send({embeds:[new Discord.MessageEmbed({title:'Avatar request fullfilled!', description:'It will now be archived. If you want, you can now send the finished request as a zip file, to attach it to the archive. If you don\'t want that, just type "skip". Type "abort" to cancel this action.'})]}).catch(console.error);
             }
         }
         else if (reaction.emoji.name == '📝') {
             reaction.message.reactions.cache.get('📝').users.remove(user.id);
-            if (user.id != element.user) return;// only the author can edit
+
+            let userIsModerator = await isModerator(user, msg);
+            if (user.id != element.user && !userIsModerator) return;// only the author can edit
             
             if (Actions.set(user.id, {type:ActionType.EDIT_REQUEST, data:reaction.message})) {
                 await user.send({embeds:[new Discord.MessageEmbed({title:'Edit Avatar Request!', description:'We will now update the details of the request. You can cancel this at any point by typing "abort".'})]}).catch(console.error);

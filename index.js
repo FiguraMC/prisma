@@ -45,6 +45,7 @@ client.once('ready', async () => {
 
 client.on('messageCreate', async message => {
 	if (message.author.bot) return;
+	
 	try {
 		if (message.channel.type == 'DM') {
 			if (Actions.has(message.author.id)) {
