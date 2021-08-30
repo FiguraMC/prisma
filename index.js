@@ -27,13 +27,15 @@ const Requests = require('./Requests');
 const Accept = require('./Accept');
 const Actions = require('./Actions');
 const ActionType = require('./ActionType');
+const Wiki = require('./wiki');
 
 client.once('ready', async () => {
 	await ReactionCollector.init(client);
-	const job = new CronJob('0 0 * * * *', function() {
+	const job = new CronJob('0 0 * * * *', function () {
 		RequestDeletion(client);
 	}, null, true, 'Europe/London');
 	job.start();
+	Wiki.init();
 	console.log('Ready!');
 });
 
@@ -45,7 +47,7 @@ client.once('ready', async () => {
 
 client.on('messageCreate', async message => {
 	if (message.author.bot) return;
-	
+
 	try {
 		if (message.channel.type == 'DM') {
 			if (Actions.has(message.author.id)) {
@@ -70,16 +72,26 @@ client.on('messageCreate', async message => {
 			message.delete().catch(console.error);
 			let embed = new Discord.MessageEmbed({
 				title: 'Hello there!',
-				description: 'If you want to create an avatar request, send "request" in my DMs here.'+
-							 '\n\n'+
-							 'If you want to respond to an existing request, please do so in the corresponding thread.'
+				description: 'If you want to create an avatar request, send "request" in my DMs here.' +
+					'\n\n' +
+					'If you want to respond to an existing request, please do so in the corresponding thread.'
 			});
-			message.author.send({embeds: [embed]}).catch(console.error);
+			message.author.send({ embeds: [embed] }).catch(console.error);
+		}
+		else if (message.content.startsWith('?wiki ')) {
+			const s = message.content.substring(6).toLowerCase();
+			const result = Wiki.search(s);
+			if (result) {
+				message.channel.send(result);
+			}
+			else {
+				message.channel.send('Could not find anything about ``' + s + '``');
+			}
 		}
 	}
 	catch (error) {
 		console.error(error.stack);
-		
+
 		client.channels.fetch(process.env.LOG_CHANNEL)
 			.then(channel => channel.send({
 				content: error.toString(),
