@@ -5,6 +5,14 @@ exports.storage = {avatar_requests:[]}
 function load() {
     if (!fs.existsSync('./storage.json')) return save();
     exports.storage = JSON.parse(fs.readFileSync('./storage.json').toString());
+
+    if (exports.storage.avatar_requests == undefined) {
+        exports.storage.avatar_requests = [];
+    }
+    if (exports.storage.people == undefined) {
+        exports.storage.people = {};
+    }
+    save();
 }
 
 function save() {

@@ -21,6 +21,7 @@ const client = new Discord.Client({
 });
 
 require('./DataStorage').load();
+const DataStorage = require('./DataStorage');
 const ReactionCollector = require('./ReactionCollector');
 const RequestDeletion = require('./RequestDeletion');
 const Requests = require('./Requests');
@@ -28,6 +29,8 @@ const Accept = require('./Accept');
 const Actions = require('./Actions');
 const ActionType = require('./ActionType');
 const Wiki = require('./wiki');
+const {isModerator} = require('./util');
+const TierRolesManager = require('./TierRolesManager');
 
 client.once('ready', async () => {
 	await ReactionCollector.init(client);
@@ -47,7 +50,6 @@ client.once('ready', async () => {
 
 client.on('messageCreate', async message => {
 	if (message.author.bot) return;
-
 	try {
 		if (message.channel.type == 'DM') {
 			if (Actions.has(message.author.id)) {
@@ -68,16 +70,17 @@ client.on('messageCreate', async message => {
 				Requests.handle(client, message);
 			}
 		}
-		else if (message.channel.id == process.env.REQUESTS_CHANNEL) {
-			message.delete().catch(console.error);
-			let embed = new Discord.MessageEmbed({
-				title: 'Hello there!',
-				description: 'If you want to create an avatar request, send "request" in my DMs here.' +
-					'\n\n' +
-					'If you want to respond to an existing request, please do so in the corresponding thread.'
-			});
-			message.author.send({ embeds: [embed] }).catch(console.error);
-		}
+		// deleting messages sent in the requests channel - removed
+		// else if (message.channel.id == process.env.REQUESTS_CHANNEL) {
+		// 	message.delete().catch(console.error);
+		// 	let embed = new Discord.MessageEmbed({
+		// 		title: 'Hello there!',
+		// 		description: 'If you want to create an avatar request, send "request" in my DMs here.' +
+		// 			'\n\n' +
+		// 			'If you want to respond to an existing request, please do so in the corresponding thread.'
+		// 	});
+		// 	message.author.send({ embeds: [embed] }).catch(console.error);
+		// }
 		else if (message.content.startsWith('?wiki ')) {
 			const s = message.content.substring(6).toLowerCase();
 			const result = Wiki.search(s);
@@ -87,6 +90,79 @@ client.on('messageCreate', async message => {
 			else {
 				message.channel.send('Could not find anything about ``' + s + '``');
 			}
+		}
+		else if ((message.content.startsWith('?requestsbans') || message.content.startsWith('?requestbans')) && await isModerator(message.author.id, message)) {
+			let response = 'These people are currently banned from making requests:\n';
+			let x = false;
+			for (const key in DataStorage.storage.people) {
+				if (Object.hasOwnProperty.call(DataStorage.storage.people, key)) {
+					const person = DataStorage.storage.people[key];
+					if (person.ban) {
+						x = true;
+						response += '<@' + key + '>\n';
+					}
+				}
+			}
+			message.channel.send(x ? response : 'Noone is currently request-banned.');
+		}
+		else if ((message.content.startsWith('?requestsban') || message.content.startsWith('?requestban')) && await isModerator(message.author.id, message)) {
+			const member = message.mentions.members.first();
+			if (member == undefined) return message.channel.send('Please specify a user.');
+			if (DataStorage.storage.people[member.id] == undefined) {
+				DataStorage.storage.people[member.id] = {};
+			}
+			const person = DataStorage.storage.people[member.id];
+			if (person.ban) return message.channel.send('This user is already banned.');
+			person.ban = true;
+			DataStorage.save();
+			message.channel.send('Request-Banned <@' + message.mentions.members.first() + '>');
+		}
+		else if ((message.content.startsWith('?requestsunban') || message.content.startsWith('?requestunban')) && await isModerator(message.author.id, message)) {
+			const member = message.mentions.members.first();
+			if (member == undefined) return message.channel.send('Please specify a user.');
+			if (DataStorage.storage.people[member.id] == undefined) {
+				return;
+			}
+			const person = DataStorage.storage.people[member.id];
+			if (person.ban) {
+				delete person.ban;
+				DataStorage.save();
+				message.channel.send('Request-Unbanned <@' + message.mentions.members.first() + '>');
+			}
+			else {
+				message.channel.send('This user is not banned.');
+			}
+		}
+		else if (message.content.startsWith('?level')) {
+			const member = message.mentions.members.first();
+			if (member == undefined) return message.channel.send('Please specify a user.');
+			if (DataStorage.storage.people[member.id] == undefined) {
+				return;
+			}
+			const person = DataStorage.storage.people[member.id];
+			if (person.level == undefined) {
+				message.channel.send('<@' + message.mentions.members.first() + '> has not completed any requests yet.');
+			}
+			else {
+				message.channel.send('<@' + message.mentions.members.first() + '> has completed ' + person.level + ' requests.');
+			}
+		}
+		else if (message.content.startsWith('?setlevel') && await isModerator(message.author.id, message)) {
+			const member = message.mentions.members.first();
+			if (member == undefined) return message.channel.send('Please specify a user.');
+			
+			let newLevel = parseInt(message.content.split(' ')[2]);
+			if (isNaN(newLevel)) return message.channel.send('Please specify the amount of requests.');
+			
+			const person = DataStorage.storage.people[member.id];
+			
+			if (person.level == undefined) {
+				message.channel.send('Changed level of <@' + message.mentions.members.first() + '> to ' + newLevel + '.');
+			}
+			else {
+				message.channel.send('Changed level of <@' + message.mentions.members.first() + '> from ' + person.level + ' to ' + newLevel + '.');
+			}
+			TierRolesManager.levelset(member, newLevel);
 		}
 	}
 	catch (error) {
@@ -106,6 +182,56 @@ client.on('messageCreate', async message => {
 
 client.on('interactionCreate', interaction => {
 	Requests.onInteract(interaction);
+	Accept.onInteract(interaction);
+});
+
+client.on('messageUpdate', async (oldMessage, newMessage) => {
+	if (oldMessage.author.bot) return;
+	if (oldMessage.guild != newMessage.guild) return;
+	let channel = await oldMessage.guild.channels.fetch(process.env.LOG_CHANNEL);
+	channel.send({
+		embeds:[
+			{
+				author: {name: oldMessage.author.username, iconURL: oldMessage.author.avatarURL()},
+				description: 'Message from <@' + oldMessage.author + '> edited in <#' + oldMessage.channel + '>',
+				fields:[
+					{
+						name: 'Old',
+						value: oldMessage.content==''?'[empty]':oldMessage.content,
+						inline: true,
+					},
+					{
+						name: 'New',
+						value: newMessage.content==''?'[empty]':newMessage.content,
+						inline: true,
+					},
+				],
+				image: {url: oldMessage.attachments.values()?.next()?.value?.attachment},
+				color: '0875db'
+			}
+		]
+	});
+});
+
+client.on('messageDelete', async message => {
+	if (message.author.bot) return;
+	let channel = await message.guild.channels.fetch(process.env.LOG_CHANNEL);
+	channel.send({
+		embeds:[
+			{
+				author: {name: message.author.username, iconURL: message.author.avatarURL()},
+				description: 'Message from <@' + message.author + '> deleted in <#' + message.channel + '>',
+				fields:[
+					{
+						name: 'Message',
+						value: message.content==''?'[empty]':message.content
+					}
+				],
+				image: {url: message.attachments.values()?.next()?.value?.attachment},
+				color: 'ff0000'
+			}
+		]
+	});
 });
 
 /////////////////

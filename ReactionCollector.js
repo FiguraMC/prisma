@@ -2,6 +2,7 @@ const DataStorage = require('./DataStorage');
 const Actions = require('./Actions');
 const ActionType = require('./ActionType');
 const Discord = require('discord.js');
+const {isModerator} = require('./util');
 
 async function init(client) {
     const channel = await client.channels.fetch(process.env.REQUESTS_CHANNEL);
@@ -17,13 +18,6 @@ async function init(client) {
     });
 }
 
-// checks if user has moderator role, uses msg to get the guild member of the user
-async function isModerator(user, msg) {
-    const member = await msg.guild.members.fetch(user.id);
-    const userIsModerator = await member.roles.cache.some(r => r.id == process.env.MODERATOR_ROLE);
-    return userIsModerator;
-}
-
 async function createCollector(msg, element) {
     collector = msg.createReactionCollector({ dispose: true });
     
@@ -33,7 +27,7 @@ async function createCollector(msg, element) {
         if (reaction.emoji.name == '❌') {
             reaction.message.reactions.cache.get('❌').users.remove(user.id);
             
-            let userIsModerator = await isModerator(user, msg);
+            let userIsModerator = await isModerator(user.id, msg);
             if (user.id != element.user && !userIsModerator) return; // only the author or a moderator can delete
             
             if (Actions.set(user.id, {type:ActionType.DELETE_REQUEST, data:reaction.message})) {
@@ -42,18 +36,20 @@ async function createCollector(msg, element) {
         }
         else if (reaction.emoji.name == '✅') {
             reaction.message.reactions.cache.get('✅').users.remove(user.id);
+            const gearReactionPeople = await reaction.message.reactions.cache.get('⚙️').users.fetch();
             
-            let userIsModerator = await isModerator(user, msg);
+            let userIsModerator = await isModerator(user.id, msg);
             if (user.id != element.user && !userIsModerator) return;// only the author or a moderator can archive
 
-            if (Actions.set(user.id, {type:ActionType.ACCEPT_REQUEST, data:reaction.message})) {
-                user.send({embeds:[new Discord.MessageEmbed({title:'Avatar request fullfilled!', description:'It will now be archived. If you want, you can now send the finished request as a zip file, to attach it to the archive. If you don\'t want that, just type "skip". Type "abort" to cancel this action.'})]}).catch(console.error);
+            if (Actions.set(user.id, {type:ActionType.ACCEPT_REQUEST, data:reaction.message, gearReactionPeople:gearReactionPeople})) {
+                await user.send({embeds:[new Discord.MessageEmbed({title:'Archiving the avatar request!', description:'Please follow a few steps to finish this request. Type "abort" at any time to cancel this action.'})]}).catch(console.error);
+                user.send({embeds:[new Discord.MessageEmbed({title:'Request Files (1/2)', description:'You can now send the finished request as a zip file, to attach it to the archive. If you don\'t want that, just type "skip".'})]}).catch(console.error);
             }
         }
         else if (reaction.emoji.name == '📝') {
             reaction.message.reactions.cache.get('📝').users.remove(user.id);
 
-            let userIsModerator = await isModerator(user, msg);
+            let userIsModerator = await isModerator(user.id, msg);
             if (user.id != element.user && !userIsModerator) return;// only the author can edit
             
             if (Actions.set(user.id, {type:ActionType.EDIT_REQUEST, data:reaction.message})) {
@@ -70,10 +66,24 @@ async function createCollector(msg, element) {
             }
         }
         else if (reaction.emoji.name == '⚙️') {
-            if (user.id == element.user) return reaction.message.reactions.cache.get('⚙️').users.remove(user.id); // the author cannot lock it themselves
+            if (user.id == element.user || DataStorage.storage.people[user.id]?.ban) return reaction.message.reactions.cache.get('⚙️').users.remove(user.id); // the author cannot lock it themselves, and banned people neither
+
+            // check if user has hit the ⚙️ limit
+            if (DataStorage.storage.avatar_requests.filter(x => x.workers?.includes(user.id))?.length >= 5) {
+                reaction.message.reactions.cache.get('⚙️').users.remove(user.id);
+                user.send({embeds:[{description:'Your are already working on 5 requests! Please finish another request first, before working on new ones. This limit has been implemented to avoid spam.'}]});
+                return;
+            }
+
+            // add user to the workers list
+            let avatar_request = DataStorage.storage.avatar_requests.find(x => x.message == reaction.message.id);
+            if (avatar_request.workers == undefined) avatar_request.workers = [];
+            avatar_request.workers.push(user.id);
 
             element.locked = true;
+            
             DataStorage.save();
+
             // show the user, that the bot locked it
             reaction.message.embeds.forEach(embed => {
                 embed.color = 'f28a2e'; // orange
@@ -84,9 +94,13 @@ async function createCollector(msg, element) {
 
     collector.on('remove', (reaction, user) => {
         if (reaction.emoji.name == '⚙️' && user.id != element.user) {
-            if (reaction.count == 1) { // if only the bots reaction is there, unlock
+            // remove user from the workers list
+            let avatar_request = DataStorage.storage.avatar_requests.find(x => x.message == reaction.message.id);
+            avatar_request.workers = avatar_request.workers?.filter(x => x != user.id);
+
+            // if only the bots reaction is there, unlock
+            if (reaction.count == 1) {
                 element.locked = false;
-                DataStorage.save();
                 if (element.timestamp + 1000*60*60*24 < Date.now()) {
                     reaction.message.embeds.forEach(embed => {
                         embed.color = '202225'; // older than 24h gray
@@ -99,6 +113,8 @@ async function createCollector(msg, element) {
                 }
                 reaction.message.edit({embeds:reaction.message.embeds}).catch(console.error);
             }
+
+            DataStorage.save();
         }
     });
     

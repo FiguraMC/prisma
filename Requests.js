@@ -244,6 +244,7 @@ function handle(client, message) {
                             msg.react('✅').then(()=>msg.react('❌').then(()=>msg.react('📝').then(()=>msg.react('⚙️'))));
                             msg.startThread({name: state.items.find(item => item.name == 'title').value, autoArchiveDuration: 'MAX'})
                                 .then(thread=>{
+                                    thread.send({embeds:[{description:'Remember to archive the request when it\'s completed ✅.\nOthers can react with ⚙️ to show that they are working on your request.'}]});
                                     const element = {message:msg.id, user:message.author.id, timestamp: Date.now(), locked:false, thread: thread.id};
                                     DataStorage.storage.avatar_requests.push(element);
                                     DataStorage.save();
@@ -258,6 +259,7 @@ function handle(client, message) {
                                     msg.react('✅').then(()=>msg.react('❌').then(()=>msg.react('📝').then(()=>msg.react('⚙️'))));
                                     msg.startThread({name: state.items.find(item => item.name == 'title').value, autoArchiveDuration: 'MAX'})
                                         .then(thread=>{
+                                            thread.send({embeds:[{description:'Remember to archive the request when it\'s completed ✅.\nOthers can react with ⚙️ to show that they are working on your request.'}]});
                                             const element = {message:msg.id, user:message.author.id, timestamp: Date.now(), locked:false, thread: thread.id};
                                             DataStorage.storage.avatar_requests.push(element);
                                             DataStorage.save();
@@ -356,7 +358,11 @@ function onInteract(interaction) {
     else if (interaction.isButton()) {
         if (interaction.customId == 'new_avatar_request') {
             interaction.deferUpdate();
-            startRequest(interaction.user);
+            if (DataStorage.storage.people[interaction.user.id]?.ban) {
+                interaction.user.send('Sorry, you can\'t create a request at the moment.');
+                return;
+            }
+        startRequest(interaction.user);
         }
     }
 }
@@ -472,6 +478,7 @@ async function handleDelete(client, message) {
     else if (message.content.toLowerCase() == 'confirm') {
         const msg = Actions.get(message.author.id).data;
         const element = DataStorage.storage.avatar_requests.find(x=>x.message==msg.id);
+        client.channels.fetch(process.env.LOG_CHANNEL).then(channel => channel.send({content: 'Request deleted:', embeds: msg.embeds}).catch(console.error)).catch(console.error);
         msg.delete().catch(console.error);
         const thread = await msg.channel.threads.fetch(element.thread).catch(console.error);
         thread.setArchived(true).catch(console.error);
