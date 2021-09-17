@@ -244,6 +244,7 @@ function handle(client, message) {
                             msg.react('✅').then(()=>msg.react('❌').then(()=>msg.react('📝').then(()=>msg.react('⚙️'))));
                             msg.startThread({name: state.items.find(item => item.name == 'title').value, autoArchiveDuration: 'MAX'})
                                 .then(thread=>{
+                                    thread.members.add(message.author);
                                     thread.send({embeds:[{description:'Remember to archive the request when it\'s completed ✅.\nOthers can react with ⚙️ to show that they are working on your request.'}]});
                                     const element = {message:msg.id, user:message.author.id, timestamp: Date.now(), locked:false, thread: thread.id};
                                     DataStorage.storage.avatar_requests.push(element);
@@ -259,6 +260,7 @@ function handle(client, message) {
                                     msg.react('✅').then(()=>msg.react('❌').then(()=>msg.react('📝').then(()=>msg.react('⚙️'))));
                                     msg.startThread({name: state.items.find(item => item.name == 'title').value, autoArchiveDuration: 'MAX'})
                                         .then(thread=>{
+                                            thread.members.add(message.author);
                                             thread.send({embeds:[{description:'Remember to archive the request when it\'s completed ✅.\nOthers can react with ⚙️ to show that they are working on your request.'}]});
                                             const element = {message:msg.id, user:message.author.id, timestamp: Date.now(), locked:false, thread: thread.id};
                                             DataStorage.storage.avatar_requests.push(element);
