@@ -137,7 +137,7 @@ client.on('messageCreate', async message => {
 			const member = message.mentions.members.first();
 			if (member == undefined) return message.channel.send('Please specify a user.');
 			if (DataStorage.storage.people[member.id] == undefined) {
-				return;
+				return message.channel.send('This user hasn\'t done any requests yet.');
 			}
 			const person = DataStorage.storage.people[member.id];
 			if (person == undefined || person.level == undefined) {
