@@ -98,7 +98,8 @@ const new_request_button = {
         )
     ],
     embeds:[new Discord.MessageEmbed()
-        .setDescription('Create your own request by clicking this button!')
+        .setTitle('Create your own')
+        .setDescription('• Before making a request, use Discord search to make sure that something similiar hasnt already been made.\n• Make sure to provide as much detail about your request as possible, if its too vague it might be deleted.')
         .setColor('3ba55d')
     ]
 }
