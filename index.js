@@ -140,7 +140,7 @@ client.on('messageCreate', async message => {
 				return;
 			}
 			const person = DataStorage.storage.people[member.id];
-			if (person.level == undefined) {
+			if (person == undefined || person.level == undefined) {
 				message.channel.send('<@' + message.mentions.members.first() + '> has not completed any requests yet.');
 			}
 			else {
@@ -156,7 +156,7 @@ client.on('messageCreate', async message => {
 			
 			const person = DataStorage.storage.people[member.id];
 			
-			if (person.level == undefined) {
+			if (person == undefined || person.level == undefined) {
 				message.channel.send('Changed level of <@' + message.mentions.members.first() + '> to ' + newLevel + '.');
 			}
 			else {
