@@ -85,7 +85,7 @@ client.on('messageCreate', async message => {
 			const s = message.content.substring(6).toLowerCase();
 			const result = Wiki.search(s);
 			if (result) {
-				message.channel.send(result);
+				message.channel.send('<'+result+'>');
 			}
 			else {
 				message.channel.send('Could not find anything about ``' + s + '``');
@@ -164,6 +164,13 @@ client.on('messageCreate', async message => {
 			}
 			TierRolesManager.levelset(member, newLevel);
 		}
+		else if (message.content.startsWith('?help')) {
+			let response = 'Available commands:\n?wiki <search> - Search for a wiki page.\n?level <@user> - Show a users level.';
+			if (await isModerator(message.author.id, message)) {
+					response += '\n?setlevel <@user> <level> - Set the level of a user.\n?requestban <@user> - Ban someone from interacting with requests.\n?requestunban <@user> - Revert a ban.\n?requestbans - Show all the people who are currently banned from requests.';
+			}
+			message.channel.send({embeds:[{description:response}]});
+		}
 	}
 	catch (error) {
 		console.error(error.stack);
@@ -186,14 +193,14 @@ client.on('interactionCreate', interaction => {
 });
 
 client.on('messageUpdate', async (oldMessage, newMessage) => {
-	if (oldMessage.author.bot) return;
+	if (oldMessage.content == newMessage.content) return; // in order to stop link embeds from triggering this event
 	if (oldMessage.guild != newMessage.guild) return;
 	let channel = await oldMessage.guild.channels.fetch(process.env.LOG_CHANNEL);
 	channel.send({
 		embeds:[
 			{
 				author: {name: oldMessage.author.username, iconURL: oldMessage.author.avatarURL()},
-				description: 'Message from <@' + oldMessage.author + '> edited in <#' + oldMessage.channel + '>',
+				description: '[Message]('+oldMessage.url+') from <@' + oldMessage.author + '> edited in <#' + oldMessage.channel + '>',
 				fields:[
 					{
 						name: 'Old',
@@ -215,12 +222,32 @@ client.on('messageUpdate', async (oldMessage, newMessage) => {
 
 client.on('messageDelete', async message => {
 	if (message.author.bot) return;
+	if (!message.guild) return; // Ignore DM
+
+	const fetchedLogs = await message.guild.fetchAuditLogs({
+		limit: 1,
+		type: 'MESSAGE_DELETE',
+	});
+	const deletionLog = fetchedLogs.entries.first();
+
+	let personWhoDeleted;
+
+	if (!deletionLog) personWhoDeleted = 'an unknown user';
+	const { executor, target } = deletionLog;
+	if (target.id == message.author.id) {
+		personWhoDeleted = '<@'+executor.id+'>';
+	} else {
+		personWhoDeleted = 'themselves';
+	}
+
+	if (executor.id == '466378653216014359') return; // Ignore Pluralkit
+
 	let channel = await message.guild.channels.fetch(process.env.LOG_CHANNEL);
 	channel.send({
 		embeds:[
 			{
 				author: {name: message.author.username, iconURL: message.author.avatarURL()},
-				description: 'Message from <@' + message.author + '> deleted in <#' + message.channel + '>',
+				description: 'Message from <@' + message.author + '> deleted by '+personWhoDeleted+' in <#' + message.channel + '>',
 				fields:[
 					{
 						name: 'Message',

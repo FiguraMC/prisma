@@ -32,7 +32,7 @@ async function handle(client, message) {
                 steps.set(message.author.id, {step:1,file:attachment.url,client:client,thread:thread});
             }
             let options = []
-            Actions.get(message.author.id).gearReactionPeople.forEach((value,key,map) => {
+            Actions.get(message.author.id).gearReactionPeople?.forEach((value,key,map) => {
                 if (value.bot) return;
                 options.push({
                     label:value.username,
@@ -40,7 +40,7 @@ async function handle(client, message) {
                 });
             });
             
-            if (options.length == 0) return StartArchiving(client, thread, steps.get(message.author.id).file, message.author);
+            if (options.length == 0) return StartArchiving(client, thread, steps.get(message.author.id).file, message.author, messageToArchive.id, []);
 
             let requestFulfillerSelectMenu = new Discord.MessageActionRow()
             .addComponents(
@@ -68,17 +68,22 @@ async function handle(client, message) {
     }
 }
 
-function onInteract(interaction) {
+async function onInteract(interaction) {
     if (interaction.customId == 'request_fulfillers') {
         if (steps.has(interaction.user.id)) {
             const step = steps.get(interaction.user.id)
             const stepNumber = steps.get(interaction.user.id).step;
             if (stepNumber == 1) {
                 
-                interaction.values.forEach(async userid => {
-                    const messageToArchive = Actions.get(interaction.user.id).data;
+                const messageToArchive = Actions.get(interaction.user.id).data;
+                let workers = []
+
+                for (const userid of interaction.values) {
                     TierRolesManager.levelup(await messageToArchive.guild.members.fetch(userid));
-                });
+                    workers.push(userid);
+                }
+
+                console.log(workers)
 
                 interaction.update({
                     embeds: [
@@ -88,21 +93,23 @@ function onInteract(interaction) {
                     ], components: []
                 });
                 
-                StartArchiving(step.client, step.thread, step.file, interaction.user);
+                StartArchiving(step.client, step.thread, step.file, interaction.user, messageToArchive.id, workers);
             }
         }
     }
 }
 
-function StartArchiving(client, thread, file, user) {
+function StartArchiving(client, thread, file, user, messageToArchiveId, workers) {
     if (file == undefined) {
-        Archive(client, Actions.get(user.id).data, thread);
+        Archive(client, Actions.get(user.id).data, thread, workers);
     }
     else {
-        ArchiveWithFile(client, Actions.get(user.id).data, thread, file);
+        ArchiveWithFile(client, Actions.get(user.id).data, thread, workers, file);
     }
     Actions.delete(user.id);
     steps.delete(user.id);
+    DataStorage.storage.avatar_requests = DataStorage.storage.avatar_requests.filter(x => x.message != messageToArchiveId);
+    DataStorage.save();
 
     user.send({
         embeds: [
@@ -114,9 +121,19 @@ function StartArchiving(client, thread, file, user) {
     }).catch(console.error);
 }
 
-function Archive(client, message, thread) {
+function Archive(client, message, thread, workers) {
     message.embeds.forEach(embed => {
         embed.color = '202225'; // gray
+        let workersString;
+        if (workers.length > 0) {
+            workersString = '';
+            for (const worker of workers) {
+                workersString += '<@'+worker+'>\n';
+            }
+        }
+        if (workersString != undefined) {
+            embed.addField('Made by', workersString, false);
+        }
     });
     client.channels.fetch(process.env.REQUESTS_ARCHIVE_CHANNEL)
         .then(channel => channel.send({embeds:message.embeds}).catch(console.error))
@@ -124,9 +141,19 @@ function Archive(client, message, thread) {
     message.delete().catch(console.error);
     thread.setArchived(true).catch(console.error);
 }
-function ArchiveWithFile(client, message, thread, file) {
+function ArchiveWithFile(client, message, thread, workers, file) {
     message.embeds.forEach(embed => {
         embed.color = '77b255'; // green
+        let workersString;
+        if (workers.length > 0) {
+            workersString = '';
+            for (const worker of workers) {
+                workersString += '<@'+worker+'>\n';
+            }
+        }
+        if (workersString != undefined) {
+            embed.addField('Made by', workersString, false);
+        }
     });
     client.channels.fetch(process.env.REQUESTS_ARCHIVE_CHANNEL)
         .then(channel => channel.send({embeds:message.embeds, files:[file]}).catch(console.error))

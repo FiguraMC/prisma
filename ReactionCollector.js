@@ -36,7 +36,7 @@ async function createCollector(msg, element) {
         }
         else if (reaction.emoji.name == '✅') {
             reaction.message.reactions.cache.get('✅').users.remove(user.id);
-            const gearReactionPeople = await reaction.message.reactions.cache.get('⚙️').users.fetch();
+            const gearReactionPeople = await reaction.message.reactions.cache.get('⚙️')?.users.fetch();
             
             let userIsModerator = await isModerator(user.id, msg);
             if (user.id != element.user && !userIsModerator) return;// only the author or a moderator can archive

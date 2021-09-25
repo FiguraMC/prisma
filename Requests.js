@@ -124,8 +124,20 @@ function bringNewRequestButtonToTheBottom(client) {
 }
 
 let requests = new Map();
+let cooldowns = new Map();
 
 function startRequest(author) {
+    if (cooldowns.has(author.id)) {
+        let difference = Date.now() - cooldowns.get(author.id);
+        let cooldown = 30*60*1000;
+        if (difference < cooldown) {
+            return author.send('You are on cooldown, please wait ' + parseInt((cooldown-difference)/(60*1000)+1) + ' minutes.');
+        }
+        else {
+            cooldowns.delete(author.id);
+        }
+    }
+
     if (!Actions.set(author.id, {type:ActionType.BUILD_REQUEST})) return;
 
     requests.set(author.id, new RequestBuilder([
@@ -241,6 +253,7 @@ function handle(client, message) {
                 .then(channel => {
                     channel.send({ embeds: [embed] })
                         .then(msg => {
+                            cooldowns.set(message.author.id, Date.now());
                             bringNewRequestButtonToTheBottom(client);
                             msg.react('✅').then(()=>msg.react('❌').then(()=>msg.react('📝').then(()=>msg.react('⚙️'))));
                             msg.startThread({name: state.items.find(item => item.name == 'title').value, autoArchiveDuration: 'MAX'})
@@ -257,6 +270,7 @@ function handle(client, message) {
                             embed.setImage(undefined);
                             channel.send({ embeds: [embed] }).catch(console.error)
                                 .then(msg => {
+                                    cooldowns.set(message.author.id, Date.now());
                                     bringNewRequestButtonToTheBottom(client);
                                     msg.react('✅').then(()=>msg.react('❌').then(()=>msg.react('📝').then(()=>msg.react('⚙️'))));
                                     msg.startThread({name: state.items.find(item => item.name == 'title').value, autoArchiveDuration: 'MAX'})
