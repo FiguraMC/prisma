@@ -495,7 +495,8 @@ async function handleDelete(client, message) {
     else if (message.content.toLowerCase() == 'confirm') {
         const msg = Actions.get(message.author.id).data;
         const element = DataStorage.storage.avatar_requests.find(x=>x.message==msg.id);
-        client.channels.fetch(process.env.LOG_CHANNEL).then(channel => channel.send({content: 'Request deleted:', embeds: msg.embeds}).catch(console.error)).catch(console.error);
+        for (let e of msg.embeds) e.setColor('f24671');
+        client.channels.fetch(process.env.LOG_CHANNEL).then(channel => channel.send({content: 'Request deleted by user:', embeds: msg.embeds}).catch(console.error)).catch(console.error);
         msg.delete().catch(console.error);
         const thread = await msg.channel.threads.fetch(element.thread).catch(console.error);
         thread.setArchived(true).catch(console.error);
