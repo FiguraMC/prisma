@@ -88,7 +88,7 @@ const types = new Discord.MessageActionRow()
 );
 
 const new_request_button = {
-    content:'\u200b\n\u200b',
+    content:'\u200b',
     components:[new Discord.MessageActionRow()
         .addComponents(
             new Discord.MessageButton()
@@ -99,7 +99,7 @@ const new_request_button = {
     ],
     embeds:[new Discord.MessageEmbed()
         .setTitle('Create your own')
-        .setDescription('• Before making a request, use Discord search to make sure that something similiar hasnt already been made.\n• Make sure to provide as much detail about your request as possible, if its too vague it might be deleted.')
+        .setDescription('• Before making a request, use Discord search to make sure that something similiar hasnt already been made.\n• If its very simple (like glowing texture, hiding armor, make your skin 3D, change the skin on an avatar, spawn particles, etc..) you should not make a request, just ask in the <#808155531389698079> channel.\n• Make sure to provide as much detail about your request as possible, if its too vague it might be deleted.\n• **Do not repost for visibility!**')
         .setColor('3ba55d')
     ]
 }
