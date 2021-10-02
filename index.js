@@ -7,6 +7,8 @@
 require('dotenv').config();
 const Discord = require('discord.js');
 const CronJob = require('cron').CronJob;
+const PKAPI = require('pkapi.js');
+const pkapi = new PKAPI();
 
 const client = new Discord.Client({
 	intents: [
@@ -221,7 +223,6 @@ client.on('messageUpdate', async (oldMessage, newMessage) => {
 });
 
 client.on('messageDelete', async message => {
-	if (message.author.bot) return;
 	if (!message.guild) return; // Ignore DM
 
 	const fetchedLogs = await message.guild.fetchAuditLogs({
@@ -240,7 +241,8 @@ client.on('messageDelete', async message => {
 		personWhoDeleted = 'themselves';
 	}
 
-	if (executor.id == '466378653216014359') return; // Ignore Pluralkit
+	pk_message = await pkapi.getMessage({id:message.id});
+	if (pk_message?.original == message.id) return; // Ignore Pluralkit
 
 	let channel = await message.guild.channels.fetch(process.env.LOG_CHANNEL);
 	channel.send({
