@@ -256,7 +256,7 @@ function handle(client, message) {
                             cooldowns.set(message.author.id, Date.now());
                             bringNewRequestButtonToTheBottom(client);
                             msg.react('✅').then(()=>msg.react('❌').then(()=>msg.react('📝').then(()=>msg.react('⚙️'))));
-                            msg.startThread({name: state.items.find(item => item.name == 'title').value, autoArchiveDuration: 'MAX'})
+                            msg.startThread({name: state.items.find(item => item.name == 'title').value.substr(0,99), autoArchiveDuration: 'MAX'})
                                 .then(thread=>{
                                     thread.members.add(message.author);
                                     thread.send({embeds:[{description:'Remember to archive the request when it\'s completed ✅.\nOthers can react with ⚙️ to show that they are working on your request.'}]});
@@ -273,7 +273,7 @@ function handle(client, message) {
                                     cooldowns.set(message.author.id, Date.now());
                                     bringNewRequestButtonToTheBottom(client);
                                     msg.react('✅').then(()=>msg.react('❌').then(()=>msg.react('📝').then(()=>msg.react('⚙️'))));
-                                    msg.startThread({name: state.items.find(item => item.name == 'title').value, autoArchiveDuration: 'MAX'})
+                                    msg.startThread({name: state.items.find(item => item.name == 'title').value.substr(0,99), autoArchiveDuration: 'MAX'})
                                         .then(thread=>{
                                             thread.members.add(message.author);
                                             thread.send({embeds:[{description:'Remember to archive the request when it\'s completed ✅.\nOthers can react with ⚙️ to show that they are working on your request.'}]});
