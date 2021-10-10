@@ -224,6 +224,7 @@ client.on('messageUpdate', async (oldMessage, newMessage) => {
 
 client.on('messageDelete', async message => {
 	if (!message.guild) return; // Ignore DM
+	if (message.author.id == client.user.id) return; // Ignore self
 
 	const fetchedLogs = await message.guild.fetchAuditLogs({
 		limit: 1,
