@@ -36,8 +36,13 @@ async function createCollector(msg, element) {
         }
         else if (reaction.emoji.name == '✅') {
             reaction.message.reactions.cache.get('✅').users.remove(user.id);
-            const gearReactionPeople = await reaction.message.reactions.cache.get('⚙️')?.users.fetch();
+            let gearReactionPeople = await reaction.message.reactions.cache.get('⚙️')?.users.fetch();
             
+            if (reaction.message.embeds[0].footer != null) {
+                // if not eligible for leveling
+                gearReactionPeople = [];
+            }
+
             let userIsModerator = await isModerator(user.id, msg);
             if (user.id != element.user && !userIsModerator) return;// only the author or a moderator can archive
 
@@ -89,6 +94,26 @@ async function createCollector(msg, element) {
                 embed.color = 'f28a2e'; // orange
             });
             reaction.message.edit({embeds:reaction.message.embeds}).catch(console.error);
+        }
+        else if (reaction.emoji.name == '🔴') {
+            reaction.message.reactions.cache.get('🔴').users.remove(user.id);
+
+            let userIsModerator = await isModerator(user.id, msg);
+            if (!userIsModerator) return;// only a moderator can disable eligibility for leveling
+
+            let edit = reaction.message;
+            edit.embeds[0].setFooter("Not eligible for leveling.");
+            reaction.message.edit({embeds:edit.embeds}).catch(console.error);
+        }
+        else if (reaction.emoji.name == '🟢') {
+            reaction.message.reactions.cache.get('🟢').users.remove(user.id);
+
+            let userIsModerator = await isModerator(user.id, msg);
+            if (!userIsModerator) return;// only a moderator can enable eligibility for leveling
+
+            let edit = reaction.message;
+            edit.embeds[0].setFooter("");
+            reaction.message.edit({embeds:edit.embeds}).catch(console.error);
         }
     });
 

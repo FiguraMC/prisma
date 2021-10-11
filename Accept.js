@@ -83,8 +83,6 @@ async function onInteract(interaction) {
                     workers.push(userid);
                 }
 
-                console.log(workers)
-
                 interaction.update({
                     embeds: [
                         new Discord.MessageEmbed({
