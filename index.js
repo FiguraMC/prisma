@@ -38,8 +38,10 @@ const TierRolesManager = require('./TierRolesManager');
 client.once('ready', async () => {
 	await ReactionCollector.init(client);
 	const job = new CronJob('0 0 * * * *', function () {
+		ChatFilter.fetchThirdPartyScamListRecent(3610);
 		RequestDeletion(client);
 	}, null, true, 'Europe/London');
+	await ChatFilter.fetchThirdPartyScamListAll();
 	job.start();
 	Wiki.init();
 	console.log('Ready!');
@@ -224,7 +226,12 @@ client.on('messageCreate', async message => {
 			}
 		}
 		else {
-			if (ChatFilter.scam(message.content) || ChatFilter.scam(message.embeds[0]?.url) || ChatFilter.scam(message.embeds[0]?.thumbnail?.url)) {
+			if (
+				ChatFilter.scam(message.content) || 
+				ChatFilter.scam(message.embeds[0]?.url) || 
+				ChatFilter.scam(message.embeds[0]?.thumbnail?.url) || 
+				ChatFilter.scam(await ChatFilter.expandUrl(message.embeds[0]?.url))
+			) {
 				message.delete().catch(console.error);
 				message.member.roles.add(process.env.MUTED_ROLE).catch(console.error);
 				let channel = await message.guild.channels.fetch(process.env.MODERATION_LOG_CHANNEL);
