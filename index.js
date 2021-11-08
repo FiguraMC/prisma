@@ -168,7 +168,7 @@ client.on('messageCreate', async message => {
 			TierRolesManager.levelset(member, newLevel);
 		}
 		else if (message.content.startsWith('?help')) {
-			let response = 'Available commands:\n?wiki <search> - Search for a wiki page.\n?level <@user> - Show a users level.';
+			let response = 'Available commands:\n?wiki <search> - Search for a wiki page.\n?level <@user> - Show a users level.\n?rewrite [feature|avatars|blockbench] - Quick link to some QnA about the rewrite.';
 			if (await isModerator(message.author.id, message)) {
 					response += '\n?setlevel <@user> <level> - Set the level of a user.\n?requestban <@user> - Ban someone from interacting with requests.\n?requestunban <@user> - Revert a ban.\n?requestbans - Show all the people who are currently banned from requests.\n?scamlist [domain] - List, add, or remove a domain from the scam list.\n?nsfwlist [domain] - List, add, or remove a domain from the nsfw list.';
 			}
