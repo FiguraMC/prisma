@@ -6,12 +6,14 @@ module.exports.thirdPartyScamList = [];
 module.exports.scam = function (text) {
     if (DataStorage.storage.scamfilter == undefined) DataStorage.storage.scamfilter = [];
     for (const element of DataStorage.storage.scamfilter) {
-        if (text?.includes(element)) {
+        let regexp = new RegExp('\\b'+escapeRegExp(element)+'\\b','gmi');
+        if (text?.match(regexp)) {
             return true;
         }
     }
     for (const element of module.exports.thirdPartyScamList) {
-        if (text?.includes(element)) {
+        let regexp = new RegExp('\\b'+escapeRegExp(element)+'\\b','gmi');
+        if (text?.match(regexp)) {
             return true;
         }
     }
@@ -21,7 +23,8 @@ module.exports.scam = function (text) {
 module.exports.nsfw = function (text) {
     if (DataStorage.storage.nsfwfilter == undefined) DataStorage.storage.nsfwfilter = [];
     for (const element of DataStorage.storage.nsfwfilter) {
-        if (text?.includes(element)) {
+        let regexp = new RegExp('\\b'+escapeRegExp(element)+'\\b','gmi');
+        if (text?.match(regexp)) {
             return true;
         }
     }
@@ -59,4 +62,8 @@ module.exports.fetchThirdPartyScamListRecent = async function(seconds) {
             }
         }
     }
+}
+
+function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
 }
