@@ -234,12 +234,20 @@ client.on('messageCreate', async message => {
 			) {
 				message.delete().catch(console.error);
 				message.member.roles.add(process.env.MUTED_ROLE).catch(console.error);
+				message.channel.send(
+					'. 　。　　　　•　 　ﾟ　　。 　　.                   •\n'+
+					'　　　.　　　 　　.　　　　　。　　 。　. 　.\n'+
+					'。　 ඞ 　　 . •    Scammer was ejected. . .\n'+
+					'。　. 　 　　。　　　　　　ﾟ　　　.　　　　　. \n'+
+					'　　　　.　 .　　 .          　•　 .                    　ﾟ  .'
+				);
+				
 				let channel = await message.guild.channels.fetch(process.env.MODERATION_LOG_CHANNEL);
 				channel.send({
 					embeds:[
 						{
 							title: 'Scam Filter',
-							description: 'Muted <@' + message.author + '>',
+							description: 'Muted <@' + message.author.id + '>',
 							fields:[
 								{
 									name: 'Message',
@@ -253,13 +261,13 @@ client.on('messageCreate', async message => {
 			}
 			else if (ChatFilter.nsfw(message.content)) {
 				message.delete().catch(console.error);
-				message.channel.send('<@'+message.author.id+'> we don\'t do that here!');
+				message.channel.send('<@' + message.author.id + '> we don\'t do that here!');
 				let channel = await message.guild.channels.fetch(process.env.MODERATION_LOG_CHANNEL);
 				channel.send({
 					embeds:[
 						{
 							title: 'NSFW Filter',
-							description: 'Warned <@' + message.author + '>',
+							description: 'Warned <@' + message.author.id + '>',
 							fields:[
 								{
 									name: 'Message',
