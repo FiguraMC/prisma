@@ -41,11 +41,11 @@ module.exports.expandUrl = function (url) {
 }
 
 module.exports.fetchThirdPartyScamListAll = async function() {
-    module.exports.thirdPartyScamList = JSON.parse((await got('https://phish.sinking.yachts/v2/all')).body);
+    module.exports.thirdPartyScamList = JSON.parse((await got('https://phish.sinking.yachts/v2/all', {headers:{'X-Identity':'Blancworks Discord Bot'}})).body);
 }
 
 module.exports.fetchThirdPartyScamListRecent = async function(seconds) {
-    let recent = JSON.parse((await got('https://phish.sinking.yachts/v2/recent/'+seconds)).body);
+    let recent = JSON.parse((await got('https://phish.sinking.yachts/v2/recent/'+seconds, {headers:{'X-Identity':'Blancworks Discord Bot'}})).body);
 
     for (const entry of recent) {
         if (entry.type == 'add') {
