@@ -111,8 +111,17 @@ client.on('messageCreate', async message => {
 			message.channel.send(x ? response : 'Noone is currently request-banned.');
 		}
 		else if ((message.content.startsWith('?requestsban') || message.content.startsWith('?requestban')) && await isModerator(message.author.id, message)) {
-			const member = message.mentions.members.first();
+			const memberId = message.content.split(' ')[1];
+
+			let fetchedMember = undefined;
+			try {
+				if (memberId) fetchedMember = await message.guild.members.fetch(memberId);
+			}
+			catch {}
+
+			const member = message.mentions.members.first() || fetchedMember;
 			if (member == undefined) return message.channel.send('Please specify a user.');
+
 			if (DataStorage.storage.people[member.id] == undefined) {
 				DataStorage.storage.people[member.id] = {};
 			}
@@ -120,11 +129,20 @@ client.on('messageCreate', async message => {
 			if (person.ban) return message.channel.send('This user is already banned.');
 			person.ban = true;
 			DataStorage.save();
-			message.channel.send('Request-Banned <@' + message.mentions.members.first() + '>');
+			message.channel.send('Request-Banned ' + member.user.tag);
 		}
 		else if ((message.content.startsWith('?requestsunban') || message.content.startsWith('?requestunban')) && await isModerator(message.author.id, message)) {
-			const member = message.mentions.members.first();
+			const memberId = message.content.split(' ')[1];
+
+			let fetchedMember = undefined;
+			try {
+				if (memberId) fetchedMember = await message.guild.members.fetch(memberId);
+			}
+			catch {}
+
+			const member = message.mentions.members.first() || fetchedMember;
 			if (member == undefined) return message.channel.send('Please specify a user.');
+
 			if (DataStorage.storage.people[member.id] == undefined) {
 				return;
 			}
@@ -132,28 +150,43 @@ client.on('messageCreate', async message => {
 			if (person.ban) {
 				delete person.ban;
 				DataStorage.save();
-				message.channel.send('Request-Unbanned <@' + message.mentions.members.first() + '>');
+				message.channel.send('Request-Unbanned ' + member.user.tag);
 			}
 			else {
 				message.channel.send('This user is not banned.');
 			}
 		}
 		else if (message.content.startsWith('?level')) {
-			const member = message.mentions.members.first();
+			const memberId = message.content.split(' ')[1];
+			let fetchedMember = undefined;
+			try {
+				if (memberId) fetchedMember = await message.guild.members.fetch(memberId);
+			}
+			catch {}
+
+			const member = message.mentions.members.first() || fetchedMember || message.member;
 			if (member == undefined) return message.channel.send('Please specify a user.');
+			
 			if (DataStorage.storage.people[member.id] == undefined) {
 				return message.channel.send('This user hasn\'t done any requests yet.');
 			}
 			const person = DataStorage.storage.people[member.id];
 			if (person == undefined || person.level == undefined) {
-				message.channel.send('<@' + message.mentions.members.first() + '> has not completed any requests yet.');
+				message.channel.send(member.user.tag + ' has not completed any requests yet.');
 			}
 			else {
-				message.channel.send('<@' + message.mentions.members.first() + '> has completed ' + person.level + ' requests.');
+				message.channel.send(member.user.tag + ' has completed ' + person.level + ' requests.');
 			}
 		}
 		else if (message.content.startsWith('?setlevel') && await isModerator(message.author.id, message)) {
-			const member = message.mentions.members.first();
+			const memberId = message.content.split(' ')[1];
+			let fetchedMember = undefined;
+			try {
+				if (memberId) fetchedMember = await message.guild.members.fetch(memberId);
+			}
+			catch {}
+
+			const member = message.mentions.members.first() || fetchedMember;
 			if (member == undefined) return message.channel.send('Please specify a user.');
 			
 			let newLevel = parseInt(message.content.split(' ')[2]);
@@ -162,17 +195,17 @@ client.on('messageCreate', async message => {
 			const person = DataStorage.storage.people[member.id];
 			
 			if (person == undefined || person.level == undefined) {
-				message.channel.send('Changed level of <@' + message.mentions.members.first() + '> to ' + newLevel + '.');
+				message.channel.send('Changed level of ' + member.user.tag + ' to ' + newLevel + '.');
 			}
 			else {
-				message.channel.send('Changed level of <@' + message.mentions.members.first() + '> from ' + person.level + ' to ' + newLevel + '.');
+				message.channel.send('Changed level of ' + member.user.tag + ' from ' + person.level + ' to ' + newLevel + '.');
 			}
 			TierRolesManager.levelset(member, newLevel);
 		}
 		else if (message.content.startsWith('?help')) {
-			let response = 'Available commands:\n?wiki <search> - Search for a wiki page.\n?level <@user> - Show a users level.\n?rewrite [feature|avatars|blockbench] - Quick link to some QnA about the rewrite.';
+			let response = 'Available commands:\n?wiki <search> - Search for a wiki page.\n?level [@user|userid] - Show a users level.\n?rewrite [feature|avatars|blockbench] - Quick link to some QnA about the rewrite.';
 			if (await isModerator(message.author.id, message)) {
-					response += '\n?setlevel <@user> <level> - Set the level of a user.\n?requestban <@user> - Ban someone from interacting with requests.\n?requestunban <@user> - Revert a ban.\n?requestbans - Show all the people who are currently banned from requests.\n?scamlist [domain] - List, add, or remove a domain from the scam list.\n?nsfwlist [domain] - List, add, or remove a domain from the nsfw list.';
+					response += '\n?setlevel <@user|userid> <level> - Set the level of a user.\n?requestban <@user|userid> - Ban someone from interacting with requests.\n?requestunban <@user|userid> - Revert a ban.\n?requestbans - Show all the people who are currently banned from requests.\n?scamlist [domain] - List, add, or remove a domain from the scam list.\n?nsfwlist [domain] - List, add, or remove a domain from the nsfw list.';
 			}
 			message.channel.send({embeds:[{description:response}]});
 		}
