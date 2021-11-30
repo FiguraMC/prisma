@@ -373,13 +373,22 @@ client.on('messageDelete', async message => {
 
 	let personWhoDeleted;
 
-	if (!deletionLog) personWhoDeleted = 'an unknown user';
-	const { executor, target } = deletionLog;
-	if (target.id == message.author.id) {
-		personWhoDeleted = '<@'+executor.id+'>';
-	} else {
-		personWhoDeleted = 'themselves';
+	let executor = undefined;
+	let target = undefined;
+	
+	if (deletionLog) {
+		executor = deletionLog.executor;
+		target = deletionLog.target;
+		if (target.id == message.author.id) {
+			personWhoDeleted = '<@'+executor.id+'>';
+		} else {
+			personWhoDeleted = 'themselves';
+		}
 	}
+	else {
+		personWhoDeleted = 'an unknown user';
+	}
+	
 
 	pk_message = await pkapi.getMessage({id:message.id});
 	if (pk_message?.original == message.id) return; // Ignore Pluralkit
