@@ -9,7 +9,6 @@ const Discord = require('discord.js');
 const CronJob = require('cron').CronJob;
 const PKAPI = require('pkapi.js');
 const pkapi = new PKAPI();
-const ChatFilter = require('./ChatFilter');
 
 const client = new Discord.Client({
 	intents: [
@@ -23,17 +22,18 @@ const client = new Discord.Client({
 	]
 });
 
-require('./DataStorage').load();
-const DataStorage = require('./DataStorage');
-const ReactionCollector = require('./ReactionCollector');
-const RequestDeletion = require('./RequestDeletion');
-const Requests = require('./Requests');
-const Accept = require('./Accept');
-const Actions = require('./Actions');
-const ActionType = require('./ActionType');
-const Wiki = require('./wiki');
-const {isModerator} = require('./util');
-const TierRolesManager = require('./TierRolesManager');
+require('./src/DataStorage').load();
+const DataStorage = require('./src/DataStorage');
+const ReactionCollector = require('./src/ReactionCollector');
+const RequestDeletion = require('./src/RequestDeletion');
+const Requests = require('./src/Requests');
+const Accept = require('./src/Accept');
+const Actions = require('./src/Actions');
+const ActionType = require('./src/ActionType');
+const Wiki = require('./src/wiki');
+const {isModerator} = require('./src/util');
+const TierRolesManager = require('./src/TierRolesManager');
+const ChatFilter = require('./src/ChatFilter');
 
 client.once('ready', async () => {
 	await ReactionCollector.init(client);

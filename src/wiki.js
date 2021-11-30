@@ -1,9 +1,10 @@
 const fs = require('fs');
+const path = require('path');
 
 var wiki = new Array();
 
 function init() {
-    let input = fs.readFileSync('./wiki.txt').toString();
+    let input = fs.readFileSync(path.join(__dirname, 'wiki.txt')).toString();
     var isURL = true;
     var url;
     var search = new Array();
@@ -27,7 +28,7 @@ function init() {
             search.push(element);
         }
     });
-    fs.writeFileSync('./wiki.json', JSON.stringify(wiki));
+    // fs.writeFileSync('./wiki.json', JSON.stringify(wiki));
 }
 
 function search(s) {
