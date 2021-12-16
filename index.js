@@ -259,11 +259,13 @@ client.on('messageCreate', async message => {
 			}
 		}
 		else {
+			let urlsInMessage = message.content.match(/(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])/gi);
 			if (
 				ChatFilter.scam(message.content) || 
 				ChatFilter.scam(message.embeds[0]?.url) || 
 				ChatFilter.scam(message.embeds[0]?.thumbnail?.url) || 
-				ChatFilter.scam(await ChatFilter.expandUrl(message.embeds[0]?.url))
+				// ChatFilter.scam(await ChatFilter.expandUrl(message.embeds[0]?.url)) ||
+				ChatFilter.scam((await ChatFilter.expandMultipleUrls(urlsInMessage)).join())
 			) {
 				message.delete().catch(console.error);
 				message.member.roles.add(process.env.MUTED_ROLE).catch(console.error);

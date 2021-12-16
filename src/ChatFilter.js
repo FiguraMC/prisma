@@ -40,6 +40,18 @@ module.exports.expandUrl = function (url) {
     });
 }
 
+module.exports.expandMultipleUrls = function (urls) {
+    return new Promise(async (resolve) => {
+        expanded = [];
+        if (urls) {
+            for (const url of urls) {
+                expanded.push(await module.exports.expandUrl(url));
+            }
+        }
+        resolve(expanded);
+    });
+}
+
 module.exports.fetchThirdPartyScamListAll = async function() {
     module.exports.thirdPartyScamList = JSON.parse((await got('https://phish.sinking.yachts/v2/all', {headers:{'X-Identity':'Blancworks Discord Bot'}})).body);
 }
