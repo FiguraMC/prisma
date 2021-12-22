@@ -270,11 +270,11 @@ client.on('messageCreate', async message => {
 				message.delete().catch(console.error);
 				message.member.roles.add(process.env.MUTED_ROLE).catch(console.error);
 				message.channel.send(
-					'. 　。　　　　•　 　ﾟ　　。 　　.                   •\n'+
-					'　　　.　　　 　　.　　　　　。　　 。　. 　.\n'+
-					'。　 ඞ 　　 . •    Scammer was ejected. . .\n'+
-					'。　. 　 　　。　　　　　　ﾟ　　　.　　　　　. \n'+
-					'　　　　.　 .　　 .          　•　 .                    　ﾟ  .'
+					'.　。　　　　•　　　ﾟ　　。　　.　　　　•\n'+
+					'　　　.　　　　　.　　　　　。　　。　.　　.\n'+
+					'。　　ඞ　　.　•　　Scammer was ejected...\n'+
+					'。　.　　　　。　　　　　　ﾟ　　　.　　　　.\n'+
+					'　　　　.　.　　　.　　　•　　.　　　　ﾟ　.\n'
 				);
 				
 				let channel = await message.guild.channels.fetch(process.env.MODERATION_LOG_CHANNEL);
