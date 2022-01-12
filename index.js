@@ -75,17 +75,6 @@ client.on('messageCreate', async message => {
 				Requests.handle(client, message);
 			}
 		}
-		// deleting messages sent in the requests channel - removed
-		// else if (message.channel.id == process.env.REQUESTS_CHANNEL) {
-		// 	message.delete().catch(console.error);
-		// 	let embed = new Discord.MessageEmbed({
-		// 		title: 'Hello there!',
-		// 		description: 'If you want to create an avatar request, send "request" in my DMs here.' +
-		// 			'\n\n' +
-		// 			'If you want to respond to an existing request, please do so in the corresponding thread.'
-		// 	});
-		// 	message.author.send({ embeds: [embed] }).catch(console.error);
-		// }
 		else if (message.content.startsWith('?wiki ')) {
 			const s = message.content.substring(6).toLowerCase();
 			const result = Wiki.search(s);
@@ -260,6 +249,31 @@ client.on('messageCreate', async message => {
 		}
 		else {
 			let urlsInMessage = message.content.match(/(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])/gi);
+			
+			if (process.env.SHOWCASE_CHANNELS.split(',').find(x=>x==message.channel.id)) {
+				// If sent in a showcase channel, check if it contains an attachment or link
+				if (message.attachments.size == 0 && urlsInMessage == null) {
+					message.delete().catch(console.error);
+					message.author.send({ embeds: [
+						new Discord.MessageEmbed({
+							title: 'Hello there!',
+							description:
+								'To respond to a showcased post please talk in the dedicated discussion channel.\n' +
+								'If you want to post something to showcase yourself, make sure to include an image, video, file, or URL.'
+						})
+					]}).catch(console.error);
+				}
+				else {
+					// React to showcase post with the upvote button emoji
+					const messages = await message.channel.messages.fetch();
+					const aboveMessage = messages.first(2)[1];
+					if (aboveMessage?.author.id == message.author.id) {
+						aboveMessage.reactions.cache.get(process.env.UPVOTE_EMOJI).users.remove(client.user.id);
+					}
+					message.react(process.env.UPVOTE_EMOJI);
+				}
+			}
+
 			if (
 				ChatFilter.scam(message.content) || 
 				ChatFilter.scam(message.embeds[0]?.url) || 

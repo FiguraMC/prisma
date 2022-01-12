@@ -12,4 +12,6 @@ MODERATOR_ROLE=moderator_role_id
 REQUEST_TIER_ROLES=role_1_id,role_2_id,role_3_id,...
 MUTED_ROLE=muted_role_id
 MODERATION_LOG_CHANNEL=moderation_log_channel_id
+SHOWCASE_CHANNELS=showcase_channel_1_id,showcase_channel_2_id,...
+UPVOTE_EMOJI=emoji_id
 ```
