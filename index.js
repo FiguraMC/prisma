@@ -268,7 +268,7 @@ client.on('messageCreate', async message => {
 					const messages = await message.channel.messages.fetch();
 					const aboveMessage = messages.first(2)[1];
 					if (aboveMessage?.author.id == message.author.id) {
-						aboveMessage.reactions.cache.get(process.env.UPVOTE_EMOJI).users.remove(client.user.id);
+						aboveMessage.reactions.cache.get(process.env.UPVOTE_EMOJI)?.users.remove(client.user.id);
 					}
 					message.react(process.env.UPVOTE_EMOJI);
 				}
