@@ -1,23 +1,19 @@
 const fs = require('fs');
 const path = require('path');
-const storageFilePath = path.join(__dirname,'..','storage.json');
 
-exports.storage = {avatar_requests:[]}
+const storageDirectoryPath = path.join(__dirname, '../..', 'storage');
+const storageFilePath = path.join(storageDirectoryPath, 'storage.json');
+
+exports.storage = {};
 
 function load() {
     if (!fs.existsSync(storageFilePath)) return save();
     exports.storage = JSON.parse(fs.readFileSync(storageFilePath).toString());
-
-    if (exports.storage.avatar_requests == undefined) {
-        exports.storage.avatar_requests = [];
-    }
-    if (exports.storage.people == undefined) {
-        exports.storage.people = {};
-    }
     save();
 }
 
 function save() {
+    fs.mkdirSync(storageDirectoryPath, { recursive: true });
     fs.writeFileSync(storageFilePath, JSON.stringify(exports.storage));
 }
 
@@ -28,6 +24,6 @@ function deleteFromArray(array, element) {
     }
 }
 
-exports.load = load
-exports.save = save
-exports.deleteFromArray = deleteFromArray
+exports.load = load;
+exports.save = save;
+exports.deleteFromArray = deleteFromArray;

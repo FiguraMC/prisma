@@ -1,9 +1,36 @@
 {
+  "name": "blancbot",
+  "version": "1.0.0",
+  "description": "Discord Bot for the Blancworks Discord server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js dev",
+    "nodemon": "nodemon index.js dev --ignore ./storage",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blancworks/BlancBot.git"
+  },
+  "author": "Manuel-3",
+  "license": "LGPL-2.1",
+  "bugs": {
+    "url": "https://github.com/Blancworks/BlancBot/issues"
+  },
+  "homepage": "https://github.com/Blancworks/BlancBot#readme",
   "dependencies": {
+    "@discordjs/builders": "^0.11.0",
+    "@discordjs/rest": "^0.2.0-canary.0",
     "cron": "^1.8.2",
-    "discord.js": "^13.1.0",
-    "dotenv": "^10.0.0",
-    "got": "^11.8.2",
+    "discord-api-types": "^0.26.1",
+    "discord.js": "^13.6.0",
+    "dotenv": "^14.2.0",
+    "got": "^11.8.3",
     "pkapi.js": "^1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.7.0",
+    "nodemon": "^2.0.15"
   }
 }
