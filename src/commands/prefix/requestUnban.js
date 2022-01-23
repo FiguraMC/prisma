@@ -12,7 +12,7 @@ module.exports = {
 
         const member = message.mentions.members.first() || fetchedMember;
 
-        if (!member) return message.channel.send('Please specify a user.');
+        if (!member) return message.reply('Please specify a user.');
 
         if (!DataStorage.storage.people) DataStorage.storage.people = {};
 
@@ -20,10 +20,10 @@ module.exports = {
         if (person?.requestban) {
             delete person.requestban;
             DataStorage.save();
-            message.channel.send('Request unbanned ' + member.user.tag);
+            message.reply('Request unbanned ' + member.user.tag);
         }
         else {
-            message.channel.send('This user is not banned.');
+            message.reply('This user is not banned.');
         }
     },
 };

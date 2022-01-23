@@ -12,15 +12,15 @@ module.exports = {
 
         if (!domain) {
             const nsfwdomains = '`' + (DataStorage.storage.nsfwfilter.toString()).replaceAll(',', '`\n`') + '`';
-            message.channel.send(nsfwdomains == '``' ? 'No domains are in the nsfw list yet.' : nsfwdomains);
+            message.reply(nsfwdomains == '``' ? 'No domains are in the nsfw list yet.' : nsfwdomains);
         }
         else if (DataStorage.storage.nsfwfilter.includes(domain)) {
             DataStorage.storage.nsfwfilter = DataStorage.storage.nsfwfilter.filter(x => x != domain);
-            message.channel.send('Removed `' + domain + '` from the nsfw list.');
+            message.reply('Removed `' + domain + '` from the nsfw list.');
         }
         else {
             DataStorage.storage.nsfwfilter.push(domain);
-            message.channel.send('Added `' + domain + '` to the nsfw list.');
+            message.reply('Added `' + domain + '` to the nsfw list.');
         }
         DataStorage.save();
     },

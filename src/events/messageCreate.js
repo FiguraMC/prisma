@@ -1,5 +1,6 @@
 const ChatFilter = require('../filters/chatFilter');
 const ShowcaseFilter = require('../filters/showcaseFilter');
+const FaqFilter = require('../filters/faqFilter');
 const utility = require('../util/utility');
 
 module.exports = {
@@ -28,6 +29,7 @@ module.exports = {
         else {
             ChatFilter.filter(message);
             ShowcaseFilter.filter(message);
+            FaqFilter.filter(message);
         }
     },
 };

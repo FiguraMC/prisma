@@ -12,15 +12,15 @@ module.exports = {
 
         const member = message.mentions.members.first() || fetchedMember;
 
-        if (!member) return message.channel.send('Please specify a user.');
+        if (!member) return message.reply('Please specify a user.');
 
         if (!DataStorage.storage.people) DataStorage.storage.people = {};
         if (!DataStorage.storage.people[member.id]) DataStorage.storage.people[member.id] = {};
 
         const person = DataStorage.storage.people[member.id];
-        if (person.requestban) return message.channel.send('This user is already banned.');
+        if (person.requestban) return message.reply('This user is already banned.');
         person.requestban = true;
         DataStorage.save();
-        message.channel.send(`Request banned ${member.user.tag}.`);
+        message.reply(`Request banned ${member.user.tag}.`);
     },
 };

@@ -16,6 +16,6 @@ module.exports = {
                 }
             }
         }
-        message.channel.send(utility.buildEmbed('Request Bans', bannedUsers == '' ? 'List is empty.' : bannedUsers));
+        message.reply(utility.buildEmbed('Request Bans', bannedUsers == '' ? 'List is empty.' : bannedUsers));
     },
 };
