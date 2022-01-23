@@ -5,13 +5,13 @@ module.exports = {
     name: 'deleteAvatarRequest',
     async handle(message, channel, dialog) {
 
-        if (dialog.step != -1 && (message.content.toLowerCase() == 'abort' || message.content.toLowerCase() == 'cancel')) {
+        if (dialog.step != -1 && (message.content.toLowerCase() == 'cancel' || message.content.toLowerCase() == 'abort')) {
             channel.send(utility.buildEmbed('Action canceled.'));
             return true;
         }
 
         if (dialog.step == -1) {
-            channel.send(utility.buildEmbed('Request Deletion', 'Are you sure you want to delete this request? Type "confirm" to delete, or "abort" to cancel.')).catch(console.error);
+            channel.send(utility.buildEmbed('Request Deletion', 'Are you sure you want to delete this request? Type "confirm" to delete, or "cancel" to cancel.')).catch(console.error);
             dialog.step++;
 
             return false;
@@ -40,7 +40,7 @@ module.exports = {
             }
             else {
 
-                channel.send(utility.buildEmbed('Please send either "confirm" or "abort".'));
+                channel.send(utility.buildEmbed('Please send either "confirm" or "cancel".'));
 
                 return false;
             }

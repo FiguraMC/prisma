@@ -16,7 +16,7 @@ module.exports = {
             }
             catch (error) {
                 console.error(error);
-                await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true }).catch(console.error);
+                await interaction.reply({ content: 'There was an error while executing this command!' }).catch(console.error);
             }
         }
         else if (interaction.isButton()) {
@@ -25,7 +25,7 @@ module.exports = {
                 if (DataStorage.storage.people[interaction.user.id]?.requestban) return interaction.user.send(utility.buildEmbed('Sorry, you can\'t create a request at the moment.'));
 
                 if (canStartDialog(interaction.client, interaction.user)) {
-                    await interaction.user.send(utility.buildEmbed('New Avatar Request', 'We will now fill in the details of the request. Take your time to read the descriptions to ensure to make a high quality request. Low quality ones might get deleted by a moderator. You can type "abort" at any point if you make a mistake.', []));
+                    await interaction.user.send(utility.buildEmbed('New Avatar Request', 'We will now fill in the details of the request. Take your time to read the descriptions to ensure to make a high quality request. Low quality ones might get deleted by a moderator. You can type "cancel" at any point if you make a mistake.', []));
                     startDialog(interaction.client, interaction.user, 'createAvatarRequest');
                 }
                 else {

@@ -41,7 +41,7 @@ async function createCollector(msg, element) {
             }
 
             if (canStartDialog(reaction.client, user)) {
-                await user.send(utility.buildEmbed('Archiving the avatar request!', 'Please follow a few steps to finish this request. Type "abort" at any time to cancel this action.'));
+                await user.send(utility.buildEmbed('Archiving the avatar request!', 'Please follow a few steps to finish this request. Type "cancel" at any time to cancel this action.'));
                 startDialog(reaction.client, user, 'archiveAvatarRequest', { workers: workers, embed: reaction.message.embeds[0], requestMessage: reaction.message });
             }
             else {
@@ -66,7 +66,7 @@ async function createCollector(msg, element) {
             if (user.id != element.user && !isModerator) return;// only the author can edit
 
             if (canStartDialog(reaction.client, user)) {
-                await user.send(utility.buildEmbed('Edit Avatar Request!', 'We will now update the details of the request. You can cancel this at any point by typing "abort". You can skip steps by sending "skip".'));
+                await user.send(utility.buildEmbed('Edit Avatar Request!', 'We will now update the details of the request. You can cancel this at any point by typing "cancel". You can skip steps by sending "skip".'));
                 startDialog(reaction.client, user, 'editAvatarRequest', reaction.message);
             }
             else {

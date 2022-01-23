@@ -7,7 +7,7 @@ module.exports = {
     name: 'archiveAvatarRequest',
     async handle(message, channel, dialog) {
 
-        if (dialog.step != -1 && (message.content.toLowerCase() == 'abort' || message.content.toLowerCase() == 'cancel')) {
+        if (dialog.step != -1 && (message.content.toLowerCase() == 'cancel' || message.content.toLowerCase() == 'abort')) {
             channel.send(utility.buildEmbed('Action canceled.'));
             return true;
         }
@@ -26,7 +26,7 @@ module.exports = {
                 const attachment = message.attachments.values().next().value; // first attachment
 
                 if (!attachment) {
-                    channel.send(utility.buildEmbed('Please send either "skip", "abort" or a zip file.')).catch(console.error);
+                    channel.send(utility.buildEmbed('Please send either "skip", "cancel" or a zip file.')).catch(console.error);
                     return false;
                 }
 
