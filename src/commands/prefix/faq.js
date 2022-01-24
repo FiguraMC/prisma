@@ -9,6 +9,7 @@ module.exports = {
 
         if (!DataStorage.storage.faq) DataStorage.storage.faq = [];
 
+        // No arguments, show faq
         if (args.length == 0) {
             let list = '';
             DataStorage.storage.faq.forEach(element => {
@@ -16,6 +17,7 @@ module.exports = {
             });
             message.reply(utility.buildEmbed(list == '' ? 'FAQ is empty.' : list));
         }
+        // One argument, remove question
         else if (args.length == 1) {
             if (DataStorage.storage.faq.find(x => x.q?.toLowerCase() == args[0].toLowerCase())) {
                 DataStorage.storage.faq = DataStorage.storage.faq.filter(x => x.q?.toLowerCase() != args[0].toLowerCase());
@@ -26,6 +28,7 @@ module.exports = {
                 message.reply(utility.buildEmbed(`Could not find \`${args[0]}\` in the FAQ.`));
             }
         }
+        // Two arguments, add question and answer
         else if (args.length == 2) {
             DataStorage.storage.faq.push({ q: args[0], a: args[1] });
             DataStorage.save();

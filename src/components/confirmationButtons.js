@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 
+// Component template for the close ticket confirmation buttons
 module.exports = new Discord.MessageActionRow()
     .addComponents(
         new Discord.MessageButton()

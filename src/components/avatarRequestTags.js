@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 
+// Select Menu for avatar request tags
 module.exports = new Discord.MessageActionRow()
     .addComponents(
         new Discord.MessageSelectMenu()

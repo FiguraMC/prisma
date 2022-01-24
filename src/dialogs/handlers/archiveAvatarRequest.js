@@ -3,6 +3,7 @@ const workersSelectMenu = require('../../components/workersSelectMenu');
 const DataStorage = require('../../util/dataStorage');
 const requestTierRoles = require('../../util/requestTierRoles');
 
+// Dialog for archiving an avatar request
 module.exports = {
     name: 'archiveAvatarRequest',
     async handle(message, channel, dialog) {
@@ -35,6 +36,7 @@ module.exports = {
 
             dialog.step++;
 
+            // people who reacted with the gear emoji get added to a select menu
             const options = [];
             dialog.extras.workers.forEach(worker => {
                 if (worker.bot) return;
@@ -70,6 +72,8 @@ module.exports = {
     },
 };
 
+// Archives the request
+// Also levels up the workers
 async function archive(dialog, channel, client) {
 
     const files = [];

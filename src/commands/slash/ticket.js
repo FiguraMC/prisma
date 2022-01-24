@@ -10,6 +10,7 @@ module.exports = {
     usage: '`/ticket` - Create a Modmail Ticket.',
     async execute(interaction) {
         if (canStartDialog(interaction.client, interaction.user)) {
+            // Only one ticket per person can exist at the same time
             if (!DataStorage.storage.tickets?.find(x => x.author == interaction.user.id)) {
                 await interaction.user.send(utility.buildEmbed('Modmail Ticket', 'We will now ask for details, if you want to cancel this process just send "cancel".'));
                 startDialog(interaction.client, interaction.user, 'createTicket');

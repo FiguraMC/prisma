@@ -3,13 +3,14 @@ const utility = require('./utility');
 const { startDialog, canStartDialog } = require('../dialogs/startDialog');
 
 async function init(client) {
+    // Set up all the reaction collectors for avatar requests
     const channel = await client.channels.fetch(process.env.REQUESTS_CHANNEL).catch(console.error);
     if (!channel) return;
     if (!DataStorage.storage.avatar_request) DataStorage.storage.avatar_request = [];
     DataStorage.storage.avatar_requests.forEach(async element => {
         const msg = await channel.messages.fetch(element.message).catch(console.error);
         if (!msg) {
-            // delete from storage
+            // delete from storage if message doesnt exist
             DataStorage.deleteFromArray(DataStorage.storage.avatar_requests, element);
             DataStorage.save();
             return;
@@ -18,6 +19,7 @@ async function init(client) {
     });
 }
 
+// Creates a reaction collector on a message, second parameter is the entry in the data storage
 async function createCollector(msg, element) {
     const collector = msg.createReactionCollector({ dispose: true });
 
@@ -31,7 +33,7 @@ async function createCollector(msg, element) {
         if (reaction.emoji.name == '✅') {
             reaction.message.reactions.cache.get('✅').users.remove(user.id);
 
-            if (user.id != element.user && !isModerator) return;// only the author or a moderator can archive
+            if (user.id != element.user && !isModerator) return; // only the author or a moderator can archive
 
             let workers = await reaction.message.reactions.cache.get('⚙️')?.users.fetch();
 
@@ -63,7 +65,7 @@ async function createCollector(msg, element) {
         else if (reaction.emoji.name == '📝') {
             reaction.message.reactions.cache.get('📝').users.remove(user.id);
 
-            if (user.id != element.user && !isModerator) return;// only the author can edit
+            if (user.id != element.user && !isModerator) return; // only the author can edit
 
             if (canStartDialog(reaction.client, user)) {
                 await user.send(utility.buildEmbed('Edit Avatar Request!', 'We will now update the details of the request. You can cancel this at any point by typing "cancel". You can skip steps by sending "skip".'));
@@ -101,7 +103,7 @@ async function createCollector(msg, element) {
         else if (reaction.emoji.name == '🔴') {
             reaction.message.reactions.cache.get('🔴').users.remove(user.id);
 
-            if (!isModerator) return;// only a moderator can disable eligibility for leveling
+            if (!isModerator) return; // only a moderator can disable eligibility for leveling
 
             const edit = reaction.message;
             edit.embeds[0].setFooter('Not eligible for leveling.');
@@ -110,7 +112,7 @@ async function createCollector(msg, element) {
         else if (reaction.emoji.name == '🟢') {
             reaction.message.reactions.cache.get('🟢').users.remove(user.id);
 
-            if (!isModerator) return;// only a moderator can enable eligibility for leveling
+            if (!isModerator) return; // only a moderator can enable eligibility for leveling
 
             const edit = reaction.message;
             edit.embeds[0].setFooter('');

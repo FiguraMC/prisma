@@ -5,9 +5,12 @@ module.exports = {
     name: 'messageDelete',
     async execute(message) {
 
+        // Log delete in the log channel
+
         if (!message.guild) return; // Ignore DM
         if (message.author.id == message.client.user.id) return; // Ignore self
 
+        // Check audit log to see who deleted the message
         const fetchedLogs = await message.guild.fetchAuditLogs({
             limit: 1,
             type: 'MESSAGE_DELETE',
@@ -19,6 +22,7 @@ module.exports = {
         let executor = undefined;
         let target = undefined;
 
+        // this can sometimes not be accurate because some stuff doesnt show up in the audit log
         if (deletionLog) {
             executor = deletionLog.executor;
             target = deletionLog.target;

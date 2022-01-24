@@ -14,6 +14,10 @@ const questions = [
     utility.buildEmbed('Preview', 'Here is a preview of your request. If you are happy with it, type "confirm". If you want to try again, type "cancel".'),
 ];
 
+// Dialog for both creating or editing avatar requests
+// Which of the two gets decided by options
+
+// Message handler
 module.exports.handle = async function (message, channel, dialog, options) {
 
     if (dialog.step != -1 && (message.content.toLowerCase() == 'cancel' || message.content.toLowerCase() == 'abort')) {
@@ -21,6 +25,7 @@ module.exports.handle = async function (message, channel, dialog, options) {
         return true;
     }
 
+    // In edit mode, allow skipping
     let defaultValues;
     let skip;
     if (options.mode == 'edit') {
@@ -135,6 +140,7 @@ module.exports.handle = async function (message, channel, dialog, options) {
     }
 };
 
+// Interaction handler
 module.exports.handleInteraction = function (interaction, dialog) {
 
     if (dialog.step == 2 && interaction.customId == 'types' && interaction.isSelectMenu()) {
@@ -155,11 +161,13 @@ module.exports.handleInteraction = function (interaction, dialog) {
     }
 };
 
+// Utility function that increments dialog step and sends the next element in the questions array
 async function next(dialog, user) {
     dialog.step++;
     await user.send(questions[dialog.step]).catch(console.error);
 }
 
+// Gets the new request button from datastorage and puts its at the bottom of the requests channel
 async function bringNewRequestButtonToTheBottom(client) {
     try {
         const oldBtnId = DataStorage.storage.new_request_button;
@@ -177,6 +185,7 @@ async function bringNewRequestButtonToTheBottom(client) {
     }
 }
 
+// Build the embed for the avatar request
 function constructAvatarRequestEmbed(dialog, user) {
     const ret =
     {
@@ -208,6 +217,7 @@ function constructAvatarRequestEmbed(dialog, user) {
     return ret;
 }
 
+// Get all the avatar request values back from an embed
 function deconstructAvatarRequestEmbed(embed) {
     const ret = [];
     ret.push(embed.title);

@@ -2,6 +2,8 @@ module.exports = {
     name: 'messageUpdate',
     async execute(oldMessage, newMessage) {
 
+        // Log update in the log channel
+
         if (!oldMessage.guild) return; // Ignore DM
         if (oldMessage.author.id == oldMessage.client.user.id) return; // Ignore self
 

@@ -3,6 +3,7 @@ const path = require('path');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 
+// Deploy slash commands to this guild
 module.exports = {
     name: 'deploycommands',
     usage: '`?deployCommands` - Register Slash-Commands for this guild.',

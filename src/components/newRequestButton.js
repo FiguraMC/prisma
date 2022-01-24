@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 
+// Message template for the new request button
 module.exports = {
     content: '\u200b',
     components: [new Discord.MessageActionRow()

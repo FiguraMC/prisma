@@ -1,6 +1,7 @@
 const CronJob = require('cron').CronJob;
 const DataStorage = require('../util/dataStorage');
 
+// Set up cron job to check for old requests every hour
 module.exports.start = function (client) {
     const job = new CronJob('0 0 * * * *', function () {
         deleteOldRequests(client);
@@ -8,6 +9,8 @@ module.exports.start = function (client) {
     job.start();
 };
 
+// Checks the requests channel and deletes requests older than a week
+// Also updates color of requests that are older than a day
 async function deleteOldRequests(client) {
     const channel = await client.channels.fetch(process.env.REQUESTS_CHANNEL).catch(console.error);
 

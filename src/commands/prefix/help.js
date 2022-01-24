@@ -1,5 +1,7 @@
 const utility = require('../../util/utility');
 
+// Help command
+// Automatically gets information about other commands to build a reply
 module.exports = {
     name: 'help',
     usage: '`?help` - Shows this message.',

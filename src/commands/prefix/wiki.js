@@ -1,5 +1,6 @@
 const wiki = require('./wiki.json');
 
+// Old wiki command, this will be removed once the wiki gets an overhaul
 module.exports = {
     name: 'wiki',
     usage: '`?wiki <search>` - Outdated wiki command.',

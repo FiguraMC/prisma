@@ -17,6 +17,7 @@ module.exports = {
         const member = message.mentions.members.first() || fetchedMember || message.member;
         if (member == undefined) return message.channel.send('Please specify a user.');
 
+        // Shared command for prefix as well as slash command
         const reply = getLevelReplyOf(member);
 
         message.reply(reply);

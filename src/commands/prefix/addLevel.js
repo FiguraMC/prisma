@@ -1,6 +1,8 @@
 const DataStorage = require('../../util/dataStorage');
 const requestTierRoles = require('../../util/requestTierRoles');
 
+// Adds amount of levels to a user
+// This works with negative numbers as well
 module.exports = {
     name: 'addlevel',
     usage: '`?addLevel <@user|userId> <amount>` - Adds specified amount of levels to a user.',

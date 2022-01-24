@@ -4,8 +4,10 @@ const { Collection } = require('discord.js');
 
 module.exports.handlers = new Collection();
 
+// Initialization for dialog handlers
 module.exports.register = function (client) {
 
+    // Get the files inside the handlers directory
     const handlerFiles = fs.readdirSync(path.join(__dirname, 'handlers')).filter(file => file.endsWith('.js'));
 
     for (const file of handlerFiles) {
@@ -13,6 +15,7 @@ module.exports.register = function (client) {
         module.exports.handlers.set(handler.name, handler);
     }
 
+    // Call the handle function of the correct handler on messageCreate
     client.on('messageCreate', async message => {
 
         if (message.channel.type != 'DM') return;
@@ -32,6 +35,7 @@ module.exports.register = function (client) {
         }
     });
 
+    // Call the handleInteraction function of the correct handler on interactionCreate
     client.on('interactionCreate', async interaction => {
 
         const dialogs = interaction.client.dialogs;

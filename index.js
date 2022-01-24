@@ -15,9 +15,11 @@ const client = new Client({
     ],
 });
 
+// Dialogs setup
 client.dialogs = new Collection();
 require('./src/dialogs/registerDialogEvents').register(client);
 
+// Commands setup
 client.slashCommands = new Collection();
 const slashCommandFiles = fs.readdirSync('./src/commands/slash').filter(file => file.endsWith('.js'));
 
@@ -34,6 +36,7 @@ for (const file of prefixCommandFiles) {
     client.prefixCommands.set(command.name, command);
 }
 
+// Events setup
 const eventFiles = fs.readdirSync('./src/events').filter(file => file.endsWith('.js'));
 
 for (const file of eventFiles) {

@@ -1,5 +1,8 @@
 const { handlers } = require('./registerDialogEvents');
 
+// Starts a dialog by name
+// Calls the message handle function with null as the message for the first step
+// extras can be anything that is needed for the dialog
 module.exports.startDialog = function (client, user, dialogName, extras) {
 
     const dialogs = client.dialogs;
@@ -17,6 +20,7 @@ module.exports.startDialog = function (client, user, dialogName, extras) {
     }
 };
 
+// Check if dialog can be started for a specified user
 module.exports.canStartDialog = function (client, user) {
     const dialogs = client.dialogs;
     return !dialogs.has(user);

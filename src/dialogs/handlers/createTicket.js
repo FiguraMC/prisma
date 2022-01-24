@@ -2,6 +2,7 @@ const utility = require('../../util/utility');
 const DataStorage = require('../../util/dataStorage');
 const closeTicketButton = require('../../components/closeTicketButton');
 
+// Ticket creation dialog
 module.exports = {
     name: 'createTicket',
     async handle(message, channel, dialog) {

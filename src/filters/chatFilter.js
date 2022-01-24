@@ -1,6 +1,7 @@
 const ContentBlocker = require('../util/contentBlocker');
 const utility = require('../util/utility');
 
+// Filters a message using the scam and nsfw content blockers
 module.exports.filter = async function (message) {
     if (
         ContentBlocker.scam(message.content) ||
@@ -10,6 +11,7 @@ module.exports.filter = async function (message) {
     ) {
         message.delete().catch(console.error);
 
+        // Setting for clearing roles on mute, otherwise just going to add the muted role to the existing ones
         if (process.env.CLEAR_ROLES_ON_MUTE.toLowerCase() === 'true') {
             message.member.roles.set([process.env.MUTED_ROLE]).catch(console.error);
         }

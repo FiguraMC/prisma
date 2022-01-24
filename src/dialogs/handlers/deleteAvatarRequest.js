@@ -1,6 +1,7 @@
 const utility = require('../../util/utility');
 const DataStorage = require('../../util/dataStorage');
 
+// Simple dialog just for confirming if the user really wants to delete the request
 module.exports = {
     name: 'deleteAvatarRequest',
     async handle(message, channel, dialog) {

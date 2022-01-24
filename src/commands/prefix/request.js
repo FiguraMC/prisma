@@ -2,6 +2,7 @@ const { startDialog, canStartDialog } = require('../../dialogs/startDialog');
 const utility = require('../../util/utility');
 const DataStorage = require('../../util/dataStorage');
 
+// Command to start a request instead of clicking the new request button
 module.exports = {
     name: 'request',
     usage: '`?request` - Create new avatar request.',

@@ -1,6 +1,7 @@
 const DataStorage = require('../../util/dataStorage');
 const utility = require('../../util/utility');
 
+// Command for forwarding messages between moderators and ticket creator
 module.exports = {
     name: 'ticketmessage',
     usage: '`?ticketmessage <message>` - Forward message through your ticket.',

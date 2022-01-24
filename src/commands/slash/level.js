@@ -9,6 +9,7 @@ module.exports = {
     usage: '`/level <user>` - Shows Avatar Request Level of a user.',
     async execute(interaction) {
 
+        // Shared command for prefix as well as slash command
         const reply = getLevelReplyOf(interaction.options.getMember('user'));
 
         await interaction.reply(reply).catch(console.error);

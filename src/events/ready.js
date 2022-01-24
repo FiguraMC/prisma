@@ -15,6 +15,7 @@ module.exports = {
 
         requestReactions.init(client);
 
+        // Only fetch all if not in dev mode, avoiding spamming the API when using nodemon
         if (process.argv[2] != 'dev') {
             console.log('Fetching all scam domains.');
             ContentBlocker.fetchThirdPartyScamListAll();
