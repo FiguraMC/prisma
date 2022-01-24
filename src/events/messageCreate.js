@@ -15,7 +15,7 @@ module.exports = {
 
             if (!command) return;
 
-            if (message.channel.type == 'DM') return message.channel.send(utility.buildEmbed('Commands don\'t work in DMs.'));
+            if (message.channel.type == 'DM' && !command.dm) return message.channel.send(utility.buildEmbed('Commands don\'t work in DMs.'));
 
             if (command.moderator && !(await utility.isModerator(message.member))) return;
 

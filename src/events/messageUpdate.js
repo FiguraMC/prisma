@@ -1,6 +1,10 @@
 module.exports = {
     name: 'messageUpdate',
     async execute(oldMessage, newMessage) {
+
+        if (!oldMessage.guild) return; // Ignore DM
+        if (oldMessage.author.id == oldMessage.client.user.id) return; // Ignore self
+
         if (oldMessage.content == newMessage.content) return; // in order to stop link embeds from triggering this event
         if (oldMessage.guild != newMessage.guild) return;
         const channel = await oldMessage.guild.channels.fetch(process.env.LOG_CHANNEL);

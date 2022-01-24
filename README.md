@@ -10,3 +10,4 @@ Bot Permissions
 
 - [x] Administrator
 
+Make sure that people inviting the bot is turned off.

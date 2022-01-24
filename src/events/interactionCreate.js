@@ -32,6 +32,19 @@ module.exports = {
                     interaction.user.send(utility.buildEmbed('Please finish the current dialog first.'));
                 }
             }
+            else if (interaction.customId == 'ticket_buttons') {
+                if (interaction.message?.thread) {
+                    const updatedEmbed = interaction.message.embeds[0];
+                    if (updatedEmbed) updatedEmbed.title = '🔒' + updatedEmbed.title.substring(1);
+                    interaction.update({ embeds: [updatedEmbed], components: [] }).catch(console.error);
+                    const ticket = DataStorage.storage.tickets?.find(x => x.thread == interaction.message.thread.id);
+                    const author = await interaction.guild.members.fetch(ticket?.author).catch(console.error);
+                    author?.send(utility.buildEmbed('🔒 Your ticket has been closed.')).catch(console.error);
+                    DataStorage.storage.tickets = DataStorage.storage.tickets?.filter(x => x.thread != interaction.message.thread.id);
+                    DataStorage.save();
+                    interaction.message.thread.setArchived(true);
+                }
+            }
         }
     },
 };
