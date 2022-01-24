@@ -1,6 +1,6 @@
 # BlancBot
 
-Official Discord Bot for the Blancwords Discord server.
+Official Discord Bot for the Blancworks Discord server.
 
 ## Installation
 
