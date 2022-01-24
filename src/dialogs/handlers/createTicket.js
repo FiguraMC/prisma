@@ -1,6 +1,6 @@
 const utility = require('../../util/utility');
 const DataStorage = require('../../util/dataStorage');
-const ticketButtons = require('../../components/ticketButtons');
+const closeTicketButton = require('../../components/closeTicketButton');
 
 module.exports = {
     name: 'createTicket',
@@ -49,7 +49,7 @@ module.exports = {
                             { name: 'Description:', value: dialog.data[1] },
                         ],
                     }],
-                    components: [ticketButtons],
+                    components: [closeTicketButton],
                 });
                 const thread = await msg.startThread({ name: `Ticket-${id}`, autoArchiveDuration: 'MAX' });
 

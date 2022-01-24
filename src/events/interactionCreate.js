@@ -1,6 +1,8 @@
 const { startDialog, canStartDialog } = require('../dialogs/startDialog');
 const DataStorage = require('../util/dataStorage');
 const utility = require('../util/utility');
+const confirmationButtons = require('../components/confirmationButtons');
+const closeTicketButton = require('../components/closeTicketButton');
 
 module.exports = {
     name: 'interactionCreate',
@@ -32,7 +34,10 @@ module.exports = {
                     interaction.user.send(utility.buildEmbed('Please finish the current dialog first.'));
                 }
             }
-            else if (interaction.customId == 'ticket_buttons') {
+            else if (interaction.customId == 'close_ticket_button') {
+                interaction.update({ embeds: interaction.message.embeds, components: [confirmationButtons] });
+            }
+            else if (interaction.customId == 'close_ticket_confirmation_button_yes') {
                 if (interaction.message?.thread) {
                     const updatedEmbed = interaction.message.embeds[0];
                     if (updatedEmbed) updatedEmbed.title = '🔒' + updatedEmbed.title.substring(1);
@@ -44,6 +49,9 @@ module.exports = {
                     DataStorage.save();
                     interaction.message.thread.setArchived(true);
                 }
+            }
+            else if (interaction.customId == 'close_ticket_confirmation_button_no') {
+                interaction.update({ embeds: interaction.message.embeds, components: [closeTicketButton] });
             }
         }
     },
