@@ -1,13 +1,29 @@
-# BlancBotRewrite
+# BlancBot
 
-Oauth2 URL Generator Settings
+Official Discord Bot for the Blancworks Discord server.
+
+## Installation
+
+Requires a `.env` file in the project root directory, for reference see [template.env](./template.env).
+
+Make sure that the Request Tier Roles are *below* the bot role.
+
+## Setup for invite
+
+### Oauth2 URL Generator
+
+#### Scopes
 
 - [x] bot
 
 - [x] applications.commands
 
-Bot Permissions
+#### Bot Permissions
 
 - [x] Administrator
 
-Make sure that people inviting the bot is turned off.
+### Additional Settings
+
+#### Bot
+
+- Public Bot - turned off
