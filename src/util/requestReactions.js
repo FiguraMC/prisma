@@ -6,7 +6,7 @@ async function init(client) {
     // Set up all the reaction collectors for avatar requests
     const channel = await client.channels.fetch(process.env.REQUESTS_CHANNEL).catch(console.error);
     if (!channel) return;
-    if (!DataStorage.storage.avatar_request) DataStorage.storage.avatar_request = [];
+    if (!DataStorage.storage.avatar_requests) DataStorage.storage.avatar_requests = [];
     DataStorage.storage.avatar_requests.forEach(async element => {
         const msg = await channel.messages.fetch(element.message).catch(console.error);
         if (!msg) {
