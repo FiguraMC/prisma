@@ -13,7 +13,7 @@ module.exports = {
         }
 
         if (dialog.step == -1) {
-            channel.send(utility.buildEmbed('Topic/Title (1/2)', 'Could be user report, suggestion, question... just tell us why you open this ticket.')).catch(console.error);
+            channel.send(utility.buildEmbed('Topic/Title (1/2)', 'Could be user report, suggestion, question... just tell us why you are opening this ticket.')).catch(console.error);
             dialog.step++;
 
             return false;

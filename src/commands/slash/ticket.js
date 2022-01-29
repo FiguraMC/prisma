@@ -12,7 +12,7 @@ module.exports = {
         if (canStartDialog(interaction.client, interaction.user)) {
             // Only one ticket per person can exist at the same time
             if (!DataStorage.storage.tickets?.find(x => x.author == interaction.user.id)) {
-                await interaction.user.send(utility.buildEmbed('Modmail Ticket', 'We will now ask for details, if you want to cancel this process just send "cancel".'));
+                await interaction.user.send(utility.buildEmbed('Modmail Ticket', 'We will now ask for details, if you want to cancel this process just send "cancel". Your username will not be included in your ticket.'));
                 startDialog(interaction.client, interaction.user, 'createTicket');
                 interaction.reply({ embeds: [{ description: 'I have sent you a DM.' }], ephemeral: true });
             }
