@@ -20,7 +20,7 @@ module.exports.filter = async function (message) {
             });
             // if all keywords are found in the message then send the corresponding answer
             if (includesAll) {
-                message.channel.send(utility.buildEmbed(element.a.replaceAll('_', ' ')));
+                message.channel.send(utility.buildEmbed(element.a.replaceAll('_', ' ').replaceAll('\\ ', '_')));
             }
         });
     }
