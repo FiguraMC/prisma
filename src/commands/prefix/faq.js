@@ -3,7 +3,7 @@ const DataStorage = require('../../util/dataStorage');
 
 module.exports = {
     name: 'faq',
-    usage: '`?faq [question] [answer]` - Add or remove entry to or from the FAQ. Use `_` as spaces. Use `%` to split.',
+    usage: '`?faq [question] [answer]` - Add or remove entry to or from the FAQ. Use `_` as spaces. Use `\\_` as underscores. Use `%` to split.',
     moderator: true,
     async execute(message, args) {
 

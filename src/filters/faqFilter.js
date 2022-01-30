@@ -14,7 +14,7 @@ module.exports.filter = async function (message) {
 
         DataStorage.storage.faq.forEach(element => {
             let includesAll = true;
-            const keywords = element.q.toLowerCase().replaceAll('_', ' ').split('%');
+            const keywords = element.q.toLowerCase().replaceAll('_', ' ').replaceAll('\\ ', '_').split('%');
             keywords.forEach(keyword => {
                 includesAll &= message.content.toLowerCase().includes(keyword);
             });
