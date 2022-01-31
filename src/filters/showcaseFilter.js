@@ -3,9 +3,8 @@ const utility = require('../util/utility');
 module.exports.filter = async function (message) {
     if (process.env.SHOWCASE_CHANNELS.split(',').find(x => x == message.channel.id)) {
 
-        // if sent in a showcase channel, check if it contains an attachment or link
-
-        if (message.attachments.size == 0 && utility.getURLs(message.content) == null) {
+        // if sent in a showcase channel, check if it contains an attachment or link or code block
+        if (message.attachments.size == 0 && utility.getURLs(message.content) == null && !message.content?.includes('```')) {
             message.delete().catch(console.error);
             message.author.send(utility.buildEmbed(
                 'Hello there!',
