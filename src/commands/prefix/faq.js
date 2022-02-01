@@ -19,7 +19,7 @@ module.exports = {
         if (args.length == 0) {
             let list = '';
             DataStorage.storage.faq.forEach(element => {
-                list += `Q:\`${element.q}\`\nA:\`${element.a}\`\n\n`;
+                list += `Q:${element.q}\nA:${element.a}\n\n`;
             });
             message.reply(utility.buildEmbed(list == '' ? 'FAQ is empty.' : list));
         }
