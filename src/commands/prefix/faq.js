@@ -4,7 +4,7 @@ const DataStorage = require('../../util/dataStorage');
 
 module.exports = {
     name: 'faq',
-    usage: '`?faq [question] [answer]` - Add or remove entry to or from the FAQ. Use `_` as spaces. Use `\\_` as underscores. Use `%` to split.',
+    usage: '`?faq [question] [answer]` - Add or remove entry to or from the FAQ. Space: `_`, Underscore: `\\_`, Code: `´` (forwardtick!), Split: `%`.',
     moderator: true,
     /**
      * 
@@ -17,11 +17,20 @@ module.exports = {
 
         // No arguments, show faq
         if (args.length == 0) {
-            let list = '';
+            let length = 0;
+            const lists = [''];
             DataStorage.storage.faq.forEach(element => {
-                list += `Q:${element.q}\nA:${element.a}\n\n`;
+                const line = `Q:\`${element.q}\`\nA:\`${element.a}\`\n\n`;
+                length += line.length;
+                if (length > 4000) {
+                    lists.push('');
+                    length = 0;
+                }
+                lists[lists.length - 1] += line;
             });
-            message.reply(utility.buildEmbed(list == '' ? 'FAQ is empty.' : list));
+            for (const list of lists) {
+                message.reply(utility.buildEmbed(list == '' ? 'FAQ is empty.' : list));
+            }
         }
         // One argument, remove question
         else if (args.length == 1) {

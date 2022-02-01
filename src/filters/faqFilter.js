@@ -12,8 +12,8 @@ module.exports.filter = async function (message) {
 
         // this is basically a crappy pattern check thing
         // underscores are used as spaces so when adding a pattern using
-        // a command is less pain to program, % character splits the
-        // string and can therefore pretty much be called "any characters in between"
+        // a command it's less pain to program, % character splits the
+        // string and therefore acts pretty much as "any characters in between"
 
         if (!DataStorage.storage.faq) DataStorage.storage.faq = [];
 
@@ -25,7 +25,7 @@ module.exports.filter = async function (message) {
             });
             // if all keywords are found in the message then send the corresponding answer
             if (includesAll) {
-                message.channel.send(utility.buildEmbed(element.a.replaceAll('_', ' ').replaceAll('\\ ', '_')));
+                message.channel.send(utility.buildEmbed(element.a.replaceAll('_', ' ').replaceAll('\\ ', '_').replaceAll('´', '`')));
             }
         });
     }
