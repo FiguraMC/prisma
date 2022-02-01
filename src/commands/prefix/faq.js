@@ -1,3 +1,4 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const utility = require('../../util/utility');
 const DataStorage = require('../../util/dataStorage');
 
@@ -5,6 +6,11 @@ module.exports = {
     name: 'faq',
     usage: '`?faq [question] [answer]` - Add or remove entry to or from the FAQ. Use `_` as spaces. Use `\\_` as underscores. Use `%` to split.',
     moderator: true,
+    /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {String[]} args 
+     */
     async execute(message, args) {
 
         if (!DataStorage.storage.faq) DataStorage.storage.faq = [];

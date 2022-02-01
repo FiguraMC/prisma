@@ -1,9 +1,16 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const utility = require('../../util/utility');
 const DataStorage = require('../../util/dataStorage');
 
 // Simple dialog just for confirming if the user really wants to delete the request
 module.exports = {
     name: 'deleteAvatarRequest',
+    /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {Discord.TextChannel | Discord.User} channel 
+     * @param {*} dialog 
+     */
     async handle(message, channel, dialog) {
 
         if (dialog.step != -1 && (message.content.toLowerCase() == 'cancel' || message.content.toLowerCase() == 'abort')) {

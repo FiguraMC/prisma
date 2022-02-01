@@ -1,15 +1,25 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
+
 // Utility functions
 
-// Checks if a member has a moderator role
+/**
+ * Checks if a member has a moderator role
+ * @param {Discord.GuildMember} member 
+ */
 module.exports.isModerator = async function (member) {
     const moderatorRoles = process.env.MODERATOR_ROLES.split(',');
     const isModerator = await member.roles.cache.some(r => moderatorRoles.includes(r.id));
     return isModerator;
 };
 
-// Builds simple embed with title, description and components
-// If only 1 argument is given, it is used as the description
-// components is optional
+/**
+ * Builds simple embed with title, description and components
+ * If only 1 argument is given, it is used as the description
+ * components is optional
+ * @param {String} title 
+ * @param {String} description 
+ * @param {Discord.MessageComponent[]} components 
+ */
 module.exports.buildEmbed = function (title, description, components) {
     if (!description) {
         description = title;
@@ -29,7 +39,11 @@ module.exports.buildEmbed = function (title, description, components) {
     return ret;
 };
 
-// RegExp to match URLs
+/**
+ * RegExp to match URLs
+ * @param {String} text 
+ * @returns 
+ */
 module.exports.getURLs = function (text) {
     return text.match(/(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])/gi);
 };

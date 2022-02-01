@@ -1,3 +1,4 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const fs = require('fs');
 const path = require('path');
 const { REST } = require('@discordjs/rest');
@@ -8,6 +9,10 @@ module.exports = {
     name: 'deploycommands',
     usage: '`?deployCommands` - Register Slash-Commands for this guild.',
     moderator: true,
+    /**
+     * 
+     * @param {Discord.Message} message 
+     */
     async execute(message) {
         const commands = [];
         const commandFiles = fs.readdirSync(path.join(__dirname, '../slash')).filter(file => file.endsWith('.js'));

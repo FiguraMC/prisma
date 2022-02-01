@@ -3,8 +3,12 @@ const got = require('got');
 
 module.exports.thirdPartyScamList = [];
 
-// Check text for scam domains
-// Returns true if scam domain was found
+/**
+ * Check text for scam domains
+ * Returns true if scam domain was found
+ * @param {String} text 
+ * @returns 
+ */
 module.exports.scam = function (text) {
     if (DataStorage.storage.scamfilter == undefined) DataStorage.storage.scamfilter = [];
     // Check for local scam domain list
@@ -24,9 +28,13 @@ module.exports.scam = function (text) {
     return false;
 };
 
-// Check text for nsfw domains/keywords
-// Returns true if nsfw domain/keyword was found
-// This only uses the local list
+/**
+ * Check text for nsfw domains/keywords
+ * Returns true if nsfw domain/keyword was found
+ * This only uses the local list
+ * @param {String} text 
+ * @returns 
+ */
 module.exports.nsfw = function (text) {
     if (DataStorage.storage.nsfwfilter == undefined) DataStorage.storage.nsfwfilter = [];
     for (const element of DataStorage.storage.nsfwfilter) {
@@ -38,8 +46,12 @@ module.exports.nsfw = function (text) {
     return false;
 };
 
-// Follow the shortened URL redirects and return the expanded URL
-// Returns the unshortened URL or the same URL if it couldnt unshorten
+/**
+ * Follow the shortened URL redirects and return the expanded URL
+ * Returns the unshortened URL or the same URL if it couldnt unshorten
+ * @param {String} url 
+ * @returns 
+ */
 module.exports.expandUrl = async function (url) {
     try {
         return (await got(url)).url;
@@ -49,8 +61,12 @@ module.exports.expandUrl = async function (url) {
     }
 };
 
-// Unshortens multiple URLs
-// Basicall just a loop array version of above
+/**
+ * Unshortens multiple URLs
+ * Basicall just a loop array version of `expandUrl`
+ * @param {String[]} urls 
+ * @returns 
+ */
 module.exports.expandMultipleUrls = async function (urls) {
     const expanded = [];
     if (urls) {
@@ -61,13 +77,18 @@ module.exports.expandMultipleUrls = async function (urls) {
     return expanded;
 };
 
-// Fetch all scam domains from phishing API
+/**
+ * Fetch all scam domains from phishing API
+ */
 module.exports.fetchThirdPartyScamListAll = async function () {
     module.exports.thirdPartyScamList = JSON.parse((await got('https://phish.sinking.yachts/v2/all', { headers: { 'X-Identity': process.env.IDENTITY } })).body);
 };
 
-// Fetch recent scam domains from phishing API
-// Adds only the new entries to the list
+/**
+ * Fetch recent scam domains from phishing API
+ * Adds only the new entries to the list
+ * @param {Number} seconds 
+ */
 module.exports.fetchThirdPartyScamListRecent = async function (seconds) {
     const recent = JSON.parse((await got('https://phish.sinking.yachts/v2/recent/' + seconds, { headers: { 'X-Identity': process.env.IDENTITY } })).body);
 
@@ -88,7 +109,11 @@ module.exports.fetchThirdPartyScamListRecent = async function (seconds) {
     }
 };
 
-// Utility function to escape a RegExp string
+/**
+ * Utility function to escape a RegExp string
+ * @param {String} string 
+ * @returns 
+ */
 function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
 }

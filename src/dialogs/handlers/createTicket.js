@@ -1,3 +1,4 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const utility = require('../../util/utility');
 const DataStorage = require('../../util/dataStorage');
 const closeTicketButton = require('../../components/closeTicketButton');
@@ -5,6 +6,12 @@ const closeTicketButton = require('../../components/closeTicketButton');
 // Ticket creation dialog
 module.exports = {
     name: 'createTicket',
+    /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {Discord.TextChannel | Discord.User} channel 
+     * @param {*} dialog 
+     */
     async handle(message, channel, dialog) {
 
         if (dialog.step != -1 && (message.content.toLowerCase() == 'cancel' || message.content.toLowerCase() == 'abort')) {

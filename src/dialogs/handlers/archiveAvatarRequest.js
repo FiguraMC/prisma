@@ -1,3 +1,4 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const utility = require('../../util/utility');
 const workersSelectMenu = require('../../components/workersSelectMenu');
 const DataStorage = require('../../util/dataStorage');
@@ -6,6 +7,12 @@ const requestTierRoles = require('../../util/requestTierRoles');
 // Dialog for archiving an avatar request
 module.exports = {
     name: 'archiveAvatarRequest',
+    /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {Discord.TextChannel | Discord.User} channel 
+     * @param {*} dialog 
+     */
     async handle(message, channel, dialog) {
 
         if (dialog.step != -1 && (message.content.toLowerCase() == 'cancel' || message.content.toLowerCase() == 'abort')) {
@@ -58,6 +65,11 @@ module.exports = {
             return false;
         }
     },
+    /**
+     * 
+     * @param {Discord.Interaction} interaction 
+     * @param {*} dialog 
+     */
     async handleInteraction(interaction, dialog) {
 
         if (dialog.step == 1 && interaction.customId == 'request_workers' && interaction.isSelectMenu()) {
@@ -72,8 +84,13 @@ module.exports = {
     },
 };
 
-// Archives the request
-// Also levels up the workers
+/**
+ * Archives the request
+ * Also levels up the workers
+ * @param {*} dialog 
+ * @param {Discord.TextChannel | Discord.User} channel 
+ * @param {Discord.Client} client 
+ */
 async function archive(dialog, channel, client) {
 
     const files = [];

@@ -1,3 +1,4 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const DataStorage = require('../../util/dataStorage');
 const requestTierRoles = require('../../util/requestTierRoles');
 
@@ -7,6 +8,11 @@ module.exports = {
     name: 'addlevel',
     usage: '`?addLevel <@user|userId> <amount>` - Adds specified amount of levels to a user.',
     moderator: true,
+    /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {String[]} args 
+     */
     async execute(message, args) {
 
         if (args.length < 2) return message.channel.send('Not enough arguments.');

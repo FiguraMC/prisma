@@ -1,5 +1,12 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
+
 module.exports = {
     name: 'messageUpdate',
+    /**
+     * 
+     * @param {Discord.Message} oldMessage 
+     * @param {Discord.Message} newMessage 
+     */
     async execute(oldMessage, newMessage) {
 
         // Log update in the log channel

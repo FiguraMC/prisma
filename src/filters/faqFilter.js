@@ -1,6 +1,11 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const utility = require('../util/utility');
 const DataStorage = require('../util/dataStorage');
 
+/**
+ * 
+ * @param {Discord.Message} message 
+ */
 module.exports.filter = async function (message) {
     if (process.env.HELP_CHANNELS.split(',').find(x => x == message.channel.id)) {
         // if sent in a help channel, check for FAQ keywords

@@ -1,8 +1,15 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const { handlers } = require('./registerDialogEvents');
 
-// Starts a dialog by name
-// Calls the message handle function with null as the message for the first step
-// extras can be anything that is needed for the dialog
+/**
+ * Starts a dialog by name.
+ * Calls the message handle function with null as the message for the first step.
+ * `extras` can be anything that is needed for the dialog.
+ * @param {Discord.Client} client 
+ * @param {Discord.User} user 
+ * @param {String} dialogName 
+ * @param {*} extras 
+ */
 module.exports.startDialog = function (client, user, dialogName, extras) {
 
     const dialogs = client.dialogs;
@@ -20,7 +27,11 @@ module.exports.startDialog = function (client, user, dialogName, extras) {
     }
 };
 
-// Check if dialog can be started for a specified user
+/**
+ * Check if dialog can be started for a specified user
+ * @param {Discord.Client} client 
+ * @param {Discord.User} user 
+ */
 module.exports.canStartDialog = function (client, user) {
     const dialogs = client.dialogs;
     return !dialogs.has(user);

@@ -1,7 +1,11 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const ContentBlocker = require('../util/contentBlocker');
 const utility = require('../util/utility');
 
-// Filters a message using the scam and nsfw content blockers
+/**
+ * Filters a message using the scam and nsfw content blockers
+ * @param {Discord.Message} message 
+ */
 module.exports.filter = async function (message) {
     if (
         ContentBlocker.scam(message.content) ||

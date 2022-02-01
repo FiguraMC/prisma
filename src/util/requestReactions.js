@@ -1,7 +1,12 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const DataStorage = require('./dataStorage');
 const utility = require('./utility');
 const { startDialog, canStartDialog } = require('../dialogs/startDialog');
 
+/**
+ * Avatar requests reactions init
+ * @param {Discord.Client} client 
+ */
 async function init(client) {
     // Set up all the reaction collectors for avatar requests
     const channel = await client.channels.fetch(process.env.REQUESTS_CHANNEL).catch(console.error);
@@ -19,7 +24,11 @@ async function init(client) {
     });
 }
 
-// Creates a reaction collector on a message, second parameter is the entry in the data storage
+/**
+ * Creates a reaction collector on a message, second parameter is the entry in the data storage
+ * @param {Discord.Message} msg 
+ * @param {*} element 
+ */
 async function createCollector(msg, element) {
     const collector = msg.createReactionCollector({ dispose: true });
 

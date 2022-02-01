@@ -1,3 +1,4 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const { startDialog, canStartDialog } = require('../../dialogs/startDialog');
 const utility = require('../../util/utility');
 const DataStorage = require('../../util/dataStorage');
@@ -6,6 +7,10 @@ const DataStorage = require('../../util/dataStorage');
 module.exports = {
     name: 'request',
     usage: '`?request` - Create new avatar request.',
+    /**
+     * 
+     * @param {Discord.Message} message 
+     */
     async execute(message) {
         if (DataStorage.storage.people[message.author.id]?.requestban) return message.author.send(utility.buildEmbed('Sorry, you can\'t create a request at the moment.'));
 

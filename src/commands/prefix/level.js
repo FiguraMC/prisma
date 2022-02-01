@@ -1,8 +1,14 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const getLevelReplyOf = require('../shared/level');
 
 module.exports = {
     name: 'level',
     usage: '`?level [@user|userId]` - Shows Avatar Request Level of a user.',
+    /**
+     * 
+     * @param {Discord.message} message 
+     * @param {String[]} args 
+     */
     async execute(message, args) {
 
         const memberId = args[0];

@@ -1,3 +1,4 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const ContentBlocker = require('../util/contentBlocker');
 const cronJobDeleteOldRequests = require('../cronjobs/deleteOldRequests');
 const cronJobUpdateScamList = require('../cronjobs/updateScamList');
@@ -6,6 +7,10 @@ const requestReactions = require('../util/requestReactions');
 module.exports = {
     name: 'ready',
     once: true,
+    /**
+     * 
+     * @param {Discord.Client} client 
+     */
     async execute(client) {
 
         console.log(`Ready! Logged in as ${client.user.tag}`);

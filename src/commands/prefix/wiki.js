@@ -1,9 +1,15 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const wiki = require('./wiki.json');
 
 // Old wiki command, this will be removed once the wiki gets an overhaul
 module.exports = {
     name: 'wiki',
     usage: '`?wiki <search>` - Outdated wiki command.',
+    /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {String[]} args 
+     */
     async execute(message, args) {
         const result = search(args.join(' '));
         if (result) {
@@ -15,6 +21,10 @@ module.exports = {
     },
 };
 
+/**
+ *
+ * @param {String} s
+ */
 function search(s) {
     // exact matches
     for (const entry of wiki) {

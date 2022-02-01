@@ -1,3 +1,4 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const ChatFilter = require('../filters/chatFilter');
 const ShowcaseFilter = require('../filters/showcaseFilter');
 const FaqFilter = require('../filters/faqFilter');
@@ -5,6 +6,10 @@ const utility = require('../util/utility');
 
 module.exports = {
     name: 'messageCreate',
+    /**
+     * 
+     * @param {Discord.Message} message 
+     */
     async execute(message) {
 
         if (message.author.bot) return; // Ignore bots

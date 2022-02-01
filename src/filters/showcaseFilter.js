@@ -1,5 +1,10 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const utility = require('../util/utility');
 
+/**
+ * 
+ * @param {Discord.Message} message 
+ */
 module.exports.filter = async function (message) {
     if (process.env.SHOWCASE_CHANNELS.split(',').find(x => x == message.channel.id)) {
 

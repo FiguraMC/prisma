@@ -1,3 +1,4 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const { startDialog, canStartDialog } = require('../dialogs/startDialog');
 const DataStorage = require('../util/dataStorage');
 const utility = require('../util/utility');
@@ -6,6 +7,10 @@ const closeTicketButton = require('../components/closeTicketButton');
 
 module.exports = {
     name: 'interactionCreate',
+    /**
+     * 
+     * @param {Discord.Interaction} interaction 
+     */
     async execute(interaction) {
 
         // Handle slash commands

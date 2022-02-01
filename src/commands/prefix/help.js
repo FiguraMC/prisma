@@ -1,3 +1,4 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const utility = require('../../util/utility');
 
 // Help command
@@ -5,6 +6,10 @@ const utility = require('../../util/utility');
 module.exports = {
     name: 'help',
     usage: '`?help` - Shows this message.',
+    /**
+     * 
+     * @param {Discord.Message} message 
+     */
     async execute(message) {
 
         const isModerator = await utility.isModerator(message.member);

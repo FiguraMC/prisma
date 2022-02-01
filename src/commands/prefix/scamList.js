@@ -1,9 +1,15 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const DataStorage = require('../../util/dataStorage');
 
 module.exports = {
     name: 'scamlist',
     usage: '`?scamList [domain]` - Adds, removes, or shows elements on the Scam list.',
     moderator: true,
+    /**
+     * 
+     * @param {Discord.Message} message 
+     * @param {String[]} args 
+     */
     async execute(message, args) {
 
         if (DataStorage.storage.scamfilter == undefined) DataStorage.storage.scamfilter = [];

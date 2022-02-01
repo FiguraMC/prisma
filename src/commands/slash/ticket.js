@@ -1,3 +1,4 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { startDialog, canStartDialog } = require('../../dialogs/startDialog');
 const DataStorage = require('../../util/dataStorage');
@@ -8,6 +9,10 @@ module.exports = {
         .setName('ticket')
         .setDescription('Creates a Modmail Ticket.'),
     usage: '`/ticket` - Create a Modmail Ticket.',
+    /**
+     * 
+     * @param {Discord.CommandInteraction} interaction 
+     */
     async execute(interaction) {
         if (canStartDialog(interaction.client, interaction.user)) {
             // Only one ticket per person can exist at the same time
