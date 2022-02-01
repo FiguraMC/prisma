@@ -2,6 +2,9 @@ const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const utility = require('../util/utility');
 const DataStorage = require('../util/dataStorage');
 
+const cooldownTime = 2; // minutes
+const cooldowns = new Discord.Collection();
+
 /**
  * 
  * @param {Discord.Message} message 
@@ -23,8 +26,19 @@ module.exports.filter = async function (message) {
             keywords.forEach(keyword => {
                 includesAll &= message.content.toLowerCase().includes(keyword);
             });
-            // if all keywords are found in the message then send the corresponding answer
+            // if all keywords are found in the message and there is no cooldown then send the corresponding answer
             if (includesAll) {
+                if (cooldowns.has(element)) {
+                    if (cooldowns.get(element) < Date.now()) {
+                        cooldowns.delete(element); // cooldown over
+                    }
+                    else {
+                        return; // stil on cooldown
+                    }
+                }
+                else {
+                    cooldowns.set(element, Date.now() + cooldownTime * 1000 * 60); // new cooldown
+                }
                 message.channel.send(utility.buildEmbed(element.a.replaceAll('_', ' ').replaceAll('\\ ', '_').replaceAll('´', '`')));
             }
         });
