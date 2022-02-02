@@ -18,7 +18,7 @@ module.exports = {
         let modCommands = '**Moderator commands**\n';
 
         message.client.slashCommands.forEach(command => {
-            if (command.moderator && isModerator) {
+            if (command.moderator) {
                 modCommands += command.usage + '\n';
             }
             else {
@@ -27,7 +27,7 @@ module.exports = {
         });
 
         message.client.prefixCommands.forEach(command => {
-            if (command.moderator && isModerator) {
+            if (command.moderator) {
                 modCommands += command.usage + '\n';
             }
             else {
@@ -35,6 +35,6 @@ module.exports = {
             }
         });
 
-        message.reply({ embeds: [{ description: `${commands}\n${modCommands}` }] });
+        message.reply({ embeds: [{ description: `${commands}\n${isModerator ? modCommands : ''}` }] });
     },
 };
