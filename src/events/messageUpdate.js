@@ -16,6 +16,14 @@ module.exports = {
 
         if (oldMessage.content == newMessage.content) return; // in order to stop link embeds from triggering this event
         if (oldMessage.guild != newMessage.guild) return;
+
+        if (oldMessage.content.length > 1024) {
+            oldMessage.content = oldMessage.content.substring(0, 1017) + '`[...]`';
+        }
+        if (newMessage.content.length > 1024) {
+            newMessage.content = newMessage.content.substring(0, 1017) + '`[...]`';
+        }
+
         const channel = await oldMessage.guild.channels.fetch(process.env.LOG_CHANNEL);
         channel.send({
             embeds: [

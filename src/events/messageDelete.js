@@ -45,6 +45,10 @@ module.exports = {
         const pk_message = await pkapi.getMessage({ id: message.id });
         if (pk_message?.original == message.id) return; // Ignore Pluralkit
 
+        if (message.content.length > 1024) {
+            message.content = message.content.substring(0, 1017) + '`[...]`';
+        }
+
         const channel = await message.guild.channels.fetch(process.env.LOG_CHANNEL);
         channel.send({
             embeds: [
