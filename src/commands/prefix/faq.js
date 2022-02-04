@@ -13,14 +13,14 @@ module.exports = {
      */
     async execute(message, args) {
 
-        if (!DataStorage.storage.faq) DataStorage.storage.faq = [];
+        if (!DataStorage.storage.faq) DataStorage.storage.faq = new Map();
 
         // No arguments, show faq
         if (args.length == 0) {
             let length = 0;
             const lists = [''];
-            DataStorage.storage.faq.forEach(element => {
-                const line = `Q:\`${element.q}\`\nA:\`${element.a}\`\n\n`;
+            DataStorage.storage.faq.forEach((value, key, map) => { // eslint-disable-line no-unused-vars
+                const line = `Q:\`${key}\`\nA:\`${value}\`\n\n`;
                 length += line.length;
                 if (length > 4000) {
                     lists.push('');
@@ -34,8 +34,8 @@ module.exports = {
         }
         // One argument, remove question
         else if (args.length == 1) {
-            if (DataStorage.storage.faq.find(x => x.q?.toLowerCase() == args[0].toLowerCase())) {
-                DataStorage.storage.faq = DataStorage.storage.faq.filter(x => x.q?.toLowerCase() != args[0].toLowerCase());
+            if (DataStorage.storage.faq.has(args[0].toLowerCase())) {
+                DataStorage.storage.faq.remove(args[0].toLowerCase());
                 DataStorage.save();
                 message.reply(`Removed \`${args[0]}\` from the FAQ.`);
             }
@@ -43,9 +43,9 @@ module.exports = {
                 message.reply(utility.buildEmbed(`Could not find \`${args[0]}\` in the FAQ.`));
             }
         }
-        // Two arguments, add question and answer
+        // Two arguments, add question and answer (or overwrite existing)
         else if (args.length == 2) {
-            DataStorage.storage.faq.push({ q: args[0], a: args[1] });
+            DataStorage.storage.faq.set(args[0].toLowerCase(), args[1]);
             DataStorage.save();
             message.reply(`Added \`${args[0]}\` to the FAQ.`);
         }

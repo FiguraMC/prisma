@@ -12,7 +12,7 @@ exports.storage = {};
  */
 function load() {
     if (!fs.existsSync(storageFilePath)) return save();
-    exports.storage = JSON.parse(fs.readFileSync(storageFilePath).toString());
+    exports.storage = JSON.parse(fs.readFileSync(storageFilePath).toString(), reviver);
     save();
 }
 
@@ -21,7 +21,7 @@ function load() {
  */
 function save() {
     fs.mkdirSync(storageDirectoryPath, { recursive: true });
-    fs.writeFileSync(storageFilePath, JSON.stringify(exports.storage));
+    fs.writeFileSync(storageFilePath, JSON.stringify(exports.storage, replacer));
 }
 
 /**
@@ -34,6 +34,33 @@ function deleteFromArray(array, element) {
     if (index > -1) {
         array.splice(index, 1);
     }
+}
+
+/**
+ * Replacer Function to support storing Map objects
+ */
+function replacer(key, value) {
+    if (value instanceof Map) {
+        return {
+            dataType: 'Map',
+            value: Array.from(value.entries()),
+        };
+    }
+    else {
+        return value;
+    }
+}
+
+/**
+ * Reviver Function to support loading Map objects
+ */
+function reviver(key, value) {
+    if (typeof value == 'object' && value != null) {
+        if (value.dataType == 'Map') {
+            return new Map(value.value);
+        }
+    }
+    return value;
 }
 
 exports.load = load;
