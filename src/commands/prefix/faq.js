@@ -35,7 +35,7 @@ module.exports = {
         // One argument, remove question
         else if (args.length == 1) {
             if (DataStorage.storage.faq.has(args[0].toLowerCase())) {
-                DataStorage.storage.faq.remove(args[0].toLowerCase());
+                DataStorage.storage.faq.delete(args[0].toLowerCase());
                 DataStorage.save();
                 message.reply(`Removed \`${args[0]}\` from the FAQ.`);
             }

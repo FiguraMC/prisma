@@ -28,19 +28,24 @@ module.exports.filter = async function (message) {
             });
             // if all keywords are found in the message and there is no cooldown then send the corresponding answer
             if (includesAll) {
-                if (cooldowns.has(key)) {
-                    if (cooldowns.get(key) < Date.now()) {
-                        cooldowns.delete(key); // cooldown over
-                    }
-                    else {
-                        return; // still on cooldown
-                    }
-                }
-                else {
-                    cooldowns.set(key, Date.now() + cooldownTime * 1000 * 60); // new cooldown
-                }
+                if (cooldowns.has(key) && cooldowns.get(key) > Date.now()) return; // still on cooldown
+                cooldowns.set(key, Date.now() + cooldownTime * 1000 * 60); // new cooldown
+                cleanCooldowns();
                 message.channel.send(utility.buildEmbed(value.replaceAll('_', ' ').replaceAll('\\ ', '_').replaceAll('´', '`')));
             }
         });
     }
 };
+
+/**
+ * Removes cooldowns for FAQ entries that no longer exist
+ */
+function cleanCooldowns() {
+    if (DataStorage.storage.faq) {
+        cooldowns.forEach((value, key, map) => { // eslint-disable-line no-unused-vars
+            if (!DataStorage.storage.faq.has(key)) {
+                cooldowns.delete(key);
+            }
+        }); 
+    }
+}
