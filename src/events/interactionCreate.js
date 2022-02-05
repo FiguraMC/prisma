@@ -63,6 +63,7 @@ module.exports = {
                     author?.send(utility.buildEmbed('🔒 Your ticket has been closed.')).catch(console.error);
                     DataStorage.storage.tickets = DataStorage.storage.tickets?.filter(x => x.thread != interaction.message.thread.id);
                     DataStorage.save();
+                    await interaction.message.thread.send(utility.buildEmbed('🔒 Ticket has been closed.')).catch(console.error);
                     interaction.message.thread.setArchived(true);
                 }
             }
