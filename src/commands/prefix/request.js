@@ -12,6 +12,7 @@ module.exports = {
      * @param {Discord.Message} message 
      */
     async execute(message) {
+        if (!DataStorage.storage.people) DataStorage.storage.people = {};
         if (DataStorage.storage.people[message.author.id]?.requestban) return message.author.send(utility.buildEmbed('Sorry, you can\'t create a request at the moment.'));
 
         if (canStartDialog(message.client, message.author)) {

@@ -50,7 +50,7 @@ module.exports.handle = async function (message, channel, dialog, options) {
             return false;
         }
         if (skip) dialog.data.push(defaultValues[0]);
-        else dialog.data.push(message.content);
+        else dialog.data.push(message.content.substring(0, 256));
 
         next(dialog, channel);
 

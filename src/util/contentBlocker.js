@@ -52,7 +52,6 @@ module.exports.nsfw = function (text) {
  */
 module.exports.matchesGenericScamMessage = function (message) {
     const content = message.content.toLowerCase();
-    console.log(content);
     if (content.includes('@everyone') && content.includes('free') && content.includes('nitro')) {
         if (!message.member.permissions.has('MENTION_EVERYONE')) {
             return true;
