@@ -1,3 +1,4 @@
+const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const DataStorage = require('./dataStorage');
 const got = require('got');
 
@@ -5,9 +6,8 @@ module.exports.thirdPartyScamList = [];
 
 /**
  * Check text for scam domains
- * Returns true if scam domain was found
  * @param {String} text 
- * @returns 
+ * @returns {boolean} True if scam domain was found
  */
 module.exports.scam = function (text) {
     if (DataStorage.storage.scamfilter == undefined) DataStorage.storage.scamfilter = [];
@@ -30,10 +30,9 @@ module.exports.scam = function (text) {
 
 /**
  * Check text for nsfw domains/keywords
- * Returns true if nsfw domain/keyword was found
  * This only uses the local list
  * @param {String} text 
- * @returns 
+ * @returns {boolean} True if nsfw domain/keyword was found
  */
 module.exports.nsfw = function (text) {
     if (DataStorage.storage.nsfwfilter == undefined) DataStorage.storage.nsfwfilter = [];
@@ -47,10 +46,26 @@ module.exports.nsfw = function (text) {
 };
 
 /**
+ * Checks if a message contains an attempt to mention @ everyone and has "free nitro" in it.
+ * @param {Discord.Message} message 
+ * @returns {boolean} True if it matches
+ */
+module.exports.matchesGenericScamMessage = function (message) {
+    const content = message.content.toLowerCase();
+    console.log(content);
+    if (content.includes('@everyone') && content.includes('free') && content.includes('nitro')) {
+        if (!message.member.permissions.has('MENTION_EVERYONE')) {
+            return true;
+        }
+    }
+    return false;
+};
+
+/**
  * Follow the shortened URL redirects and return the expanded URL
  * Returns the unshortened URL or the same URL if it couldnt unshorten
  * @param {String} url 
- * @returns 
+ * @returns {String} Expanded URL, or same URL if couldn't expand
  */
 module.exports.expandUrl = async function (url) {
     try {
@@ -63,9 +78,9 @@ module.exports.expandUrl = async function (url) {
 
 /**
  * Unshortens multiple URLs
- * Basicall just a loop array version of `expandUrl`
  * @param {String[]} urls 
- * @returns 
+ * @returns {String[]} Array of expanded URLs
+ * @see {@link module.exports.expandUrl expandUrl}
  */
 module.exports.expandMultipleUrls = async function (urls) {
     const expanded = [];
@@ -112,7 +127,7 @@ module.exports.fetchThirdPartyScamListRecent = async function (seconds) {
 /**
  * Utility function to escape a RegExp string
  * @param {String} string 
- * @returns 
+ * @returns {String} Escaped string
  */
 function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
