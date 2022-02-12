@@ -1,5 +1,6 @@
 const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const DataStorage = require('./dataStorage');
+const utility = require('./utility');
 const got = require('got');
 
 module.exports.thirdPartyScamList = [];
@@ -52,7 +53,8 @@ module.exports.nsfw = function (text) {
  */
 module.exports.matchesGenericScamMessage = function (message) {
     const content = message.content.toLowerCase();
-    if (content.includes('@everyone') && content.includes('free') && content.includes('nitro')) {
+    const urls = utility.getURLs(content);
+    if (content.includes('@everyone') && ((content.includes('free') && content.includes('nitro')) || urls != null)) {
         if (!message.member.permissions.has('MENTION_EVERYONE')) {
             return true;
         }
