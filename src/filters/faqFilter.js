@@ -2,7 +2,7 @@ const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const utility = require('../util/utility');
 const DataStorage = require('../util/dataStorage');
 
-const cooldownTime = 2; // minutes
+const cooldownTime = 10; // minutes
 const cooldowns = new Discord.Collection();
 
 /**
