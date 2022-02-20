@@ -12,10 +12,13 @@ module.exports = {
      */
     async execute(message) {
 
-        if (message.author.bot) return; // Ignore bots
+        if (message.author.id == message.client.user.id) return; // Ignore self
 
         // Prefix commands handling
         if (message.content.startsWith(process.env.PREFIX)) {
+
+            if (message.author.bot) return; // Ignore bots
+
             const args = message.content.split(/ +/);
             const commandName = args.shift().toLowerCase().substring(process.env.PREFIX.length);
             const command = message.client.prefixCommands.get(commandName);
