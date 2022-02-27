@@ -27,9 +27,9 @@ module.exports = {
                     }] }).catch(console.error);
                 }
             })
-            .catch(() => {
+            .catch(err => {
                 message.channel.send({ embeds:[{
-                    description: 'Could not connect.',
+                    description: 'Status code ' + err.response.statusCode,
                 }] }).catch(console.error);
             });
     },
