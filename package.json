@@ -27,7 +27,8 @@
     "discord.js": "^13.6.0",
     "dotenv": "^14.2.0",
     "got": "^11.8.3",
-    "pkapi.js": "^1.2.0"
+    "pkapi.js": "^1.2.0",
+    "shelljs": "^0.8.5"
   },
   "devDependencies": {
     "eslint": "^8.7.0",
