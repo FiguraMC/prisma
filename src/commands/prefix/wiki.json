@@ -643,5 +643,61 @@
             "vector"
         ],
         "value": "https://github.com/Blancworks/Figura/wiki/Vector-API"
+    },
+    {
+        "keys": [
+            "keyind"
+        ],
+        "value": "https://github.com/Blancworks/Figura/wiki/Keybind-API"
+    },
+    {
+        "keys": [
+            "animation"
+        ],
+        "value": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "keys": [
+            "camera"
+        ],
+        "value": "https://github.com/Blancworks/Figura/wiki/Camera-API"
+    },
+    {
+        "keys": [
+            "chat"
+        ],
+        "value": "https://github.com/Blancworks/Figura/wiki/Chat-API"
+    },
+    {
+        "keys": [
+            "meta"
+        ],
+        "value": "https://github.com/Blancworks/Figura/wiki/Meta-API"
+    },
+    {
+        "keys": [
+            "nameplate"
+        ],
+        "value": "https://github.com/Blancworks/Figura/wiki/Nameplate-API"
+    },
+    {
+        "keys": [
+            "pings",
+            "network"
+        ],
+        "value": "https://github.com/Blancworks/Figura/wiki/Ping-API"
+    },
+    {
+        "keys": [
+            "renderer"
+        ],
+        "value": "https://github.com/Blancworks/Figura/wiki/Renderer-API"
+    },
+    {
+        "keys": [
+            "spyglass",
+            "spyglass model"
+        ],
+        "value": "https://github.com/Blancworks/Figura/wiki/Spyglass-Model-API"
     }
 ]
