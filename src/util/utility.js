@@ -47,3 +47,12 @@ module.exports.buildEmbed = function (title, description, components) {
 module.exports.getURLs = function (text) {
     return text.match(/(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])/gi);
 };
+
+/**
+ * Utility function to escape a RegExp string
+ * @param {String} string 
+ * @returns {String} Escaped string
+ */
+module.exports.escapeRegExp = function (string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+};

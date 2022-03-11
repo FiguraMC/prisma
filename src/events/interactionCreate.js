@@ -4,6 +4,7 @@ const DataStorage = require('../util/dataStorage');
 const utility = require('../util/utility');
 const confirmationButtons = require('../components/confirmationButtons');
 const closeTicketButton = require('../components/closeTicketButton');
+const docs = require('../../storage/docs.json');
 
 module.exports = {
     name: 'interactionCreate',
@@ -73,5 +74,44 @@ module.exports = {
                 interaction.update({ embeds: interaction.message.embeds, components: [closeTicketButton] });
             }
         }
+        // Handle /docs command autocomplete
+        else if (interaction.isAutocomplete()) {
+            const search = interaction.options.getFocused().toLowerCase(); // the text the user is currently typing
+            const results = browseDocs(search); // find matching docs entries
+            interaction.respond(results.slice(0, 25)).catch(console.error); // max of 25 autocomplete entries allowed
+        }
     },
 };
+
+/**
+ * Finds matches for the search string in the docs
+ * Checks inheritance to provide methods and fields
+ * @param {String} search The search string
+ * @param {*} branch Used for recursion, just leave it undefined
+ * @param {*} results Used for recursion, just leave it undefined
+ * @returns Array of possible matches
+ */
+function browseDocs(search, branch, results) {
+    branch = branch ?? docs;
+    results = results ?? [];
+    branch.forEach(entry => {
+        if (similar(entry.name.toLowerCase(), search)) {
+            if (!results.find(e => e.name == entry.name)) {
+                results.push({ name: entry.name, value: entry.name });
+            }
+        }
+        if (entry.extends) {
+            let parent = JSON.parse(JSON.stringify(docs));
+            parent = parent.filter(e => e.name.match(`^${utility.escapeRegExp(entry.extends)}[#\\.]`) || e.name == entry.extends);
+            parent.forEach(e => {
+                e.name = e.name.replace(entry.extends, entry.name);
+            });
+            results = browseDocs(search, parent, results);
+        }
+    });
+    return results;
+}
+
+function similar(text, search) {
+    return text.match(search.split('').join('.*'));
+}

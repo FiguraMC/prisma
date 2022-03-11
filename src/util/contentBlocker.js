@@ -14,14 +14,14 @@ module.exports.scam = function (text) {
     if (DataStorage.storage.scamfilter == undefined) DataStorage.storage.scamfilter = [];
     // Check for local scam domain list
     for (const element of DataStorage.storage.scamfilter) {
-        const regexp = new RegExp(`\\b${escapeRegExp(element)}\\b`, 'gmi');
+        const regexp = new RegExp(`\\b${utility.escapeRegExp(element)}\\b`, 'gmi');
         if (text?.match(regexp)) {
             return true;
         }
     }
     // Check for third party scam list
     for (const element of module.exports.thirdPartyScamList) {
-        const regexp = new RegExp(`\\b${escapeRegExp(element)}\\b`, 'gmi');
+        const regexp = new RegExp(`\\b${utility.escapeRegExp(element)}\\b`, 'gmi');
         if (text?.match(regexp)) {
             return true;
         }
@@ -38,7 +38,7 @@ module.exports.scam = function (text) {
 module.exports.nsfw = function (text) {
     if (DataStorage.storage.nsfwfilter == undefined) DataStorage.storage.nsfwfilter = [];
     for (const element of DataStorage.storage.nsfwfilter) {
-        const regexp = new RegExp('\\b' + escapeRegExp(element) + '\\b', 'gmi');
+        const regexp = new RegExp('\\b' + utility.escapeRegExp(element) + '\\b', 'gmi');
         if (text?.match(regexp)) {
             return true;
         }
@@ -124,12 +124,3 @@ module.exports.fetchThirdPartyScamListRecent = async function (seconds) {
         }
     }
 };
-
-/**
- * Utility function to escape a RegExp string
- * @param {String} string 
- * @returns {String} Escaped string
- */
-function escapeRegExp(string) {
-    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
-}
