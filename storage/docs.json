@@ -1,2410 +1,3250 @@
 [
     {
-        "name": "vanilla_model",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "class",
-        "url": ""
-    },
-    {
-        "name": "vanilla_model.HEAD",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "vanilla_model.HAT",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "vanilla_model.TORSO",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "vanilla_model.JACKET",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "vanilla_model.LEFT_ARM",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "vanilla_model.LEFT_SLEEVE",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "vanilla_model.RIGHT_ARM",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "vanilla_model.RIGHT_SLEEVE",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "vanilla_model.LEFT_LEG",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "vanilla_model.LEFT_PANTS_LEG",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "vanilla_model.RIGHT_LEG",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "vanilla_model.RIGHT_PANTS_LEG",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "vanilla_model.CAPE",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "vanilla_model.LEFT_EAR",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "vanilla_model.RIGHT_EAR",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "armor_model",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "class",
-        "url": ""
-    },
-    {
-        "name": "armor_model.HELMET",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "armor_model.CHESTPLATE",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "armor_model.LEGGINGS",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "armor_model.BOOTS",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "armor_model.HEAD_ITEM",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "elytra_model",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "class",
-        "url": ""
-    },
-    {
-        "name": "elytra_model.LEFT_WING",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "elytra_model.RIGHT_WING",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "held_item_model",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "class",
-        "url": ""
-    },
-    {
-        "name": "held_item_model.LEFT_HAND",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "held_item_model.RIGHT_HAND",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
         "name": "particle",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Particle-API"
     },
     {
         "name": "particle#addParticle",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Adds a particle to the world.\n\nOnly the default Minecraft particles are auto-completed. \nYou can use modded particles as long as they only take a position and velocity to function.\n\nCertain particles [...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Particle-API"
     },
     {
         "name": "sound",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Sound-API"
     },
     {
         "name": "sound#playSound",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "`pos: VectorPos` \nThree numbers that represent a position in the world.\n\n`vol: number[]` \nTwo numbers that represent the volume and pitch of the sound.\n***\nPlays a sound event for this client. \nSounds[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Sound-API"
     },
     {
         "name": "sound#getSounds",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns a list of all sounds the player can hear.\n@return string[]\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Sound-API"
     },
     {
         "name": "sound#registerCustomSound",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Sound-API"
     },
     {
         "name": "sound#isCustomSoundRegistered",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Sound-API"
     },
     {
         "name": "sound#playCustomSound",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "`pos: VectorPos` \nThree numbers that represent a position in the world.\n\n`vol: number[]` \nTwo numbers that represent the volume and pitch of the sound.\n***\nPlays a custom sound event for this client. [...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Sound-API"
     },
     {
         "name": "sound#getCustomSounds",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Sound-API"
     },
     {
         "name": "sound#getRegisteredCustomSounds",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Sound-API"
     },
     {
         "name": "sound#stopCustomSound",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Sound-API"
     },
     {
-        "name": "player",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
+        "name": "Player",
+        "extends": "LivingEntity",
+        "description": "No description available.",
         "type": "class",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Player-API"
     },
     {
-        "name": "player#getHeldItem",
+        "name": "Player#getHeldItem",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns an item held in this entity's hands.\nReturns `nil` if the slot is empty.\n@param slot HandSlot\n@return ItemStack|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Player-API"
     },
     {
-        "name": "player#getFood",
+        "name": "Player#getFood",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the amount of hunger this entity has.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Player-API"
     },
     {
-        "name": "player#getSaturation",
+        "name": "Player#getSaturation",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the amount of saturation this entity has.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Player-API"
     },
     {
-        "name": "player#getExperienceProgress",
+        "name": "Player#getExperienceProgress",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the progress between this entity's current level and next level as a percentage. (`0..1`)\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Player-API"
     },
     {
-        "name": "player#getExperienceLevel",
+        "name": "Player#getExperienceLevel",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the current level of this entity.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Player-API"
     },
     {
-        "name": "player#getTargetedEntity",
+        "name": "Player#getTargetedEntity",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Player-API"
     },
     {
-        "name": "player#lastDamageSource",
+        "name": "Player#lastDamageSource",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the last source of damage this entity has taken.\n@return DamageSource string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Player-API"
     },
     {
-        "name": "player#getStoredValue",
+        "name": "Player#getStoredValue",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Gets the stored value from the player.\n@param key string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Player-API"
     },
     {
-        "name": "player#getModelType",
+        "name": "Player#getModelType",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Player-API"
     },
     {
-        "name": "player#hasAvatar",
+        "name": "Player#hasAvatar",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Player-API"
     },
     {
-        "name": "player#getGamemode",
+        "name": "Player#getGamemode",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Player-API"
     },
     {
-        "name": "player#isFlying",
+        "name": "Player#isFlying",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Player-API"
     },
     {
-        "name": "player#getBodyYaw",
+        "name": "World",
         "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getHealth",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getMaxHealth",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getHealthPercentage",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getArmor",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getDeathTime",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getStatusEffectTypes",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getStatusEffect",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getStuckArrowCount",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getStingerCount",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#isLeftHanded",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#isUsingItem",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getActiveHand",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getActiveItem",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#isClimbing",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getPos",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getRot",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getType",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getVelocity",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getLookDir",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getUUID",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getFireTicks",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getFrozenTicks",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getAir",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getMaxAir",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getAirPercentage",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getWorldName",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getEquipmentItem",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getAnimation",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getVehicle",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#isOnGround",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getEyeHeight",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getBoundingBox",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getName",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getTargetedBlockPos",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#isWet",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#isTouchingWater",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#isUnderwater",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#isInLava",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#isInRain",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#hasAvatar",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#isSprinting",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getEyeY",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#isGlowing",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#isInvisible",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#isSilent",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#isSneaking",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#isSneaky",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#isHamburger",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "player#getNbtValue",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "method",
-        "url": ""
-    },
-    {
-        "name": "world",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/World-API"
     },
     {
-        "name": "world#getBlockState",
+        "name": "World#getBlockState",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the block state at the given block position.\n\nNote: Always returns a valid block state, even if the block position is unloaded.\n@param pos VectorPos\n@return BlockState\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/World-API"
     },
     {
-        "name": "world#getRedstonePower",
+        "name": "World#getRedstonePower",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the redstone power the given block position is receiving. \nThis does *not* return the redstone power the block is sending.\n\nNote: Returns `0` if the block position is not loaded.\n@return Redst[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/World-API"
     },
     {
-        "name": "world#getStrongRedstonePower",
+        "name": "World#getStrongRedstonePower",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the strong redstone power of the block position is receiving. \nThis does *not* return the redstone power the block is sending. \nThis *only* checks for direct connections, redstone power sent t[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/World-API"
     },
     {
-        "name": "world#getTime",
+        "name": "World#getTime",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "See `.getTimeOfDay`.\n@deprecated\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/World-API"
     },
     {
-        "name": "world#getTimeOfDay",
+        "name": "World#getTimeOfDay",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "See `.getTimeOfDay`.\n@deprecated\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/World-API"
     },
     {
-        "name": "world#getMoonPhase",
+        "name": "World#getMoonPhase",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the current moon phase.\n@return MoonPhase number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/World-API"
     },
     {
-        "name": "world#getLunarTime",
+        "name": "World#getLunarTime",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "See `.getTimeOfDay`.\n@deprecated\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/World-API"
     },
     {
-        "name": "world#getRainGradient",
+        "name": "World#getRainGradient",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns how heavy rain is falling in this world. \n`0` is no rain, `1` is full rain.\n@param delta number\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/World-API"
     },
     {
-        "name": "world#isLightning",
+        "name": "World#isLightning",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns if the current weather is thunder.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/World-API"
     },
     {
-        "name": "world#getLightLevel",
+        "name": "World#getLightLevel",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the combined light level at the given block position.\n\nNote: Returns `15` if the block position is not loaded.\n@param pos VectorPos\n@return LightLevel number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/World-API"
     },
     {
-        "name": "world#getSkyLightLevel",
+        "name": "World#getSkyLightLevel",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the sky-light level of the given block position.\n\nNote: Returns `15` if the block position is not loaded.\n@return LightLevel number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/World-API"
     },
     {
-        "name": "world#getBlockLightLevel",
+        "name": "World#getBlockLightLevel",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the block-light level at the given block position.\n\nNote: Returns `15` if the block position is not loaded.\n@param pos VectorPos\n@return LightLevel number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/World-API"
     },
     {
-        "name": "world#isOpenSky",
+        "name": "World#isOpenSky",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/World-API"
     },
     {
-        "name": "world#getPlayers",
+        "name": "World#getPlayers",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/World-API"
     },
     {
-        "name": "world#getBiome",
+        "name": "World#getBiome",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the biome identifier at the given block position.\n\nNote: Returns `\"minecraft:plains\"` if the block position is not loaded.\n@param pos VectorPos\n@return BiomeID string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/World-API"
     },
     {
-        "name": "world#hasWorld",
+        "name": "World#hasWorld",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns true if a world is present.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/World-API"
     },
     {
         "name": "vectors",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
         "url": ""
     },
     {
         "name": "vectors#of",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "A Minecraft block identifier.\n\nOnly the default Minecraft blocks are auto-completed. \nYou can use any block from any mod, even if it does not auto-complete.\n@alias BlockID\n| '\"minecraft:acacia_button\"[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
         "url": ""
     },
     {
         "name": "vectors#getVector",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Creates a Vector with `x` amount of numbers.\n@param x \"1\"|\"2\"|\"3\"|\"4\"|\"5\"|\"6\"\n@return Vector\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
         "url": ""
     },
     {
         "name": "vectors#worldToPart",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Creates a Position Vector from a block coordinate.\n\nYou can use this function to place a `NO_PARENT` part at an exact block coordinate.\n@param vec VectorPos\n@return VectorPos\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
         "url": ""
     },
     {
         "name": "vectors#hsvToRGB",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Creates a Color Vector from an HSV vector.\n\nNote: The resulting color will not have `a` set.\n@param vec VectorHSV\n@return VectorColor\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
         "url": ""
     },
     {
         "name": "vectors#rgbToHSV",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Creates an HSV Vector from a Color Vector.\n@param vec VectorColor\n@return VectorHSV\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
         "url": ""
     },
     {
         "name": "vectors#rgbToINT",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Creates a number from a Color Vector.\n@param vec VectorColor\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
         "url": ""
     },
     {
         "name": "vectors#intToRGB",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Creates a Color Vector from a 24 bit integer.\n\nNote: The resulting color will not have `a` set.\n@param x number\n@return VectorColor\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
         "url": ""
     },
     {
         "name": "vectors#lerp",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Applies linear interpolation to two Vectors. \nReturns a `Vector` that is between `Vector a` and `Vector b`,\nusing `c` as the distance from `Vector a` to `Vector b`.\n\nEx: A `c` of .5 will be in directl[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
         "url": ""
     },
     {
         "name": "vectors#asTable",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Converts a Vector to a table. \nThe table is created with numeric indexes.\n@param vec Vector\n@return number[]\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
         "url": ""
     },
     {
         "name": "vectors#worldToCameraPos",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
         "url": ""
     },
     {
         "name": "vectors#rotateWithQuaternion",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
         "url": ""
     },
     {
         "name": "vectors#toQuaternion",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Converts a XYZ vector into a quaternion.\n@param vector any\n@return VectorPos\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
         "url": ""
     },
     {
         "name": "vectors#fromQuaternion",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Converts a quaternion into a XYZ vector.\n@param vector VectorPos\n@return VectorPos\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
         "url": ""
     },
     {
         "name": "vectors#worldToScreenSpace",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": " Converts world position to screen space positions\n@param VectorPos VectorPos\n@return VectorPos\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
         "url": ""
     },
     {
         "name": "renderer",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Renderer-API"
     },
     {
         "name": "renderer#setShadowSize",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the radius of the player's shadow. \nReturns `nil` if the size has not been set by `.setShadowSize()`.\n@return number|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Renderer-API"
     },
     {
         "name": "renderer#getShadowSize",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the radius of the player's shadow. \nReturns `nil` if the size has not been set by `.setShadowSize()`.\n@return number|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Renderer-API"
     },
     {
         "name": "renderer#isFirstPerson",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns if the model is being viewed in first-person. \nThis will always return false for other clients since they cannot see your first-person model.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Renderer-API"
     },
     {
         "name": "renderer#isCameraBackwards",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": " returns true if the camera is backwards\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Renderer-API"
     },
     {
         "name": "renderer#getCameraPos",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the VIEWER's camera pos\n@return VectorPos\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Renderer-API"
     },
     {
         "name": "renderer#getCameraRot",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Renderer-API"
     },
     {
         "name": "renderer#setRenderFire",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Renderer-API"
     },
     {
         "name": "renderer#getRenderFire",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Renderer-API"
     },
     {
         "name": "renderer#getTextWidth",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Renderer-API"
     },
     {
         "name": "renderer#setMountEnabled",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Renderer-API"
     },
     {
         "name": "renderer#isMountEnabled",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Renderer-API"
     },
     {
         "name": "renderer#setMountShadowEnabled",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Renderer-API"
     },
     {
         "name": "renderer#isMountShadowEnabled",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Renderer-API"
     },
     {
         "name": "renderer#swingArm",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Renderer-API"
     },
     {
         "name": "renderer#setRenderPlayerHead",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Renderer-API"
     },
     {
         "name": "renderer#getRenderPlayerHead",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Renderer-API"
     },
     {
         "name": "renderer#raycastBlocks",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Renderer-API"
     },
     {
         "name": "renderer#raycastEntities",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Renderer-API"
     },
     {
         "name": "network",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/network/NetworkAPI.java"
     },
     {
         "name": "network#registerPing",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Registers a ping that allows you to send information to all clients running this script. \nThis is mainly used to sync variables that do not sync normally. (`Keybind`s, `action_wheel`\nfunctions, NBT, e[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/network/NetworkAPI.java"
     },
     {
         "name": "network#ping",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "A Minecraft block identifier.\n\nOnly the default Minecraft blocks are auto-completed. \nYou can use any block from any mod, even if it does not auto-complete.\n@alias BlockID\n| '\"minecraft:acacia_button\"[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/network/NetworkAPI.java"
     },
     {
         "name": "item_stack",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
         "url": ""
     },
     {
         "name": "item_stack#createItem",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "An Item Stack.\n\nSee `item_stack.createItem` for more info.\n@class ItemStack\nMeant for internal use. Has no purpose in Lua.\n@deprecated\n@field stack userdata\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
         "url": ""
     },
     {
         "name": "action_wheel",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
     },
     {
         "name": "action_wheel#setLeftSize",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Sets the amount of slots on the left side of the action wheel.\n@param size SlotSideNumber\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
     },
     {
         "name": "action_wheel#setRightSize",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Sets the amount of slots on the right side of the action wheel.\n@param size SlotSideNumber\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
     },
     {
         "name": "action_wheel#getLeftSize",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the amount of slots on the left side of the action wheel.\n@return SlotSideNumber number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
     },
     {
         "name": "action_wheel#getRightSize",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the amount of slots on the right side of the action wheel.\n@return SlotSideNumber number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
     },
     {
         "name": "action_wheel#getSelectedSlot",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the slot that is currently being hovered over.\n@return SlotNumber number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
     },
     {
         "name": "action_wheel#isOpen",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns true if the action wheel is open. \nnote: this will return nil if the avatar is a remote view. \n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
     },
     {
         "name": "action_wheel#runAction",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
     },
     {
         "name": "action_wheel.SLOT_1",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
     },
     {
         "name": "action_wheel.SLOT_2",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
     },
     {
         "name": "action_wheel.SLOT_3",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
     },
     {
         "name": "action_wheel.SLOT_4",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
     },
     {
         "name": "action_wheel.SLOT_5",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
     },
     {
         "name": "action_wheel.SLOT_6",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
     },
     {
         "name": "action_wheel.SLOT_7",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
     },
     {
         "name": "action_wheel.SLOT_8",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
     },
     {
         "name": "keybind",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Keybind-API"
     },
     {
         "name": "keybind#newKey",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns a new named keybind that can be tracked.\n@param name string\n@param key Key\n@return FiguraKeybind\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Keybind-API"
     },
     {
         "name": "keybind#getRegisteredKeybind",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns a value that represents a registered keybind.\n\nAny registered keybind by both Minecraft and mods can be used.\n@param bind string|MinecraftKeybind\n@return RegisteredKeybind\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Keybind-API"
     },
     {
         "name": "keybind#getKeyList",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Keybind-API"
     },
     {
         "name": "keybind#getRegisteredKeyList",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Keybind-API"
     },
     {
         "name": "chat",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Chat-API"
     },
     {
         "name": "chat#sendMessage",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Sends a message as yourself.\n@param str string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Chat-API"
     },
     {
         "name": "chat#getMessage",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Retrieves a message from chat. \nMessages are ordered from bottom to top, starting at 1.\n@param num number\n@return string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Chat-API"
     },
     {
         "name": "chat#getInputText",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "note that this returns the input text of every client's inputted text. \n\"intentional\" as of 0.0.8\n@return string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Chat-API"
     },
     {
         "name": "chat#setFiguraCommandPrefix",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Sets the command prefix to the given string.\n\nCreate a function `onCommand(cmd)` to catch commands typed by you into chat.\n@param str string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Chat-API"
     },
     {
         "name": "chat#isOpen",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns true if the action wheel is open. \nnote: this will return nil if the avatar is a remote view. \n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Chat-API"
     },
     {
         "name": "meta",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getInitLimit",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the init instruction limit in this client's instance of the script.\n\nThis is affected by the \"Max Init Instructions\" trust setting.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getTickLimit",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the tick instruction limit in this client's instance of the script.\n\nThis is affected by the \"Max Tick Instructions\" trust setting.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getRenderLimit",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the render instruction limit in this client's instance of the script.\n\nThis is affected by the \"Max Render Instructions\" trust setting.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getCanModifyVanilla",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns if the vanilla playermodel can be edited in this client's instance of the script.\n\nThis is affected by the \"Vanilla Avatar Changes\" trust setting.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getComplexityLimit",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the complexity limit in this client's instance of the script.\n\nThis is affected by the \"Max Complexity\" trust setting.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getParticleLimit",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the particles-per-second limit in this client's instance of the script.\n\nThis is affected by the \"Maximum Particles Per Second\" trust setting.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getSoundLimit",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the sounds-per-second limit in this client's instance of the script.\n\nThis is affected by the \"Maximum Sounds Per Second\" trust setting.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getAnimationLimit",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getDoesRenderOffscreen",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns if the avatar is allowed to render offscreen in this client's instance of the script.\n\nThis is affected by the \"Offscreen Rendering\" trust setting.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getCanModifyNameplate",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns if the nameplate can be modified in this client's instance of the script.\n\nThis is affected by the \"Nameplate/Chat Name Changes\" trust setting.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getCanHaveCustomRenderLayer",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getCanHaveCustomSounds",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getCurrentInitCount",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getCurrentTickCount",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the amount of tick instruction the avatar is running in this client's instance of the\nscript at this tick.\n\nThe amount of tick instructions is affected by whatever is running in the `tick()` f[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getCurrentRenderCount",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the amount of render instructions the avatar is running in this client's instance of the\nscript at this frame.\n\nThe amount of render instructions is affected by whatever is running in the `ren[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getCurrentComplexity",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the current complexity of the avatar in this client's instance of the script.\n\nThe complexity is the amount of faces being rendered on the client's screen.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getCurrentParticleCount",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the amount of particles the avatar is creating per second in this client's instance of\nthe script.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getCurrentSoundCount",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the amount of sounds the avatar is emitting per second in this client's instance of the\nscript.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getCurrentAnimationCount",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getFiguraVersion",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the current version of Figura in this client's instance of the script.\n@return string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getModelStatus",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": " Returns the model status in numbers between 1 to 4 indicating its current state. \n hover the avatar indicators at the model preview screen for more info \n\n 1 - white \n 2 - red \n 3 - yellow \n 4 - gree[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getScriptStatus",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": " Returns the script status in numbers between 1 to 4 indicating its current state. \n hover the avatar indicators at the model preview screen for more info \n\n 1 - white \n 2 - red \n 3 - yellow \n 4 - gre[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getTextureStatus",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": " Returns the texture status in numbers between 1 to 4 indicating its current state. \n hover the avatar indicators at the model preview screen for more info \n\n 1 - white \n 2 - red \n 3 - yellow \n 4 - gr[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "meta#getBackendStatus",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Meta-API"
     },
     {
         "name": "log",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
         "url": ""
     },
     {
         "name": "logTable",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
         "url": ""
     },
     {
         "name": "logTableContent",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
-        "url": ""
-    },
-    {
-        "name": "parrot_model",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "class",
-        "url": ""
-    },
-    {
-        "name": "parrot_model.LEFT_PARROT",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
-        "url": ""
-    },
-    {
-        "name": "parrot_model.RIGHT_PARROT",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
-        "type": "property",
         "url": ""
     },
     {
         "name": "nameplate",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Nameplate-API"
     },
     {
         "name": "nameplate.CHAT",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Nameplate-API"
     },
     {
         "name": "nameplate.ENTITY",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Nameplate-API"
     },
     {
         "name": "nameplate.LIST",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Nameplate-API"
     },
     {
         "name": "camera",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
         "url": ""
     },
     {
         "name": "camera.FIRST_PERSON",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
         "url": ""
     },
     {
         "name": "camera.THIRD_PERSON",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
         "url": ""
     },
     {
         "name": "client",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getOpenScreen",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "note: this will return nil on remote view.\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getFPS",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "note: this will return nil on remote view.\n@return integer\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#isPaused",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "note: this will return nil on remote view.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getVersion",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "note: this will return nil on remote view.\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getVersionType",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "note: this will return nil on remote view.\n@return string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getServerBrand",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "note: this will return nil on remote view.\n@return string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getChunksCount",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "note: this will return nil on remote view.\n@return integer\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getEntityCount",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "note: this will return nil on remote view.\n@return integer\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getParticleCount",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "note: this will return nil on remote view.\n@return integer\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getSoundCount",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "note: this will return nil on remote view. \n@return integer\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getActiveShader",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "note: this will return nil on remote view. \n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getJavaVersion",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "note: this will return nil on remote view. \n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getMemoryInUse",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the amount of Memory in use. \nnote: this will return nil on remote view.\n@return integer\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getMaxMemory",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the Memory capacity. \nnote: this will return nil on remote view.\n@return integer\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getAllocatedMemory",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the Allocated memory for the game. \nnote: this will return nil on remote view.\n@return integer\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#isWindowFocused",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns true if the window is Focused\nnote: this will return nil on remote view.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#isHudEnabled",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns true if the Hud is Enabled. \nnote: this will return nil on remote view.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getWindowSize",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the window size. \nnote: this will return nil on remote view.\n@return Vector2\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getGUIScale",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the GUI scale setted in the settings\nNote that GUI scale set to auto wont return the auto GUI scale. \nanother note: this will return nil on remote view.\n@return integer\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getFov",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the Field of View of the host. \nnote: this will return nil on remote view.\n@return integer\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#setCrosshairPos",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Offsets the chrosshair.\n@param pos Vector2\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getCrosshairPos",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#setCrosshairEnabled",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Toggles the crosshair.\n@param toggle boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getCrosshairEnabled",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns true if the crosshair is enabled.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#isHost",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "access your client variables only accessible with the host script (local player) using it on non-host will always return nil for everything (except isHost)\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getSystemTime",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getMousePos",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getScaledWindowSize",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getScaleFactor",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#setTitleTimes",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#clearTitle",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#setTitle",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the current title of the slot.\n\nNote: Causes a VM Error if the title has not been set by `.setTitle()`.\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getTitle",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the current title of the slot.\n\nNote: Causes a VM Error if the title has not been set by `.setTitle()`.\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#setSubtitle",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getSubtitle",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getActionbar",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#setActionbar",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#setMouseUnlocked",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getIrisShadersEnabled",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#checkVersion",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "client#getMouseScroll",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/ClientAPI.java"
     },
     {
         "name": "data",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/DataAPI.java"
     },
     {
         "name": "data#setName",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Sets the target File name.\n@param name string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/DataAPI.java"
     },
     {
         "name": "data#getName",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "returns a string, of the part name (the name as in blockbench for this cube/bone)\n@return string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/DataAPI.java"
     },
     {
         "name": "data#allowTracking",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/DataAPI.java"
     },
     {
         "name": "data#hasTracking",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/DataAPI.java"
     },
     {
         "name": "data#save",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "A `table` containing blockstate properties.\n\nOnly the default Minecraft block state properties are auto-completed. \nYou can use any block state property from any mod, even if it does not auto-complete[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/DataAPI.java"
     },
     {
         "name": "data#load",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "A `table` containing blockstate properties.\n\nOnly the default Minecraft block state properties are auto-completed. \nYou can use any block state property from any mod, even if it does not auto-complete[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/DataAPI.java"
     },
     {
         "name": "data#loadAll",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns a LuaTable of all the saved variables.\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/DataAPI.java"
     },
     {
         "name": "data#remove",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Removes the value from the file.\n@param name string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/DataAPI.java"
     },
     {
         "name": "data#deleteFile",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Completely removes the file from the existence.\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/DataAPI.java"
     },
     {
         "name": "first_person_model",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
         "url": ""
     },
     {
         "name": "first_person_model.MAIN_HAND",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
         "url": ""
     },
     {
         "name": "first_person_model.OFF_HAND",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
         "url": ""
     },
     {
         "name": "spyglass_model",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
         "url": ""
     },
     {
         "name": "spyglass_model.RIGHT_SPYGLASS",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
         "url": ""
     },
     {
         "name": "spyglass_model.LEFT_SPYGLASS",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
         "url": ""
     },
     {
         "name": "ping",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
         "url": ""
     },
     {
         "name": "renderlayers",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#registerShader",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": " Registers a new render layer with the given name\n → params is a table where you can set certain keys\n → startFunction and endFunction - are two lua functions, called when you start rendering and when[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#registerRenderLayer",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": " Registers a new render layer with the given name\n → params is a table where you can set certain keys\n → startFunction and endFunction - are two lua functions, called when you start rendering and when[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#setUniform",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "custom shader uniform controllers\n@param stringLayer string\n@param stringUniform string\n@param tableValue integer\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#setPriority",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#getPriority",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": " Gets the priority of the chosen render layer, or nil if it doesn't exist\n@param renderLayerName string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#isShaderReady",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": " Returns true or false depending on if the shader exists yet\n@param shaderName string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#useShader",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#setTexture",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": " Textures: \n **Custom** = your custom texture, if any (default) \n **Skin** = your vanilla minecraft skin \n **Cape** = your cape, or Steve if you dont have a cape \n **Elytra** = your elytra texture (NO[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#enableLightmap",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#disableLightmap",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#enableOverlay",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#disableOverlay",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#enableCull",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#disableCull",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#enableDepthTest",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#disableDepthTest",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#depthFunc",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#depthMask",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#enableBlend",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#disableBlend",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#blendFunc",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#blendFuncSeparate",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#defaultBlendFunc",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#blendEquation",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#enableColorLogicOp",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#disableColorLogicOp",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#logicOp",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#colorMask",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#enableStencil",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#disableStencil",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#stencilMask",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#stencilFunc",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#stencilOp",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#enableScissors",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#disableScissors",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#lineWidth",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers#restoreDefaults",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Resets the rendering to default state.\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers.GL_NEVER",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers.GL_LESS",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers.GL_EQUAL",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers.GL_LEQUAL",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers.GL_GREATER",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers.GL_NOTEQUAL",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers.GL_GEQUAL",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers.GL_ALWAYS",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers.GL_FUNC_ADD",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers.GL_FUNC_SUBTRACT",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers.GL_FUNC_REVERSE_SUBTRACT",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers.GL_MAX",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers.GL_MIN",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers.GL_KEEP",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers.GL_REPLACE",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers.GL_INCR",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers.GL_INCR_WRAP",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers.GL_DECR",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers.GL_DECR_WRAP",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "renderlayers.GL_INVERT",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "property",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/RenderLayerAPI.java"
     },
     {
         "name": "biome",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
         "url": ""
     },
     {
         "name": "biome#getBiome",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "Returns the biome identifier at the given block position.\n\nNote: Returns `\"minecraft:plains\"` if the block position is not loaded.\n@param pos VectorPos\n@return BiomeID string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
         "type": "method",
         "url": ""
     },
     {
-        "name": "model",
-        "extends": "",
-        "description": "Description and URL currently still missing.",
+        "name": "VanillaModelPart",
+        "extends": "ModelPart",
+        "description": "No description available.",
         "type": "class",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "VanillaModelPart#setPos",
+        "extends": "",
+        "description": " to set the position of the block.\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "VanillaModelPart#getPos",
+        "extends": "",
+        "description": "Returns the position offset of the nameplate in blocks. \nReturns `nil` if the position offset has not been set by `.setPos()`.\n\nNote: This value is not accurate if the player's entity is scaled.\n@retu[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "VanillaModelPart#setRot",
+        "extends": "",
+        "description": "Returns the rotation offset of the part. \nReturns `nil` if the part has not been moved with `.setRot()` yet.\n@return VectorAng|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "VanillaModelPart#getRot",
+        "extends": "",
+        "description": "Returns the rotation offset of the part. \nReturns `nil` if the part has not been moved with `.setRot()` yet.\n@return VectorAng|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "VanillaModelPart#setEnabled",
+        "extends": "",
+        "description": "Returns if the nameplate is visible.\n\nNote: Causes a VM Error if the state has not been set by `.setEnabled()`.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "VanillaModelPart#getEnabled",
+        "extends": "",
+        "description": "Returns if the nameplate is visible.\n\nNote: Causes a VM Error if the state has not been set by `.setEnabled()`.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "VanillaModelPart#getOriginEnabled",
+        "extends": "",
+        "description": "Returns if the part is enabled before any `.setEnabled()` operations are applied. \nAlways seems to return `false`.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "VanillaModelPart#getOriginPos",
+        "extends": "",
+        "description": "Returns the part's original position before any `.setPos()` operations are applied.\n@return VectorPos\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "VanillaModelPart#getOriginRot",
+        "extends": "",
+        "description": "Returns the part's original angle *in radians*. \nIf you want the angle in degrees, use `math.deg()`.\n@return VectorAng\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "VanillaModelPart#isOptionEnabled",
+        "extends": "",
+        "description": "Returns if the part's skin customization setting is enabled. \nReturns `nil` if the part does not have a setting.\n@return boolean|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
     },
     {
         "name": "animation",
         "extends": "",
-        "description": "Description and URL currently still missing.",
+        "description": "No description available.",
         "type": "class",
-        "url": ""
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "animation#listAnimations",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "animation#stopAll",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "animation#ceaseAll",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "VanillaModelPart",
+        "extends": "",
+        "description": "No description available.",
+        "type": "class",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "VanillaModelPart#setPos",
+        "extends": "",
+        "description": " to set the position of the block.\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "VanillaModelPart#getPos",
+        "extends": "",
+        "description": "Returns the position offset of the nameplate in blocks. \nReturns `nil` if the position offset has not been set by `.setPos()`.\n\nNote: This value is not accurate if the player's entity is scaled.\n@retu[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "VanillaModelPart#setRot",
+        "extends": "",
+        "description": "Returns the rotation offset of the part. \nReturns `nil` if the part has not been moved with `.setRot()` yet.\n@return VectorAng|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "VanillaModelPart#getRot",
+        "extends": "",
+        "description": "Returns the rotation offset of the part. \nReturns `nil` if the part has not been moved with `.setRot()` yet.\n@return VectorAng|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "VanillaModelPart#setEnabled",
+        "extends": "",
+        "description": "Returns if the nameplate is visible.\n\nNote: Causes a VM Error if the state has not been set by `.setEnabled()`.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "VanillaModelPart#getEnabled",
+        "extends": "",
+        "description": "Returns if the nameplate is visible.\n\nNote: Causes a VM Error if the state has not been set by `.setEnabled()`.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "VanillaModelPart#getOriginEnabled",
+        "extends": "",
+        "description": "Returns if the part is enabled before any `.setEnabled()` operations are applied. \nAlways seems to return `false`.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "VanillaModelPart#getOriginPos",
+        "extends": "",
+        "description": "Returns the part's original position before any `.setPos()` operations are applied.\n@return VectorPos\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "VanillaModelPart#getOriginRot",
+        "extends": "",
+        "description": "Returns the part's original angle *in radians*. \nIf you want the angle in degrees, use `math.deg()`.\n@return VectorAng\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "VanillaModelPart#isOptionEnabled",
+        "extends": "",
+        "description": "Returns if the part's skin customization setting is enabled. \nReturns `nil` if the part does not have a setting.\n@return boolean|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "ModelPart",
+        "extends": "",
+        "description": "No description available.",
+        "type": "class",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "ModelPart#getPos",
+        "extends": "",
+        "description": "Returns the position offset of the nameplate in blocks. \nReturns `nil` if the position offset has not been set by `.setPos()`.\n\nNote: This value is not accurate if the player's entity is scaled.\n@retu[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "ModelPart#setPos",
+        "extends": "",
+        "description": " to set the position of the block.\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "ModelPart#getRot",
+        "extends": "",
+        "description": "Returns the rotation offset of the part. \nReturns `nil` if the part has not been moved with `.setRot()` yet.\n@return VectorAng|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "ModelPart#setRot",
+        "extends": "",
+        "description": "Returns the rotation offset of the part. \nReturns `nil` if the part has not been moved with `.setRot()` yet.\n@return VectorAng|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "ModelPart#getEnabled",
+        "extends": "",
+        "description": "Returns if the nameplate is visible.\n\nNote: Causes a VM Error if the state has not been set by `.setEnabled()`.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "ModelPart#setEnabled",
+        "extends": "",
+        "description": "Returns if the nameplate is visible.\n\nNote: Causes a VM Error if the state has not been set by `.setEnabled()`.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+    },
+    {
+        "name": "CustomModelPart",
+        "extends": "ModelPart",
+        "description": "No description available.",
+        "type": "class",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getChildren",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getAnimPos",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getAnimRot",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getAnimScale",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getPos",
+        "extends": "",
+        "description": "Returns the position offset of the nameplate in blocks. \nReturns `nil` if the position offset has not been set by `.setPos()`.\n\nNote: This value is not accurate if the player's entity is scaled.\n@retu[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#setPos",
+        "extends": "",
+        "description": " to set the position of the block.\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getPivot",
+        "extends": "",
+        "description": "Returns the position offset of the part's pivot point.\n@return VectorPos\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#setPivot",
+        "extends": "",
+        "description": "Sets the pivot point of the camera.\n@param pos VectorPos\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getColor",
+        "extends": "",
+        "description": "Returns the color of the nameplate.\n\nNote: Causes a VM Error if the color has not been set by `.setColor()`.\n@return VectorColor\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#setColor",
+        "extends": "",
+        "description": "Returns the color of the nameplate.\n\nNote: Causes a VM Error if the color has not been set by `.setColor()`.\n@return VectorColor\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getScale",
+        "extends": "",
+        "description": "Returns the scale of the nameplate. \nReturns nil if the scale has not been set by `.setScale()`.\n@return VectorPos|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#setScale",
+        "extends": "",
+        "description": "Returns the scale of the nameplate. \nReturns nil if the scale has not been set by `.setScale()`.\n@return VectorPos|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getRot",
+        "extends": "",
+        "description": "Returns the rotation offset of the part. \nReturns `nil` if the part has not been moved with `.setRot()` yet.\n@return VectorAng|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#setRot",
+        "extends": "",
+        "description": "Returns the rotation offset of the part. \nReturns `nil` if the part has not been moved with `.setRot()` yet.\n@return VectorAng|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getUVData",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#setUVData",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getTextureSize",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#setTextureSize",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getUV",
+        "extends": "",
+        "description": "Returns the UV offset of the part.\n\nNote: This does *not* return the actual UV of the part.\n@return VectorUV\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#setUV",
+        "extends": "",
+        "description": "Sets the UV offset of the part.\n\nNote: This does *not* set the actual UV of the part.\n@param uv VectorUV\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getParentType",
+        "extends": "",
+        "description": "Returns the parent type of the part.\n@return ParentType ParentType\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#setParentType",
+        "extends": "",
+        "description": "Sets the mimic mode of the model. \nIf true, the model will *mimic* its parent as set by `.setParentType()` instead of having its\norigin connected to the parent part's origin.\n@param state boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getMimicMode",
+        "extends": "",
+        "description": "Returns if the part is only mimicing its parent part instead of having its origin connected to\nthe parent part's origin.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#setMimicMode",
+        "extends": "",
+        "description": "Sets the mimic mode of the model. \nIf true, the model will *mimic* its parent as set by `.setParentType()` instead of having its\norigin connected to the parent part's origin.\n@param state boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getEnabled",
+        "extends": "",
+        "description": "Returns if the nameplate is visible.\n\nNote: Causes a VM Error if the state has not been set by `.setEnabled()`.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#setEnabled",
+        "extends": "",
+        "description": "Returns if the nameplate is visible.\n\nNote: Causes a VM Error if the state has not been set by `.setEnabled()`.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getShader",
+        "extends": "",
+        "description": "Returns the shader of the part.\n@return Shader Shader\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#setShader",
+        "extends": "",
+        "description": "Sets the shader of the part.\n@param shader Shader\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#setRenderLayer",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getTexture",
+        "extends": "",
+        "description": " Returns the texture status in numbers between 1 to 4 indicating its current state. \n hover the avatar indicators at the model preview screen for more info \n\n 1 - white \n 2 - red \n 3 - yellow \n 4 - gr[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#setTexture",
+        "extends": "",
+        "description": " Textures: \n **Custom** = your custom texture, if any (default) \n **Skin** = your vanilla minecraft skin \n **Cape** = your cape, or Steve if you dont have a cape \n **Elytra** = your elytra texture (NO[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getExtraTexEnabled",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#setExtraTexEnabled",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getCullEnabled",
+        "extends": "",
+        "description": "Returns true culling is enabled on the custom part.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#setCullEnabled",
+        "extends": "",
+        "description": "Toggles culling on the custom part.\n@param bool boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#partToWorldPos",
+        "extends": "",
+        "description": "*Just a word of caution, this function is very complicated. Do not expect to get how it works\nright from the start.*\n\nTakes a `Vector` with a blockbench position, then: \n* Makes a pivot `x` (which is [...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#partToWorldDir",
+        "extends": "",
+        "description": "Takes a `Vector` with a direction relative to the part and returns a `Vector` with the direction\nin world-space.\n@param dir VectorPos\n@return VectorPos\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#worldToPartPos",
+        "extends": "",
+        "description": "Takes a `Vector` with a a blockbench position and returns a `Vector` with the world position\nrelative to the player rotated by the part's rotation.\n@param pos VectorPos\n@return VectorPos\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#worldToPartDir",
+        "extends": "",
+        "description": "Takes a `Vector` with a direction in world-space and\nreturns a `Vector` with the direction relative to the part.\n\nSeems to act similar to `.partToWorldDir()`.\n@param dir VectorPos\n@return VectorPos\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getOpacity",
+        "extends": "",
+        "description": "@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#setOpacity",
+        "extends": "",
+        "description": "Sets the opacity of the part.\n\nNote: Opacity is a value from 0 to 1.\n@param num number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getType",
+        "extends": "",
+        "description": "Returns a string, either \"CUBE\", \"GROUP\" or \"MESH\", of the part type.\n@return string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getName",
+        "extends": "",
+        "description": "returns a string, of the part name (the name as in blockbench for this cube/bone)\n@return string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#addRenderTask",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getRenderTask",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#removeRenderTask",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#clearAllRenderTasks",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getLight",
+        "extends": "",
+        "description": "Returns the combined light level at the given block position.\n\nNote: Returns `15` if the block position is not loaded.\n@param pos VectorPos\n@return LightLevel number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#setLight",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#getOverlay",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "CustomModelPart#setOverlay",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part"
+    },
+    {
+        "name": "Entity",
+        "extends": "",
+        "description": "No description available.",
+        "type": "class",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#getPos",
+        "extends": "",
+        "description": "Returns the position offset of the nameplate in blocks. \nReturns `nil` if the position offset has not been set by `.setPos()`.\n\nNote: This value is not accurate if the player's entity is scaled.\n@retu[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#getRot",
+        "extends": "",
+        "description": "Returns the rotation offset of the part. \nReturns `nil` if the part has not been moved with `.setRot()` yet.\n@return VectorAng|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#getType",
+        "extends": "",
+        "description": "Returns a string, either \"CUBE\", \"GROUP\" or \"MESH\", of the part type.\n@return string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#getVelocity",
+        "extends": "",
+        "description": "Returns the velocity of this entity.\n@returns VectorPos\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#getLookDir",
+        "extends": "",
+        "description": "Returns the normalized direction that this entity is looking in.\n@return VectorPos\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#getUUID",
+        "extends": "",
+        "description": "Returns the UUID4 of this entity.\n@return string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#getFireTicks",
+        "extends": "",
+        "description": "Returns how long this entity will be on fire for. \nIf this number is negative, it is how long the entity is immune to being set on fire.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#getFrozenTicks",
+        "extends": "",
+        "description": "Returns the amount of ticks this entity has been frozen in deep snow for.\n\nNote: Always returns `0` if playing on 1.16.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#getAir",
+        "extends": "",
+        "description": "Returns the ticks of air this entity has left.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#getMaxAir",
+        "extends": "",
+        "description": "Returns the maximum air this entity can have.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#getAirPercentage",
+        "extends": "",
+        "description": "Returns the remaining air of this entity as a percentage. (`0..1`)\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#getWorldName",
+        "extends": "",
+        "description": "Returns the dimension identifier of the world this entity is in.\n@return DimensionID string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#getEquipmentItem",
+        "extends": "",
+        "description": "Returns the item in this entity's given equipment slot.\n\nNote: An empty slot will still return an `ItemStack` of air.\n@param slot EquipmentSlot\n@return ItemStack\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#getAnimation",
+        "extends": "",
+        "description": "Returns the currently playing animation of this entity.\n@return EntityAnimation string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#getVehicle",
+        "extends": "",
+        "description": "Returns the entity that this entity is riding.\n@return Entity|LivingEntity|Player|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#isOnGround",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#getEyeHeight",
+        "extends": "",
+        "description": "Returns the height from the base of this entity to their eye level in blocks.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#getBoundingBox",
+        "extends": "",
+        "description": "Returns the size of this entity's bounding box in blocks.\n@return VectorPos\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#getName",
+        "extends": "",
+        "description": "returns a string, of the part name (the name as in blockbench for this cube/bone)\n@return string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#getTargetedBlockPos",
+        "extends": "",
+        "description": "Returns the position of the block this entity is looking at. \nReturns `nil` if not looking at any blocks.\n@return VectorPos|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#isWet",
+        "extends": "",
+        "description": "Returns if this entity is being rained on or in water.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#isTouchingWater",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#isUnderwater",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#isInLava",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#isInRain",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#hasAvatar",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#isSprinting",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#getEyeY",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#isGlowing",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#isInvisible",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#isSilent",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#isSneaking",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#isSneaky",
+        "extends": "",
+        "description": "Returns if this entity is sneaking.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#isHamburger",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "Entity#getNbtValue",
+        "extends": "",
+        "description": "Returns an NBT value from this entity using the given SNBT path.\n\n`List`, `Compound`, `Byte_Array`, `Int_Array`, `Long_Array` tags return a `table`. \n`Byte`, `Short`, `Int`, `Long`, `Float`, and `Doub[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+    },
+    {
+        "name": "LivingEntity",
+        "extends": "Entity",
+        "description": "No description available.",
+        "type": "class",
+        "url": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API"
+    },
+    {
+        "name": "LivingEntity#getBodyYaw",
+        "extends": "",
+        "description": "Returns the yaw of this entity's body.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API"
+    },
+    {
+        "name": "LivingEntity#getHealth",
+        "extends": "",
+        "description": "Returns the current health of this entity as a percentage. (`0..1`)\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API"
+    },
+    {
+        "name": "LivingEntity#getMaxHealth",
+        "extends": "",
+        "description": "Returns the max health of this entity.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API"
+    },
+    {
+        "name": "LivingEntity#getHealthPercentage",
+        "extends": "",
+        "description": "Returns the current health of this entity as a percentage. (`0..1`)\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API"
+    },
+    {
+        "name": "LivingEntity#getArmor",
+        "extends": "",
+        "description": "Returns the total armor value of this entity.\n\nNote: Some entities have natural armor that is added on top of the armor they are wearing.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API"
+    },
+    {
+        "name": "LivingEntity#getDeathTime",
+        "extends": "",
+        "description": "Returns how long this entity has been dead for in ticks. \nAn entity is deleted after being dead for 20 ticks.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API"
+    },
+    {
+        "name": "LivingEntity#getStatusEffectTypes",
+        "extends": "",
+        "description": "Returns a list of all status effects on this entity.\n@return StatusEffectID[]\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API"
+    },
+    {
+        "name": "LivingEntity#getStatusEffect",
+        "extends": "",
+        "description": "Returns the duration and amplifier of the given status effect on this entity. \nReturns `nil` if the given status effect does not exist on this entity.\n@param effect StatusEffectID\n@return StatusEffect[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API"
+    },
+    {
+        "name": "LivingEntity#getStuckArrowCount",
+        "extends": "",
+        "description": "Returns the amount of arrows stuck in this entity.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API"
+    },
+    {
+        "name": "LivingEntity#getStingerCount",
+        "extends": "",
+        "description": "Returns the amount of stingers stuck in this entity.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API"
+    },
+    {
+        "name": "LivingEntity#isLeftHanded",
+        "extends": "",
+        "description": "Returns if this entity is left-handed.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API"
+    },
+    {
+        "name": "LivingEntity#isUsingItem",
+        "extends": "",
+        "description": "Returns true if the entity is using an item.\n@return boolean\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API"
+    },
+    {
+        "name": "LivingEntity#getActiveHand",
+        "extends": "",
+        "description": " get the player active hand. \n outputs are: `nil`, `\"MAIN_HAND\"`, `\"OFF_HAND\"` \n only updates after using an item, \n if no item was ever used, it returns nil. \n@return string | nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API"
+    },
+    {
+        "name": "LivingEntity#getActiveItem",
+        "extends": "",
+        "description": "Returns an item stack table of the active item.\n@return table\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API"
+    },
+    {
+        "name": "LivingEntity#isClimbing",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API"
+    },
+    {
+        "name": "BBAnimation",
+        "extends": "",
+        "description": "No description available.",
+        "type": "class",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#start",
+        "extends": "",
+        "description": "Returns the total amount of ticks that have passed since the start of day 0. \nThis will not always sync up with `getTime` if the world's time is modified.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#play",
+        "extends": "",
+        "description": "A Minecraft block identifier.\n\nOnly the default Minecraft blocks are auto-completed. \nYou can use any block from any mod, even if it does not auto-complete.\n@alias BlockID\n| '\"minecraft:acacia_button\"[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#pause",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#stop",
+        "extends": "",
+        "description": " Registers a new render layer with the given name\n → params is a table where you can set certain keys\n → startFunction and endFunction - are two lua functions, called when you start rendering and when[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#cease",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#isPlaying",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#setPlayState",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#getPlayState",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#setLength",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#getLength",
+        "extends": "",
+        "description": "Gets the distance between `{0,0,0,0,0,0}` and this `Vector`.\n@return number\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#setSpeed",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#getSpeed",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#setLoopMode",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#getLoopMode",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#setStartOffset",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#getStartOffset",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#setBlendWeight",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#getBlendWeight",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#setStartDelay",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#getStartDelay",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#setLoopDelay",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#getLoopDelay",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#setBlendTime",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#getBlendTime",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#setOverride",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#getOverride",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#setReplace",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#getReplace",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#setPriority",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#getPriority",
+        "extends": "",
+        "description": " Gets the priority of the chosen render layer, or nil if it doesn't exist\n@param renderLayerName string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "BBAnimation#getName",
+        "extends": "",
+        "description": "returns a string, of the part name (the name as in blockbench for this cube/bone)\n@return string\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+    },
+    {
+        "name": "Biome",
+        "extends": "",
+        "description": "No description available.",
+        "type": "class",
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/BiomeAPI.java"
+    },
+    {
+        "name": "Biome#getID",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/BiomeAPI.java"
+    },
+    {
+        "name": "Biome#getCategory",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/BiomeAPI.java"
+    },
+    {
+        "name": "Biome#getTemperature",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/BiomeAPI.java"
+    },
+    {
+        "name": "Biome#getPrecipitation",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/BiomeAPI.java"
+    },
+    {
+        "name": "Biome#getSkyColor",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/BiomeAPI.java"
+    },
+    {
+        "name": "Biome#getFoliageColor",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/BiomeAPI.java"
+    },
+    {
+        "name": "Biome#getGrassColor",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/BiomeAPI.java"
+    },
+    {
+        "name": "Biome#getFogColor",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/BiomeAPI.java"
+    },
+    {
+        "name": "Biome#getWaterColor",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/BiomeAPI.java"
+    },
+    {
+        "name": "Biome#getWaterFogColor",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/BiomeAPI.java"
+    },
+    {
+        "name": "Biome#getDownfall",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/BiomeAPI.java"
+    },
+    {
+        "name": "Biome#isHot",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/BiomeAPI.java"
+    },
+    {
+        "name": "Biome#isCold",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/blob/1.18/src/main/java/net/blancworks/figura/lua/api/BiomeAPI.java"
+    },
+    {
+        "name": "ActionWheelSlot",
+        "extends": "",
+        "description": "No description available.",
+        "type": "class",
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
+    },
+    {
+        "name": "ActionWheelSlot#getFunction",
+        "extends": "",
+        "description": "Returns the current function of the slot. \nReturns `nil` if the function has not been set by `.setFunction()`.\n@return function|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
+    },
+    {
+        "name": "ActionWheelSlot#setFunction",
+        "extends": "",
+        "description": "Returns the current function of the slot. \nReturns `nil` if the function has not been set by `.setFunction()`.\n@return function|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
+    },
+    {
+        "name": "ActionWheelSlot#getItem",
+        "extends": "",
+        "description": "Returns a list of item tags that contain this item. \nItem tags are assigned by datapacks.\n@return string[]\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
+    },
+    {
+        "name": "ActionWheelSlot#setItem",
+        "extends": "",
+        "description": "Returns the current item icon of the slot. \nReturns `nil` if the item has not been set by `.setItem()`.\n@return ItemStack|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
+    },
+    {
+        "name": "ActionWheelSlot#getHoverItem",
+        "extends": "",
+        "description": "Returns the current hover item of the slot. \nReturns `nil` if the hover item has not been set by `.setHoverItem()`.\n@return ItemStack|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
+    },
+    {
+        "name": "ActionWheelSlot#setHoverItem",
+        "extends": "",
+        "description": "Returns the current hover item of the slot. \nReturns `nil` if the hover item has not been set by `.setHoverItem()`.\n@return ItemStack|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
+    },
+    {
+        "name": "ActionWheelSlot#getColor",
+        "extends": "",
+        "description": "Returns the color of the nameplate.\n\nNote: Causes a VM Error if the color has not been set by `.setColor()`.\n@return VectorColor\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
+    },
+    {
+        "name": "ActionWheelSlot#setColor",
+        "extends": "",
+        "description": "Returns the color of the nameplate.\n\nNote: Causes a VM Error if the color has not been set by `.setColor()`.\n@return VectorColor\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
+    },
+    {
+        "name": "ActionWheelSlot#getHoverColor",
+        "extends": "",
+        "description": "Returns the current hover color of the slot. \nReturns `nil` if the hover color has not been set by `.setHoverColor()`.\n@return VectorColor|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
+    },
+    {
+        "name": "ActionWheelSlot#setHoverColor",
+        "extends": "",
+        "description": "Returns the current hover color of the slot. \nReturns `nil` if the hover color has not been set by `.setHoverColor()`.\n@return VectorColor|nil\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
+    },
+    {
+        "name": "ActionWheelSlot#getTitle",
+        "extends": "",
+        "description": "Returns the current title of the slot.\n\nNote: Causes a VM Error if the title has not been set by `.setTitle()`.\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
+    },
+    {
+        "name": "ActionWheelSlot#setTitle",
+        "extends": "",
+        "description": "Returns the current title of the slot.\n\nNote: Causes a VM Error if the title has not been set by `.setTitle()`.\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
+    },
+    {
+        "name": "ActionWheelSlot#getTexture",
+        "extends": "",
+        "description": " Returns the texture status in numbers between 1 to 4 indicating its current state. \n hover the avatar indicators at the model preview screen for more info \n\n 1 - white \n 2 - red \n 3 - yellow \n 4 - gr[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
+    },
+    {
+        "name": "ActionWheelSlot#setTexture",
+        "extends": "",
+        "description": " Textures: \n **Custom** = your custom texture, if any (default) \n **Skin** = your vanilla minecraft skin \n **Cape** = your cape, or Steve if you dont have a cape \n **Elytra** = your elytra texture (NO[...]\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
+    },
+    {
+        "name": "ActionWheelSlot#getTextureScale",
+        "extends": "",
+        "description": "Returns the texture Scale\n@return Vector2\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
+    },
+    {
+        "name": "ActionWheelSlot#setTextureScale",
+        "extends": "",
+        "description": "No description available.",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
+    },
+    {
+        "name": "ActionWheelSlot#getUV",
+        "extends": "",
+        "description": "Returns the UV offset of the part.\n\nNote: This does *not* return the actual UV of the part.\n@return VectorUV\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
+    },
+    {
+        "name": "ActionWheelSlot#setUV",
+        "extends": "",
+        "description": "Sets the UV offset of the part.\n\nNote: This does *not* set the actual UV of the part.\n@param uv VectorUV\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
+    },
+    {
+        "name": "ActionWheelSlot#clear",
+        "extends": "",
+        "description": "Clears the slot of all of its changes.\n\n**Disclaimer:** *Description has been autogenerated from the vscode docs.*",
+        "type": "method",
+        "url": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
     }
 ]
