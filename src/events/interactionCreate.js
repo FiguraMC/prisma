@@ -1,4 +1,5 @@
 const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
+const levenshtein = require('fastest-levenshtein');
 const { startDialog, canStartDialog } = require('../dialogs/startDialog');
 const DataStorage = require('../util/dataStorage');
 const utility = require('../util/utility');
@@ -78,6 +79,7 @@ module.exports = {
         else if (interaction.isAutocomplete()) {
             const search = interaction.options.getFocused().toLowerCase(); // the text the user is currently typing
             const results = browseDocs(search); // find matching docs entries
+            results.sort((a, b) => a.levenshtein - b.levenshtein); // sort by levenshtein distance
             interaction.respond(results.slice(0, 25)).catch(console.error); // max of 25 autocomplete entries allowed
         }
     },
@@ -97,7 +99,7 @@ function browseDocs(search, branch, results) {
     branch.forEach(entry => {
         if (similar(entry.name.toLowerCase(), search)) {
             if (!results.find(e => e.name == entry.name)) {
-                results.push({ name: entry.name, value: entry.name });
+                results.push({ name: entry.name, value: entry.name, levenshtein: levenshtein.distance(entry.name, search) });
             }
         }
         if (entry.extends) {
