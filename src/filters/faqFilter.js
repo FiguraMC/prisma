@@ -20,7 +20,7 @@ module.exports.filter = async function (message) {
 
         if (!DataStorage.storage.faq) DataStorage.storage.faq = new Map();
 
-        DataStorage.storage.faq.forEach((value, key, map) => { // eslint-disable-line no-unused-vars
+        DataStorage.storage.faq.forEach(async (value, key, map) => { // eslint-disable-line no-unused-vars
             let includesAll = true;
             const keywords = key.replaceAll('_', ' ').replaceAll('\\ ', '_').split('%');
             keywords.forEach(keyword => {
@@ -31,7 +31,12 @@ module.exports.filter = async function (message) {
                 if (cooldowns.has(key) && cooldowns.get(key) > Date.now()) return; // still on cooldown
                 cooldowns.set(key, Date.now() + cooldownTime * 1000 * 60); // new cooldown
                 cleanCooldowns();
-                message.channel.send(utility.buildEmbed(value.replaceAll('_', ' ').replaceAll('\\ ', '_').replaceAll('´', '`')));
+                const sentMessage = await message.channel.send(utility.buildEmbed(value.replaceAll('_', ' ').replaceAll('\\ ', '_').replaceAll('´', '`')));
+                sentMessage.createReactionCollector().on('collect', async (reaction, user) => {
+                    if (reaction.emoji.name == '❌' && user.id == message.author.id) {
+                        sentMessage.delete().catch(console.error);
+                    }
+                });
             }
         });
     }
@@ -46,6 +51,6 @@ function cleanCooldowns() {
             if (!DataStorage.storage.faq.has(key)) {
                 cooldowns.delete(key);
             }
-        }); 
+        });
     }
 }
