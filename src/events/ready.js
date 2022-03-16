@@ -18,6 +18,8 @@ module.exports = {
 
         console.log(`Ready! Logged in as ${client.user.tag}`);
 
+        client.user.setActivity('/ticket', { type: 'LISTENING' });
+
         cronJobDeleteOldRequests.start(client);
         cronJobUpdateScamList.start();
 
