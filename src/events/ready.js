@@ -4,6 +4,7 @@ const path = require('path');
 const ContentBlocker = require('../util/contentBlocker');
 const cronJobDeleteOldRequests = require('../cronjobs/deleteOldRequests');
 const cronJobUpdateScamList = require('../cronjobs/updateScamList');
+const cronJobStorageBackup = require('../cronjobs/storageBackup');
 const requestReactions = require('../util/requestReactions');
 const flag = path.join(__dirname, '../../storage/restart.json');
 
@@ -22,6 +23,7 @@ module.exports = {
 
         cronJobDeleteOldRequests.start(client);
         cronJobUpdateScamList.start();
+        cronJobStorageBackup.start();
 
         requestReactions.init(client);
 
