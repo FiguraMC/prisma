@@ -12,7 +12,7 @@ module.exports = {
      */
     async execute(message) {
 
-        const isModerator = await utility.isModerator(message.member);
+        const isModerator = utility.isModerator(message.member);
 
         let commands = '**Available commands**\n';
         let modCommands = '**Moderator commands**\n';

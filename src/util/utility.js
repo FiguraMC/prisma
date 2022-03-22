@@ -6,10 +6,17 @@ const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
  * Checks if a member has a moderator role
  * @param {Discord.GuildMember} member 
  */
-module.exports.isModerator = async function (member) {
+module.exports.isModerator = function (member) {
     const moderatorRoles = process.env.MODERATOR_ROLES.split(',');
-    const isModerator = await member.roles.cache.some(r => moderatorRoles.includes(r.id));
-    return isModerator;
+    return member.roles.cache.some(r => moderatorRoles.includes(r.id));
+};
+
+/**
+ * Checks if a member has the helper role
+ * @param {Discord.GuildMember} member 
+ */
+module.exports.isHelper = function (member) {
+    return member.roles.cache.some(r => r.id == process.env.HELPER_ROLE);
 };
 
 /**
@@ -19,6 +26,7 @@ module.exports.isModerator = async function (member) {
  * @param {String} title 
  * @param {String} description 
  * @param {Discord.MessageComponent[]} components 
+ * @returns {Discord.Message} Object similar to Discord.Message (just the embed structure)
  */
 module.exports.buildEmbed = function (title, description, components) {
     if (!description) {

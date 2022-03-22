@@ -28,8 +28,18 @@ module.exports = {
             // Only allow commands that have dm property set to true in DMs
             if (message.channel.type == 'DM' && !command.dm) return message.channel.send(utility.buildEmbed('Commands don\'t work in DMs.'));
 
-            // Check if command needs moderator perms and check if sender has moderator role
-            if (command.moderator && !(await utility.isModerator(message.member))) return;
+            // Check if command needs moderator or helper perms
+            let isAllowedToUse = false;
+            if (command.moderator) {
+                isAllowedToUse |= utility.isModerator(message.member);
+            }
+            if (command.helper) {
+                isAllowedToUse |= utility.isHelper(message.member);
+            }
+            if (!command.moderator && !command.helper) {
+                isAllowedToUse = true;
+            }
+            if (!isAllowedToUse) return;
 
             // Execute the command
             try {

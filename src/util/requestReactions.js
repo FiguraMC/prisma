@@ -37,7 +37,7 @@ async function createCollector(msg, element) {
         if (user.bot) return;
 
         const member = await msg.guild.members.fetch(user.id);
-        const isModerator = await utility.isModerator(member);
+        const isModerator = utility.isModerator(member);
 
         if (reaction.emoji.name == '✅') {
             reaction.message.reactions.cache.get('✅').users.remove(user.id);

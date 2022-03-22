@@ -6,6 +6,7 @@ module.exports = {
     name: 'faq',
     usage: '`?faq [question] [answer]` - Add or remove entry to or from the FAQ. Space: `_`, Underscore: `\\_`, Code: `´` (forwardtick!), Split: `%`.',
     moderator: true,
+    helper: true,
     /**
      * 
      * @param {Discord.Message} message 

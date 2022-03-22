@@ -31,9 +31,12 @@ module.exports.filter = async function (message) {
                 if (cooldowns.has(key) && cooldowns.get(key) > Date.now()) return; // still on cooldown
                 cooldowns.set(key, Date.now() + cooldownTime * 1000 * 60); // new cooldown
                 cleanCooldowns();
-                const sentMessage = await message.channel.send(utility.buildEmbed(value.replaceAll('_', ' ').replaceAll('\\ ', '_').replaceAll('´', '`')));
+                const embed = utility.buildEmbed(value.replaceAll('_', ' ').replaceAll('\\ ', '_').replaceAll('´', '`'));
+                embed.embeds[0].footer = { text: 'React with ❌ to delete.' };
+                const sentMessage = await message.channel.send(embed);
                 sentMessage.createReactionCollector().on('collect', async (reaction, user) => {
-                    if (reaction.emoji.name == '❌' && user.id == message.author.id) {
+                    const member = await message.guild.members.fetch(user.id);
+                    if (reaction.emoji.name == '❌' && (user.id == message.author.id || utility.isHelper(member))) {
                         sentMessage.delete().catch(console.error);
                     }
                 });
