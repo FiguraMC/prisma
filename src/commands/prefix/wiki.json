@@ -699,5 +699,12 @@
             "spyglass model"
         ],
         "value": "https://github.com/Blancworks/Figura/wiki/Spyglass-Model-API"
+    },
+    {
+        "keys": [
+            "action wheel",
+            "action_wheel"
+        ],
+        "value": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
     }
 ]
