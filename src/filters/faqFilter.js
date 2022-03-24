@@ -19,8 +19,7 @@ module.exports.filter = async function (message) {
         // string and therefore acts pretty much as "any characters in between"
 
         if (!DataStorage.storage.faq) DataStorage.storage.faq = new Map();
-
-        DataStorage.storage.faq.forEach(async (value, key, map) => { // eslint-disable-line no-unused-vars
+        for (const [key, value] of DataStorage.storage.faq.entries()) {
             let includesAll = true;
             const keywords = key.replaceAll('_', ' ').replaceAll('\\ ', '_').split('%');
             keywords.forEach(keyword => {
@@ -28,7 +27,7 @@ module.exports.filter = async function (message) {
             });
             // if all keywords are found in the message and there is no cooldown then send the corresponding answer
             if (includesAll) {
-                if (cooldowns.has(key) && cooldowns.get(key) > Date.now()) return; // still on cooldown
+                if (cooldowns.has(key) && cooldowns.get(key) > Date.now()) continue; // still on cooldown
                 cooldowns.set(key, Date.now() + cooldownTime * 1000 * 60); // new cooldown
                 cleanCooldowns();
                 const embed = utility.buildEmbed(value.replaceAll('_', ' ').replaceAll('\\ ', '_').replaceAll('´', '`'));
@@ -40,8 +39,9 @@ module.exports.filter = async function (message) {
                         sentMessage.delete().catch(console.error);
                     }
                 });
+                return;
             }
-        });
+        }
     }
 };
 
