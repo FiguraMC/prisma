@@ -83,6 +83,14 @@ function backup() {
 }
 
 /**
+ * Creates a storage dump.
+ * @returns String of the current storage file
+ */
+function createDump() {
+    return JSON.stringify(exports.storage, replacer);
+}
+
+/**
  * Utility function to delete an element from an array
  * @param {*} array 
  * @param {*} element 
@@ -124,4 +132,5 @@ function reviver(key, value) {
 exports.load = load;
 exports.save = save;
 exports.backup = backup;
+exports.createDump = createDump;
 exports.deleteFromArray = deleteFromArray;

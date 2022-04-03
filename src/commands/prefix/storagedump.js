@@ -13,7 +13,7 @@ module.exports = {
         message.author.send({
             files: [
                 new Discord.MessageAttachment(
-                    Buffer.from(JSON.stringify(DataStorage.storage)),
+                    Buffer.from(DataStorage.createDump()),
                     'storage.json',
                 ),
             ],
