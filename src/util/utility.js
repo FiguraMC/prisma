@@ -1,4 +1,5 @@
 const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
+const got = require('got');
 
 // Utility functions
 
@@ -63,4 +64,24 @@ module.exports.getURLs = function (text) {
  */
 module.exports.escapeRegExp = function (string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+};
+
+/**
+ * Checks if Figura backend is online
+ * @returns boolean
+ */
+module.exports.getBackendStatus = function () {
+    return new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
+        got(process.env.FIGURA_BACKEND_URL, {
+            https: {
+                rejectUnauthorized: false,
+            },
+        })
+            .then(res => {
+                resolve(res.statusCode == 200);
+            })
+            .catch(() => {
+                resolve(false);
+            });
+    });
 };

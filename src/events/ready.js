@@ -2,6 +2,7 @@ const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const fs = require('fs');
 const path = require('path');
 const ContentBlocker = require('../util/contentBlocker');
+const checkBackendStatus = require('../cronjobs/checkBackendStatus');
 const cronJobDeleteOldRequests = require('../cronjobs/deleteOldRequests');
 const cronJobUpdateScamList = require('../cronjobs/updateScamList');
 const cronJobStorageBackup = require('../cronjobs/storageBackup');
@@ -21,6 +22,7 @@ module.exports = {
 
         client.user.setActivity('/ticket', { type: 'LISTENING' });
 
+        checkBackendStatus.start(client);
         cronJobDeleteOldRequests.start(client);
         cronJobUpdateScamList.start();
         cronJobStorageBackup.start();
