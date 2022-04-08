@@ -76,6 +76,8 @@ module.exports.getBackendStatus = function () {
             https: {
                 rejectUnauthorized: false,
             },
+            timeout: 5000,
+            retry: 1,
         })
             .then(res => {
                 resolve(res.statusCode == 200);
