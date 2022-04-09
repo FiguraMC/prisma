@@ -10,5 +10,5 @@ module.exports = new Discord.MessageActionRow()
         new Discord.MessageButton()
             .setCustomId('close_ticket_confirmation_button_no')
             .setLabel('Cancel')
-            .setStyle('SUCCESS'),
+            .setStyle('SECONDARY'),
     );
