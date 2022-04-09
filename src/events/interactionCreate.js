@@ -6,6 +6,7 @@ const utility = require('../util/utility');
 const confirmationButtons = require('../components/confirmationButtons');
 const closeTicketButton = require('../components/closeTicketButton');
 const docs = require('../../storage/docs.json');
+const ticketMenu = require('../components/ticketMenu');
 
 module.exports = {
     name: 'interactionCreate',
@@ -73,6 +74,44 @@ module.exports = {
             // Replaces itself with the close ticket button
             else if (interaction.customId == 'close_ticket_confirmation_button_no') {
                 interaction.update({ embeds: interaction.message.embeds, components: [closeTicketButton] });
+            }
+            // Subscribe to tickets
+            else if (interaction.customId == 'subscribe_to_tickets') {
+                if (!DataStorage.storage.ticketsubscribers) DataStorage.storage.ticketsubscribers = [];
+                if (!DataStorage.storage.ticketsubscribers.find(x => x == interaction.user.id)) {
+                    DataStorage.storage.ticketsubscribers.push(interaction.user.id);
+                    DataStorage.save();
+                    interaction.update({
+                        content: '\u200b',
+                        embeds: [{
+                            title: 'Ticket notifications.',
+                            description: '<@' + DataStorage.storage.ticketsubscribers.join('>\n<@') + '>',
+                        }],
+                        components: [ticketMenu],
+                    });
+                }
+                else {
+                    interaction.deferUpdate();
+                }
+            }
+            // Unsubscribe from tickets
+            else if (interaction.customId == 'unsubscribe_from_tickets') {
+                if (!DataStorage.storage.ticketsubscribers) DataStorage.storage.ticketsubscribers = [];
+                if (DataStorage.storage.ticketsubscribers.find(x => x == interaction.user.id)) {
+                    DataStorage.storage.ticketsubscribers = DataStorage.storage.ticketsubscribers.filter(x => x != interaction.user.id);
+                    DataStorage.save();
+                    interaction.update({
+                        content: '\u200b',
+                        embeds: [{
+                            title: 'Ticket notifications.',
+                            description: '<@' + DataStorage.storage.ticketsubscribers.join('>\n<@') + '>',
+                        }],
+                        components: [ticketMenu],
+                    });
+                }
+                else {
+                    interaction.deferUpdate();
+                }
             }
         }
         // Handle /docs command autocomplete

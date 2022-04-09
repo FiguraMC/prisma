@@ -2,6 +2,7 @@ const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const utility = require('../../util/utility');
 const DataStorage = require('../../util/dataStorage');
 const closeTicketButton = require('../../components/closeTicketButton');
+const ticketMenu = require('../../components/ticketMenu');
 
 // Ticket creation dialog
 module.exports = {
@@ -61,10 +62,21 @@ module.exports = {
                 });
                 const thread = await msg.startThread({ name: `Ticket-${id}`, autoArchiveDuration: 'MAX' });
 
+                await bringTicketMenuToTheBottom(message.client);
+
                 if (!DataStorage.storage.tickets) DataStorage.storage.tickets = [];
+                if (!DataStorage.storage.ticketsubscribers) DataStorage.storage.ticketsubscribers = [];
                 DataStorage.storage.tickets.push({ author: message.author.id, thread: thread.id });
                 DataStorage.storage.ticketId++;
+
                 DataStorage.save();
+
+                DataStorage.storage.ticketsubscribers.forEach(async (subscriberID) => {
+                    const user = await message.client.users.fetch(subscriberID);
+                    if (user) {
+                        thread.members.add(user).catch(console.error);
+                    }
+                });
 
                 channel.send(utility.buildEmbed('✉️ Ticket sent!', 'A moderator will check it out shortly. You might get a reply here if more information is required. If you want to forward an additional message to your ticket for moderators to see, you can DM the command `?ticketmessage <message>` which will send that message to us.'));
 
@@ -82,3 +94,30 @@ module.exports = {
         return false;
     },
 };
+
+/**
+ * Gets the ticket menu from datastorage and puts its at the bottom of the ticket channel
+ * @param {Discord.Client} client 
+ */
+async function bringTicketMenuToTheBottom(client) {
+    try {
+        const oldMenuId = DataStorage.storage.ticket_menu;
+        const channel = await client.channels.fetch(process.env.TICKET_CHANNEL);
+        const newMenu = await channel.send({
+            content: '\u200b',
+            embeds: [{
+                title: 'Ticket notifications.',
+                description: '<@' + DataStorage.storage.ticketsubscribers?.join('>\n<@') + '>',
+            }],
+            components: [ticketMenu],
+        });
+        DataStorage.storage.ticket_menu = newMenu.id;
+        if (oldMenuId) {
+            const oldMenu = await channel.messages.fetch(oldMenuId);
+            oldMenu.delete().catch(console.error);
+        }
+    }
+    catch (error) {
+        console.error(error);
+    }
+}

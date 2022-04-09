@@ -116,14 +116,14 @@ module.exports.handle = async function (message, channel, dialog, options) {
                 const msg = await requestsChannel.send(constructAvatarRequestEmbed(dialog, message.author));
                 msg.react('✅').then(() => msg.react('❌').then(() => msg.react('📝').then(() => msg.react('⚙️'))));
 
-                bringNewRequestButtonToTheBottom(message.client);
-
                 let threadName = dialog.data[0].substr(0, 99).replace(/[^A-Za-z0-9_+-.,&()]/gi, '');
                 if (threadName == '') threadName = 'Request';
 
                 const thread = await msg.startThread({ name: threadName, autoArchiveDuration: 'MAX' });
-                thread.members.add(message.author);
+                thread.members.add(message.author).catch(console.error);
                 thread.send(utility.buildEmbed('Remember to archive the request when it\'s completed ✅.\nOthers can react with ⚙️ to show that they are working on your request.'));
+
+                await bringNewRequestButtonToTheBottom(message.client);
 
                 const element = { message: msg.id, user: message.author.id, timestamp: Date.now(), locked: false, thread: thread.id };
                 if (!DataStorage.storage.avatar_requests) DataStorage.storage.avatar_requests = [];
@@ -192,7 +192,6 @@ async function bringNewRequestButtonToTheBottom(client) {
         const channel = await client.channels.fetch(process.env.REQUESTS_CHANNEL);
         const newBtn = await channel.send(newRequestButton);
         DataStorage.storage.new_request_button = newBtn.id;
-        DataStorage.save();
         if (oldBtnId) {
             const oldBtn = await channel.messages.fetch(oldBtnId);
             oldBtn.delete().catch(console.error);
