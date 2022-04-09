@@ -4,63 +4,63 @@
             "custommodelpart.setpos",
             "custommodelpart.getpos"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part#void-custommodelpartsetposxyz-and-xyz-custommodelpartgetpos"
+        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-API#void-custommodelpartsetposxyz-and-xyz-custommodelpartgetpos"
     },
     {
         "keys": [
             "custommodelpart.setrot",
             "custommodelpart.getrot"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part#void-custommodelpartsetrotpitchyawroll-and-pitchyawroll-custommodelpartgetrot"
+        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-API#void-custommodelpartsetrotpitchyawroll-and-pitchyawroll-custommodelpartgetrot"
     },
     {
         "keys": [
             "custommodelpart.setenabled",
             "custommodelpart.getenabled"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part#void-custommodelpartsetenabledenabled--boolean-custommodelpartgetenabled"
+        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-API#void-custommodelpartsetenabledenabled--boolean-custommodelpartgetenabled"
     },
     {
         "keys": [
             "custommodelpart.setscale",
             "custommodelpart.getscale"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part#void-custommodelpartsetscalexyz-and-xyz-custommodelpartgetscale"
+        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-API#void-custommodelpartsetscalexyz-and-xyz-custommodelpartgetscale"
     },
     {
         "keys": [
             "custommodelpart.setpivot",
             "custommodelpart.getpivot"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part#void-custommodelpartsetpivotxyz-and-xyz-custommodelpartgetpivot"
+        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-API#void-custommodelpartsetpivotxyz-and-xyz-custommodelpartgetpivot"
     },
     {
         "keys": [
             "custommodelpart.setuv",
             "custommodelpart.getuv"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part#void-custommodelpartsetuvuv--uv-custommodelpartgetuv"
+        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-API#void-custommodelpartsetuvuv--uv-custommodelpartgetuv"
     },
     {
         "keys": [
             "custommodelpart.setcolor",
             "custommodelpart.getcolor"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part#void-custommodelpartsetcolorrgb--rgb-custommodelpartgetcolor"
+        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-API#void-custommodelpartsetcolorrgb--rgb-custommodelpartgetcolor"
     },
     {
         "keys": [
             "custommodelpart.setparenttype",
             "custommodelpart.getparenttype"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part#void-custommodelpartsetparenttypetype--string-custommodelpartgetparenttype"
+        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-API#void-custommodelpartsetparenttypetype--string-custommodelpartgetparenttype"
     },
     {
         "keys": [
             "custommodelpart.setmimicmode",
             "custommodelpart.getmimicmode"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-Part#custom-only---void-modelpartsetmimicmodeboolean--boolean-modelpartgetmimicmode"
+        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-API#custom-only---void-modelpartsetmimicmodeboolean--boolean-modelpartgetmimicmode"
     },
     {
         "keys": [
