@@ -109,3 +109,4 @@ desktop.ini
 # Data storage
 storage/*
 !docs.json
+!wiki.json

@@ -1,10 +1,10 @@
 const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
-const wiki = require('./wiki.json');
+const wiki = require('../../../storage/wiki.json');
 
 // Old wiki command, this will be removed once the wiki gets an overhaul
 module.exports = {
     name: 'wiki',
-    usage: '`?wiki <search>` - Outdated wiki command.',
+    usage: '`?wiki <search>` - Figura wiki command.',
     /**
      * 
      * @param {Discord.Message} message 
