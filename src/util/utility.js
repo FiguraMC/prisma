@@ -70,7 +70,7 @@ module.exports.escapeRegExp = function (string) {
  * Checks if Figura backend is online
  * @returns boolean
  */
-module.exports.getBackendStatus = function () {
+module.exports.checkBackendStatus = function (client) {
     return new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
         got(process.env.FIGURA_BACKEND_URL, {
             https: {
@@ -80,10 +80,24 @@ module.exports.getBackendStatus = function () {
             retry: 1,
         })
             .then(res => {
+                setBackendStatusChannel(client, res.statusCode == 200);
                 resolve(res.statusCode == 200);
             })
             .catch(() => {
+                setBackendStatusChannel(client, false);
                 resolve(false);
             });
     });
 };
+
+/**
+ * Sets the backend status channel to online or offline
+ * @param {Discord.Client} client 
+ * @param {boolean} status 
+ */
+async function setBackendStatusChannel(client, status) {
+    const channel = await client.channels.fetch(process.env.BACKEND_STATUS_CHANNEL);
+    if (channel) {
+        channel.setName('Backend: ' + (status ? 'Online ✅' : 'Offline ❌')).catch(console.error);
+    }
+}

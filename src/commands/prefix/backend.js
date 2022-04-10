@@ -14,15 +14,12 @@ module.exports = {
                 description: '💻● ● ● ● ●🗄️',
             }],
         });
-        const status = await utility.getBackendStatus();
+        const status = await utility.checkBackendStatus(message.client);
         const icon = status ? '✅' : '❌';
         msg.edit({
             content: 'Backend Status', embeds: [{
                 description: '💻● ●' + icon + '● ●🗄️',
             }],
         });
-        const text = status ? 'Online✅' : 'Offline❌';
-        const channel = await message.client.channels.fetch(process.env.BACKEND_STATUS_CHANNEL);
-        channel.setName('Backend: ' + text).catch(console.error);
     },
 };

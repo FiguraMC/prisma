@@ -8,11 +8,8 @@ const utility = require('../util/utility');
  * @param {Discord.Client} client 
  */
 module.exports.start = async function (client) {
-    const job = new CronJob('0 */10 * * * *', async function () {
-        const status = await utility.getBackendStatus();
-        const text = status ? 'Online✅' : 'Offline❌';
-        const channel = await client.channels.fetch(process.env.BACKEND_STATUS_CHANNEL);
-        channel.setName('Backend: ' + text).catch(console.error);
+    const job = new CronJob('0 */10 * * * *', function () {
+        utility.checkBackendStatus(client);
     }, null, true, 'Europe/London');
     job.start();
 };
