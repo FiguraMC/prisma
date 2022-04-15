@@ -10,47 +10,59 @@ module.exports = {
      * @param {Discord.Message} message 
      * @param {String[]} args 
      */
-    async execute(message, args) {
-        const result = search(args.join(' '));
-        if (result) {
-            message.channel.send('<' + result + '>');
-        }
-        else {
+	 async execute(message, args) {
+        const result = search(args);
+        if (!result.length) {
             message.channel.send(`Could not find anything about "${args.join(' ')}".`);
+        }
+        else if(result.length>10){
+			//This should never happen but if wiki.json isn't set up properly it may occur.
+			message.channel.send(`Too many possible matches. Try adding another keyword.`);
+		}
+		else{
+			var string=""
+			for(const entry in result){
+				string+=`\n${entry.name??"No Name Provided"}\n\t<${entry.url??"No Url Provided"}>`
+			}
+            message.channel.send(`Possible matches found:${string}`);
         }
     },
 };
 
 /**
  *
- * @param {String} s
+ * @param {String} argKeywords
  */
-function search(s) {
-    // exact matches
-    for (const entry of wiki) {
-        for (const key of entry.keys) {
-            for (const word of key.split('.')) {
-                if (word == s) {
-                    return entry.value;
-                }
-            }
-        }
-    }
-    // search word is a substring of key
-    for (const entry of wiki) {
-        for (const key of entry.keys) {
-            if (key.includes(s)) {
-                return entry.value;
-            }
-        }
-    }
-    // key is a substring of search word
-    for (const entry of wiki) {
-        for (const key of entry.keys) {
-            if (s.includes(key)) {
-                return entry.value;
-            }
-        }
-    }
-    return null;
+function search(argKeywords) {
+	var mostKeywords=[]
+	var currentMaximum=0
+	for(const entry of wiki){
+		var keywords=0
+		for(const keyword of entry.keywords){
+			for (const word of argKeywords){
+				if(keyword==word){
+					keywords++
+				}
+			}
+		}
+		if(keywords==currentMaximum){
+			mostKeywords.push(entry)
+		}
+		else if(keywords>currentMaximum){
+			currentMaximum=keywords
+			mostKeywords=[entry]
+		}
+	}
+	var matches=[]
+	var currentPriority=0
+	for(const entry of mostKeywords){
+		if (entry.priority==currentPriority){
+			matches.push(entry)
+		}
+		else if(entry.priority>currentPriority){
+			currentPriority=entry.priority
+			matches=[entry]
+		}
+	}
+	return matches
 }
