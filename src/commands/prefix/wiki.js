@@ -56,10 +56,10 @@ function search(argKeywords) {
 	var matches=[]
 	var currentPriority=0
 	for(const entry of mostKeywords){
-		if (entry.priority==currentPriority){
+		if ((entry.priority??0)==currentPriority){
 			matches.push(entry)
 		}
-		else if(entry.priority>currentPriority){
+		else if((entry.priority??0)>currentPriority){
 			currentPriority=entry.priority
 			matches=[entry]
 		}
