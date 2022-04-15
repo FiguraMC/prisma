@@ -31,9 +31,10 @@ module.exports = {
 
 /**
  *
- * @param {String} argKeywords
+ * @param {String[]} argKeywords
  */
 function search(argKeywords) {
+	argKeywords=argKeywords.map(string=>string.toLowerCase())
 	var mostKeywords=[]
 	var currentMaximum=0
 	for(const entry of wiki){
