@@ -378,5 +378,35 @@
 		"keywords":["vanilla","model","part","is","option","enabled","isoptionenabled"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API#isoptionenabled",
 		"name":"VanillaModelPart.isOptionEnabled"
+	},
+	{
+		"keywords":["vanilla","armor","model","part","armor_model","armormodelpart","api"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Armor-Model-API",
+		"name":"Armor Model API"
+	},
+	{
+		"keywords":["vanilla","elytra","model","part","elytra_model","elytramodelpart","api"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Elytra-Model-API",
+		"name":"Elytra Model API"
+	},
+	{
+		"keywords":["vanilla","held","item","helditem","held_item","model","part","held_item_model","helditemmodelpart","api"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Held-Item-Model-API",
+		"name":"Held Item Model API"
+	},
+	{
+		"keywords":["vanilla","spyglass","model","part","spyglass_model","spyglassmodelpart","api"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Spyglass-Model-API",
+		"name":"Spyglass Model API"
+	},
+	{
+		"keywords":["vanilla","parrot","model","part","parrot_model","parrotmodelpart","api"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Parrot-Model-API",
+		"name":"Parrot Model API"
+	},
+	{
+		"keywords":["vanilla","first","person","firstperson","first_person","model","part","first_person_model","firstpersonmodelpart","api"],
+		"url":"https://github.com/Blancworks/Figura/wiki/First-Person-Model-API",
+		"name":"First Person Model API"
 	}
 ]
