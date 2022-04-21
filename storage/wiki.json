@@ -870,5 +870,46 @@
 		"keywords":["world","has","open","sky","roof","above","hasopensky"],
 		"url":"https://github.com/Blancworks/Figura/wiki/World-API#isopenskyvector",
 		"name":"world.hasOpenSky"
+	},
+	{
+		"keywords":["blockstate","block","state","api"],
+		"url":"https://github.com/Blancworks/Figura/wiki/BlockState-API",
+		"name":"Blockstate API"
+	},
+	{
+		"keywords":["item","stack","itemstack","api"],
+		"url":"https://github.com/Blancworks/Figura/wiki/ItemStack-API",
+		"name":"ItemStacK API",
+		"priority":1
+	},
+	{
+		"keywords":["item","stack","itemstack","get","type","id","itemid","gettype"],
+		"url":"https://github.com/Blancworks/Figura/wiki/ItemStack-API#string-itemstackgettype",
+		"name":"ItemStack.getType"
+	},
+	{
+		"keywords":["item","stack","itemstack","get","tag","nbt","gettag"],
+		"url":"https://github.com/Blancworks/Figura/wiki/ItemStack-API#nbttag-itemstackgettag",
+		"name":"ItemStack.getTag"
+	},
+	{
+		"keywords":["item","stack","itemstack","get","count","getcound"],
+		"url":"https://github.com/Blancworks/Figura/wiki/ItemStack-API#number-itemstackgetcount",
+		"name":"ItemStack.getCount"
+	},
+	{
+		"keywords":["item","stack","itemstack","get","damage","durability","getdamage"],
+		"url":"https://github.com/Blancworks/Figura/wiki/ItemStack-API#number-itemstackgetdamage",
+		"name":"ItemStack.getDamage"
+	},
+	{
+		"keywords":["item","stack","itemstack","get","cooldown","getcooldown"],
+		"url":"https://github.com/Blancworks/Figura/wiki/ItemStack-API#number-itemstackgetcooldown",
+		"name":"ItemStack.getCooldown"
+	},
+	{
+		"keywords":["item","stack","itemstack","has","glint","enchant","enchanted","hasglint"],
+		"url":"https://github.com/Blancworks/Figura/wiki/ItemStack-API#boolean-itemstackhasglint",
+		"name":"ItemStack.hasGlint"
 	}
 ]
