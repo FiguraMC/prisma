@@ -488,6 +488,12 @@
 		"name":"sound.stopCustomSound"
 	},
 	{
+		"keywords":["kitcat","kit","cat","katt","kitcat962"],
+		"url":"https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+		"name":"Nyahhahaaaa! You found me!",
+		"priority":-1
+	},
+	{
 		"keywords":["entity","api"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Entity-API",
 		"name":"Entity API",
