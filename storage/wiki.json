@@ -744,5 +744,60 @@
 		"keywords":["livingentity","player","is","using","item","isusingitem"],
 		"url":"https://github.com/Blancworks/Figura/wiki/LivingEntity-API#isusingitem",
 		"name":"LivingEntity.isUsingItem"
+	},
+	{
+		"keywords":["player","get","experience","exp","xp","level","getexperiencelevel"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Player-API#getexperiencelevel",
+		"name":"Player.getExperienceLevel"
+	},
+	{
+		"keywords":["player","get","experience","exp","xp","progress","getexperienceprogress"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Player-API#getexperienceprogress",
+		"name":"Player.getExperienceProgress"
+	},
+	{
+		"keywords":["player","get","food","hunger","getfood"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Player-API#getfood",
+		"name":"Player.getFood"
+	},
+	{
+		"keywords":["player","get","gamemode","getgamemode"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Player-API#getgamemode",
+		"name":"Player.getGamemode"
+	},
+	{
+		"keywords":["player","get","held","item","gethelditem"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Player-API#gethelditemint",
+		"name":"Player.getHeldItem"
+	},
+	{
+		"keywords":["player","get","vanilla","model","type","steve","slim","getmodeltype"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Player-API#getmodeltype",
+		"name":"Player.getModelType"
+	},
+	{
+		"keywords":["player","get","saturation","hunger","getsaturation"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Player-API#getsaturation",
+		"name":"Player.getSaturation"
+	},
+	{
+		"keywords":["player","get","data","stored","value","getstoredvalue"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Player-API#getstoredvaluestring",
+		"name":"player.getStoredValue"
+	},
+	{
+		"keywords":["player","get","target","targeted","crosshair","entity","gettargetedentity"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Player-API#gettargetedentity",
+		"name":"Player.getTargetedEntity"
+	},
+	{
+		"keywords":["player","is","flying","creative","flight","isflying"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Player-API#isflying",
+		"name":"Player.isFlying"
+	},
+	{
+		"keywords":["player","get","last","damage","source","lastdamagesource"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Player-API#lastdamagesource",
+		"name":"Player.lastDamageSource"
 	}
 ]
