@@ -313,5 +313,70 @@
 		"keywords":["custom","model","part","world","to","coord","coords","coordinates","pos","position","worldtopartpos"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#worldtopartposvector",
 		"name":"CustomModelPart.worldToPartPos"
+	},
+	{
+		"keywords":["vanilla","model","part","vanilla_model","vanillamodelpart","api"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API",
+		"name":"Vanilla Model API"
+	},
+	{
+		"keywords":["vanilla","model","part","set","position","pos","setpos"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API#setpos",
+		"name":"VanillaModelPart.setPos"
+	},
+	{
+		"keywords":["vanilla","model","part","set","rotation","rot","setrot"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API#setrot",
+		"name":"VanillaModelPart.setRot"
+	},
+	{
+		"keywords":["vanilla","model","part","set","scale","setscale"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API#setscale",
+		"name":"VanillaModelPart.setScale"
+	},
+	{
+		"keywords":["vanilla","model","part","set","enable","enabled","disable","visible","invisible","setenabled"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API#setenabledbool",
+		"name":"VanillaModelPart.setEnabled"
+	},
+	{
+		"keywords":["vanilla","model","part","get","position","pos","getpos"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API#getpos",
+		"name":"VanillaModelPart.getPos"
+	},
+	{
+		"keywords":["vanilla","model","part","get","rotation","rot","getrot"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API#getrot",
+		"name":"VanillaModelPart.getRot"
+	},
+	{
+		"keywords":["vanilla","model","part","get","scale","getscale"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API#getscale",
+		"name":"VanillaModelPart.getScale"
+	},
+	{
+		"keywords":["vanilla","model","part","get","enable","enabled","visible","getenabled"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API#getenabled",
+		"name":"VanillaModelPart.getEnabled"
+	},
+	{
+		"keywords":["vanilla","model","part","get","origin","position","pos","getpos"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API#getoriginpos",
+		"name":"VanillaModelPart.getOriginPos"
+	},
+	{
+		"keywords":["vanilla","model","part","get","origin","rotation","rot","getrot"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API#getoriginrot",
+		"name":"VanillaModelPart.getOriginRot"
+	},
+	{
+		"keywords":["vanilla","model","part","get","origin","enable","enabled","visible","getenabled"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API#getoriginenabled",
+		"name":"VanillaModelPart.getOriginEnabled"
+	},
+	{
+		"keywords":["vanilla","model","part","is","option","enabled","isoptionenabled"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API#isoptionenabled",
+		"name":"VanillaModelPart.isOptionEnabled"
 	}
 ]
