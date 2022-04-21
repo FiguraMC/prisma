@@ -17,7 +17,8 @@
 	{
 		"keywords":["keyword","keywords","blockbench","elytra","item","parrot","camera","hud","gui"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Blockbench-Keywords",
-		"name":"BlockBench Keywords"
+		"name":"BlockBench Keywords",
+		"priority":1
 	},
 	{
 		"keywords":["keyword","keywords","parent"],
@@ -57,7 +58,8 @@
 	{
 		"keywords":["custom","model","part","custommodelpart","api"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API",
-		"name":"Custom Model API"
+		"name":"Custom Model API",
+		"priority":1
 	},
 	{
 		"keywords":["custom","model","part","rendertask","render","task","addrendertask","add"],
@@ -317,7 +319,8 @@
 	{
 		"keywords":["vanilla","model","part","vanilla_model","vanillamodelpart","api"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API",
-		"name":"Vanilla Model API"
+		"name":"Vanilla Model API",
+		"priority":1
 	},
 	{
 		"keywords":["vanilla","model","part","set","position","pos","setpos"],
@@ -382,31 +385,106 @@
 	{
 		"keywords":["vanilla","armor","model","part","armor_model","armormodelpart","api"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Armor-Model-API",
-		"name":"Armor Model API"
+		"name":"Armor Model API",
+		"priority":1
 	},
 	{
 		"keywords":["vanilla","elytra","model","part","elytra_model","elytramodelpart","api"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Elytra-Model-API",
-		"name":"Elytra Model API"
+		"name":"Elytra Model API",
+		"priority":1
 	},
 	{
 		"keywords":["vanilla","held","item","helditem","held_item","model","part","held_item_model","helditemmodelpart","api"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Held-Item-Model-API",
-		"name":"Held Item Model API"
+		"name":"Held Item Model API",
+		"priority":1
 	},
 	{
 		"keywords":["vanilla","spyglass","model","part","spyglass_model","spyglassmodelpart","api"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Spyglass-Model-API",
-		"name":"Spyglass Model API"
+		"name":"Spyglass Model API",
+		"priority":1
 	},
 	{
 		"keywords":["vanilla","parrot","model","part","parrot_model","parrotmodelpart","api"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Parrot-Model-API",
-		"name":"Parrot Model API"
+		"name":"Parrot Model API",
+		"priority":1
 	},
 	{
 		"keywords":["vanilla","first","person","firstperson","first_person","model","part","first_person_model","firstpersonmodelpart","api"],
 		"url":"https://github.com/Blancworks/Figura/wiki/First-Person-Model-API",
-		"name":"First Person Model API"
+		"name":"First Person Model API",
+		"priority":1
+	},
+	{
+		"keywords":["particle","api"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Particle-API",
+		"name":"Particle API",
+		"priority":1
+	},
+	{
+		"keywords":["particle","add","addparticle"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Particle-API#particleaddparticlename-x-y-z-velocityx-velocityy-velocityz-extra1-extra2",
+		"name":"particle.addParticle"
+	},
+	{
+		"keywords":["sound","api"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Sound-API",
+		"name":"Sound API",
+		"priority":1
+	},
+	{
+		"keywords":["sound","regular"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Sound-API#regular-sounds",
+		"name":"Regular/Vanilla Sounds",
+		"priority":1
+	},
+	{
+		"keywords":["sound","regular","get","sounds","getsounds"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Sound-API#getsounds",
+		"name":"sound.getSounds"
+	},
+	{
+		"keywords":["sound","regular","play"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Sound-API#playsoundstringname-vector3position-vector2volumepitch",
+		"name":"sound.playSound"
+	},
+	{
+		"keywords":["sound","custom"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Sound-API#custom-sounds",
+		"name":"Custom Sounds",
+		"priority":1
+	},
+	{
+		"keywords":["sound","custom","get","sounds","getcustomsounds"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Sound-API#getcustomsoundsbooloptional",
+		"name":"sound.getCustomSounds"
+	},
+	{
+		"keywords":["sound","custom","get","registered","sounds","getregisteredcustomsounds"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Sound-API#getregisteredcustomsounds",
+		"name":"sound.getRegisteredCustomSounds"
+	},
+	{
+		"keywords":["sound","custom","registered","is","iscustomsoundregistered"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Sound-API#iscustomsoundregisteredstring",
+		"name":"sound.isCustomSoundRegistered"
+	},
+	{
+		"keywords":["sound","custom","play"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Sound-API#playcustomsoundstringname-vector3position-vector2volumepitch",
+		"name":"sound.playCustomSound"
+	},
+	{
+		"keywords":["sound","custom","register","registercustomsound"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Sound-API#registercustomsoundstringname-stringbase64",
+		"name":"sound.registerCustomSound"
+	},
+	{
+		"keywords":["sound","custom","stop"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Sound-API#stopcustomsoundstring",
+		"name":"sound.stopCustomSound"
 	}
 ]
