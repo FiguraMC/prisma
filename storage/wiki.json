@@ -799,5 +799,76 @@
 		"keywords":["player","get","last","damage","source","lastdamagesource"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Player-API#lastdamagesource",
 		"name":"Player.lastDamageSource"
+	},
+	{
+		"keywords":["world","api"],
+		"url":"https://github.com/Blancworks/Figura/wiki/World-API",
+		"name":"World API",
+		"priority":1
+	},
+	{
+		"keywords":["world","get","biome"],
+		"url":"https://github.com/Blancworks/Figura/wiki/World-API#getbiomevector",
+		"name":"world.getBiome"
+	},
+	{
+		"keywords":["world","get","block","light","level","getblocklightlevel"],
+		"url":"https://github.com/Blancworks/Figura/wiki/World-API#getblocklightlevelvector",
+		"name":"world.getBlockLightLevel"
+	},
+	{
+		"keywords":["world","get","block","state","getblockstate"],
+		"url":"https://github.com/Blancworks/Figura/wiki/World-API#getblockstatevector",
+		"name":"world.getBlockState"
+	},
+	{
+		"keywords":["world","get","light","level","getlightlevel"],
+		"url":"https://github.com/Blancworks/Figura/wiki/World-API#getlightlevelvector",
+		"name":"world.getLightLevel"
+	},
+	{
+		"keywords":["world","get","moon","phase","getmoonphase"],
+		"url":"https://github.com/Blancworks/Figura/wiki/World-API#getmoonphase",
+		"name":"world.getMoonPhase"
+	},
+	{
+		"keywords":["world","player","players","get","all","getplayers"],
+		"url":"https://github.com/Blancworks/Figura/wiki/World-API#getplayers",
+		"name":"world.getPlayers"
+	},
+	{
+		"keywords":["world","get","rain","gradient","getraingradient"],
+		"url":"https://github.com/Blancworks/Figura/wiki/World-API#getraingradientfloat",
+		"name":"world.getRainGradient"
+	},
+	{
+		"keywords":["world","get","redstone","power","level","getredstonepower"],
+		"url":"https://github.com/Blancworks/Figura/wiki/World-API#getredstonepowervector",
+		"name":"world.getRedstonePower"
+	},
+	{
+		"keywords":["world","get","sky","light","level","getskylightlevel"],
+		"url":"https://github.com/Blancworks/Figura/wiki/World-API#getskylightlevelvector",
+		"name":"world.getSkyLightLevel"
+	},
+	{
+		"keywords":["world","get","time","clock","system","gettime"],
+		"url":"https://github.com/Blancworks/Figura/wiki/World-API#gettime",
+		"name":"world.getTime"
+	},
+	{
+		"keywords":["world","get","time","of","day","gettimeofday"],
+		"url":"https://github.com/Blancworks/Figura/wiki/World-API#gettimeofday",
+		"name":"world.getTimeOfDay"
+	},
+	{
+		"keywords":["world","has","hasworld"],
+		"url":"https://github.com/Blancworks/Figura/wiki/World-API#hasworld",
+		"name":"world.hasWorld"
+	},
+	{
+		"keywords":["world","has","open","sky","roof","above","hasopensky"],
+		"url":"https://github.com/Blancworks/Figura/wiki/World-API#isopenskyvector",
+		"name":"world.hasOpenSky"
 	}
 ]
