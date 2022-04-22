@@ -1392,7 +1392,8 @@
 	{
 		"keywords":["meta","api"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Meta-API",
-		"name":"Meta API"
+		"name":"Meta API",
+		"priority":1
 	},
 	{
 		"keywords":["meta","get","animation","limit","getanimationlimit"],
@@ -1513,5 +1514,96 @@
 		"keywords":["meta","get","tick","limit","getticklimit"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Meta-API#getticklimit",
 		"name":"meta.getTickLimit"
+	},
+	{
+		"keywords":["renderer","api"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Renderer-API",
+		"name":"Renderer API",
+		"priority":1
+	},
+	{
+		"keywords":["renderer","get","camera","pos","position","getcamerapos"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Renderer-API#getcamerapos",
+		"name":"renderer.getCameraPos"
+	},
+	{
+		"keywords":["renderer","get","camera","rot","rotation","getcamerarotation"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Renderer-API#getcamerarot",
+		"name":"renderer.getCameraRot"
+	},
+	{
+		"keywords":["renderer","get","render","fire","getrenderfire"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Renderer-API#getrenderfire",
+		"name":"renderer.getRenderFire"
+	},
+	{
+		"keywords":["renderer","get","render","player","head","playerhead","getrenderplayerhead"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Renderer-API#getrenderplayerhead",
+		"name":"renderer.getRenderPlayerHead"
+	},
+	{
+		"keywords":["renderer","get","shadow","size","getshadowsize"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Renderer-API#getshadowsize",
+		"name":"renderer.getShadowSize"
+	},
+	{
+		"keywords":["renderer","is","camera","backwards","iscamerabackwards"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Renderer-API#iscamerabackwards",
+		"name":"renderer.isCameraBackwards"
+	},
+	{
+		"keywords":["renderer","is","first","person","isfirstperson"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Renderer-API#isfirstperson",
+		"name":"renderer.isFirstPerson"
+	},
+	{
+		"keywords":["renderer","is","mount","enabled","ismountenabled"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Renderer-API#ismountenabled",
+		"name":"renderer.isMountEnabled"
+	},
+	{
+		"keywords":["renderer","is","mount","shadow","enabled","ismountshadowenabled"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Renderer-API#ismountshadowenabled",
+		"name":"renderer.isMountShadowEnabled"
+	},
+	{
+		"keywords":["renderer","raycast","block","blocks","raycastblocks"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Renderer-API#raycastblocksvector3startpos-vector3endpos-shapehandling-optional-fluidhandling-optional-functionpredicate-optional",
+		"name":"renderer.raycastBlocks"
+	},
+	{
+		"keywords":["renderer","raycast","entity","entities","raycastEntities"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Renderer-API#raycastentitiesvector3startpos-vector3endpos-functionpredicate-optional",
+		"name":"renderer.raycastEntities"
+	},
+	{
+		"keywords":["renderer","set","mount","enabled","setmountenabled"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Renderer-API#setmountenabledbool",
+		"name":"renderer.setMountEnabled"
+	},
+	{
+		"keywords":["renderer","set","mount","shadow","enabled","setmountshadowenabled"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Renderer-API#setmountshadowenabledbool",
+		"name":"renderer.setMountShadowEnabled"
+	},
+	{
+		"keywords":["renderer","set","render","fire","setrenderfire"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Renderer-API#setrenderfirebool",
+		"name":"renderer.setRenderFire"
+	},
+	{
+		"keywords":["renderer","set","render","player","head","playerhead","setrenderplayerhead"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Renderer-API#setrenderplayerheadbool",
+		"name":"renderer.setRenderPlayerHead"
+	},
+	{
+		"keywords":["renderer","set","shadow","size","setshadowsize"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Renderer-API#setshadowsizefloat",
+		"name":"renderer.setShadowSize"
+	},
+	{
+		"keywords":["renderer","swing","arm","swingarm"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Renderer-API#swingarmbool-optional",
+		"name":"renderer.swingArm"
 	}
 ]
