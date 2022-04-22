@@ -15,8 +15,7 @@ module.exports = {
         if (!result.length) {
             message.channel.send(`Could not find anything about "${args.join(' ')}".`);
         }
-        else if(result.length>10){
-			//This should never happen but if wiki.json isn't set up properly it may occur.
+        else if(result.length>20){
 			message.channel.send(`Too many possible matches. Try adding another keyword.`);
 		}
 		else{
@@ -35,22 +34,28 @@ module.exports = {
  */
 function search(argKeywords) {
 	argKeywords=argKeywords.map(string=>string.toLowerCase())
+	var keywords=new Set()
+	for(const keyword of argKeywords){
+		for(const w of keyword.split(/[_.]+/g)){
+			keywords.add(w)
+		}
+	}
 	var mostKeywords=[]
 	var currentMaximum=0
 	for(const entry of wiki){
-		var keywords=0
+		var numKeywords=0
 		for(const keyword of entry.keywords){
-			for (const word of argKeywords){
+			for (const word of keywords){
 				if(keyword==word){
-					keywords++
+					numKeywords++
 				}
 			}
 		}
-		if(keywords==currentMaximum){
+		if(numKeywords==currentMaximum){
 			mostKeywords.push(entry)
 		}
-		else if(keywords>currentMaximum){
-			currentMaximum=keywords
+		else if(numKeywords>currentMaximum){
+			currentMaximum=numKeywords
 			mostKeywords=[entry]
 		}
 	}
