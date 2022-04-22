@@ -917,5 +917,36 @@
 		"keywords":["item","stack","itemstack","has","glint","enchant","enchanted","hasglint"],
 		"url":"https://github.com/Blancworks/Figura/wiki/ItemStack-API#boolean-itemstackhasglint",
 		"name":"ItemStack.hasGlint"
+	},
+	{
+		"keywords":["vector","vectors","api"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Vector-API",
+		"name":"Vector API",
+		"priority":1
+	},
+	{
+		"keywords":["vector","vectors","access","use","accessing","x","y","z","w","t","h","r","g","b","a","u","v"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Vector-API#number-vectorval",
+		"name":"Accessing Vector Values"
+	},
+	{
+		"keywords":["vector","vectors","create","get"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Vector-API#vectorx-vectorsgetvectorcount",
+		"name":"vectors.getVector"
+	},
+	{
+		"keywords":["vector","vectors","world","to","part","worldtopart"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Vector-API#vector3-vectorsworldtopartvector3-worldpos",
+		"name":"vectors"
+	},
+	{
+		"keywords":["vector","vectors","color","convert","hsv","rgb","to","hsvtorgb"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Vector-API#vector3-vectorshsvtorgbvector3-hsv",
+		"name":"vectors.hsvToRGB"
+	},
+	{
+		"keywords":["vector","vectors","color","convert","hsv","rgb","to","rgbtohsv"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Vector-API#vector3-vectorsrgbtohsvvector3-rgb",
+		"name":"vectors.rgbToHSV"
 	}
 ]
