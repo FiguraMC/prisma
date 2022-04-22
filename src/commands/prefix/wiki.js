@@ -33,13 +33,16 @@ module.exports = {
  * @param {String[]} argKeywordArray
  */
 function search(argKeywordArray) {
+	///Prepare the given keywords for searching
 	argKeywordArray=argKeywordArray.map(string=>string.toLowerCase())
 	let keywordSet=new Set()
 	for(const keyword of argKeywordArray){
+		//split the given keywords into seperate keywords if they contain "_", ".", or "-". The set object automatically filters duplicates.
 		for(const w of keyword.split(/[_.\-]+/g)){
 			keywordSet.add(w)
 		}
 	}
+	///Find all entries that have the most amount of matching keywords
 	let mostKeywords=[]
 	let currentMaximum=0
 	for(const entry of wiki){
@@ -54,14 +57,17 @@ function search(argKeywordArray) {
 		if(numKeywords==currentMaximum){
 			mostKeywords.push(entry)
 		}
+		//if an entry has more matches then all the previous entries, nuke the list and only accept entries with the same amount of matches
 		else if(numKeywords>currentMaximum){
 			currentMaximum=numKeywords
 			mostKeywords=[entry]
 		}
 	}
+	//If this variable has not changed then no entries have keywords that match the given keywords
 	if(currentMaximum==0){return[]}
+	///Flter out the entries with less priority
 	let matches=[]
-	let currentPriority=0
+	let currentPriority=Number.MIN_SAFE_INTEGER
 	for(const entry of mostKeywords){
 		if ((entry.priority??0)==currentPriority){
 			matches.push(entry)
