@@ -1,5 +1,10 @@
 [
 	{
+		"keywords":["wiki"],
+		"url":"https://github.com/Blancworks/Figura/wiki",
+		"name":"Did you know that there is a wiki? *Read it.*"
+	},
+	{
 		"keywords":["menu","figura","avatar","panel","figurapanel","screen"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Figura-Panel",
 		"name":"Select Avatar Screen"
@@ -1274,7 +1279,8 @@
 	{
 		"keywords":["nameplate","nametag","api"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Nameplate-API",
-		"name":"Nameplate API"
+		"name":"Nameplate API",
+		"priority":1
 	},
 	{
 		"keywords":["nameplate","nametag","set","text","settext"],
@@ -1315,5 +1321,41 @@
 		"keywords":["nameplate","nametag","get","scale","getscale"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Nameplate-API#getscale",
 		"name":"nameplate.ENTITY.getScale"
+	},
+	{
+		"keywords":["camera","api"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Camera-API",
+		"name":"Camera API",
+		"priority":1
+	},
+	{
+		"keywords":["camera","set","pos","position","setpos"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Camera-API#setposvector",
+		"name":"camera.FIRST_PERSON.setPos\ncamera.THIRD_PERSON.setPos"
+	},
+	{
+		"keywords":["camera","set","rot","rotation","setrot"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Camera-API#setrotvector",
+		"name":"camera.FIRST_PERSON.setRot\ncamera.THIRD_PERSON.setRot"
+	},
+	{
+		"keywords":["camera","set","pivot","setpivot"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Camera-API#setpivotvector",
+		"name":"camera.FIRST_PERSON.setPivot\ncamera.THIRD_PERSON.setPivot"
+	},
+	{
+		"keywords":["camera","get","pos","position","getpos"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Camera-API#getpos",
+		"name":"camera.FIRST_PERSON.getPos\ncamera.THIRD_PERSON.getPos"
+	},
+	{
+		"keywords":["camera","get","rot","rotation","getrot"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Camera-API#getrot",
+		"name":"camera.FIRST_PERSON.getRot\ncamera.THIRD_PERSON.getRot"
+	},
+	{
+		"keywords":["camera","get","pivot","getpivot"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Camera-API#getpivot",
+		"name":"camera.FIRST_PERSON.getPivot\ncamera.THIRD_PERSON.getPivot"
 	}
 ]
