@@ -34,16 +34,16 @@ module.exports = {
  */
 function search(argKeywordArray) {
 	argKeywordArray=argKeywordArray.map(string=>string.toLowerCase())
-	var keywordSet=new Set()
+	let keywordSet=new Set()
 	for(const keyword of argKeywordArray){
 		for(const w of keyword.split(/[_.\-]+/g)){
 			keywordSet.add(w)
 		}
 	}
-	var mostKeywords=[]
-	var currentMaximum=0
+	let mostKeywords=[]
+	let currentMaximum=0
 	for(const entry of wiki){
-		var numKeywords=0
+		let numKeywords=0
 		for(const keyword of entry.keywords){
 			for (const word of keywordSet){
 				if(keyword==word){
@@ -60,8 +60,8 @@ function search(argKeywordArray) {
 		}
 	}
 	if(currentMaximum==0){return[]}
-	var matches=[]
-	var currentPriority=0
+	let matches=[]
+	let currentPriority=0
 	for(const entry of mostKeywords){
 		if ((entry.priority??0)==currentPriority){
 			matches.push(entry)
