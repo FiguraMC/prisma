@@ -1385,7 +1385,7 @@
 		"name":"chat.setFiguraCommandPrefix"
 	},
 	{
-		"keywords":["tutorial","command","commands","avatar"],
+		"keywords":["tutorial","create","creating","command","commands","avatar"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Chat-API#figura-command-system",
 		"name":"Tutorial: Create Avatar Commands"
 	}
