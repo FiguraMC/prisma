@@ -632,6 +632,12 @@
 		"name":"Entity.isGlowing"
 	},
 	{
+		"keywords":["entity","livingentity","player","is","hamburger","ishamburger"],
+		"url":"H̶͓̝̫̼̺͑͂̊̓͋̅͌̕̚À̵̖͍̅M̸͉̩̲̠̩̟̯̪̒̊̊̍̽̉͋̌͝B̵͈̗̥̝̭̜̔͆̽̈́͊́̚̕U̷̧̳̪̥̺̺̫̩͊̅͂̔͆̓̀͋̋̕̚͠R̸͉̪̮̦͍̲͔̥̪͕̮̤̰̀̾̓́̀̆̎͐̕͘̕͜Ģ̷͍͚̼̞̊E̴̱͛͒̾̑͛͂͒́́͗̒͝͝Ṛ̷̨̨̹͙̲̖̙͙͕̝̽̒̌̀̌̃͑̆͋͝ͅ",
+		"name":"Entity.isHamburger",
+		"priority":-1
+	},
+	{
 		"keywords":["entity","livingentity","player","is","in","lava","isinlava"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Entity-API#isinlava",
 		"name":"Entity.isInLava"
