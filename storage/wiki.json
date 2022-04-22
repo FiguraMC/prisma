@@ -1357,5 +1357,36 @@
 		"keywords":["camera","get","pivot","getpivot"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Camera-API#getpivot",
 		"name":"camera.FIRST_PERSON.getPivot\ncamera.THIRD_PERSON.getPivot"
+	},
+	{
+		"keywords":["chat","api"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Chat-API",
+		"name":"Chat API",
+		"priority":1
+	},
+	{
+		"keywords":["chat","get","input","text","message","getinputtext"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Chat-API#getinputtext",
+		"name":"chat.getInputText"
+	},
+	{
+		"keywords":["chat","get","message","messages","getmessage"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Chat-API#getmessageint",
+		"name":"chat.getMessage"
+	},
+	{
+		"keywords":["chat","is","open","isopen"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Chat-API#isopen",
+		"name":"chat.isOpen"
+	},
+	{
+		"keywords":["chat","set","figura","command","prefix","commands","setfiguracommandprefix"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Chat-API#setfiguracommandprefixstring",
+		"name":"chat.setFiguraCommandPrefix"
+	},
+	{
+		"keywords":["tutorial","command","commands","avatar"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Chat-API#figura-command-system",
+		"name":"Tutorial: Create Avatar Commands"
 	}
 ]
