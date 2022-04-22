@@ -1210,5 +1210,65 @@
 		"keywords":["action","wheel","actionwheel","get","hover","color","gethovercolor"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Action-Wheel-API#gethovercolor",
 		"name":"ActionWheelSlot.getHoverColor"
+	},
+	{
+		"keywords":["keybind","api"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Keybind-API",
+		"name":"KeyBind API"
+	},
+	{
+		"keywords":["keybind","get","key","list","getkeylist"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Keybind-API#getkeylist",
+		"name":"keybind.getKeyList"
+	},
+	{
+		"keywords":["keybind","get","registered","key","list","getregisteredkeylist"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Keybind-API#getregisteredkeylist",
+		"name":"keybind.getRegisteredKeyList"
+	},
+	{
+		"keywords":["keybind","new","key","newkey"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Keybind-API#newkeystring-key-bool",
+		"name":"keybind.newKey"
+	},
+	{
+		"keywords":["keybind","get","registered","vanilla","getregisteredkeybind"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Keybind-API#getregisteredkeybindvanillakeybind",
+		"name":"keybind.getRegisteredKeybind"
+	},
+	{
+		"keywords":["keybind","get","key","getkey"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Keybind-API#getkey",
+		"name":"Keybind.getKey"
+	},
+	{
+		"keywords":["keybind","get","name","getname"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Keybind-API#getname",
+		"name":"Keybind.getName"
+	},
+	{
+		"keywords":["keybind","is","pressed","ispressed"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Keybind-API#ispressed",
+		"name":"Keybind.isPressed"
+	},
+	{
+		"keywords":["keybind","was","pressed","waspressed"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Keybind-API#waspressed",
+		"name":"Keybind.wasPressed"
+	},
+	{
+		"keywords":["keybind","reset"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Keybind-API#reset",
+		"name":"CustomKeybind.reset"
+	},
+	{
+		"keywords":["keybind","set","key","setkey"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Keybind-API#setkeykey",
+		"name":"CustomKeybind.setKey"
+	},
+	{
+		"keywords":["keybind","set","name","setname"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Keybind-API#setnamestring",
+		"name":"CustomKeybind.setName"
 	}
 ]
