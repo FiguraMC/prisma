@@ -31,7 +31,7 @@
 		"name":"Mimic Keywords"
 	},
 	{
-		"keywords":["keyword","keywords","no","parent","noparent","no_parent"],
+		"keywords":["keyword","keywords","no","parent","noparent"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Blockbench-Keywords#no_parent",
 		"name":"NO_PARENT Keyword"
 	},
@@ -317,7 +317,7 @@
 		"name":"CustomModelPart.worldToPartPos"
 	},
 	{
-		"keywords":["vanilla","model","part","vanilla_model","vanillamodelpart","api"],
+		"keywords":["vanilla","model","part","vanillamodelpart","api"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API",
 		"name":"Vanilla Model API",
 		"priority":1
@@ -383,37 +383,37 @@
 		"name":"VanillaModelPart.isOptionEnabled"
 	},
 	{
-		"keywords":["vanilla","armor","model","part","armor_model","armormodelpart","api"],
+		"keywords":["vanilla","armor","model","part","armormodelpart","api"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Armor-Model-API",
 		"name":"Armor Model API",
 		"priority":1
 	},
 	{
-		"keywords":["vanilla","elytra","model","part","elytra_model","elytramodelpart","api"],
+		"keywords":["vanilla","elytra","model","part","elytramodelpart","api"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Elytra-Model-API",
 		"name":"Elytra Model API",
 		"priority":1
 	},
 	{
-		"keywords":["vanilla","held","item","helditem","held_item","model","part","held_item_model","helditemmodelpart","api"],
+		"keywords":["vanilla","held","item","helditem","model","part","helditemmodelpart","api"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Held-Item-Model-API",
 		"name":"Held Item Model API",
 		"priority":1
 	},
 	{
-		"keywords":["vanilla","spyglass","model","part","spyglass_model","spyglassmodelpart","api"],
+		"keywords":["vanilla","spyglass","model","part","spyglassmodelpart","api"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Spyglass-Model-API",
 		"name":"Spyglass Model API",
 		"priority":1
 	},
 	{
-		"keywords":["vanilla","parrot","model","part","parrot_model","parrotmodelpart","api"],
+		"keywords":["vanilla","parrot","model","part","parrotmodelpart","api"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Parrot-Model-API",
 		"name":"Parrot Model API",
 		"priority":1
 	},
 	{
-		"keywords":["vanilla","first","person","firstperson","first_person","model","part","first_person_model","firstpersonmodelpart","api"],
+		"keywords":["vanilla","first","person","firstperson","model","part","firstpersonmodelpart","api"],
 		"url":"https://github.com/Blancworks/Figura/wiki/First-Person-Model-API",
 		"name":"First Person Model API",
 		"priority":1
@@ -547,7 +547,7 @@
 		"name":"Entity.getEyeHeight"
 	},
 	{
-		"keywords":["entity","livingentity","player","get","eye","y","pos","world","coord","geteyey"],
+		"keywords":["entity","livingentity","player","get","eye","y","geteyey"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Entity-API#geteyey",
 		"name":"Entity.getEyeY"
 	},
@@ -940,12 +940,12 @@
 		"name":"vectors"
 	},
 	{
-		"keywords":["vector","vectors","color","convert","hsv","rgb","to","hsvtorgb"],
+		"keywords":["vector","vectors","color","convert","hsv","rgb","to","color","hsvtorgb"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Vector-API#vector3-vectorshsvtorgbvector3-hsv",
 		"name":"vectors.hsvToRGB"
 	},
 	{
-		"keywords":["vector","vectors","color","convert","hsv","rgb","to","rgbtohsv"],
+		"keywords":["vector","vectors","color","convert","hsv","rgb","to","color","rgbtohsv"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Vector-API#vector3-vectorsrgbtohsvvector3-rgb",
 		"name":"vectors.rgbToHSV"
 	},
@@ -1119,5 +1119,96 @@
 		"url":"https://github.com/Blancworks/Figura/wiki/Ping-API",
 		"name":"Ping API",
 		"priority":1
+	},
+	{
+		"keywords":["action","wheel","actionwheel","api"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Action-Wheel-API",
+		"name":"Action Wheel API",
+		"priority":1
+	},
+	{
+		"keywords":["action","wheel","actionwheel","slot","number","#"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Action-Wheel-API#slot_",
+		"name":"action_wheel.SLOT_1\naction_wheel.SLOT_<1-8>"
+	},
+	{
+		"keywords":["action","wheel","actionwheel","set","left","slot","size","amount","setleftsize"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Action-Wheel-API#setleftsizenumber",
+		"name":"action_wheel.setLeftSize"
+	},
+	{
+		"keywords":["action","wheel","actionwheel","set","right","slot","size","amount","setrightsize"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Action-Wheel-API#setrightsizenumber",
+		"name":"action_wheel.setRightSize"
+	},
+	{
+		"keywords":["action","wheel","actionwheel","is","open","isopen"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Action-Wheel-API#isopen",
+		"name":"action_wheel.isOpen"
+	},
+	{
+		"keywords":["action","wheel","actionwheel","get","left","slot","size","amount","getleftsize"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Action-Wheel-API#getleftsize",
+		"name":"action_wheel.getLeftSize"
+	},
+	{
+		"keywords":["action","wheel","actionwheel","get","right","slot","size","amount","getrightsize"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Action-Wheel-API#getrightsize",
+		"name":"action_wheel.getRightSize"
+	},
+	{
+		"keywords":["action","wheel","actionwheel","get","selected","slot","getselectedslot"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Action-Wheel-API#getselectedslot",
+		"name":"action_wheel.getSelectedSlot"
+	},
+	{
+		"keywords":["action","wheel","actionwheel","run","execute","selected","slot","action","runaction"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Action-Wheel-API#runaction",
+		"name":"action_wheel.runAction"
+	},
+	{
+		"keywords":["action","wheel","actionwheel","set","item","setitem"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Action-Wheel-API#setitemitem",
+		"name":"ActionWheelSlot.setItem"
+	},
+	{
+		"keywords":["action","wheel","actionwheel","set","title","settitle"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Action-Wheel-API#settitlestring",
+		"name":"ActionWheelSlot.setTitle"
+	},
+	{
+		"keywords":["action","wheel","actionwheel","set","function","setfunction"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Action-Wheel-API#setfunctionfunction",
+		"name":"ActionWheelSlot.setFunction"
+	},
+	{
+		"keywords":["action","wheel","actionwheel","set","hover","item","sethoveritem"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Action-Wheel-API#sethoveritemitem",
+		"name":"ActionWheelSlot.setHoverItem"
+	},
+	{
+		"keywords":["action","wheel","actionwheel","set","color","setcolor"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Action-Wheel-API#setcolorcolor",
+		"name":"ActionWheelSlot.setColor"
+	},
+	{
+		"keywords":["action","wheel","actionwheel","set","hover","color","sethovercolor"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Action-Wheel-API#sethovercolorcolor",
+		"name":"ActionWheelSlot.setHoverColor"
+	},
+	{
+		"keywords":["action","wheel","actionwheel","get","hover","item","gethoveritem"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Action-Wheel-API#gethoveritem",
+		"name":"ActionWheelSlot.getHoverItem"
+	},
+	{
+		"keywords":["action","wheel","actionwheel","get","color","getcolor"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Action-Wheel-API#getcolor",
+		"name":"ActionWheelSlot.getColor"
+	},
+	{
+		"keywords":["action","wheel","actionwheel","get","hover","color","gethovercolor"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Action-Wheel-API#gethovercolor",
+		"name":"ActionWheelSlot.getHoverColor"
 	}
 ]
