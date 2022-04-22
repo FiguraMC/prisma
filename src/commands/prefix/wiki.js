@@ -19,7 +19,7 @@ module.exports = {
 			message.channel.send(`Too many possible matches. Try adding another keyword.`);
 		}
 		else{
-			var string=""
+			let string=""
 			for(const entry in result){
 				string+=`\n${entry.name??"No Name Provided"}\n\t<${entry.url??"No Url Provided"}>`
 			}
