@@ -30,14 +30,14 @@ module.exports = {
 
 /**
  *
- * @param {String[]} argKeywords
+ * @param {String[]} argKeywordArray
  */
-function search(argKeywords) {
-	argKeywords=argKeywords.map(string=>string.toLowerCase())
-	var keywords=new Set()
-	for(const keyword of argKeywords){
+function search(argKeywordArray) {
+	argKeywordArray=argKeywordArray.map(string=>string.toLowerCase())
+	var keywordSet=new Set()
+	for(const keyword of argKeywordArray){
 		for(const w of keyword.split(/[_.]+/g)){
-			keywords.add(w)
+			keywordSet.add(w)
 		}
 	}
 	var mostKeywords=[]
@@ -45,7 +45,7 @@ function search(argKeywords) {
 	for(const entry of wiki){
 		var numKeywords=0
 		for(const keyword of entry.keywords){
-			for (const word of keywords){
+			for (const word of keywordSet){
 				if(keyword==word){
 					numKeywords++
 				}
