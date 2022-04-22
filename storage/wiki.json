@@ -1113,5 +1113,11 @@
 		"keywords":["animation","get","name","getname"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Animation-API#getname",
 		"name":"Animation.getName"
+	},
+	{
+		"keywords":["ping","pings","api"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Ping-API",
+		"name":"Ping API",
+		"priority":1
 	}
 ]
