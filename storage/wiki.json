@@ -1120,7 +1120,7 @@
 		"name":"Animation.getName"
 	},
 	{
-		"keywords":["ping","pings","api"],
+		"keywords":["ping","pings","network","api"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Ping-API",
 		"name":"Ping API",
 		"priority":1
