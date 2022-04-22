@@ -59,6 +59,7 @@ function search(argKeywords) {
 			mostKeywords=[entry]
 		}
 	}
+	if(currentMaximum==0){return[]}
 	var matches=[]
 	var currentPriority=0
 	for(const entry of mostKeywords){
