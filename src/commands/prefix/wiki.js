@@ -36,7 +36,7 @@ function search(argKeywordArray) {
 	argKeywordArray=argKeywordArray.map(string=>string.toLowerCase())
 	var keywordSet=new Set()
 	for(const keyword of argKeywordArray){
-		for(const w of keyword.split(/[_.]+/g)){
+		for(const w of keyword.split(/[_.\-]+/g)){
 			keywordSet.add(w)
 		}
 	}
