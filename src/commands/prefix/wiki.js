@@ -3,19 +3,19 @@ const wiki = require('../../../storage/wiki.json');
 
 // Old wiki command, this will be removed once the wiki gets an overhaul
 module.exports = {
-    name: 'wiki',
-    usage: '`?wiki <search>` - Figura wiki command.',
-    /**
-     * 
-     * @param {Discord.Message} message 
-     * @param {String[]} args 
-     */
+	name: 'wiki',
+	usage: '`?wiki <search>` - Figura wiki command.',
+	/**
+	 * 
+	 * @param {Discord.Message} message 
+	 * @param {String[]} args 
+	 */
 	 async execute(message, args) {
-        const result = search(args);
-        if (!result.length) {
-            message.channel.send(`Could not find anything about "${args.join(' ')}".`);
-        }
-        else if(result.length>20){
+		const result = search(args);
+		if (!result.length) {
+			message.channel.send(`Could not find anything about "${args.join(' ')}".`);
+		}
+		else if(result.length>20){
 			message.channel.send(`Too many possible matches. Try adding another keyword.`);
 		}
 		else{
@@ -23,9 +23,9 @@ module.exports = {
 			for(const entry in result){
 				string+=`\n${entry.name??"No Name Provided"}\n\t<${entry.url??"No Url Provided"}>`
 			}
-            message.channel.send(`Possible matches found:${string}`);
-        }
-    },
+			message.channel.send(`Possible matches found:${string}`);
+		}
+	},
 };
 
 /**
