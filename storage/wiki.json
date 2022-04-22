@@ -232,38 +232,38 @@
 		"name":"CustomModelPart.setExtraTexEnabled"
 	},
 	{
-		"keywords":["custom","model","part","get","light","getlight"],
+		"keywords":["custom","model","part","set","light","setlight"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setlightint",
 		"name":"CustomModelPart.setLight"
 	},
 	{
 		"keywords":["custom","model","part","set","mimic","mimicmode","mode","parent","setmimicmode"],
-		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setmimicmode",
+		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setmimicmodebool",
 		"name":"CustomModelPart.setMimicMode"
 	},
 	{
 		"keywords":["custom","model","part","set","opacity","visible","visibility","transparent","translucent","setopacity"],
-		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setopacity",
+		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setopacityfloat",
 		"name":"CustomModelPart.setOpacity"
 	},
 	{
 		"keywords":["custom","model","part","set","damage","hurt","explode","explosion","color","overlay","setoverlay"],
-		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setoverlay",
+		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setoverlayvector",
 		"name":"CustomModelPart.setOverlay"
 	},
 	{
 		"keywords":["custom","model","part","set","parent","type","keyword","keywords","setparenttype"],
-		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setparenttype",
+		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setparenttypestring",
 		"name":"CustomModelPart.setParentType"
 	},
 	{
 		"keywords":["custom","model","part","set","pivot","point","setpivotpoint"],
-		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setpivot",
+		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setpivotvector",
 		"name":"CustomModelPart.setPivot"
 	},
 	{
 		"keywords":["custom","model","part","set","position","pos","setpos"],
-		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setpos",
+		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setposvector",
 		"name":"CustomModelPart.setPos"
 	},
 	{
@@ -273,37 +273,37 @@
 	},
 	{
 		"keywords":["custom","model","part","set","rotation","rot","setrot"],
-		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setrot",
+		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setrotvector",
 		"name":"CustomModelPart.setRot"
 	},
 	{
 		"keywords":["custom","model","part","set","scale","setscale"],
-		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setscale",
+		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setscalevector",
 		"name":"CustomModelPart.setScale"
 	},
 	{
 		"keywords":["custom","model","part","set","shader","setshader"],
-		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setshader",
+		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setshaderstring",
 		"name":"CustomModelPart.setShader"
 	},
 	{
 		"keywords":["custom","model","part","set","texture","settexture"],
-		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#settexture",
+		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#settexturestring",
 		"name":"CustomModelPart.setTexture"
 	},
 	{
 		"keywords":["custom","model","part","set","texture","size","settexturesize"],
-		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#settexturesize",
+		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#settexturesizetable",
 		"name":"CustomModelPart.setTextureSize"
 	},
 	{
 		"keywords":["custom","model","part","set","uv","offset","setuv"],
-		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setuv",
+		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setuvtable",
 		"name":"CustomModelPart.setUV"
 	},
 	{
 		"keywords":["custom","model","part","set","uv","data","size","position","setuvdata"],
-		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setuvdatastring",
+		"url":"https://github.com/Blancworks/Figura/wiki/Custom-Model-API#setuvdatastring-vector4",
 		"name":"CustomModelPart.setUVData"
 	},
 	{
@@ -1270,5 +1270,50 @@
 		"keywords":["keybind","set","name","setname"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Keybind-API#setnamestring",
 		"name":"CustomKeybind.setName"
+	},
+	{
+		"keywords":["nameplate","nametag","api"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Nameplate-API",
+		"name":"Nameplate API"
+	},
+	{
+		"keywords":["nameplate","nametag","set","text","settext"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Nameplate-API#settextstring",
+		"name":"nameplate.ENTITY.setText\nnameplate.CHAT.setText\nnameplate.LIST.setText"
+	},
+	{
+		"keywords":["nameplate","nametag","get","text","gettext"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Nameplate-API#gettext",
+		"name":"nameplate.ENTITY.getText\nnameplate.CHAT.getText\nnameplate.LIST.getText"
+	},
+	{
+		"keywords":["nameplate","nametag","set","enabled","enable","visible","setenabled"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Nameplate-API#setenabledbool",
+		"name":"nameplate.ENTITY.setEnabled"
+	},
+	{
+		"keywords":["nameplate","nametag","set","pos","position","setpos"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Nameplate-API#setposvector",
+		"name":"nameplate.ENTITY.setPos"
+	},
+	{
+		"keywords":["nameplate","nametag","set","scale","setscale"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Nameplate-API#setscalevector",
+		"name":"nameplate.ENTITY.setScale"
+	},
+	{
+		"keywords":["nameplate","nametag","get","enabled","getenabled"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Nameplate-API#getenabled",
+		"name":"nameplate.ENTITY.getEnabled"
+	},
+	{
+		"keywords":["nameplate","nametag","get","pos","position","getpos"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Nameplate-API#getpos",
+		"name":"nameplate.ENTITY.getPos"
+	},
+	{
+		"keywords":["nameplate","nametag","get","scale","getscale"],
+		"url":"https://github.com/Blancworks/Figura/wiki/Nameplate-API#getscale",
+		"name":"nameplate.ENTITY.getScale"
 	}
 ]
