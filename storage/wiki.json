@@ -5,6 +5,11 @@
 		"name":"Did you know that there is a wiki? *Read it.*"
 	},
 	{
+		"keywords":["math"],
+		"url":"http://www.lua.org/manual/5.2/manual.html#6.6",
+		"name":"Lua Math Library Functions"
+	},
+	{
 		"keywords":["menu","figura","avatar","panel","figurapanel","screen"],
 		"url":"https://github.com/Blancworks/Figura/wiki/Figura-Panel",
 		"name":"Select Avatar Screen"
