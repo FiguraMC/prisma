@@ -19,7 +19,7 @@ module.exports = {
         }
         else {
             let string = '';
-            for (const entry in result) {
+            for (const entry of result) {
                 string += `\n${entry.name ?? 'No Name Provided'}\n\t<${entry.url ?? 'No Url Provided'}>`;
             }
             message.channel.send(`Possible matches found:${string}`);
@@ -72,7 +72,7 @@ function search(argKeywordArray) {
             matches.push(entry);
         }
         else if ((entry.priority ?? 0) > currentPriority) {
-            currentPriority = entry.priority;
+            currentPriority = (entry.priority??0);
             matches = [entry];
         }
     }
