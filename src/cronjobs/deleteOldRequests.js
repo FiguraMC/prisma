@@ -40,7 +40,7 @@ async function deleteOldRequests(client) {
                 }
                 // delete from storage
                 DataStorage.deleteFromArray(DataStorage.storage.avatar_requests, element);
-                DataStorage.save();
+                DataStorage.save('storage');
             }
             else {
                 let edit = false;

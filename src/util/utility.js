@@ -1,5 +1,6 @@
 const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const got = require('got');
+const DataStorage = require('./dataStorage');
 
 // Utility functions
 
@@ -68,6 +69,7 @@ module.exports.escapeRegExp = function (string) {
 
 /**
  * Checks if Figura backend is online
+ * @param {Discord.Client} client 
  * @returns boolean
  */
 module.exports.checkBackendStatus = function (client) {
@@ -95,9 +97,13 @@ module.exports.checkBackendStatus = function (client) {
  * @param {Discord.Client} client 
  * @param {boolean} status 
  */
-async function setBackendStatusChannel(client, status) {
-    const channel = await client.channels.fetch(process.env.BACKEND_STATUS_CHANNEL);
-    if (channel) {
-        channel.setName('Backend: ' + (status ? 'Online ✅' : 'Offline ❌')).catch(console.error);
-    }
+function setBackendStatusChannel(client, status) {
+    client.guilds.cache.forEach(async guild => {
+        try {
+            const channel = await guild.channels.fetch(DataStorage.guildsettings?.guilds?.get(guild.id)?.get('backend_status_channel'));
+            channel.setName('Backend: ' + (status ? 'Online ✅' : 'Offline ❌')).catch(console.error);
+        }
+        // eslint-disable-next-line no-empty
+        catch (err) { console.error(err); }
+    });
 }

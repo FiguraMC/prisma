@@ -17,7 +17,7 @@ async function init(client) {
         if (!msg) {
             // delete from storage if message doesnt exist
             DataStorage.deleteFromArray(DataStorage.storage.avatar_requests, element);
-            DataStorage.save();
+            DataStorage.save('storage');
             return;
         }
         createCollector(msg, element);
@@ -101,7 +101,7 @@ async function createCollector(msg, element) {
 
             element.locked = true;
 
-            DataStorage.save();
+            DataStorage.save('storage');
 
             // show the user, that the bot locked it
             reaction.message.embeds.forEach(embed => {
@@ -151,7 +151,7 @@ async function createCollector(msg, element) {
                 reaction.message.edit({ embeds: reaction.message.embeds }).catch(console.error);
             }
 
-            DataStorage.save();
+            DataStorage.save('storage');
         }
     });
 

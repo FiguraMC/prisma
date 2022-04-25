@@ -31,6 +31,6 @@ module.exports = {
             DataStorage.storage.nsfwfilter.push(domain);
             message.reply('Added `' + domain + '` to the nsfw list.');
         }
-        DataStorage.save();
+        DataStorage.save('storage');
     },
 };

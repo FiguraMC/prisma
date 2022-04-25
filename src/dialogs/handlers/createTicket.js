@@ -69,7 +69,7 @@ module.exports = {
                 DataStorage.storage.tickets.push({ author: message.author.id, thread: thread.id });
                 DataStorage.storage.ticketId++;
 
-                DataStorage.save();
+                DataStorage.save('storage');
 
                 DataStorage.storage.ticketsubscribers.forEach(async (subscriberID) => {
                     const user = await message.client.users.fetch(subscriberID);

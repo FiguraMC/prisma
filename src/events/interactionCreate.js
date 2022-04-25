@@ -20,7 +20,11 @@ module.exports = {
         if (interaction.isCommand()) {
             const command = interaction.client.slashCommands.get(interaction.commandName);
 
+            // If command doesnt exist, return
             if (!command) return;
+
+            // If not in main guild only allow specific commands
+            if (interaction.guild.id != process.env.MAIN_GUILD && !command.allowInOtherGuilds) return;
 
             try {
                 await command.execute(interaction);
@@ -65,7 +69,7 @@ module.exports = {
                     const author = await interaction.guild.members.fetch(ticket?.author).catch(console.error);
                     author?.send(utility.buildEmbed('🔒 Your ticket has been closed.')).catch(console.error);
                     DataStorage.storage.tickets = DataStorage.storage.tickets?.filter(x => x.thread != interaction.message.thread.id);
-                    DataStorage.save();
+                    DataStorage.save('storage');
                     await interaction.message.thread.send(utility.buildEmbed('🔒 Ticket has been closed.')).catch(console.error);
                     interaction.message.thread.setArchived(true);
                 }
@@ -80,7 +84,7 @@ module.exports = {
                 if (!DataStorage.storage.ticketsubscribers) DataStorage.storage.ticketsubscribers = [];
                 if (!DataStorage.storage.ticketsubscribers.find(x => x == interaction.user.id)) {
                     DataStorage.storage.ticketsubscribers.push(interaction.user.id);
-                    DataStorage.save();
+                    DataStorage.save('storage');
                     interaction.update({
                         content: '\u200b',
                         embeds: [{
@@ -99,7 +103,7 @@ module.exports = {
                 if (!DataStorage.storage.ticketsubscribers) DataStorage.storage.ticketsubscribers = [];
                 if (DataStorage.storage.ticketsubscribers.find(x => x == interaction.user.id)) {
                     DataStorage.storage.ticketsubscribers = DataStorage.storage.ticketsubscribers.filter(x => x != interaction.user.id);
-                    DataStorage.save();
+                    DataStorage.save('storage');
                     interaction.update({
                         content: '\u200b',
                         embeds: [{

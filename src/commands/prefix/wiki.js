@@ -5,6 +5,7 @@ const wiki = require('../../../storage/wiki.json');
 module.exports = {
     name: 'wiki',
     usage: '`?wiki <search>` - Figura wiki command.',
+    allowInOtherGuilds: true,
     /**
      * 
      * @param {Discord.Message} message 

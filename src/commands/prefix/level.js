@@ -4,6 +4,7 @@ const getLevelReplyOf = require('../shared/level');
 module.exports = {
     name: 'level',
     usage: '`?level [@user|userId]` - Shows Avatar Request Level of a user.',
+    allowInOtherGuilds: true,
     /**
      * 
      * @param {Discord.message} message 

@@ -15,7 +15,7 @@ function levelup(member) {
     else {
         DataStorage.storage.people[member.user.id].level++;
     }
-    DataStorage.save();
+    DataStorage.save('storage');
     updateroles(member, DataStorage.storage.people[member.user.id].level);
 }
 
@@ -34,7 +34,7 @@ function levelset(member, level) {
     else {
         DataStorage.storage.people[member.user.id].level = level;
     }
-    DataStorage.save();
+    DataStorage.save('storage');
     updateroles(member, level);
 }
 

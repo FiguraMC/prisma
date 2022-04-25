@@ -1,6 +1,7 @@
 const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const PKAPI = require('pkapi.js');
 const pkapi = new PKAPI();
+const DataStorage = require('../util/dataStorage');
 
 module.exports = {
     name: 'messageDelete',
@@ -13,6 +14,7 @@ module.exports = {
         // Log delete in the log channel
 
         if (!message.guild) return; // Ignore DM
+        if (DataStorage.guildsettings.guilds?.get(message.guild.id)?.get('enable_message_logging') != 'true') return; // Ignore if logging is disabled
         if (message.author.id == message.client.user.id) return; // Ignore self
 
         // Check audit log to see who deleted the message
@@ -49,22 +51,25 @@ module.exports = {
             message.content = message.content.substring(0, 1017) + '`[...]`';
         }
 
-        const channel = await message.guild.channels.fetch(process.env.LOG_CHANNEL);
-        channel.send({
-            embeds: [
-                {
-                    author: { name: message.author.username, iconURL: message.author.avatarURL() },
-                    description: 'Message from <@' + message.author + '> deleted by ' + personWhoDeleted + ' in <#' + message.channel + '>',
-                    fields: [
+        message.guild.channels.fetch(DataStorage.guildsettings.guilds?.get(message.guild.id)?.get('log_channel'))
+            .then(channel => {
+                channel.send({
+                    embeds: [
                         {
-                            name: 'Message',
-                            value: message.content == '' ? '[empty]' : message.content,
+                            author: { name: message.author.username, iconURL: message.author.avatarURL() },
+                            description: 'Message from <@' + message.author + '> deleted by ' + personWhoDeleted + ' in <#' + message.channel + '>',
+                            fields: [
+                                {
+                                    name: 'Message',
+                                    value: message.content == '' ? '[empty]' : message.content,
+                                },
+                            ],
+                            image: { url: message.attachments.values()?.next()?.value?.attachment },
+                            color: 'ff0000',
                         },
                     ],
-                    image: { url: message.attachments.values()?.next()?.value?.attachment },
-                    color: 'ff0000',
-                },
-            ],
-        });
+                }).catch(console.error);
+            })
+            .catch(console.error);
     },
 };

@@ -4,6 +4,7 @@ const utility = require('../../util/utility');
 module.exports = {
     name: 'backend',
     usage: '`?backend` - Checks Figura backend status.',
+    allowInOtherGuilds: true,
     /**
      * 
      * @param {Discord.Message} message 

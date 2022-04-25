@@ -24,11 +24,27 @@ module.exports = {
 
         const rest = new REST({ version: '9' }).setToken(process.env.TOKEN);
 
-        rest.put(Routes.applicationGuildCommands(message.client.user.id, message.guild.id), { body: commands })
-            .then(() => message.reply('Successfully registered application commands.'))
-            .catch((error) => {
-                console.error(error);
-                message.reply('Could not register application commands.');
-            });
+        // If in dev mode
+        if (process.argv[2] == 'dev') {
+            // Register local application commands
+            rest.put(Routes.applicationGuildCommands(message.client.user.id, message.guild.id), { body: commands })
+                .then(() => message.channel.send('Successfully registered local application commands.'))
+                .catch((error) => {
+                    console.error(error);
+                    message.reply('Could not register local application commands.');
+                });
+        }
+        else {
+            // Delete local application commands
+            rest.put(Routes.applicationGuildCommands(message.client.user.id, message.guild.id), { body: [] });
+
+            // Register global application commands
+            rest.put(Routes.applicationCommands(message.client.user.id), { body: commands })
+                .then(() => message.channel.send('Successfully registered global application commands.'))
+                .catch((error) => {
+                    console.error(error);
+                    message.reply('Could not register global application commands.');
+                });
+        }
     },
 };

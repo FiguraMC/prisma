@@ -31,6 +31,6 @@ module.exports = {
             DataStorage.storage.scamfilter.push(domain);
             message.reply('Added `' + domain + '` to the scam list.');
         }
-        DataStorage.save();
+        DataStorage.save('storage');
     },
 };

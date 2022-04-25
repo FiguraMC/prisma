@@ -40,7 +40,7 @@ module.exports = {
                 dialog.extras.requestMessage.delete().catch(console.error);
 
                 DataStorage.deleteFromArray(DataStorage.storage.avatar_requests, avatarRequest);
-                DataStorage.save();
+                DataStorage.save('storage');
 
                 channel.send(utility.buildEmbed('Request deleted.'));
 

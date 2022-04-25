@@ -8,6 +8,7 @@ module.exports = {
         .setDescription('Shows Avatar Request Level of a user.')
         .addUserOption((option) => option.setName('user').setDescription('The user to check the level of.').setRequired(true)),
     usage: '`/level <user>` - Shows Avatar Request Level of a user.',
+    allowInOtherGuilds: true,
     /**
      * 
      * @param {Discord.CommandInteraction} interaction 

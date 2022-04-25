@@ -125,7 +125,7 @@ async function archive(dialog, channel, client) {
     dialog.extras.requestMessage.delete().catch(console.error);
 
     DataStorage.deleteFromArray(DataStorage.storage.avatar_requests, avatarRequest);
-    DataStorage.save();
+    DataStorage.save('storage');
 
     channel.send(utility.buildEmbed('Done!', 'The request is now archived!', [])).catch(console.error);
 }

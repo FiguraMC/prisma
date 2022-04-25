@@ -10,13 +10,16 @@ module.exports = {
      * @param {Discord.Message} message 
      */
     async execute(message) {
-        message.author.send({
-            files: [
+        const dump = DataStorage.createDump();
+        const files = [];
+        dump.forEach((value, key) => {
+            files.push(
                 new Discord.MessageAttachment(
-                    Buffer.from(DataStorage.createDump()),
-                    'storage.json',
+                    Buffer.from(value),
+                    key + '.json',
                 ),
-            ],
-        }).catch();
+            );
+        });
+        message.author.send({ files: files }).catch();
     },
 };

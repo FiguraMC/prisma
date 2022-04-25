@@ -25,7 +25,7 @@ module.exports = {
         const person = DataStorage.storage.people[member.id];
         if (person?.requestban) {
             delete person.requestban;
-            DataStorage.save();
+            DataStorage.save('storage');
             message.reply('Request unbanned ' + member.user.tag);
         }
         else {

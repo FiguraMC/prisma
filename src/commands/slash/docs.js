@@ -9,6 +9,7 @@ module.exports = {
         .addStringOption(option => option.setName('query').setDescription('Class or Class#method or Class.property combination to search for').setAutocomplete(true))
         .addUserOption(option => option.setName('target').setDescription('User to mention').setRequired(false)),
     usage: '`/docs <query> [target]` - Display Figura documentation.',
+    allowInOtherGuilds: true,
     /**
      * 
      * @param {Discord.CommandInteraction} interaction 

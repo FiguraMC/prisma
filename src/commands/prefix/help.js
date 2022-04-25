@@ -6,6 +6,7 @@ const utility = require('../../util/utility');
 module.exports = {
     name: 'help',
     usage: '`?help` - Shows this message.',
+    allowInOtherGuilds: true,
     /**
      * 
      * @param {Discord.Message} message 
@@ -18,6 +19,7 @@ module.exports = {
         let modCommands = '**Moderator commands**\n';
 
         message.client.slashCommands.forEach(command => {
+            if (message.guild.id != process.env.MAIN_GUILD && !command.allowInOtherGuilds) return;
             if (command.moderator) {
                 modCommands += command.usage + '\n';
             }
@@ -27,6 +29,7 @@ module.exports = {
         });
 
         message.client.prefixCommands.forEach(command => {
+            if (message.guild.id != process.env.MAIN_GUILD && !command.allowInOtherGuilds) return;
             if (command.moderator) {
                 modCommands += command.usage + '\n';
             }

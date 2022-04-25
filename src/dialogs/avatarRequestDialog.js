@@ -128,7 +128,7 @@ module.exports.handle = async function (message, channel, dialog, options) {
                 const element = { message: msg.id, user: message.author.id, timestamp: Date.now(), locked: false, thread: thread.id };
                 if (!DataStorage.storage.avatar_requests) DataStorage.storage.avatar_requests = [];
                 DataStorage.storage.avatar_requests.push(element);
-                DataStorage.save();
+                DataStorage.save('storage');
 
                 requestReactions.createCollector(msg, element);
             }

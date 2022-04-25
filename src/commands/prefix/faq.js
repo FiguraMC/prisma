@@ -37,7 +37,7 @@ module.exports = {
         else if (args.length == 1) {
             if (DataStorage.storage.faq.has(args[0].toLowerCase())) {
                 DataStorage.storage.faq.delete(args[0].toLowerCase());
-                DataStorage.save();
+                DataStorage.save('storage');
                 message.reply(`Removed \`${args[0]}\` from the FAQ.`);
             }
             else {
@@ -47,7 +47,7 @@ module.exports = {
         // Two arguments, add question and answer (or overwrite existing)
         else if (args.length == 2) {
             DataStorage.storage.faq.set(args[0].toLowerCase(), args[1]);
-            DataStorage.save();
+            DataStorage.save('storage');
             message.reply(`Added \`${args[0]}\` to the FAQ.`);
         }
         else {

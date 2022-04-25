@@ -26,7 +26,7 @@ module.exports = {
         const person = DataStorage.storage.people[member.id];
         if (person.requestban) return message.reply('This user is already banned.');
         person.requestban = true;
-        DataStorage.save();
+        DataStorage.save('storage');
         message.reply(`Request banned ${member.user.tag}.`);
     },
 };

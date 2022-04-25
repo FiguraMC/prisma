@@ -107,6 +107,10 @@ dist
 desktop.ini
 
 # Data storage
-storage/*
-!docs.json
-!wiki.json
+storage/backups
+storage/storage.json
+storage/storage0.json
+storage/storage1.json
+storage/guildsettings.json
+storage/guildsettings0.json
+storage/guildsettings1.json
