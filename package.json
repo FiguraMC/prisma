@@ -1,7 +1,7 @@
 {
-  "name": "blancbot",
+  "name": "lightloop",
   "version": "1.0.0",
-  "description": "Discord Bot for the Blancworks Discord server",
+  "description": "Discord Bot for the MoonLight Discord server",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Blancworks/BlancBot.git"
+    "url": "git+https://github.com/Moonlight-MC/LightLoop.git"
   },
   "author": "Manuel-3",
   "license": "LGPL-2.1",
   "bugs": {
-    "url": "https://github.com/Blancworks/BlancBot/issues"
+    "url": "https://github.com/Moonlight-MC/LightLoop/issues"
   },
-  "homepage": "https://github.com/Blancworks/BlancBot#readme",
+  "homepage": "https://github.com/Moonlight-MC/LightLoop#readme",
   "dependencies": {
     "@discordjs/builders": "^0.11.0",
     "@discordjs/rest": "^0.2.0-canary.0",

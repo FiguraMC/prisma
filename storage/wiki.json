@@ -4,144 +4,144 @@
             "custommodelpart.setpos",
             "custommodelpart.getpos"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-API#void-custommodelpartsetposxyz-and-xyz-custommodelpartgetpos"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#void-custommodelpartsetposxyz-and-xyz-custommodelpartgetpos"
     },
     {
         "keys": [
             "custommodelpart.setrot",
             "custommodelpart.getrot"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-API#void-custommodelpartsetrotpitchyawroll-and-pitchyawroll-custommodelpartgetrot"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#void-custommodelpartsetrotpitchyawroll-and-pitchyawroll-custommodelpartgetrot"
     },
     {
         "keys": [
             "custommodelpart.setenabled",
             "custommodelpart.getenabled"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-API#void-custommodelpartsetenabledenabled--boolean-custommodelpartgetenabled"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#void-custommodelpartsetenabledenabled--boolean-custommodelpartgetenabled"
     },
     {
         "keys": [
             "custommodelpart.setscale",
             "custommodelpart.getscale"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-API#void-custommodelpartsetscalexyz-and-xyz-custommodelpartgetscale"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#void-custommodelpartsetscalexyz-and-xyz-custommodelpartgetscale"
     },
     {
         "keys": [
             "custommodelpart.setpivot",
             "custommodelpart.getpivot"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-API#void-custommodelpartsetpivotxyz-and-xyz-custommodelpartgetpivot"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#void-custommodelpartsetpivotxyz-and-xyz-custommodelpartgetpivot"
     },
     {
         "keys": [
             "custommodelpart.setuv",
             "custommodelpart.getuv"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-API#void-custommodelpartsetuvuv--uv-custommodelpartgetuv"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#void-custommodelpartsetuvuv--uv-custommodelpartgetuv"
     },
     {
         "keys": [
             "custommodelpart.setcolor",
             "custommodelpart.getcolor"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-API#void-custommodelpartsetcolorrgb--rgb-custommodelpartgetcolor"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#void-custommodelpartsetcolorrgb--rgb-custommodelpartgetcolor"
     },
     {
         "keys": [
             "custommodelpart.setparenttype",
             "custommodelpart.getparenttype"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-API#void-custommodelpartsetparenttypetype--string-custommodelpartgetparenttype"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#void-custommodelpartsetparenttypetype--string-custommodelpartgetparenttype"
     },
     {
         "keys": [
             "custommodelpart.setmimicmode",
             "custommodelpart.getmimicmode"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-API#custom-only---void-modelpartsetmimicmodeboolean--boolean-modelpartgetmimicmode"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#custom-only---void-modelpartsetmimicmodeboolean--boolean-modelpartgetmimicmode"
     },
     {
         "keys": [
             "vanillamodelpart.setpos",
             "vanillamodelpart.getpos"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-Part#void-vanillamodelpartsetposxyz-and-xyz-vanillamodelpartgetpos"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-Part#void-vanillamodelpartsetposxyz-and-xyz-vanillamodelpartgetpos"
     },
     {
         "keys": [
             "vanillamodelpart.setrot",
             "vanillamodelpart.getrot"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-Part#void-vanillamodelpartsetrotpitchyawroll-and-pitchyawroll-vanillamodelpartgetrot"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-Part#void-vanillamodelpartsetrotpitchyawroll-and-pitchyawroll-vanillamodelpartgetrot"
     },
     {
         "keys": [
             "vanillamodelpart.setenabled",
             "vanillamodelpart.getenabled"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-Part#void-vanillamodelpartsetenabledenabled--boolean-vanillamodelpartgetenabled"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-Part#void-vanillamodelpartsetenabledenabled--boolean-vanillamodelpartgetenabled"
     },
     {
         "keys": [
             "vanillamodelpart.getoriginenabled"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-Part#void-vanillamodelpartgetoriginenabled"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-Part#void-vanillamodelpartgetoriginenabled"
     },
     {
         "keys": [
             "vanillamodelpart.getoriginpos"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-Part#void-vanillamodelpartgetoriginpos"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-Part#void-vanillamodelpartgetoriginpos"
     },
     {
         "keys": [
             "vanillamodelpart.getoriginrot"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-Part#void-vanillamodelpartgetoriginrot"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-Part#void-vanillamodelpartgetoriginrot"
     },
     {
         "keys": [
             "mimic"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Blockbench-Keywords#mimic-types"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Blockbench-Keywords#mimic-types"
     },
     {
         "keys": [
             "parent"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Blockbench-Keywords#parent-types"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Blockbench-Keywords#parent-types"
     },
     {
         "keys": [
             "mesh"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Blockbench-Keywords#mesh_"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Blockbench-Keywords#mesh_"
     },
     {
         "keys": [
             "noload"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Blockbench-Keywords#noload"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Blockbench-Keywords#noload"
     },
     {
         "keys": [
             "minecraft skin"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Creating-a-basic-avatar#creating-a-minecraft-skin-model"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Creating-a-basic-avatar#creating-a-minecraft-skin-model"
     },
     {
         "keys": [
             "generic model"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Creating-a-basic-avatar#creating-a-generic-model"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Creating-a-basic-avatar#creating-a-generic-model"
     },
     {
         "keys": [
             "texture"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Creating-a-basic-avatar#creating-a-texture"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Creating-a-basic-avatar#creating-a-texture"
     },
     {
         "keys": [
@@ -149,331 +149,331 @@
             "view",
             "preview"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Creating-a-basic-avatar#viewing-an-avatar"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Creating-a-basic-avatar#viewing-an-avatar"
     },
     {
         "keys": [
             "upload"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Creating-a-basic-avatar#uploading-an-avatar"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Creating-a-basic-avatar#uploading-an-avatar"
     },
     {
         "keys": [
             "particle.addParticle"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Particle-API#particleaddparticlename-x-y-z-velocityx-velocityy-velocityz"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Particle-API#particleaddparticlename-x-y-z-velocityx-velocityy-velocityz"
     },
     {
         "keys": [
             "entity.getpos"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Entity-API#xyz-entitygetpos"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#xyz-entitygetpos"
     },
     {
         "keys": [
             "entity.getrot"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Entity-API#pitchyaw-entitygetrot"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#pitchyaw-entitygetrot"
     },
     {
         "keys": [
             "entity.getvelocity"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Entity-API#xyz-entitygetvelocity"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#xyz-entitygetvelocity"
     },
     {
         "keys": [
             "entity.getlookdir"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Entity-API#xyz-entitygetlookdir"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#xyz-entitygetlookdir"
     },
     {
         "keys": [
             "entity.getuuid"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Entity-API#string-entitygetuuid"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#string-entitygetuuid"
     },
     {
         "keys": [
             "entity.getfireticks"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Entity-API#number-entitygetfireticks"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#number-entitygetfireticks"
     },
     {
         "keys": [
             "entity.getair"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Entity-API#number-entitygetair"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#number-entitygetair"
     },
     {
         "keys": [
             "entity.getmaxair"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Entity-API#number-entitygetmaxair"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#number-entitygetmaxair"
     },
     {
         "keys": [
             "entity.getairpercentage"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Entity-API#number-entitygetairpercentage"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#number-entitygetairpercentage"
     },
     {
         "keys": [
             "entity.getworldname"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Entity-API#number-entitygetworldname"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#number-entitygetworldname"
     },
     {
         "keys": [
             "entity.getequipmentitem"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Entity-API#itemstack-entitygetequipmentitemindex"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#itemstack-entitygetequipmentitemindex"
     },
     {
         "keys": [
             "entity.getanimation"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Entity-API#string-entitygetanimation"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#string-entitygetanimation"
     },
     {
         "keys": [
             "entity.getvehicle"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Entity-API#entitylivingentity-getvehicle"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#entitylivingentity-getvehicle"
     },
     {
         "keys": [
             "entity.isgrounded"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Entity-API#boolean-isgrounded"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#boolean-isgrounded"
     },
     {
         "keys": [
             "entity.getNbtValue"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Entity-API#experimental---any-getnbtvaluestring"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#experimental---any-getnbtvaluestring"
     },
     {
         "keys": [
             "livingentity.gethealth"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API#number-livingentitygethealth"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#number-livingentitygethealth"
     },
     {
         "keys": [
             "livingentity.getmaxhealth"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API#number-livingentitygetmaxhealth"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#number-livingentitygetmaxhealth"
     },
     {
         "keys": [
             "livingentity.gethealthpercentage"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API#number-livingentitygethealthpercentage"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#number-livingentitygethealthpercentage"
     },
     {
         "keys": [
             "livingentity.getarmor"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API#number-livingentitygetarmor"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#number-livingentitygetarmor"
     },
     {
         "keys": [
             "livingentity.getdeathtime"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API#number-livingentitygetdeathtime"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#number-livingentitygetdeathtime"
     },
     {
         "keys": [
             "livingentity.getbodyyaw"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API#number-number-getbodyyaw"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#number-number-getbodyyaw"
     },
     {
         "keys": [
             "livingentity.getstatuseffecttypes"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API#string---getstatuseffecttypes"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#string---getstatuseffecttypes"
     },
     {
         "keys": [
             "livingentity.getstatuseffect"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API#amplifier-duration-getstatuseffectstring"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#amplifier-duration-getstatuseffectstring"
     },
     {
         "keys": [
             "livingentity.issneaky"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API#boolean-issneaky"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#boolean-issneaky"
     },
     {
         "keys": [
             "player.gethelditem"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Player-API#itemstack-playergethelditemindex"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Player-API#itemstack-playergethelditemindex"
     },
     {
         "keys": [
             "player.getfood"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Player-API#number-getfood"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Player-API#number-getfood"
     },
     {
         "keys": [
             "player.getsaturation"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Player-API#number-getsaturation"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Player-API#number-getsaturation"
     },
     {
         "keys": [
             "player.getexperienceprogress"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Player-API#number-getexperienceprogress"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Player-API#number-getexperienceprogress"
     },
     {
         "keys": [
             "player.getexperiencelevel"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Player-API#number-getexperiencelevel"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Player-API#number-getexperiencelevel"
     },
     {
         "keys": [
             "world.getblockstate"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/World-API#blockstate-worldgetblockstatexyz"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#blockstate-worldgetblockstatexyz"
     },
     {
         "keys": [
             "world.getredstonepower"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/World-API#number-worldgetredstonepowerxyz"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#number-worldgetredstonepowerxyz"
     },
     {
         "keys": [
             "world.gettime"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/World-API#number-worldgettime"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#number-worldgettime"
     },
     {
         "keys": [
             "world.gettimeofday"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/World-API#number-worldgettimeofday"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#number-worldgettimeofday"
     },
     {
         "keys": [
             "world.getmoonphase"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/World-API#number-worldgetmoonphase"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#number-worldgetmoonphase"
     },
     {
         "keys": [
             "world.getraingradient"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/World-API#number-worldgetraingradientnumber"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#number-worldgetraingradientnumber"
     },
     {
         "keys": [
             "world.islightning"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/World-API#boolean-worldislightning"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#boolean-worldislightning"
     },
     {
         "keys": [
             "world.getlightlevel"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/World-API#number-worldgetlightlevelxyz"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#number-worldgetlightlevelxyz"
     },
     {
         "keys": [
             "world.getskylightlevel"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/World-API#number-worldgetskylightlevelxyz"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#number-worldgetskylightlevelxyz"
     },
     {
         "keys": [
             "world.getblocklightlevel"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/World-API#number-worldgetblocklightlevelxyz"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#number-worldgetblocklightlevelxyz"
     },
     {
         "keys": [
             "world.getbiomeid"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/World-API#string-worldgetbiomeidxyz"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#string-worldgetbiomeidxyz"
     },
     {
         "keys": [
             "itemstack.gettype"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/ItemStack-API#string-itemstackgettype"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API#string-itemstackgettype"
     },
     {
         "keys": [
             "itemstack.gettag"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/ItemStack-API#nbttag-itemstackgettag"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API#nbttag-itemstackgettag"
     },
     {
         "keys": [
             "itemstack.getcount"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/ItemStack-API#number-itemstackgetcount"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API#number-itemstackgetcount"
     },
     {
         "keys": [
             "itemstack.getdamage"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/ItemStack-API#number-itemstackgetdamage"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API#number-itemstackgetdamage"
     },
     {
         "keys": [
             "itemstack.getcooldown"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/ItemStack-API#number-itemstackgetcooldown"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API#number-itemstackgetcooldown"
     },
     {
         "keys": [
             "itemstack.hasglint"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/ItemStack-API#boolean-itemstackhasglint"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API#boolean-itemstackhasglint"
     },
     {
         "keys": [
             "itemstack.getitem"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/ItemStack-API#item-itemstackgetitem"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API#item-itemstackgetitem"
     },
     {
         "keys": [
             "vectors.getvector"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Vector-API#vectorx-vectorsgetvectorcount"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vector-API#vectorx-vectorsgetvectorcount"
     },
     {
         "keys": [
             "vectors.worldtopart"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Vector-API#vector3-vectorsworldtopartvector3-worldpos"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vector-API#vector3-vectorsworldtopartvector3-worldpos"
     },
     {
         "keys": [
             "vectors.hsvtorgb"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Vector-API#vector3-vectorshsvtorgbvector3-hsv"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vector-API#vector3-vectorshsvtorgbvector3-hsv"
     },
     {
         "keys": [
             "vectors.rgbtohsv"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Vector-API#vector3-vectorsrgbtohsvvector3-rgb"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vector-API#vector3-vectorsrgbtohsvvector3-rgb"
     },
     {
         "keys": [
             "sound.playSound"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Sound-API#soundplaysoundname-x-y-z-volume-pitch"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Sound-API#soundplaysoundname-x-y-z-volume-pitch"
     },
     {
         "keys": [
@@ -482,13 +482,13 @@
             "interface",
             "menu"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Figura-Panel"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Figura-Panel"
     },
     {
         "keys": [
             "trust"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Trust-Menu"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Trust-Menu"
     },
     {
         "keys": [
@@ -498,7 +498,7 @@
             "instructions",
             "vanilla-modification"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Avatar-Permissions"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Avatar-Permissions"
     },
     {
         "keys": [
@@ -507,7 +507,7 @@
             "zip",
             "legacy"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/File-System"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/File-System"
     },
     {
         "keys": [
@@ -516,60 +516,60 @@
             "size-limit",
             "single-texture"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Avatar-Limitations"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Avatar-Limitations"
     },
     {
         "keys": [
             "blockbench",
             "keywords"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Blockbench-Keywords"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Blockbench-Keywords"
     },
     {
         "keys": [
             "advanced-avatar"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Creating-An-Advanced-Avatar-(Scripting)"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Creating-An-Advanced-Avatar-(Scripting)"
     },
     {
         "keys": [
             "tutorial",
             "basic-avatar"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Creating-a-basic-avatar"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Creating-a-basic-avatar"
     },
     {
         "keys": [
             "scripting"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Scripting-Basics"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Scripting-Basics"
     },
     {
         "keys": [
             "model-api"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Model-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Model-API"
     },
     {
         "keys": [
             "vanilla-model",
             "vanilla_model"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Vanilla-Model-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-API"
     },
     {
         "keys": [
             "armor-model",
             "armor_model"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Armor-Model-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Armor-Model-API"
     },
     {
         "keys": [
             "elytra-model",
             "elytra_model"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Elytra-Model-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Elytra-Model-API"
     },
     {
         "keys": [
@@ -578,57 +578,57 @@
             "held-item model",
             "held_item_model"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Held-Item-Model-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Held-Item-Model-API"
     },
     {
         "keys": [
             "model"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Custom-Model-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API"
     },
     {
         "keys": [
             "particle"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Particle-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Particle-API"
     },
     {
         "keys": [
             "sound"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Sound-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Sound-API"
     },
     {
         "keys": [
             "living-entity",
             "livingentity"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/LivingEntity-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API"
     },
     {
         "keys": [
             "entity"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Entity-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API"
     },
     {
         "keys": [
             "player"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Player-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Player-API"
     },
     {
         "keys": [
             "world"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/World-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API"
     },
     {
         "keys": [
             "block",
             "blockstate"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/BlockState-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/BlockState-API"
     },
     {
         "keys": [
@@ -636,75 +636,75 @@
             "item-stack",
             "itemstack"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/ItemStack-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API"
     },
     {
         "keys": [
             "vector"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Vector-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vector-API"
     },
     {
         "keys": [
             "keybind"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Keybind-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Keybind-API"
     },
     {
         "keys": [
             "animation"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Animation-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Animation-API"
     },
     {
         "keys": [
             "camera"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Camera-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Camera-API"
     },
     {
         "keys": [
             "chat"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Chat-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Chat-API"
     },
     {
         "keys": [
             "meta"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Meta-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Meta-API"
     },
     {
         "keys": [
             "nameplate"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Nameplate-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Nameplate-API"
     },
     {
         "keys": [
             "pings",
             "network"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Ping-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Ping-API"
     },
     {
         "keys": [
             "renderer"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Renderer-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Renderer-API"
     },
     {
         "keys": [
             "spyglass",
             "spyglass model"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Spyglass-Model-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Spyglass-Model-API"
     },
     {
         "keys": [
             "action wheel",
             "action_wheel"
         ],
-        "value": "https://github.com/Blancworks/Figura/wiki/Action-Wheel-API"
+        "value": "https://github.com/Moonlight-MC/Figura/wiki/Action-Wheel-API"
     }
 ]

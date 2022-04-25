@@ -1,12 +1,12 @@
-# BlancBot
+# LightLoop
 
-Official Discord Bot for the Blancworks Discord server.
+Official Discord Bot for the Moonlight Discord server.
 
 ## Installation
 
 Requires a `.env` file in the project root directory, for reference see [template.env](./template.env).
 
-Make sure that the Request Tier Roles are *below* the bot role.
+Make sure that the Request Tier Roles are _below_ the bot role.
 
 ## Setup for invite
 
