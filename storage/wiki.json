@@ -1,710 +1,1620 @@
 [
     {
-        "keys": [
-            "custommodelpart.setpos",
-            "custommodelpart.getpos"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#void-custommodelpartsetposxyz-and-xyz-custommodelpartgetpos"
+        "keywords":["wiki"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki",
+        "name":"Did you know that there is a wiki? *Read it.*"
     },
     {
-        "keys": [
-            "custommodelpart.setrot",
-            "custommodelpart.getrot"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#void-custommodelpartsetrotpitchyawroll-and-pitchyawroll-custommodelpartgetrot"
+        "keywords":["math"],
+        "url":"http://www.lua.org/manual/5.2/manual.html#6.6",
+        "name":"Lua Math Library Functions"
     },
     {
-        "keys": [
-            "custommodelpart.setenabled",
-            "custommodelpart.getenabled"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#void-custommodelpartsetenabledenabled--boolean-custommodelpartgetenabled"
+        "keywords":["menu","figura","avatar","panel","figurapanel","screen"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Figura-Panel",
+        "name":"Select Avatar Screen"
     },
     {
-        "keys": [
-            "custommodelpart.setscale",
-            "custommodelpart.getscale"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#void-custommodelpartsetscalexyz-and-xyz-custommodelpartgetscale"
+        "keywords":["menu","trust","screen"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Trust-Menu",
+        "name":"Trust Menu"
     },
     {
-        "keys": [
-            "custommodelpart.setpivot",
-            "custommodelpart.getpivot"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#void-custommodelpartsetpivotxyz-and-xyz-custommodelpartgetpivot"
+        "keywords":["menu","trust","screen","avatar","permissions","complexity","instructions"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Avatar-Permissions",
+        "name":"Avatar Permissions"
     },
     {
-        "keys": [
-            "custommodelpart.setuv",
-            "custommodelpart.getuv"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#void-custommodelpartsetuvuv--uv-custommodelpartgetuv"
+        "keywords":["keyword","keywords","blockbench","elytra","item","parrot","camera","hud","gui"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Blockbench-Keywords",
+        "name":"BlockBench Keywords",
+        "priority":1
     },
     {
-        "keys": [
-            "custommodelpart.setcolor",
-            "custommodelpart.getcolor"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#void-custommodelpartsetcolorrgb--rgb-custommodelpartgetcolor"
+        "keywords":["keyword","keywords","parent"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Blockbench-Keywords#player-model-types",
+        "name":"Parent Keywords"
     },
     {
-        "keys": [
-            "custommodelpart.setparenttype",
-            "custommodelpart.getparenttype"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#void-custommodelpartsetparenttypetype--string-custommodelpartgetparenttype"
+        "keywords":["keyword","keywords","mimic"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Blockbench-Keywords#mimic-types",
+        "name":"Mimic Keywords"
     },
     {
-        "keys": [
-            "custommodelpart.setmimicmode",
-            "custommodelpart.getmimicmode"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#custom-only---void-modelpartsetmimicmodeboolean--boolean-modelpartgetmimicmode"
+        "keywords":["keyword","keywords","no","parent","noparent"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Blockbench-Keywords#no_parent",
+        "name":"NO_PARENT Keyword"
     },
     {
-        "keys": [
-            "vanillamodelpart.setpos",
-            "vanillamodelpart.getpos"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-Part#void-vanillamodelpartsetposxyz-and-xyz-vanillamodelpartgetpos"
+        "keywords":["tutorial","create","creating","basic","avatar"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Creating-a-basic-avatar",
+        "name":"Tutorial: Creating a Basic Avatar"
     },
     {
-        "keys": [
-            "vanillamodelpart.setrot",
-            "vanillamodelpart.getrot"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-Part#void-vanillamodelpartsetrotpitchyawroll-and-pitchyawroll-vanillamodelpartgetrot"
+        "keywords":["create","creating","avatar","model"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Creating-a-basic-avatar#creating-a-generic-model",
+        "name":"Creating an Avatar: Model"
     },
     {
-        "keys": [
-            "vanillamodelpart.setenabled",
-            "vanillamodelpart.getenabled"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-Part#void-vanillamodelpartsetenabledenabled--boolean-vanillamodelpartgetenabled"
+        "keywords":["create","creating","avatar","texture","emissive"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Creating-a-basic-avatar#creating-a-texture",
+        "name":"Creating an Avatar: Texture"
     },
     {
-        "keys": [
-            "vanillamodelpart.getoriginenabled"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-Part#void-vanillamodelpartgetoriginenabled"
+        "keywords":["tutorial","create","creating","avatar","script","script.lua"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Creating-An-Advanced-Avatar-(Scripting)",
+        "name":"Creating an Avatar: Script"
     },
     {
-        "keys": [
-            "vanillamodelpart.getoriginpos"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-Part#void-vanillamodelpartgetoriginpos"
+        "keywords":["custom","model","part","custommodelpart","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API",
+        "name":"Custom Model API",
+        "priority":1
     },
     {
-        "keys": [
-            "vanillamodelpart.getoriginrot"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-Part#void-vanillamodelpartgetoriginrot"
+        "keywords":["custom","model","part","rendertask","render","task","addrendertask","add"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#addrendertaskstringtype-stringname-booleanemissive-vectorpos-vectorrot-vectorscale-stringrenderlayer",
+        "name":"CustomModelPart.addRenderTask"
     },
     {
-        "keys": [
-            "mimic"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Blockbench-Keywords#mimic-types"
+        "keywords":["custom","model","part","rendertask","render","task","clearallrendertask","clear"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#clearallrendertask",
+        "name":"CustomModelPart.clearAllRenderTask"
     },
     {
-        "keys": [
-            "parent"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Blockbench-Keywords#parent-types"
+        "keywords":["custom","model","part","get","animation","anim","position","pos","getanimpos"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getanimpos",
+        "name":"CustomModelPart.getAnimPos"
     },
     {
-        "keys": [
-            "mesh"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Blockbench-Keywords#mesh_"
+        "keywords":["custom","model","part","get","animation","anim","rotation","rot","getanimrot"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getanimrot",
+        "name":"CustomModelPart.getAnimRot"
     },
     {
-        "keys": [
-            "noload"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Blockbench-Keywords#noload"
+        "keywords":["custom","model","part","get","animation","anim","scale","getanimscale"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getanimscale",
+        "name":"CustomModelPart.getAnimScale"
     },
     {
-        "keys": [
-            "minecraft skin"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Creating-a-basic-avatar#creating-a-minecraft-skin-model"
+        "keywords":["custom","model","part","get","children","getchildren"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getchildren",
+        "name":"CustomModelPart.getChildren"
     },
     {
-        "keys": [
-            "generic model"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Creating-a-basic-avatar#creating-a-generic-model"
+        "keywords":["custom","model","part","get","color","getcolor"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getcolor",
+        "name":"CustomModelPart.getColor"
     },
     {
-        "keys": [
-            "texture"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Creating-a-basic-avatar#creating-a-texture"
+        "keywords":["custom","model","part","get","cull","culling","getcullenabled"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getcullenabled",
+        "name":"CustomModelPart.getCullEnabled"
     },
     {
-        "keys": [
-            "viewing",
-            "view",
-            "preview"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Creating-a-basic-avatar#viewing-an-avatar"
+        "keywords":["custom","model","part","get","enable","enabled","visible","getenabled"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getenabled",
+        "name":"CustomModelPart.getEnabled"
     },
     {
-        "keys": [
-            "upload"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Creating-a-basic-avatar#uploading-an-avatar"
+        "keywords":["custom","model","part","get","texture","emissive","textures","enabled","getextratexenabled"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getextratexenabled",
+        "name":"CustomModelPart.getExtraTexEnabled"
     },
     {
-        "keys": [
-            "particle.addParticle"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Particle-API#particleaddparticlename-x-y-z-velocityx-velocityy-velocityz"
+        "keywords":["custom","model","part","get","light","getlight"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getlight",
+        "name":"CustomModelPart.getLight"
     },
     {
-        "keys": [
-            "entity.getpos"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#xyz-entitygetpos"
+        "keywords":["custom","model","part","get","mimic","mimicmode","mode","parent","getmimicmode"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getmimicmode",
+        "name":"CustomModelPart.getMimicMode"
     },
     {
-        "keys": [
-            "entity.getrot"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#pitchyaw-entitygetrot"
+        "keywords":["custom","model","part","get","name","getname"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getname",
+        "name":"CustomModelPart.getName"
     },
     {
-        "keys": [
-            "entity.getvelocity"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#xyz-entitygetvelocity"
+        "keywords":["custom","model","part","get","opacity","visible","visibility","transparent","translucent","getopacity"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getopacity",
+        "name":"CustomModelPart.getOpacity"
     },
     {
-        "keys": [
-            "entity.getlookdir"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#xyz-entitygetlookdir"
+        "keywords":["custom","model","part","get","damage","hurt","explode","explosion","color","overlay","getoverlay"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getoverlay",
+        "name":"CustomModelPart.getOverlay"
     },
     {
-        "keys": [
-            "entity.getuuid"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#string-entitygetuuid"
+        "keywords":["custom","model","part","get","parent","type","keyword","keywords","getparenttype"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getparenttype",
+        "name":"CustomModelPart.getParentType"
     },
     {
-        "keys": [
-            "entity.getfireticks"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#number-entitygetfireticks"
+        "keywords":["custom","model","part","get","pivot","point","getpivotpoint"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getpivot",
+        "name":"CustomModelPart.getPivot"
     },
     {
-        "keys": [
-            "entity.getair"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#number-entitygetair"
+        "keywords":["custom","model","part","get","position","pos","getpos"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getpos",
+        "name":"CustomModelPart.getPos"
     },
     {
-        "keys": [
-            "entity.getmaxair"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#number-entitygetmaxair"
+        "keywords":["custom","model","part","get","render","task","rendertask","getrendertask"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getrendertask",
+        "name":"CustomModelPart.getRenderTask"
     },
     {
-        "keys": [
-            "entity.getairpercentage"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#number-entitygetairpercentage"
+        "keywords":["custom","model","part","get","rotation","rot","getrot"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getrot",
+        "name":"CustomModelPart.getRot"
     },
     {
-        "keys": [
-            "entity.getworldname"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#number-entitygetworldname"
+        "keywords":["custom","model","part","get","scale","getscale"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getscale",
+        "name":"CustomModelPart.getScale"
     },
     {
-        "keys": [
-            "entity.getequipmentitem"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#itemstack-entitygetequipmentitemindex"
+        "keywords":["custom","model","part","get","shader","getshader"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getshader",
+        "name":"CustomModelPart.getShader"
     },
     {
-        "keys": [
-            "entity.getanimation"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#string-entitygetanimation"
+        "keywords":["custom","model","part","get","texture","gettexture"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#gettexture",
+        "name":"CustomModelPart.getTexture"
     },
     {
-        "keys": [
-            "entity.getvehicle"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#entitylivingentity-getvehicle"
+        "keywords":["custom","model","part","get","texture","size","gettexturesize"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#gettexturesize",
+        "name":"CustomModelPart.getTextureSize"
     },
     {
-        "keys": [
-            "entity.isgrounded"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#boolean-isgrounded"
+        "keywords":["custom","model","part","get","type","blockbench","group","cube","mesh","gettype"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#gettype",
+        "name":"CustomModelPart.getType"
     },
     {
-        "keys": [
-            "entity.getNbtValue"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API#experimental---any-getnbtvaluestring"
+        "keywords":["custom","model","part","get","uv","offset","getuv"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getuv",
+        "name":"CustomModelPart.getUV"
     },
     {
-        "keys": [
-            "livingentity.gethealth"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#number-livingentitygethealth"
+        "keywords":["custom","model","part","get","uv","data","size","position","getuvdata"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#getuvdatastring",
+        "name":"CustomModelPart.getUVData"
     },
     {
-        "keys": [
-            "livingentity.getmaxhealth"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#number-livingentitygetmaxhealth"
+        "keywords":["custom","model","part","world","to","dir","direction","parttoworlddir"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#parttoworlddirvector",
+        "name":"CustomModelPart.partToWorldDir"
     },
     {
-        "keys": [
-            "livingentity.gethealthpercentage"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#number-livingentitygethealthpercentage"
+        "keywords":["custom","model","part","world","to","coord","coords","coordinates","pos","position","parttoworldpos"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#parttoworldposvector",
+        "name":"CustomModelPart.partToWorldPos"
     },
     {
-        "keys": [
-            "livingentity.getarmor"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#number-livingentitygetarmor"
+        "keywords":["custom","model","part","rendertask","render","task","removerendertask","remove"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#removerendertaskstring",
+        "name":"CustomModelPart.removeRenderTask"
     },
     {
-        "keys": [
-            "livingentity.getdeathtime"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#number-livingentitygetdeathtime"
+        "keywords":["custom","model","part","set","color","setcolor"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#setcolorvector",
+        "name":"CustomModelPart.setColor"
     },
     {
-        "keys": [
-            "livingentity.getbodyyaw"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#number-number-getbodyyaw"
+        "keywords":["custom","model","part","set","cull","culling","setcullenabled"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#setcullenabledbool",
+        "name":"CustomModelPart.setCullEnabled"
     },
     {
-        "keys": [
-            "livingentity.getstatuseffecttypes"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#string---getstatuseffecttypes"
+        "keywords":["custom","model","part","set","enable","enabled","disable","visible","invisible","setenabled"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#setenabledbool",
+        "name":"CustomModelPart.setEnabled"
     },
     {
-        "keys": [
-            "livingentity.getstatuseffect"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#amplifier-duration-getstatuseffectstring"
+        "keywords":["custom","model","part","set","texture","emissive","textures","enabled","setextratexenabled"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#setextratexenabledbool",
+        "name":"CustomModelPart.setExtraTexEnabled"
     },
     {
-        "keys": [
-            "livingentity.issneaky"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#boolean-issneaky"
+        "keywords":["custom","model","part","set","light","setlight"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#setlightint",
+        "name":"CustomModelPart.setLight"
     },
     {
-        "keys": [
-            "player.gethelditem"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Player-API#itemstack-playergethelditemindex"
+        "keywords":["custom","model","part","set","mimic","mimicmode","mode","parent","setmimicmode"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#setmimicmodebool",
+        "name":"CustomModelPart.setMimicMode"
     },
     {
-        "keys": [
-            "player.getfood"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Player-API#number-getfood"
+        "keywords":["custom","model","part","set","opacity","visible","visibility","transparent","translucent","setopacity"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#setopacityfloat",
+        "name":"CustomModelPart.setOpacity"
     },
     {
-        "keys": [
-            "player.getsaturation"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Player-API#number-getsaturation"
+        "keywords":["custom","model","part","set","damage","hurt","explode","explosion","color","overlay","setoverlay"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#setoverlayvector",
+        "name":"CustomModelPart.setOverlay"
     },
     {
-        "keys": [
-            "player.getexperienceprogress"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Player-API#number-getexperienceprogress"
+        "keywords":["custom","model","part","set","parent","type","keyword","keywords","setparenttype"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#setparenttypestring",
+        "name":"CustomModelPart.setParentType"
     },
     {
-        "keys": [
-            "player.getexperiencelevel"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Player-API#number-getexperiencelevel"
+        "keywords":["custom","model","part","set","pivot","point","setpivotpoint"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#setpivotvector",
+        "name":"CustomModelPart.setPivot"
     },
     {
-        "keys": [
-            "world.getblockstate"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#blockstate-worldgetblockstatexyz"
+        "keywords":["custom","model","part","set","position","pos","setpos"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#setposvector",
+        "name":"CustomModelPart.setPos"
     },
     {
-        "keys": [
-            "world.getredstonepower"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#number-worldgetredstonepowerxyz"
+        "keywords":["custom","model","part","set","renderlayer","shader","shaders"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#setrenderlayerstring",
+        "name":"CustomModelPart.setRenderLayer"
     },
     {
-        "keys": [
-            "world.gettime"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#number-worldgettime"
+        "keywords":["custom","model","part","set","rotation","rot","setrot"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#setrotvector",
+        "name":"CustomModelPart.setRot"
     },
     {
-        "keys": [
-            "world.gettimeofday"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#number-worldgettimeofday"
+        "keywords":["custom","model","part","set","scale","setscale"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#setscalevector",
+        "name":"CustomModelPart.setScale"
     },
     {
-        "keys": [
-            "world.getmoonphase"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#number-worldgetmoonphase"
+        "keywords":["custom","model","part","set","shader","setshader"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#setshaderstring",
+        "name":"CustomModelPart.setShader"
     },
     {
-        "keys": [
-            "world.getraingradient"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#number-worldgetraingradientnumber"
+        "keywords":["custom","model","part","set","texture","settexture"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#settexturestring",
+        "name":"CustomModelPart.setTexture"
     },
     {
-        "keys": [
-            "world.islightning"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#boolean-worldislightning"
+        "keywords":["custom","model","part","set","texture","size","settexturesize"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#settexturesizetable",
+        "name":"CustomModelPart.setTextureSize"
     },
     {
-        "keys": [
-            "world.getlightlevel"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#number-worldgetlightlevelxyz"
+        "keywords":["custom","model","part","set","uv","offset","setuv"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#setuvtable",
+        "name":"CustomModelPart.setUV"
     },
     {
-        "keys": [
-            "world.getskylightlevel"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#number-worldgetskylightlevelxyz"
+        "keywords":["custom","model","part","set","uv","data","size","position","setuvdata"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#setuvdatastring-vector4",
+        "name":"CustomModelPart.setUVData"
     },
     {
-        "keys": [
-            "world.getblocklightlevel"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#number-worldgetblocklightlevelxyz"
+        "keywords":["custom","model","part","world","to","dir","direction","worldtopartdir"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#worldtopartdir",
+        "name":"CustomModelPart.worldToPartDir"
     },
     {
-        "keys": [
-            "world.getbiomeid"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API#string-worldgetbiomeidxyz"
+        "keywords":["custom","model","part","world","to","coord","coords","coordinates","pos","position","worldtopartpos"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API#worldtopartposvector",
+        "name":"CustomModelPart.worldToPartPos"
     },
     {
-        "keys": [
-            "itemstack.gettype"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API#string-itemstackgettype"
+        "keywords":["vanilla","model","part","vanillamodelpart","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-API",
+        "name":"Vanilla Model API",
+        "priority":1
     },
     {
-        "keys": [
-            "itemstack.gettag"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API#nbttag-itemstackgettag"
+        "keywords":["vanilla","model","part","set","position","pos","setpos"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-API#setpos",
+        "name":"VanillaModelPart.setPos"
     },
     {
-        "keys": [
-            "itemstack.getcount"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API#number-itemstackgetcount"
+        "keywords":["vanilla","model","part","set","rotation","rot","setrot"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-API#setrot",
+        "name":"VanillaModelPart.setRot"
     },
     {
-        "keys": [
-            "itemstack.getdamage"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API#number-itemstackgetdamage"
+        "keywords":["vanilla","model","part","set","scale","setscale"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-API#setscale",
+        "name":"VanillaModelPart.setScale"
     },
     {
-        "keys": [
-            "itemstack.getcooldown"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API#number-itemstackgetcooldown"
+        "keywords":["vanilla","model","part","set","enable","enabled","disable","visible","invisible","setenabled"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-API#setenabledbool",
+        "name":"VanillaModelPart.setEnabled"
     },
     {
-        "keys": [
-            "itemstack.hasglint"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API#boolean-itemstackhasglint"
+        "keywords":["vanilla","model","part","get","position","pos","getpos"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-API#getpos",
+        "name":"VanillaModelPart.getPos"
     },
     {
-        "keys": [
-            "itemstack.getitem"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API#item-itemstackgetitem"
+        "keywords":["vanilla","model","part","get","rotation","rot","getrot"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-API#getrot",
+        "name":"VanillaModelPart.getRot"
     },
     {
-        "keys": [
-            "vectors.getvector"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vector-API#vectorx-vectorsgetvectorcount"
+        "keywords":["vanilla","model","part","get","scale","getscale"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-API#getscale",
+        "name":"VanillaModelPart.getScale"
     },
     {
-        "keys": [
-            "vectors.worldtopart"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vector-API#vector3-vectorsworldtopartvector3-worldpos"
+        "keywords":["vanilla","model","part","get","enable","enabled","visible","getenabled"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-API#getenabled",
+        "name":"VanillaModelPart.getEnabled"
     },
     {
-        "keys": [
-            "vectors.hsvtorgb"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vector-API#vector3-vectorshsvtorgbvector3-hsv"
+        "keywords":["vanilla","model","part","get","origin","position","pos","getpos"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-API#getoriginpos",
+        "name":"VanillaModelPart.getOriginPos"
     },
     {
-        "keys": [
-            "vectors.rgbtohsv"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vector-API#vector3-vectorsrgbtohsvvector3-rgb"
+        "keywords":["vanilla","model","part","get","origin","rotation","rot","getrot"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-API#getoriginrot",
+        "name":"VanillaModelPart.getOriginRot"
     },
     {
-        "keys": [
-            "sound.playSound"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Sound-API#soundplaysoundname-x-y-z-volume-pitch"
+        "keywords":["vanilla","model","part","get","origin","enable","enabled","visible","getenabled"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-API#getoriginenabled",
+        "name":"VanillaModelPart.getOriginEnabled"
     },
     {
-        "keys": [
-            "panel",
-            "ui",
-            "interface",
-            "menu"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Figura-Panel"
+        "keywords":["vanilla","model","part","is","option","enabled","isoptionenabled"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-API#isoptionenabled",
+        "name":"VanillaModelPart.isOptionEnabled"
     },
     {
-        "keys": [
-            "trust"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Trust-Menu"
+        "keywords":["vanilla","armor","model","part","armormodelpart","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Armor-Model-API",
+        "name":"Armor Model API",
+        "priority":1
     },
     {
-        "keys": [
-            "permissions",
-            "perms",
-            "complexity",
-            "instructions",
-            "vanilla-modification"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Avatar-Permissions"
+        "keywords":["vanilla","elytra","model","part","elytramodelpart","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Elytra-Model-API",
+        "name":"Elytra Model API",
+        "priority":1
     },
     {
-        "keys": [
-            "file",
-            "folder",
-            "zip",
-            "legacy"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/File-System"
+        "keywords":["vanilla","held","item","helditem","model","part","helditemmodelpart","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Held-Item-Model-API",
+        "name":"Held Item Model API",
+        "priority":1
     },
     {
-        "keys": [
-            "limitations",
-            "file-size",
-            "size-limit",
-            "single-texture"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Avatar-Limitations"
+        "keywords":["vanilla","spyglass","model","part","spyglassmodelpart","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Spyglass-Model-API",
+        "name":"Spyglass Model API",
+        "priority":1
     },
     {
-        "keys": [
-            "blockbench",
-            "keywords"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Blockbench-Keywords"
+        "keywords":["vanilla","parrot","model","part","parrotmodelpart","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Parrot-Model-API",
+        "name":"Parrot Model API",
+        "priority":1
     },
     {
-        "keys": [
-            "advanced-avatar"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Creating-An-Advanced-Avatar-(Scripting)"
+        "keywords":["vanilla","first","person","firstperson","model","part","firstpersonmodelpart","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/First-Person-Model-API",
+        "name":"First Person Model API",
+        "priority":1
     },
     {
-        "keys": [
-            "tutorial",
-            "basic-avatar"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Creating-a-basic-avatar"
+        "keywords":["particle","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Particle-API",
+        "name":"Particle API",
+        "priority":1
     },
     {
-        "keys": [
-            "scripting"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Scripting-Basics"
+        "keywords":["particle","add","addparticle"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Particle-API#particleaddparticlename-x-y-z-velocityx-velocityy-velocityz-extra1-extra2",
+        "name":"particle.addParticle"
     },
     {
-        "keys": [
-            "model-api"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Model-API"
+        "keywords":["sound","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Sound-API",
+        "name":"Sound API",
+        "priority":1
     },
     {
-        "keys": [
-            "vanilla-model",
-            "vanilla_model"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vanilla-Model-API"
+        "keywords":["sound","regular"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Sound-API#regular-sounds",
+        "name":"Regular/Vanilla Sounds",
+        "priority":1
     },
     {
-        "keys": [
-            "armor-model",
-            "armor_model"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Armor-Model-API"
+        "keywords":["sound","regular","get","sounds","getsounds"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Sound-API#getsounds",
+        "name":"sound.getSounds"
     },
     {
-        "keys": [
-            "elytra-model",
-            "elytra_model"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Elytra-Model-API"
+        "keywords":["sound","regular","play"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Sound-API#playsoundstringname-vector3position-vector2volumepitch",
+        "name":"sound.playSound"
     },
     {
-        "keys": [
-            "held-item",
-            "held_item",
-            "held-item model",
-            "held_item_model"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Held-Item-Model-API"
+        "keywords":["sound","custom"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Sound-API#custom-sounds",
+        "name":"Custom Sounds",
+        "priority":1
     },
     {
-        "keys": [
-            "model"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Custom-Model-API"
+        "keywords":["sound","custom","get","sounds","getcustomsounds"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Sound-API#getcustomsoundsbooloptional",
+        "name":"sound.getCustomSounds"
     },
     {
-        "keys": [
-            "particle"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Particle-API"
+        "keywords":["sound","custom","get","registered","sounds","getregisteredcustomsounds"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Sound-API#getregisteredcustomsounds",
+        "name":"sound.getRegisteredCustomSounds"
     },
     {
-        "keys": [
-            "sound"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Sound-API"
+        "keywords":["sound","custom","registered","is","iscustomsoundregistered"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Sound-API#iscustomsoundregisteredstring",
+        "name":"sound.isCustomSoundRegistered"
     },
     {
-        "keys": [
-            "living-entity",
-            "livingentity"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API"
+        "keywords":["sound","custom","play"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Sound-API#playcustomsoundstringname-vector3position-vector2volumepitch",
+        "name":"sound.playCustomSound"
     },
     {
-        "keys": [
-            "entity"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Entity-API"
+        "keywords":["sound","custom","register","registercustomsound"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Sound-API#registercustomsoundstringname-stringbase64",
+        "name":"sound.registerCustomSound"
     },
     {
-        "keys": [
-            "player"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Player-API"
+        "keywords":["sound","custom","stop"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Sound-API#stopcustomsoundstring",
+        "name":"sound.stopCustomSound"
     },
     {
-        "keys": [
-            "world"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/World-API"
+        "keywords":["kitcat","kit","cat","katt","kitcat962"],
+        "url":"https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "name":"Nyahhahaaaa! You found me!",
+        "priority":-1
     },
     {
-        "keys": [
-            "block",
-            "blockstate"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/BlockState-API"
+        "keywords":["entity","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API",
+        "name":"Entity API",
+        "priority":1
     },
     {
-        "keys": [
-            "item",
-            "item-stack",
-            "itemstack"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API"
+        "keywords":["livingentity","living","entity","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API",
+        "name":"Living Entity API",
+        "priority":1
     },
     {
-        "keys": [
-            "vector"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Vector-API"
+        "keywords":["player","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Player-API",
+        "name":"Player API",
+        "priority":1
     },
     {
-        "keys": [
-            "keybind"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Keybind-API"
+        "keywords":["entity","livingentity","player","get","active","hand","getactivehand"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#getactivehand",
+        "name":"Entity.getActiveHand"
     },
     {
-        "keys": [
-            "animation"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Animation-API"
+        "keywords":["entity","livingentity","player","get","air","getair"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#getair",
+        "name":"Entity.getAir"
     },
     {
-        "keys": [
-            "camera"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Camera-API"
+        "keywords":["entity","livingentity","player","get","air","percentage","getairpercentage"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#getairpercentage",
+        "name":"Entity.getAirPercentage"
     },
     {
-        "keys": [
-            "chat"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Chat-API"
+        "keywords":["entity","livingentity","player","get","animation","getanimation"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#getanimation",
+        "name":"Entity.getAnimation"
     },
     {
-        "keys": [
-            "meta"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Meta-API"
+        "keywords":["entity","livingentity","player","get","bounding","hit","box","boundingbox","hitbox","getboundingbox"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#getboundingbox",
+        "name":"Entity.getBoundingBox"
     },
     {
-        "keys": [
-            "nameplate"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Nameplate-API"
+        "keywords":["entity","livingentity","player","get","item","equipment","slot","getequipmentitem"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#getequipmentitemint",
+        "name":"Entity.getEquipmentItem"
     },
     {
-        "keys": [
-            "pings",
-            "network"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Ping-API"
+        "keywords":["entity","livingentity","player","get","eye","height","geteyeheight"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#geteyeheight",
+        "name":"Entity.getEyeHeight"
     },
     {
-        "keys": [
-            "renderer"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Renderer-API"
+        "keywords":["entity","livingentity","player","get","eye","y","geteyey"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#geteyey",
+        "name":"Entity.getEyeY"
     },
     {
-        "keys": [
-            "spyglass",
-            "spyglass model"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Spyglass-Model-API"
+        "keywords":["entity","livingentity","player","get","fire","tick","ticks","duration","getfireticks"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#getfireticks",
+        "name":"Entity.getFireTicks"
     },
     {
-        "keys": [
-            "action wheel",
-            "action_wheel"
-        ],
-        "value": "https://github.com/Moonlight-MC/Figura/wiki/Action-Wheel-API"
+        "keywords":["entity","livingentity","player","get","frozen","tick","ticks","duration","getfrozenticks"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#getfrozenticks",
+        "name":"Entity.getFrozenTicks"
+    },
+    {
+        "keywords":["entity","livingentity","player","get","look","dir","direction","getlookdir"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#getlookdir",
+        "name":"Entity.getLookDir"
+    },
+    {
+        "keywords":["entity","livingentity","player","get","max","air","getmaxair"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#getmaxair",
+        "name":"Entity.getMaxAir"
+    },
+    {
+        "keywords":["entity","livingentity","player","get","name","nametag","getname"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#getname",
+        "name":"Entity.getName"
+    },
+    {
+        "keywords":["entity","livingentity","player","get","nbt","value","getnbtvalue"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#getnbtvaluestringnbt",
+        "name":"Entity.getNbtValue"
+    },
+    {
+        "keywords":["entity","livingentity","player","get","position","pos","getpos"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#getposfloatoptional",
+        "name":"Entity.getPos"
+    },
+    {
+        "keywords":["entity","livingentity","player","get","rotation","rot","getrot"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#getrotfloatoptional",
+        "name":"Entity.getRot"
+    },
+    {
+        "keywords":["entity","livingentity","player","get","targeted","crosshair","block","gettargetedblock"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#gettargetedblockposbool",
+        "name":"Entity.getTargetedBlock"
+    },
+    {
+        "keywords":["entity","livingentity","player","get","type","gettype"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#gettype",
+        "name":"Entity.getType"
+    },
+    {
+        "keywords":["entity","livingentity","player","get","uuid","getuuid"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#getuuid",
+        "name":"Entity.getUUID"
+    },
+    {
+        "keywords":["entity","livingentity","player","get","vehicle","ride","riding","getvehicle"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#getvehicle",
+        "name":"Entity.getVehicle"
+    },
+    {
+        "keywords":["entity","livingentity","player","get","world","dimension","name","getworldname"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#getworldname",
+        "name":"Entity.getWorldName"
+    },
+    {
+        "keywords":["entity","livingentity","player","has","figura","avatar","hasavatar"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#hasavatar",
+        "name":"Entity.hasAvatar"
+    },
+    {
+        "keywords":["entity","livingentity","player","is","glowing","glow","effect","isglowing"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#isglowing",
+        "name":"Entity.isGlowing"
+    },
+    {
+        "keywords":["entity","livingentity","player","is","hamburger","ishamburger"],
+        "url":"H̶͓̝̫̼̺͑͂̊̓͋̅͌̕̚À̵̖͍̅M̸͉̩̲̠̩̟̯̪̒̊̊̍̽̉͋̌͝B̵͈̗̥̝̭̜̔͆̽̈́͊́̚̕U̷̧̳̪̥̺̺̫̩͊̅͂̔͆̓̀͋̋̕̚͠R̸͉̪̮̦͍̲͔̥̪͕̮̤̰̀̾̓́̀̆̎͐̕͘̕͜Ģ̷͍͚̼̞̊E̴̱͛͒̾̑͛͂͒́́͗̒͝͝Ṛ̷̨̨̹͙̲̖̙͙͕̝̽̒̌̀̌̃͑̆͋͝ͅ",
+        "name":"Entity.isHamburger",
+        "priority":-1
+    },
+    {
+        "keywords":["entity","livingentity","player","is","in","lava","isinlava"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#isinlava",
+        "name":"Entity.isInLava"
+    },
+    {
+        "keywords":["entity","livingentity","player","is","in","rain","isinrain"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#isinrain",
+        "name":"Entity.isInRain"
+    },
+    {
+        "keywords":["entity","livingentity","player","is","invisible","isinvisible"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#isinvisible",
+        "name":"Entity.isInvisible"
+    },
+    {
+        "keywords":["entity","livingentity","player","is","on","ground","isonground"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#isonground",
+        "name":"Entity.isOnGround"
+    },
+    {
+        "keywords":["entity","livingentity","player","is","silent","issilent"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#issilent",
+        "name":"Entity.isSilent"
+    },
+    {
+        "keywords":["entity","livingentity","player","is","sneaking","crouching","issneaking"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#issneaking",
+        "name":"Entity.isSneaking"
+    },
+    {
+        "keywords":["entity","livingentity","player","is","sneaky","crouching","issneaky"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#issneaky",
+        "name":"Entity.isSneaky"
+    },
+    {
+        "keywords":["entity","livingentity","player","is","sprinting","issprinting"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#issprinting",
+        "name":"Entity.isSprinting"
+    },
+    {
+        "keywords":["entity","livingentity","player","is","touching","water","waterlogged","istouchingwater"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#istouchingwater",
+        "name":"Entity.isTouchingWater"
+    },
+    {
+        "keywords":["entity","livingentity","player","is","underwater","submerged","isunderwater"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#isunderwater",
+        "name":"Entity.isUnderwater"
+    },
+    {
+        "keywords":["entity","livingentity","player","is","wet","rain","touching","water","waterlogged","iswet"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Entity-API#iswet",
+        "name":"Entity.isWet"
+    },
+    {
+        "keywords":["livingentity","player","get","active","item","getactiveitem"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#getactiveitem",
+        "name":"LivingEntity.getActiveItem"
+    },
+    {
+        "keywords":["livingentity","player","get","armor","getarmor"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#getarmor",
+        "name":"LivingEntity.getArmor"
+    },
+    {
+        "keywords":["livingentity","player","get","body","yaw","rotation","rot","getbodyyaw"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#getbodyyawfloatoptional",
+        "name":"LivingEntity.getBodyYaw"
+    },
+    {
+        "keywords":["livingentity","player","get","death","time","getdeathtime"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#getdeathtime",
+        "name":"LivingEntity.getDeathTime"
+    },
+    {
+        "keywords":["livingentity","player","get","health","gethealth"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#gethealth",
+        "name":"LivingEntity.getHealth"
+    },
+    {
+        "keywords":["livingentity","player","get","health","percentage","gethealthpercentage"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#gethealthpercentage",
+        "name":"LivingEntity.getHealthPercentage"
+    },
+    {
+        "keywords":["livingentity","player","get","health","max","getmaxhealth"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#getmaxhealth",
+        "name":"LivingEntity.getMaxHealth"
+    },
+    {
+        "keywords":["livingentity","player","get","status","potion","effect","getstatuseffect"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#getstatuseffectstring",
+        "name":"LivingEnityt.getStatusEffect"
+    },
+    {
+        "keywords":["livingentity","player","get","status","potion","effect","type","types","getstatuseffecttypes"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#getstatuseffecttypes",
+        "name":"LivingEntity.getStatusEffectTypes"
+    },
+    {
+        "keywords":["livingentity","player","get","stinger","bee","count","getstingercount"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#getstingercount",
+        "name":"LivingEntity.getStingerCount"
+    },
+    {
+        "keywords":["livingentity","player","get","stuck","arrow","count","getstuckarrowcount"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#getstuckarrowcount",
+        "name":"LivingEntity.getStuckArrowCount"
+    },
+    {
+        "keywords":["livingentity","player","is","climbing","isclimbing"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#isclimbing",
+        "name":"LivingEntity.isClimbing"
+    },
+    {
+        "keywords":["livingentity","player","is","left","handed","islefthanded"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#islefthanded",
+        "name":"LivingEntity.isLeftHanded"
+    },
+    {
+        "keywords":["livingentity","player","is","using","item","isusingitem"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/LivingEntity-API#isusingitem",
+        "name":"LivingEntity.isUsingItem"
+    },
+    {
+        "keywords":["player","get","experience","exp","xp","level","getexperiencelevel"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Player-API#getexperiencelevel",
+        "name":"Player.getExperienceLevel"
+    },
+    {
+        "keywords":["player","get","experience","exp","xp","progress","getexperienceprogress"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Player-API#getexperienceprogress",
+        "name":"Player.getExperienceProgress"
+    },
+    {
+        "keywords":["player","get","food","hunger","getfood"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Player-API#getfood",
+        "name":"Player.getFood"
+    },
+    {
+        "keywords":["player","get","gamemode","getgamemode"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Player-API#getgamemode",
+        "name":"Player.getGamemode"
+    },
+    {
+        "keywords":["player","get","held","item","gethelditem"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Player-API#gethelditemint",
+        "name":"Player.getHeldItem"
+    },
+    {
+        "keywords":["player","get","vanilla","model","type","steve","slim","getmodeltype"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Player-API#getmodeltype",
+        "name":"Player.getModelType"
+    },
+    {
+        "keywords":["player","get","saturation","hunger","getsaturation"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Player-API#getsaturation",
+        "name":"Player.getSaturation"
+    },
+    {
+        "keywords":["player","get","data","stored","value","getstoredvalue"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Player-API#getstoredvaluestring",
+        "name":"player.getStoredValue"
+    },
+    {
+        "keywords":["player","get","target","targeted","crosshair","entity","gettargetedentity"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Player-API#gettargetedentity",
+        "name":"Player.getTargetedEntity"
+    },
+    {
+        "keywords":["player","is","flying","creative","flight","isflying"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Player-API#isflying",
+        "name":"Player.isFlying"
+    },
+    {
+        "keywords":["player","get","last","damage","source","lastdamagesource"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Player-API#lastdamagesource",
+        "name":"Player.lastDamageSource"
+    },
+    {
+        "keywords":["world","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/World-API",
+        "name":"World API",
+        "priority":1
+    },
+    {
+        "keywords":["world","get","biome"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/World-API#getbiomevector",
+        "name":"world.getBiome"
+    },
+    {
+        "keywords":["world","get","block","light","level","getblocklightlevel"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/World-API#getblocklightlevelvector",
+        "name":"world.getBlockLightLevel"
+    },
+    {
+        "keywords":["world","get","block","state","getblockstate"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/World-API#getblockstatevector",
+        "name":"world.getBlockState"
+    },
+    {
+        "keywords":["world","get","light","level","getlightlevel"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/World-API#getlightlevelvector",
+        "name":"world.getLightLevel"
+    },
+    {
+        "keywords":["world","get","moon","phase","getmoonphase"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/World-API#getmoonphase",
+        "name":"world.getMoonPhase"
+    },
+    {
+        "keywords":["world","player","players","get","all","getplayers"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/World-API#getplayers",
+        "name":"world.getPlayers"
+    },
+    {
+        "keywords":["world","get","rain","gradient","getraingradient"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/World-API#getraingradientfloat",
+        "name":"world.getRainGradient"
+    },
+    {
+        "keywords":["world","get","redstone","power","level","getredstonepower"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/World-API#getredstonepowervector",
+        "name":"world.getRedstonePower"
+    },
+    {
+        "keywords":["world","get","sky","light","level","getskylightlevel"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/World-API#getskylightlevelvector",
+        "name":"world.getSkyLightLevel"
+    },
+    {
+        "keywords":["world","get","time","clock","system","gettime"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/World-API#gettime",
+        "name":"world.getTime"
+    },
+    {
+        "keywords":["world","get","time","of","day","gettimeofday"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/World-API#gettimeofday",
+        "name":"world.getTimeOfDay"
+    },
+    {
+        "keywords":["world","has","hasworld"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/World-API#hasworld",
+        "name":"world.hasWorld"
+    },
+    {
+        "keywords":["world","has","open","sky","roof","above","hasopensky"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/World-API#isopenskyvector",
+        "name":"world.hasOpenSky"
+    },
+    {
+        "keywords":["blockstate","block","state","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/BlockState-API",
+        "name":"Blockstate API"
+    },
+    {
+        "keywords":["item","stack","itemstack","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API",
+        "name":"ItemStacK API",
+        "priority":1
+    },
+    {
+        "keywords":["item","stack","itemstack","get","type","id","itemid","gettype"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API#string-itemstackgettype",
+        "name":"ItemStack.getType"
+    },
+    {
+        "keywords":["item","stack","itemstack","get","tag","nbt","gettag"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API#nbttag-itemstackgettag",
+        "name":"ItemStack.getTag"
+    },
+    {
+        "keywords":["item","stack","itemstack","get","count","getcound"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API#number-itemstackgetcount",
+        "name":"ItemStack.getCount"
+    },
+    {
+        "keywords":["item","stack","itemstack","get","damage","durability","getdamage"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API#number-itemstackgetdamage",
+        "name":"ItemStack.getDamage"
+    },
+    {
+        "keywords":["item","stack","itemstack","get","cooldown","getcooldown"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API#number-itemstackgetcooldown",
+        "name":"ItemStack.getCooldown"
+    },
+    {
+        "keywords":["item","stack","itemstack","has","glint","enchant","enchanted","hasglint"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/ItemStack-API#boolean-itemstackhasglint",
+        "name":"ItemStack.hasGlint"
+    },
+    {
+        "keywords":["vector","vectors","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Vector-API",
+        "name":"Vector API",
+        "priority":1
+    },
+    {
+        "keywords":["vector","vectors","access","use","accessing","x","y","z","w","t","h","r","g","b","a","u","v"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Vector-API#number-vectorval",
+        "name":"Accessing Vector Values"
+    },
+    {
+        "keywords":["vector","vectors","create","get"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Vector-API#vectorx-vectorsgetvectorcount",
+        "name":"vectors.getVector"
+    },
+    {
+        "keywords":["vector","vectors","world","to","part","worldtopart"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Vector-API#vector3-vectorsworldtopartvector3-worldpos",
+        "name":"vectors"
+    },
+    {
+        "keywords":["vector","vectors","color","convert","hsv","rgb","to","color","hsvtorgb"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Vector-API#vector3-vectorshsvtorgbvector3-hsv",
+        "name":"vectors.hsvToRGB"
+    },
+    {
+        "keywords":["vector","vectors","color","convert","hsv","rgb","to","color","rgbtohsv"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Vector-API#vector3-vectorsrgbtohsvvector3-rgb",
+        "name":"vectors.rgbToHSV"
+    },
+    {
+        "keywords":["animation","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API",
+        "name":"Animation API"
+    },
+    {
+        "keywords":["animation","list","all","animations","listanimations"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#listanimations",
+        "name":"animation.listAnimations"
+    },
+    {
+        "keywords":["animation","stop","all","stopall"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#stopall",
+        "name":"animation.stopAll"
+    },
+    {
+        "keywords":["animation","cease","all","ceaseall"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#ceaseall",
+        "name":"animation.ceaseAll"
+    },
+    {
+        "keywords":["animation","play"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#play",
+        "name":"Animation.play"
+    },
+    {
+        "keywords":["animation","start"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#start",
+        "name":"Animation.start"
+    },
+    {
+        "keywords":["animation","stop"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#stop",
+        "name":"Animation.stop"
+    },
+    {
+        "keywords":["animation","cease"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#cease",
+        "name":"Animation.cease"
+    },
+    {
+        "keywords":["animation","pause"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#pause",
+        "name":"Animation.pause"
+    },
+    {
+        "keywords":["animation","is","playing","isplaying"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#isplaying",
+        "name":"Animation.isPlaying"
+    },
+    {
+        "keywords":["animation","set","length","setlength"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#setlengthfloat",
+        "name":"Animation.setLength"
+    },
+    {
+        "keywords":["animation","get","length","getlength"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#getlength",
+        "name":"Animation.getLength"
+    },
+    {
+        "keywords":["animation","set","speed","setspeed"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#setspeedfloat",
+        "name":"Animation.setSpeed"
+    },
+    {
+        "keywords":["animation","get","speed","getspeed"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#getspeed",
+        "name":"Animation.getSpeed"
+    },
+    {
+        "keywords":["animation","set","loop","mode","setloopmode"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#setloopmodestring",
+        "name":"Animation.setLoopMode"
+    },
+    {
+        "keywords":["animation","get","loop","mode","getloopmode"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#getloopmode",
+        "name":"Animation.getLoopMode"
+    },
+    {
+        "keywords":["animation","set","start","offset","setstartoffset"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#setstartoffsetfloat",
+        "name":"Animation.setStartOffset"
+    },
+    {
+        "keywords":["animation","get","start","offset","getstartoffset"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#getstartoffset",
+        "name":"Animation.getStartOffset"
+    },
+    {
+        "keywords":["animation","set","blend","weight","blendweight","setblendweight"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#setblendweightfloat",
+        "name":"Animation.setBlendWeight"
+    },
+    {
+        "keywords":["animation","get","blend","weight","blendweight","getblendweight"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#getblendweight",
+        "name":"Animation.getBlendWeight"
+    },
+    {
+        "keywords":["animation","set","start","delay","setstartdelay"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#setstartdelayfloat",
+        "name":"Animation.setStartDelay"
+    },
+    {
+        "keywords":["animation","get","start","delay","getstartdelay"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#getstartdelay",
+        "name":"Animation.getStartDelay"
+    },
+    {
+        "keywords":["animation","set","loop","delay","setloopdelay"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#setloopdelayfloat",
+        "name":"Animation.setLoopDelay"
+    },
+    {
+        "keywords":["animation","set","priority","setpriority"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#setpriorityint",
+        "name":"Animation.setPriority"
+    },
+    {
+        "keywords":["animation","get","priority","getpriority"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#getpriority",
+        "name":"Animation.getPriority"
+    },
+    {
+        "keywords":["animation","get","loop","delay","getloopdelay"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#getloopdelay",
+        "name":"Animation.getLoopDelay"
+    },
+    {
+        "keywords":["animation","set","play","state","playstate","setplaystate"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#setplaystatestring",
+        "name":"Animation.setPlayState"
+    },
+    {
+        "keywords":["animation","get","play","state","playstate","getplaystate"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#getplaystate",
+        "name":"Animation.getPlayState"
+    },
+    {
+        "keywords":["animation","set","blend","time","blendtime","setblendtime"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#setblendtimefloat",
+        "name":"Animation.setBlendTime"
+    },
+    {
+        "keywords":["animation","get","blend","time","blendtime","getblendtime"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#getblendtime",
+        "name":"Animation.getBlendTime"
+    },
+    {
+        "keywords":["animation","set","override","setoverride"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#setoverridebool",
+        "name":"Animation.setOverride"
+    },
+    {
+        "keywords":["animation","get","override","getoverride"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#getoverride",
+        "name":"Animation.getOverride"
+    },
+    {
+        "keywords":["animation","get","name","getname"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Animation-API#getname",
+        "name":"Animation.getName"
+    },
+    {
+        "keywords":["ping","pings","network","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Ping-API",
+        "name":"Ping API",
+        "priority":1
+    },
+    {
+        "keywords":["action","wheel","actionwheel","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Action-Wheel-API",
+        "name":"Action Wheel API",
+        "priority":1
+    },
+    {
+        "keywords":["action","wheel","actionwheel","slot","number","#"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Action-Wheel-API#slot_",
+        "name":"action_wheel.SLOT_1\naction_wheel.SLOT_<1-8>"
+    },
+    {
+        "keywords":["action","wheel","actionwheel","set","left","slot","size","amount","setleftsize"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Action-Wheel-API#setleftsizenumber",
+        "name":"action_wheel.setLeftSize"
+    },
+    {
+        "keywords":["action","wheel","actionwheel","set","right","slot","size","amount","setrightsize"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Action-Wheel-API#setrightsizenumber",
+        "name":"action_wheel.setRightSize"
+    },
+    {
+        "keywords":["action","wheel","actionwheel","is","open","isopen"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Action-Wheel-API#isopen",
+        "name":"action_wheel.isOpen"
+    },
+    {
+        "keywords":["action","wheel","actionwheel","get","left","slot","size","amount","getleftsize"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Action-Wheel-API#getleftsize",
+        "name":"action_wheel.getLeftSize"
+    },
+    {
+        "keywords":["action","wheel","actionwheel","get","right","slot","size","amount","getrightsize"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Action-Wheel-API#getrightsize",
+        "name":"action_wheel.getRightSize"
+    },
+    {
+        "keywords":["action","wheel","actionwheel","get","selected","slot","getselectedslot"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Action-Wheel-API#getselectedslot",
+        "name":"action_wheel.getSelectedSlot"
+    },
+    {
+        "keywords":["action","wheel","actionwheel","run","execute","selected","slot","action","runaction"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Action-Wheel-API#runaction",
+        "name":"action_wheel.runAction"
+    },
+    {
+        "keywords":["action","wheel","actionwheel","set","item","setitem"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Action-Wheel-API#setitemitem",
+        "name":"ActionWheelSlot.setItem"
+    },
+    {
+        "keywords":["action","wheel","actionwheel","set","title","settitle"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Action-Wheel-API#settitlestring",
+        "name":"ActionWheelSlot.setTitle"
+    },
+    {
+        "keywords":["action","wheel","actionwheel","set","function","setfunction"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Action-Wheel-API#setfunctionfunction",
+        "name":"ActionWheelSlot.setFunction"
+    },
+    {
+        "keywords":["action","wheel","actionwheel","set","hover","item","sethoveritem"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Action-Wheel-API#sethoveritemitem",
+        "name":"ActionWheelSlot.setHoverItem"
+    },
+    {
+        "keywords":["action","wheel","actionwheel","set","color","setcolor"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Action-Wheel-API#setcolorcolor",
+        "name":"ActionWheelSlot.setColor"
+    },
+    {
+        "keywords":["action","wheel","actionwheel","set","hover","color","sethovercolor"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Action-Wheel-API#sethovercolorcolor",
+        "name":"ActionWheelSlot.setHoverColor"
+    },
+    {
+        "keywords":["action","wheel","actionwheel","get","hover","item","gethoveritem"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Action-Wheel-API#gethoveritem",
+        "name":"ActionWheelSlot.getHoverItem"
+    },
+    {
+        "keywords":["action","wheel","actionwheel","get","color","getcolor"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Action-Wheel-API#getcolor",
+        "name":"ActionWheelSlot.getColor"
+    },
+    {
+        "keywords":["action","wheel","actionwheel","get","hover","color","gethovercolor"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Action-Wheel-API#gethovercolor",
+        "name":"ActionWheelSlot.getHoverColor"
+    },
+    {
+        "keywords":["keybind","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Keybind-API",
+        "name":"KeyBind API"
+    },
+    {
+        "keywords":["keybind","get","key","list","getkeylist"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Keybind-API#getkeylist",
+        "name":"keybind.getKeyList"
+    },
+    {
+        "keywords":["keybind","get","registered","key","list","getregisteredkeylist"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Keybind-API#getregisteredkeylist",
+        "name":"keybind.getRegisteredKeyList"
+    },
+    {
+        "keywords":["keybind","new","key","newkey"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Keybind-API#newkeystring-key-bool",
+        "name":"keybind.newKey"
+    },
+    {
+        "keywords":["keybind","get","registered","vanilla","getregisteredkeybind"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Keybind-API#getregisteredkeybindvanillakeybind",
+        "name":"keybind.getRegisteredKeybind"
+    },
+    {
+        "keywords":["keybind","get","key","getkey"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Keybind-API#getkey",
+        "name":"Keybind.getKey"
+    },
+    {
+        "keywords":["keybind","get","name","getname"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Keybind-API#getname",
+        "name":"Keybind.getName"
+    },
+    {
+        "keywords":["keybind","is","pressed","ispressed"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Keybind-API#ispressed",
+        "name":"Keybind.isPressed"
+    },
+    {
+        "keywords":["keybind","was","pressed","waspressed"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Keybind-API#waspressed",
+        "name":"Keybind.wasPressed"
+    },
+    {
+        "keywords":["keybind","reset"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Keybind-API#reset",
+        "name":"CustomKeybind.reset"
+    },
+    {
+        "keywords":["keybind","set","key","setkey"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Keybind-API#setkeykey",
+        "name":"CustomKeybind.setKey"
+    },
+    {
+        "keywords":["keybind","set","name","setname"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Keybind-API#setnamestring",
+        "name":"CustomKeybind.setName"
+    },
+    {
+        "keywords":["nameplate","nametag","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Nameplate-API",
+        "name":"Nameplate API",
+        "priority":1
+    },
+    {
+        "keywords":["nameplate","nametag","set","text","settext"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Nameplate-API#settextstring",
+        "name":"nameplate.ENTITY.setText\nnameplate.CHAT.setText\nnameplate.LIST.setText"
+    },
+    {
+        "keywords":["nameplate","nametag","get","text","gettext"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Nameplate-API#gettext",
+        "name":"nameplate.ENTITY.getText\nnameplate.CHAT.getText\nnameplate.LIST.getText"
+    },
+    {
+        "keywords":["nameplate","nametag","set","enabled","enable","visible","setenabled"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Nameplate-API#setenabledbool",
+        "name":"nameplate.ENTITY.setEnabled"
+    },
+    {
+        "keywords":["nameplate","nametag","set","pos","position","setpos"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Nameplate-API#setposvector",
+        "name":"nameplate.ENTITY.setPos"
+    },
+    {
+        "keywords":["nameplate","nametag","set","scale","setscale"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Nameplate-API#setscalevector",
+        "name":"nameplate.ENTITY.setScale"
+    },
+    {
+        "keywords":["nameplate","nametag","get","enabled","getenabled"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Nameplate-API#getenabled",
+        "name":"nameplate.ENTITY.getEnabled"
+    },
+    {
+        "keywords":["nameplate","nametag","get","pos","position","getpos"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Nameplate-API#getpos",
+        "name":"nameplate.ENTITY.getPos"
+    },
+    {
+        "keywords":["nameplate","nametag","get","scale","getscale"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Nameplate-API#getscale",
+        "name":"nameplate.ENTITY.getScale"
+    },
+    {
+        "keywords":["camera","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Camera-API",
+        "name":"Camera API",
+        "priority":1
+    },
+    {
+        "keywords":["camera","set","pos","position","setpos"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Camera-API#setposvector",
+        "name":"camera.FIRST_PERSON.setPos\ncamera.THIRD_PERSON.setPos"
+    },
+    {
+        "keywords":["camera","set","rot","rotation","setrot"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Camera-API#setrotvector",
+        "name":"camera.FIRST_PERSON.setRot\ncamera.THIRD_PERSON.setRot"
+    },
+    {
+        "keywords":["camera","set","pivot","setpivot"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Camera-API#setpivotvector",
+        "name":"camera.FIRST_PERSON.setPivot\ncamera.THIRD_PERSON.setPivot"
+    },
+    {
+        "keywords":["camera","get","pos","position","getpos"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Camera-API#getpos",
+        "name":"camera.FIRST_PERSON.getPos\ncamera.THIRD_PERSON.getPos"
+    },
+    {
+        "keywords":["camera","get","rot","rotation","getrot"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Camera-API#getrot",
+        "name":"camera.FIRST_PERSON.getRot\ncamera.THIRD_PERSON.getRot"
+    },
+    {
+        "keywords":["camera","get","pivot","getpivot"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Camera-API#getpivot",
+        "name":"camera.FIRST_PERSON.getPivot\ncamera.THIRD_PERSON.getPivot"
+    },
+    {
+        "keywords":["chat","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Chat-API",
+        "name":"Chat API",
+        "priority":1
+    },
+    {
+        "keywords":["chat","get","input","text","message","getinputtext"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Chat-API#getinputtext",
+        "name":"chat.getInputText"
+    },
+    {
+        "keywords":["chat","get","message","messages","getmessage"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Chat-API#getmessageint",
+        "name":"chat.getMessage"
+    },
+    {
+        "keywords":["chat","is","open","isopen"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Chat-API#isopen",
+        "name":"chat.isOpen"
+    },
+    {
+        "keywords":["chat","set","figura","command","prefix","commands","setfiguracommandprefix"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Chat-API#setfiguracommandprefixstring",
+        "name":"chat.setFiguraCommandPrefix"
+    },
+    {
+        "keywords":["tutorial","create","creating","command","commands","avatar"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Chat-API#figura-command-system",
+        "name":"Tutorial: Create Avatar Commands"
+    },
+    {
+        "keywords":["meta","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API",
+        "name":"Meta API",
+        "priority":1
+    },
+    {
+        "keywords":["meta","get","animation","limit","getanimationlimit"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getanimationlimit",
+        "name":"meta.getAnimationLimit"
+    },
+    {
+        "keywords":["meta","get","backend","status","getbackendstatus"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getbackendstatus",
+        "name":"meta.getBackendStatus"
+    },
+    {
+        "keywords":["meta","get","can","have","custom","render","layer","layers","renderlayer","getcanhavecustomrenderlayer"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getcanhavecustomrenderlayer",
+        "name":"meta.getCanHaveCustomRenderLayer"
+    },
+    {
+        "keywords":["meta","get","can","have","custom","sound","sounds","getcanhavecustomsounds"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getcanhavecustomsounds",
+        "name":"meta.getCanHaveCustomSounds"
+    },
+    {
+        "keywords":["meta","get","can","modify","nameplate","nameplates","nametag","getcanmodifynameplate"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getcanmodifynameplate",
+        "name":"meta.getCanModifyNameplate"
+    },
+    {
+        "keywords":["meta","get","can","modify","vanilla","model","part","getcanmodifyvanilla"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getcanmodifyvanilla",
+        "name":"meta.getCanModifyVanilla"
+    },
+    {
+        "keywords":["meta","get","complexity","limit","getcomplexitylimit"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getcomplexitylimit",
+        "name":"meta.getComplexityLimit"
+    },
+    {
+        "keywords":["meta","get","current","animation","count","getcurrentanimationcount"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getcurrentanimationcount",
+        "name":"meta.getCurrentAnimationCount"
+    },
+    {
+        "keywords":["meta","get","current","complexity","getcurrentcomplexity"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getcurrentcomplexity",
+        "name":"meta.getCurrentComplexity"
+    },
+    {
+        "keywords":["meta","get","current","init","count","getcurrentinitcount"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getcurrentinitcount",
+        "name":"meta.getCurrentInitCount"
+    },
+    {
+        "keywords":["meta","get","current","particle","count","getcurrentparticlecount"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getcurrentparticlecount",
+        "name":"meta.getCurrentParticleCount"
+    },
+    {
+        "keywords":["meta","get","current","render","count","getcurrentrendercount"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getcurrentrendercount",
+        "name":"meta.getCurrentRenderCount"
+    },
+    {
+        "keywords":["meta","get","current","sound","count","getcurrentsoundcount"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getcurrentsoundcount",
+        "name":"meta.getCurrentSoundCount"
+    },
+    {
+        "keywords":["meta","get","current","tick","count","getcurrenttickcount"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getcurrenttickcount",
+        "name":"meta.getCurrentTickCount"
+    },
+    {
+        "keywords":["meta","get","does","render","offscreen","getdoesrenderoffscreen"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getdoesrenderoffscreen",
+        "name":"meta.getDoesRenderOffscreen"
+    },
+    {
+        "keywords":["meta","get","figura","version","getfiguraversion"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getfiguraversion",
+        "name":"meta.getFiguraVersion"
+    },
+    {
+        "keywords":["meta","get","init","limit","getinitlimit"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getinitlimit",
+        "name":"meta.getInitLimit"
+    },
+    {
+        "keywords":["meta","get","model","status","getmodelstatus"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getmodelstatus",
+        "name":"meta.getModelStatus"
+    },
+    {
+        "keywords":["meta","get","particle","limit","getparticlelimit"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getparticlelimit",
+        "name":"meta.getParticleLimit"
+    },
+    {
+        "keywords":["meta","get","render","limit","getrenderlimit"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getrenderlimit",
+        "name":"meta.getRenderLimit"
+    },
+    {
+        "keywords":["meta","get","script","status","getscriptstatus"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getscriptstatus",
+        "name":"meta.getScriptStatus"
+    },
+    {
+        "keywords":["meta","get","sound","limit","getsoundlimit"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getsoundlimit",
+        "name":"meta.getSoundLimit"
+    },
+    {
+        "keywords":["meta","get","texture","status","gettexturestatus"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#gettexturestatus",
+        "name":"meta.getTextureStatus"
+    },
+    {
+        "keywords":["meta","get","tick","limit","getticklimit"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Meta-API#getticklimit",
+        "name":"meta.getTickLimit"
+    },
+    {
+        "keywords":["renderer","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Renderer-API",
+        "name":"Renderer API",
+        "priority":1
+    },
+    {
+        "keywords":["renderer","get","camera","pos","position","getcamerapos"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Renderer-API#getcamerapos",
+        "name":"renderer.getCameraPos"
+    },
+    {
+        "keywords":["renderer","get","camera","rot","rotation","getcamerarotation"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Renderer-API#getcamerarot",
+        "name":"renderer.getCameraRot"
+    },
+    {
+        "keywords":["renderer","get","render","fire","getrenderfire"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Renderer-API#getrenderfire",
+        "name":"renderer.getRenderFire"
+    },
+    {
+        "keywords":["renderer","get","render","player","head","playerhead","getrenderplayerhead"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Renderer-API#getrenderplayerhead",
+        "name":"renderer.getRenderPlayerHead"
+    },
+    {
+        "keywords":["renderer","get","shadow","size","getshadowsize"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Renderer-API#getshadowsize",
+        "name":"renderer.getShadowSize"
+    },
+    {
+        "keywords":["renderer","is","camera","backwards","iscamerabackwards"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Renderer-API#iscamerabackwards",
+        "name":"renderer.isCameraBackwards"
+    },
+    {
+        "keywords":["renderer","is","first","person","isfirstperson"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Renderer-API#isfirstperson",
+        "name":"renderer.isFirstPerson"
+    },
+    {
+        "keywords":["renderer","is","mount","enabled","ismountenabled"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Renderer-API#ismountenabled",
+        "name":"renderer.isMountEnabled"
+    },
+    {
+        "keywords":["renderer","is","mount","shadow","enabled","ismountshadowenabled"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Renderer-API#ismountshadowenabled",
+        "name":"renderer.isMountShadowEnabled"
+    },
+    {
+        "keywords":["renderer","raycast","block","blocks","raycastblocks"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Renderer-API#raycastblocksvector3startpos-vector3endpos-shapehandling-optional-fluidhandling-optional-functionpredicate-optional",
+        "name":"renderer.raycastBlocks"
+    },
+    {
+        "keywords":["renderer","raycast","entity","entities","raycastEntities"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Renderer-API#raycastentitiesvector3startpos-vector3endpos-functionpredicate-optional",
+        "name":"renderer.raycastEntities"
+    },
+    {
+        "keywords":["renderer","set","mount","enabled","setmountenabled"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Renderer-API#setmountenabledbool",
+        "name":"renderer.setMountEnabled"
+    },
+    {
+        "keywords":["renderer","set","mount","shadow","enabled","setmountshadowenabled"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Renderer-API#setmountshadowenabledbool",
+        "name":"renderer.setMountShadowEnabled"
+    },
+    {
+        "keywords":["renderer","set","render","fire","setrenderfire"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Renderer-API#setrenderfirebool",
+        "name":"renderer.setRenderFire"
+    },
+    {
+        "keywords":["renderer","set","render","player","head","playerhead","setrenderplayerhead"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Renderer-API#setrenderplayerheadbool",
+        "name":"renderer.setRenderPlayerHead"
+    },
+    {
+        "keywords":["renderer","set","shadow","size","setshadowsize"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Renderer-API#setshadowsizefloat",
+        "name":"renderer.setShadowSize"
+    },
+    {
+        "keywords":["renderer","swing","arm","swingarm"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Renderer-API#swingarmbool-optional",
+        "name":"renderer.swingArm"
     }
 ]
