@@ -34,7 +34,7 @@ module.exports = {
         if (missing > 0) {
             string += `\n...and ${missing} more.`;
         }
-        message.channel.send(utility.buildEmbed(string));
+        message.channel.send(utility.buildEmbed(`Search results for "${args.join(' ')}"`, string));
     },
 };
 
