@@ -1,5 +1,6 @@
 const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const wiki = require('../../../storage/wiki.json');
+const utility = require('../../util/utility');
 
 module.exports = {
     name: 'wiki',
@@ -10,20 +11,30 @@ module.exports = {
      * @param {String[]} args 
      */
     async execute(message, args) {
-        const result = search(args);
-        if (!result.length) {
-            message.channel.send(`Could not find anything about "${args.join(' ')}".`);
+        let result = search(args);
+        if (result.length == 0) {
+            message.channel.send(utility.buildEmbed(`Could not find anything about "${args.join(' ')}".`)).catch(console.error);
+            return;
         }
-        else if (result.length > 20) {
-            message.channel.send('Too many possible matches. Try adding another keyword.');
+        const max = 10;
+        let missing = result.length - max;
+        if (result.length > max) {
+            result = result.slice(0, max);
         }
-        else {
-            let string = '';
-            for (const entry of result) {
-                string += `\n${entry.name ?? 'No Name Provided'}\n\t<${entry.url ?? 'No Url Provided'}>`;
+        let string = '';
+        for (const entry of result) {
+            const append = `\n[${entry.name ?? 'No Name Provided'}](${entry.url ?? 'No Url Provided'})`;
+            if ((string + append).length < 3800) { // 4000 max, 200 to be save when adding missing note
+                string += append;
             }
-            message.channel.send(`Possible matches found:${string}`);
+            else {
+                missing++;
+            }
         }
+        if (missing > 0) {
+            string += `\n...and ${missing} more.`;
+        }
+        message.channel.send(utility.buildEmbed(string));
     },
 };
 
@@ -72,7 +83,7 @@ function search(argKeywordArray) {
             matches.push(entry);
         }
         else if ((entry.priority ?? 0) > currentPriority) {
-            currentPriority = (entry.priority??0);
+            currentPriority = entry.priority ?? 0;
             matches = [entry];
         }
     }
