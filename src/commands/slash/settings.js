@@ -111,22 +111,22 @@ module.exports = {
                     interaction.reply('The muted role has been set to ' + value + '.');
                     break;
                 case 'clear_roles_on_mute':
-                    if (value == 'yes') { value = 'true'; }
-                    else if (value == 'no') { value = 'false'; }
+                    if (value == 'yes' || value == 'true') { value = 'true'; }
+                    else if (value == 'no' || value == 'false') { value = 'false'; }
                     else { return interaction.reply('Please put either "yes" or "no" or "true" or "false"'); }
                     DataStorage.guildsettings.guilds.get(interaction.guild.id).set('clear_roles_on_mute', value);
                     interaction.reply('The clear roles on mute setting has been set to ' + value + '.');
                     break;
                 case 'enable_scam_filter':
-                    if (value == 'yes') { value = 'true'; }
-                    else if (value == 'no') { value = 'false'; }
+                    if (value == 'yes' || value == 'true') { value = 'true'; }
+                    else if (value == 'no' || value == 'false') { value = 'false'; }
                     else { return interaction.reply('Please put either "yes" or "no" or "true" or "false"'); }
                     DataStorage.guildsettings.guilds.get(interaction.guild.id).set('enable_scam_filter', value);
                     interaction.reply('The enable scam filter setting has been set to ' + value + '.');
                     break;
                 case 'enable_message_logging':
-                    if (value == 'yes') { value = 'true'; }
-                    else if (value == 'no') { value = 'false'; }
+                    if (value == 'yes' || value == 'true') { value = 'true'; }
+                    else if (value == 'no' || value == 'false') { value = 'false'; }
                     else { return interaction.reply('Please put either "yes" or "no" or "true" or "false"'); }
                     DataStorage.guildsettings.guilds.get(interaction.guild.id).set('enable_message_logging', value);
                     interaction.reply('The enable message logging setting has been set to ' + value + '.');
