@@ -28,8 +28,13 @@ module.exports = {
                 const ticket = DataStorage.storage.tickets?.find(x => x.thread == message.channel.id);
                 if (!ticket) return message.reply('Could not find a ticket for this thread.');
                 const ticketUser = await message.guild.members.fetch(ticket.author);
-                await ticketUser.send(utility.buildEmbed('↩️ Moderator reply:', args.join(' ')));
-                message.reply(utility.buildEmbed('Message forwarded. ✉️')).catch(console.error);
+                try {
+                    await ticketUser.send(utility.buildEmbed('↩️ Moderator reply:', args.join(' ')));
+                    message.reply(utility.buildEmbed('Message forwarded. ✉️')).catch(console.error);
+                }
+                catch {
+                    message.reply(utility.buildEmbed('Couldn\'t forward message. ❌')).catch(console.error);
+                }
             }
         }
         catch (error) {

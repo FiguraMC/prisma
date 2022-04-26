@@ -24,7 +24,7 @@ module.exports = {
             if (!command) return;
 
             // If not in main guild only allow specific commands
-            if (interaction.guild.id != process.env.MAIN_GUILD && !command.allowInOtherGuilds) return;
+            if (interaction.guild?.id != process.env.MAIN_GUILD && !command.allowInOtherGuilds) return;
 
             try {
                 await command.execute(interaction);

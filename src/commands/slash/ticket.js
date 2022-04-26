@@ -15,7 +15,8 @@ module.exports = {
      * @param {Discord.CommandInteraction} interaction 
      */
     async execute(interaction) {
-        if (interaction.guild.id != process.env.MAIN_GUILD) {
+        // Only allow this comamnd to be used in DM or in main guild
+        if (interaction.guild?.id != undefined && interaction.guild?.id != process.env.MAIN_GUILD) {
             interaction.reply({ embeds: [{ description: 'Modmail is only available in our main server.' }], ephemeral: true });
             return;
         }

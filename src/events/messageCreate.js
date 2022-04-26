@@ -27,11 +27,11 @@ module.exports = {
             // If command doesnt exist, return
             if (!command) return;
 
-            // If not in main guild only allow specific commands
-            if (message.guild.id != process.env.MAIN_GUILD && !command.allowInOtherGuilds) return;
-
             // Only allow commands that have dm property set to true in DMs
             if (message.channel.type == 'DM' && !command.dm) return message.channel.send(utility.buildEmbed('Commands don\'t work in DMs.'));
+
+            // If not in main guild only allow specific commands
+            if (message.guild?.id != process.env.MAIN_GUILD && !command.allowInOtherGuilds) return;
 
             // Check if command needs moderator or helper perms
             let isAllowedToUse = false;
@@ -54,8 +54,8 @@ module.exports = {
                 console.error(error);
             }
         }
-        // If not a command, do some chat filter stuff
-        else {
+        // If not a command and in a guild (not in DM), do some chat filter stuff
+        else if (message.guild) {
             ScamFilter.filter(message);
             NsfwFilter.filter(message);
             ShowcaseFilter.filter(message);

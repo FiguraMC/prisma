@@ -23,14 +23,14 @@ module.exports = {
      * @param {Discord.CommandInteraction} interaction 
      */
     async execute(interaction) {
+        if (!interaction.guild) return interaction.reply('This command can only be used in your server.');
         if (!interaction.memberPermissions.has('ADMINISTRATOR')) return interaction.reply('You do not have permission to use this command.');
 
         if (!DataStorage.guildsettings.guilds) DataStorage.guildsettings.guilds = new Map();
 
         if (!DataStorage.guildsettings.guilds.has(interaction.guild.id)) {
-
             DataStorage.guildsettings.guilds.set(interaction.guild.id, new Map());
-
+            
             // Set default values
             DataStorage.guildsettings.guilds.get(interaction.guild.id).set('backend_status_channel', null);
             DataStorage.guildsettings.guilds.get(interaction.guild.id).set('log_channel', null);

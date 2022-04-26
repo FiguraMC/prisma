@@ -7,7 +7,7 @@ module.exports = new Discord.MessageActionRow()
             .setCustomId('tags')
             .setPlaceholder('Nothing selected')
             .setMinValues(1)
-            .setMaxValues(7)
+            .setMaxValues(8)
             .addOptions([
                 {
                     label: 'Texture',
@@ -43,6 +43,11 @@ module.exports = new Discord.MessageActionRow()
                     label: 'Advanced',
                     description: 'This request is difficult to complete.',
                     value: '[Advanced]',
+                },
+                {
+                    label: 'BB Animation',
+                    description: 'BlockBench Animations are needed.',
+                    value: '[BB Animation]',
                 },
             ]),
     );

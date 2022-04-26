@@ -3,20 +3,20 @@ const DataStorage = require('../../util/dataStorage');
 
 /**
  * Shared command for prefix as well as slash command
- * @param {Discord.GuildMember} member 
+ * @param {Discord.User} user 
  */
-module.exports = function (member) {
+module.exports = function (user) {
     if (!DataStorage.storage.people) {
         DataStorage.storage.people = {};
     }
-    if (DataStorage.storage.people[member.id] == undefined) {
+    if (DataStorage.storage.people[user.id] == undefined) {
         return 'This user hasn\'t done any requests yet.';
     }
-    const person = DataStorage.storage.people[member.id];
+    const person = DataStorage.storage.people[user.id];
     if (person == undefined || person.level == undefined) {
-        return member.user.tag + ' has not completed any requests yet.';
+        return user.tag + ' has not completed any requests yet.';
     }
     else {
-        return member.user.tag + ' has completed ' + person.level + ' requests.';
+        return user.tag + ' has completed ' + person.level + ' requests.';
     }
 };

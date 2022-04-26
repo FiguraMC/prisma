@@ -10,7 +10,7 @@ const cooldowns = new Discord.Collection();
  * @param {Discord.Message} message 
  */
 module.exports.filter = async function (message) {
-    if (process.env.HELP_CHANNELS.split(',').find(x => x == message.channel.id)) {
+    if (message.guild.id == process.env.MAIN_GUILD && process.env.HELP_CHANNELS.split(',').find(x => x == message.channel.id)) {
         // if sent in a help channel, check for FAQ keywords
 
         // this is basically a crappy pattern check thing

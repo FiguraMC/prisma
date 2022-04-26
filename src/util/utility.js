@@ -104,6 +104,6 @@ function setBackendStatusChannel(client, status) {
             channel.setName('Backend: ' + (status ? 'Online ✅' : 'Offline ❌')).catch(console.error);
         }
         // eslint-disable-next-line no-empty
-        catch (err) { console.error(err); }
+        catch { }
     });
 }

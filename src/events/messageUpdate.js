@@ -13,6 +13,7 @@ module.exports = {
         // Log update in the log channel
 
         if (!oldMessage.guild) return; // Ignore DM
+
         if (DataStorage.guildsettings.guilds?.get(oldMessage.guild.id)?.get('enable_message_logging') != 'true') return; // Ignore if logging is disabled
         if (oldMessage.author.id == oldMessage.client.user.id) return; // Ignore self
 

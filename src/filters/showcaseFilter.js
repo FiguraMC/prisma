@@ -6,7 +6,7 @@ const utility = require('../util/utility');
  * @param {Discord.Message} message 
  */
 module.exports.filter = async function (message) {
-    if (process.env.SHOWCASE_CHANNELS.split(',').find(x => x == message.channel.id)) {
+    if (message.guild.id == process.env.MAIN_GUILD && process.env.SHOWCASE_CHANNELS.split(',').find(x => x == message.channel.id)) {
 
         if (message.author.id == '466378653216014359') { // PluralKit ID
             setTimeout(() => {
