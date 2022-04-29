@@ -30,6 +30,11 @@
         "name":"File System"
     },
     {
+        "keywords":["avatar","limitations","limits","limit","file","size"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Avatar-Limitations",
+        "name":"Avatar Limitations"
+    },
+    {
         "keywords":["keyword","keywords","blockbench","elytra","item","parrot","camera","hud","gui"],
         "url":"https://github.com/Moonlight-MC/Figura/wiki/Blockbench-Keywords",
         "name":"BlockBench Keywords",
