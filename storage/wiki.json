@@ -25,6 +25,11 @@
         "name":"Avatar Permissions"
     },
     {
+        "keywords":["file","system","filesystem","model","bbmodel","texture","png","emissive","emission","script","lua"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/File-System",
+        "name":"File System"
+    },
+    {
         "keywords":["keyword","keywords","blockbench","elytra","item","parrot","camera","hud","gui"],
         "url":"https://github.com/Moonlight-MC/Figura/wiki/Blockbench-Keywords",
         "name":"BlockBench Keywords",
