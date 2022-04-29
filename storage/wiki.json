@@ -25,6 +25,16 @@
         "name":"Avatar Permissions"
     },
     {
+        "keywords":["file","system","filesystem","model","bbmodel","texture","png","emissive","emission","script","lua"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/File-System",
+        "name":"File System"
+    },
+    {
+        "keywords":["avatar","limitations","limits","limit","file","size"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Avatar-Limitations",
+        "name":"Avatar Limitations"
+    },
+    {
         "keywords":["keyword","keywords","blockbench","elytra","item","parrot","camera","hud","gui"],
         "url":"https://github.com/Moonlight-MC/Figura/wiki/Blockbench-Keywords",
         "name":"BlockBench Keywords",
@@ -61,7 +71,7 @@
         "name":"Creating an Avatar: Texture"
     },
     {
-        "keywords":["tutorial","create","creating","avatar","script","script.lua"],
+        "keywords":["tutorial","create","creating","avatar","script","lua"],
         "url":"https://github.com/Moonlight-MC/Figura/wiki/Creating-An-Advanced-Avatar-(Scripting)",
         "name":"Creating an Avatar: Script"
     },
@@ -457,7 +467,7 @@
         "name":"sound.getSounds"
     },
     {
-        "keywords":["sound","regular","play"],
+        "keywords":["sound","regular","play","playsound"],
         "url":"https://github.com/Moonlight-MC/Figura/wiki/Sound-API#playsoundstringname-vector3position-vector2volumepitch",
         "name":"sound.playSound"
     },
@@ -483,7 +493,7 @@
         "name":"sound.isCustomSoundRegistered"
     },
     {
-        "keywords":["sound","custom","play"],
+        "keywords":["sound","custom","play","playcustomsound"],
         "url":"https://github.com/Moonlight-MC/Figura/wiki/Sound-API#playcustomsoundstringname-vector3position-vector2volumepitch",
         "name":"sound.playCustomSound"
     },
