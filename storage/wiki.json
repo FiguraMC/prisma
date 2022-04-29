@@ -457,7 +457,7 @@
         "name":"sound.getSounds"
     },
     {
-        "keywords":["sound","regular","play"],
+        "keywords":["sound","regular","play","playsound"],
         "url":"https://github.com/Moonlight-MC/Figura/wiki/Sound-API#playsoundstringname-vector3position-vector2volumepitch",
         "name":"sound.playSound"
     },
@@ -483,7 +483,7 @@
         "name":"sound.isCustomSoundRegistered"
     },
     {
-        "keywords":["sound","custom","play"],
+        "keywords":["sound","custom","play","playcustomsound"],
         "url":"https://github.com/Moonlight-MC/Figura/wiki/Sound-API#playcustomsoundstringname-vector3position-vector2volumepitch",
         "name":"sound.playCustomSound"
     },
