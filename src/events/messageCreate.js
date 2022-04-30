@@ -46,6 +46,39 @@ module.exports = {
             }
             if (!isAllowedToUse) return;
 
+            // Remove any expired cooldowns
+            message.client.cooldowns.forEach((userCooldowns) => {
+                for (const key in userCooldowns) {
+                    if (Object.hasOwnProperty.call(userCooldowns, key)) {
+                        const cooldown = userCooldowns[key];
+                        if (cooldown < Date.now()) {
+                            delete userCooldowns[key];
+                        }
+                    }
+                }
+                if (Object.keys(userCooldowns).length == 0) {
+                    message.client.cooldowns.delete(message.author.id);
+                }
+            });
+            // Check for cooldowns (Moderators are immune)
+            if (command.cooldown && !utility.isModerator(message.member)) {
+                let userCooldowns;
+                if (message.client.cooldowns.has(message.author.id)) {
+                    userCooldowns = message.client.cooldowns.get(message.author.id);
+                }
+                else {
+                    userCooldowns = {};
+                }
+                // If a cooldown for the command is still there after removing expired ones, return
+                if (userCooldowns[command.name]) {
+                    const timeLeft = (userCooldowns[command.name] - Date.now()) / 1000;
+                    return message.channel.send(utility.buildEmbed('Please wait ' + (timeLeft > 60 ? (timeLeft / 60).toFixed(2) + ' minutes' : timeLeft.toFixed(2) + ' seconds') + ' before using this command again.'));
+                }
+                // Add new cooldown to user
+                userCooldowns[command.name] = Date.now() + command.cooldown;
+                message.client.cooldowns.set(message.author.id, userCooldowns);
+            }
+
             // Execute the command
             try {
                 command.execute(message, args);
