@@ -12,6 +12,10 @@ module.exports = {
      * @param {String[]} args 
      */
     async execute(message, args) {
+        if (args.length == 1 && args[0] == "") {
+            message.channel.send(utility.buildEmbed(`Nothing was given as an argument.`)).catch(console.error);
+            return;
+        }
         let result = search(args);
         if (result.length == 0) {
             message.channel.send(utility.buildEmbed(`Could not find anything about "${args.join(' ')}".`)).catch(console.error);
