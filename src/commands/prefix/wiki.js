@@ -12,7 +12,7 @@ module.exports = {
      * @param {String[]} args 
      */
     async execute(message, args) {
-        if (args.length == 1 && args[0] == "") {
+        if (args.length == 0) {
             message.channel.send(utility.buildEmbed(`Nothing was given as an argument.`)).catch(console.error);
             return;
         }
