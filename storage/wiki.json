@@ -1626,5 +1626,17 @@
         "keywords":["renderer","swing","arm","swingarm"],
         "url":"https://github.com/Moonlight-MC/Figura/wiki/Renderer-API#swingarmbool-optional",
         "name":"renderer.swingArm"
+    },
+    {
+        "keywords":["data","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Data-API",
+        "name":"data",
+        "priority": 1
+    },
+    {
+        "keywords":["biome","api"],
+        "url":"https://github.com/Moonlight-MC/Figura/wiki/Biome-API",
+        "name":"biome",
+        "priority": 1
     }
 ]
