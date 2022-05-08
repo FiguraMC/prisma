@@ -22,14 +22,17 @@
   "dependencies": {
     "@discordjs/builders": "^0.11.0",
     "@discordjs/rest": "^0.2.0-canary.0",
+    "canvas": "^2.9.1",
     "cron": "^1.8.2",
     "discord-api-types": "^0.26.1",
     "discord.js": "^13.6.0",
     "dotenv": "^14.2.0",
     "fastest-levenshtein": "^1.0.12",
+    "gifencoder": "^2.0.1",
     "got": "^11.8.3",
     "node-ssh": "^12.0.4",
     "pkapi.js": "^1.2.0",
+    "sharp": "^0.30.4",
     "shelljs": "^0.8.5"
   },
   "devDependencies": {
