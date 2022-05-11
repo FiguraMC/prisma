@@ -1,10 +1,9 @@
 const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
-const petPetGif = require('../../util/petpetgif');
-const utility = require('../../util/utility');
+const hexagonalImage = require('../../util/hexagonImage');
 
 module.exports = {
-    name: 'pet',
-    usage: '`?pet [userID|@user|imageURL] [framerate]` - Create a pet-pet gif.',
+    name: 'hexagon',
+    usage: '`?hexagon [userID|@user]` - Create a hexagonal profile picture.',
     /**
      * 
      * @param {Discord.Message} message 
@@ -21,22 +20,16 @@ module.exports = {
 
         const member = fetchedMember || message.mentions.members.first();
 
-        const url = member?.user.avatarURL({ format: 'png' }) ?? utility.getURLs(args[0] ?? '')?.at(0) ?? message.attachments.first()?.url;
-
-        const speed = args[1] ?? (parseFloat(args[0]) || 24);
+        const url = member?.user.avatarURL({ format: 'png', size: 512 });
 
         try {
-            const animatedGif = await petPetGif(url, {
-                resolution: 128,
-                framerate: Math.min(Math.max(speed, 5), 65),
-            });
-
+            const image = await hexagonalImage(url);
             message.reply({
                 files: [new Discord.MessageAttachment(
-                    animatedGif,
-                    'pet.gif',
+                    image,
+                    'avatar.png',
                 )],
-            }).catch(console.error);
+            });
         }
         catch (err) {
             console.error(err);
