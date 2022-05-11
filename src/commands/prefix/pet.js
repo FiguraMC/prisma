@@ -21,9 +21,9 @@ module.exports = {
 
         const member = fetchedMember || message.mentions.members.first();
 
-        const url = member?.user.avatarURL({ format: 'png' }) ?? utility.getURLs(args[0] ?? '')?.at(0) ?? message.attachments.first()?.url;
+        const url = member?.displayAvatarURL({ format: 'png' }) ?? utility.getURLs(args[0] ?? '')?.at(0) ?? message.attachments.first()?.url;
 
-        const speed = args[1] ?? (parseFloat(args[0]) || 24);
+        const speed = args[1] ?? (parseFloat(args[0]) || 18);
 
         try {
             const animatedGif = await petPetGif(url, {

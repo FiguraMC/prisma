@@ -5,7 +5,7 @@ const path = require('path');
 const GIFEncoder = require('gif-encoder');
 const Canvas = require('canvas');
 
-const FRAMES = 10;
+const FRAMES = 5;
 
 module.exports = (avatarURL, options = {}) => {
     // eslint-disable-next-line no-unused-vars
@@ -14,7 +14,7 @@ module.exports = (avatarURL, options = {}) => {
         avatarURL = avatarURL ?? '';
 
         options.resolution = options.resolution ?? 128;
-        options.framerate = options.framerate ?? 24;
+        options.framerate = options.framerate ?? 18;
         options.backgroundColor = options.backgroundColor ?? 'rgba(0,0,0,0)';
 
         const encoder = new GIFEncoder(options.resolution, options.resolution);
@@ -41,7 +41,8 @@ module.exports = (avatarURL, options = {}) => {
                     ctx.fillRect(0, 0, canvas.width, canvas.height);
                 }
 
-                const j = i < FRAMES / 2 ? i : FRAMES - i;
+                // const j = i < FRAMES / 2 ? i : FRAMES - i;
+                const j = i < FRAMES / 2 ? i * 2 : (FRAMES - i) * 2;
 
                 const width = 0.8 + j * 0.02;
                 const height = 0.8 - j * 0.05;
