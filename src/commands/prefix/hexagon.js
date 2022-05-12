@@ -1,9 +1,11 @@
 const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const hexagonalImage = require('../../util/hexagonImage');
+const utility = require('../../util/utility');
 
 module.exports = {
     name: 'hexagon',
-    usage: '`?hexagon [userID|@user]` - Create a hexagonal profile picture.',
+    usage: '`?hexagon [userID|@user|imageURL]` - Create a hexagonal profile picture.',
+    allowInOtherGuilds: true,
     /**
      * 
      * @param {Discord.Message} message 
@@ -20,7 +22,7 @@ module.exports = {
 
         const member = fetchedMember || message.mentions.members.first();
 
-        const url = member?.user.avatarURL({ format: 'png', size: 512 });
+        const url = member?.displayAvatarURL({ format: 'png' }) ?? utility.getURLs(args[0] ?? '')?.at(0) ?? message.attachments.first()?.url;
 
         try {
             const image = await hexagonalImage(url);

@@ -25,7 +25,7 @@ module.exports = {
             }
             answer += `**<:_:${emoji(entry.type)}>** [${entry.name + (entry.type == 'method' ? '()' : '')}](<${entry.url}>)\n`;
             answer += entry.description;
-            await interaction.reply(answer).catch(console.error);
+            await interaction.reply(answer.substring(0, 2000)).catch(console.error);
         }
         else {
             await interaction.reply({ content: `Unable to get documentation for \`${name}\`.`, ephemeral: true }).catch(console.error);

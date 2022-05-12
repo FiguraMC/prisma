@@ -5,6 +5,7 @@ const utility = require('../../util/utility');
 module.exports = {
     name: 'pet',
     usage: '`?pet [userID|@user|imageURL] [framerate]` - Create a pet-pet gif.',
+    allowInOtherGuilds: true,
     /**
      * 
      * @param {Discord.Message} message 
