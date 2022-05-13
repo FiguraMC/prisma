@@ -4,7 +4,7 @@ const utility = require('../../util/utility');
 
 module.exports = {
     name: 'pet',
-    usage: '`?pet [userID|@user|imageURL] [framerate]` - Create a pet-pet gif.',
+    usage: '`?pet [userID|@user|imageURL] [framerate|"slow"|"fast"]` - Create a pet-pet gif.',
     allowInOtherGuilds: true,
     /**
      * 
@@ -24,12 +24,18 @@ module.exports = {
 
         const url = member?.displayAvatarURL({ format: 'png' }) ?? utility.getURLs(args[0] ?? '')?.at(0) ?? message.attachments.first()?.url;
 
-        const speed = args[1] ?? (parseFloat(args[0]) || 18);
+        // Speed is either args[1] or, if it doesn't exist, args[0], except when args[0] was a valid user ID.
+        const defaultSpeed = 18;
+        let speed = args[1] ?? (fetchedMember ? defaultSpeed : parseFloat(args[0]) || defaultSpeed);
+        if (speed == 'slow') speed = 10;
+        else if (speed == 'fast') speed = 24;
+        speed = Math.min(Math.max(speed, 5), 65);
+        if (isNaN(speed)) speed = defaultSpeed;
 
         try {
             const animatedGif = await petPetGif(url, {
                 resolution: 128,
-                framerate: Math.min(Math.max(speed, 5), 65),
+                framerate: speed,
             });
 
             message.reply({
@@ -40,8 +46,7 @@ module.exports = {
             }).catch(console.error);
         }
         catch (err) {
-            console.error(err);
-            message.reply('Couldn\'t find an image.');
+            message.reply(err.message);
         }
     },
 };

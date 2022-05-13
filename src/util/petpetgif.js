@@ -32,6 +32,7 @@ module.exports = (avatarURL, options = {}) => {
         const canvas = Canvas.createCanvas(options.resolution, options.resolution);
         const ctx = canvas.getContext('2d');
 
+
         Canvas.loadImage(avatarURL).then(async avatar => {
             for (let i = 0; i < FRAMES; i++) {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -54,8 +55,8 @@ module.exports = (avatarURL, options = {}) => {
 
                 encoder.addFrame(ctx.getImageData(0, 0, canvas.width, canvas.height).data);
             }
-
             encoder.finish();
-        });
+
+        }).catch(() => reject(new Error('Please provide a user or image.')));
     });
 };
