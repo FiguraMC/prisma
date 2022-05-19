@@ -51,16 +51,16 @@ function search(name) {
                 for (const method of api.methods) {
                     if (method.name == methodName) {
                         if (method.parameters.length != method.returns.length) return 'Unexpected error occured, please report this to a staff member.';
-                        let lines = '';
+                        let lines = '```ansi\n\u001b[0;35mMethod\n';
                         for (let i = 0; i < method.parameters.length; i++) {
                             let params = '';
                             for (let j = 0; j < method.parameters[i].length; j++) {
-                                params += `${method.parameters[i][j].type} ${method.parameters[i][j].name}, `;
+                                params += `\u001b[0;33m${method.parameters[i][j].type} \u001b[0;37m${method.parameters[i][j].name}, `;
                             }
                             if (method.parameters[i].length > 0) params = params.substring(0, params.length - 2);
-                            lines += `<:_:${emoji('method')}> ${(className != 'globals' ? className + '#' : '')}${method.name}(${params}): Returns ${method.returns[i]}\n`;
+                            lines += `\u001b[0;34m${(className != 'globals' ? className + '.' : '')}${method.name}\u001b[0;35m(${params}\u001b[0;35m): \u001b[0;34mReturns \u001b[0;33m${method.returns[i]}\n`;
                         }
-                        lines += '\n' + method.description;
+                        lines += '\n\u001b[0;35mDescription\n\u001b[0;37m' + method.description + '```';
                         return lines;
                     }
                 }
@@ -77,7 +77,7 @@ function search(name) {
             if (api) {
                 for (const field of api.fields) {
                     if (field.name == fieldName) {
-                        return `<:_:${emoji('property')}> ${(className != 'globals' ? className + '.' : '')}${field.name}: ${field.type} ${(field.editable ? '(Editable)' : '(Not Editable)')}\n\n${field.description}`;
+                        return `\`\`\`ansi\n\u001b[0;35mField\n\u001b[0;33m${field.type} \u001b[0;34m${(className != 'globals' ? className + '.' : '')}${field.name} ${(field.editable ? '\u001b[0;32m(Editable)' : '\u001b[0;31m(Not Editable)')}\n\n\u001b[0;35mDescription\n\u001b[0;37m${field.description}\`\`\``;
                     }
                 }
             }
@@ -88,28 +88,8 @@ function search(name) {
         for (const [_, group] of Object.entries(docs)) {
             const api = group.find(a => a.name == name);
             if (api) {
-                return `<:_:${emoji('class')}> ${api.name}\n\n${api.description}`;
+                return `\`\`\`ansi\n\u001b[0;35mClass\n\u001b[0;34m${api.name}\n\n\u001b[0;35mDescription\n\u001b[0;37m${api.description}\`\`\``;
             }
         }
-    }
-}
-
-const emojis = process.env.CLASS_METHOD_PROPERTY_EMOJI.split(',');
-
-/**
- * Returns an emoji for the type of the documentation item
- * (Class, Method, Property)
- * @param {String} type 
- * @returns 
- */
-function emoji(type) {
-    if (type == 'class') {
-        return emojis[0];
-    }
-    else if (type == 'method') {
-        return emojis[1];
-    }
-    else if (type == 'property') {
-        return emojis[2];
     }
 }
