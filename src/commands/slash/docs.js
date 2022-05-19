@@ -5,7 +5,7 @@ const docs = require('../../../storage/docs.json');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('docs')
-        .setDescription('Display Figura documentation')
+        .setDescription('Display Figura 0.1.0 documentation')
         .addStringOption(option => option.setName('query').setDescription('Class or Class#method or Class.property combination to search for').setAutocomplete(true))
         .addUserOption(option => option.setName('target').setDescription('User to mention').setRequired(false)),
     usage: '`/docs <query> [target]` - Display Figura documentation.',
@@ -23,8 +23,7 @@ module.exports = {
             if (user) {
                 answer += `*Documentation suggestion for ${user}:*\n`;
             }
-            answer += `**<:_:${emoji(entry.type)}>** [${entry.name + (entry.type == 'method' ? '()' : '')}](<${entry.url}>)\n`;
-            answer += entry.description;
+            answer += entry;
             await interaction.reply(answer.substring(0, 2000)).catch(console.error);
         }
         else {
@@ -40,26 +39,58 @@ module.exports = {
  * @param {String} original Used for recursion, just leave it undefined
  * @returns Documentation entry
  */
-function search(name, original) {
-    original = original ?? name;
-    const entry = docs.find(element => element.name == name);
-    if (!entry) {
-        const split1 = name.split('#');
-        const split2 = name.split('.');
-        const x = split1.length > split2.length;
-        const classname = x ? split1[0] : split2[0];
-        const methodname = x ? split1[1] : split2[1];
-        const clas = docs.find(element => element.name == classname);
-        if (clas?.extends) {
-            return search(clas.extends + (x ? '#' : '.') + methodname, original);
+function search(name) {
+    if (name.includes('#')) {
+        const parts = name.split('#');
+        const className = parts[0];
+        const methodName = parts[1];
+        // eslint-disable-next-line no-unused-vars
+        for (const [_, group] of Object.entries(docs)) {
+            const api = group.find(a => a.name == className);
+            if (api) {
+                for (const method of api.methods) {
+                    if (method.name == methodName) {
+                        if (method.parameters.length != method.returns.length) return 'Unexpected error occured, please report this to a staff member.';
+                        let lines = '';
+                        for (let i = 0; i < method.parameters.length; i++) {
+                            let params = '';
+                            for (let j = 0; j < method.parameters[i].length; j++) {
+                                params += `${method.parameters[i][j].type} ${method.parameters[i][j].name}, `;
+                            }
+                            if (method.parameters[i].length > 0) params = params.substring(0, params.length - 2);
+                            lines += `<:_:${emoji('method')}> ${(className != 'globals' ? className + '#' : '')}${method.name}(${params}): Returns ${method.returns[i]}\n`;
+                        }
+                        lines += '\n' + method.description;
+                        return lines;
+                    }
+                }
+            }
         }
-        else {
-            return null;
+    }
+    else if (name.includes('.')) {
+        const parts = name.split('.');
+        const className = parts[0];
+        const fieldName = parts[1];
+        // eslint-disable-next-line no-unused-vars
+        for (const [_, group] of Object.entries(docs)) {
+            const api = group.find(a => a.name == className);
+            if (api) {
+                for (const field of api.fields) {
+                    if (field.name == fieldName) {
+                        return `<:_:${emoji('property')}> ${(className != 'globals' ? className + '.' : '')}${field.name}: ${field.type} ${(field.editable ? '(Editable)' : '(Not Editable)')}\n\n${field.description}`;
+                    }
+                }
+            }
         }
     }
     else {
-        entry.name = original;
-        return entry;
+        // eslint-disable-next-line no-unused-vars
+        for (const [_, group] of Object.entries(docs)) {
+            const api = group.find(a => a.name == name);
+            if (api) {
+                return `<:_:${emoji('class')}> ${api.name}\n\n${api.description}`;
+            }
+        }
     }
 }
 

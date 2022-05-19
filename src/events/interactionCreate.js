@@ -5,6 +5,7 @@ const DataStorage = require('../util/dataStorage');
 const utility = require('../util/utility');
 const confirmationButtons = require('../components/confirmationButtons');
 const closeTicketButton = require('../components/closeTicketButton');
+const docs_old = require('../../storage/docs_old.json');
 const docs = require('../../storage/docs.json');
 const ticketMenu = require('../components/ticketMenu');
 
@@ -118,8 +119,15 @@ module.exports = {
                 }
             }
         }
+        // Handle /docs_old command autocomplete
+        else if (interaction.isAutocomplete() && interaction.commandName == 'docs_old') {
+            const search = interaction.options.getFocused().toLowerCase(); // the text the user is currently typing
+            const results = browseDocs_old(search); // find matching docs entries
+            results.sort((a, b) => a.levenshtein - b.levenshtein); // sort by levenshtein distance
+            interaction.respond(results.slice(0, 25)).catch(console.error); // max of 25 autocomplete entries allowed
+        }
         // Handle /docs command autocomplete
-        else if (interaction.isAutocomplete()) {
+        else if (interaction.isAutocomplete() && interaction.commandName == 'docs') {
             const search = interaction.options.getFocused().toLowerCase(); // the text the user is currently typing
             const results = browseDocs(search); // find matching docs entries
             results.sort((a, b) => a.levenshtein - b.levenshtein); // sort by levenshtein distance
@@ -129,15 +137,15 @@ module.exports = {
 };
 
 /**
- * Finds matches for the search string in the docs
+ * Finds matches for the search string in the 0.0.8 docs
  * Checks inheritance to provide methods and fields
  * @param {String} search The search string
  * @param {*} branch Used for recursion, just leave it undefined
  * @param {*} results Used for recursion, just leave it undefined
  * @returns Array of possible matches
  */
-function browseDocs(search, branch, results) {
-    branch = branch ?? docs;
+function browseDocs_old(search, branch, results) {
+    branch = branch ?? docs_old;
     results = results ?? [];
     branch.forEach(entry => {
         if (similar(entry.name.toLowerCase(), search)) {
@@ -146,14 +154,46 @@ function browseDocs(search, branch, results) {
             }
         }
         if (entry.extends) {
-            let parent = JSON.parse(JSON.stringify(docs));
+            let parent = JSON.parse(JSON.stringify(docs_old));
             parent = parent.filter(e => e.name.match(`^${utility.escapeRegExp(entry.extends)}[#\\.]`) || e.name == entry.extends);
             parent.forEach(e => {
                 e.name = e.name.replace(entry.extends, entry.name);
             });
-            results = browseDocs(search, parent, results);
+            results = browseDocs_old(search, parent, results);
         }
     });
+    return results;
+}
+
+/**
+ * Finds matches for the search string in the 0.1.0 docs
+ * @param {String} search The search string
+ * @returns Array of possible matches
+ */
+function browseDocs(search) {
+    const results = [];
+    // eslint-disable-next-line no-unused-vars
+    for (const [_, group] of Object.entries(docs)) {
+        group.forEach(api => {
+            if (similar(api.name.toLowerCase(), search)) {
+                results.push({ name: api.name, value: api.name, levenshtein: levenshtein.distance(api.name, search) });
+            }
+            api.fields.forEach(field => {
+                if (similar(api.name.toLowerCase() + field.name.toLowerCase(), search.replaceAll(/[#.]/g, ''))) {
+                    const prefix = api.name + '.';
+                    results.push({ name: prefix + field.name, value: prefix + field.name, levenshtein: levenshtein.distance(field.name, search) });
+                }
+            });
+            api.methods.forEach(method => {
+                if (similar(api.name.toLowerCase() + method.name.toLowerCase(), search.replaceAll(/[#.]/g, ''))) {
+                    const prefix = api.name + '#';
+                    results.push({ name: prefix + method.name, value: prefix + method.name, levenshtein: levenshtein.distance(method.name, search) });
+                }
+            });
+
+        });
+    }
+
     return results;
 }
 
