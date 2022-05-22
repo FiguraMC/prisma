@@ -7,7 +7,7 @@ module.exports = new Discord.MessageActionRow()
             .setCustomId('tags')
             .setPlaceholder('Nothing selected')
             .setMinValues(1)
-            .setMaxValues(8)
+            .setMaxValues(10)
             .addOptions([
                 {
                     label: 'Texture',
@@ -48,6 +48,16 @@ module.exports = new Discord.MessageActionRow()
                     label: 'BB Animation',
                     description: 'BlockBench Animations are needed.',
                     value: '[BB Animation]',
+                },
+                {
+                    label: 'Figura Alpha 0.0.8',
+                    description: 'This request is for Figura version 0.0.8.',
+                    value: '[Figura Alpha 0.0.8]',
+                },
+                {
+                    label: 'Figura Beta/Rewrite 0.1.0',
+                    description: 'This request is for Figura version 0.1.0 or later.',
+                    value: '[Figura Beta/Rewrite 0.1.0]',
                 },
             ]),
     );
