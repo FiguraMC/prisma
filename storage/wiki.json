@@ -1188,7 +1188,7 @@
         "name":"action_wheel.getSelectedSlot"
     },
     {
-        "keywords":["action","wheel","actionwheel","run","execute","selected","slot","action","runaction"],
+        "keywords":["action","wheel","actionwheel","run","execute","selected","slot","runaction"],
         "url":"https://github.com/Moonlight-MC/Figura/wiki/Action-Wheel-API#runaction",
         "name":"action_wheel.runAction"
     },
