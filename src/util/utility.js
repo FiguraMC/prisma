@@ -1,5 +1,5 @@
 const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
-const got = require('got');
+const { WebSocketServer } = require('ws');
 const DataStorage = require('./dataStorage');
 
 // Utility functions
@@ -74,21 +74,19 @@ module.exports.escapeRegExp = function (string) {
  */
 module.exports.checkBackendStatus = function (client) {
     return new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
-        got(process.env.FIGURA_BACKEND_URL, {
-            https: {
-                rejectUnauthorized: false,
-            },
-            timeout: 5000,
-            retry: 1,
+        let c = new WebSocket(`ws://${process.env.FIGURA_BACKEND_URL}:25500`);
+
+        c.on('open', () => {
+            c.send(JSON.stringify({
+                type: 'auth',
+                token: process.env.FIGURA_BACKEND_TOKEN
+            }));
         })
-            .then(res => {
-                setBackendStatusChannel(client, res.statusCode == 200);
-                resolve(res.statusCode == 200);
-            })
-            .catch(() => {
-                setBackendStatusChannel(client, false);
-                resolve(false);
-            });
+
+        c.on('message', (raw) => {
+            const msg = JSON.parse(raw);
+            if (msg.type == 'connected') resolve();
+        });
     });
 };
 
