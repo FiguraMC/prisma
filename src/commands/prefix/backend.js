@@ -12,14 +12,14 @@ module.exports = {
     async execute(message) {
         const msg = await message.channel.send({
             content: 'Backend Status', embeds: [{
-                description: '💻● ● ● ● ●🗄️',
+                description: '**0.0.8 Backend**\n💻● ●❓● ●🗄️\n\n**0.1.0 Backend**\n💻● ● ● ● ●🗄️',
             }],
         });
         const status = await utility.checkBackendStatus(message.client);
         const icon = status ? '✅' : '❌';
         msg.edit({
             content: 'Backend Status', embeds: [{
-                description: '💻● ●' + icon + '● ●🗄️',
+                description: '**0.0.8 Backend**\n💻● ●❓● ●🗄️\n\n**0.1.0 Backend**\n💻● ●' + icon + '● ●🗄️',
             }],
         });
     },

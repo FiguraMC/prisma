@@ -1,5 +1,5 @@
 const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
-const { WebSocketServer } = require('ws');
+const { WebSocket } = require('ws');
 const DataStorage = require('./dataStorage');
 
 // Utility functions
@@ -74,18 +74,26 @@ module.exports.escapeRegExp = function (string) {
  */
 module.exports.checkBackendStatus = function (client) {
     return new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
-        let c = new WebSocket(`ws://${process.env.FIGURA_BACKEND_URL}:25500`);
+        const c = new WebSocket(`ws://${process.env.FIGURA_BACKEND_URL}:25500`);
 
         c.on('open', () => {
             c.send(JSON.stringify({
                 type: 'auth',
-                token: process.env.FIGURA_BACKEND_TOKEN
+                token: process.env.FIGURA_BACKEND_TOKEN,
             }));
-        })
+        });
 
         c.on('message', (raw) => {
             const msg = JSON.parse(raw);
-            if (msg.type == 'connected') resolve();
+            if (msg.type == 'connected') {
+                setBackendStatusChannel(client, true);
+                resolve(true);
+            }
+        });
+
+        c.on('error', () => {
+            setBackendStatusChannel(client, false);
+            resolve(false);
         });
     });
 };
@@ -99,7 +107,7 @@ function setBackendStatusChannel(client, status) {
     client.guilds.cache.forEach(async guild => {
         try {
             const channel = await guild.channels.fetch(DataStorage.guildsettings?.guilds?.get(guild.id)?.get('backend_status_channel'));
-            channel.setName('Backend: ' + (status ? 'Online ✅' : 'Offline ❌')).catch(console.error);
+            channel.setName('0.1.0 Backend: ' + (status ? 'Online ✅' : 'Offline ❌')).catch(console.error);
         }
         // eslint-disable-next-line no-empty
         catch { }
