@@ -51,7 +51,8 @@ module.exports = {
             });
             if (options.length == 0) {
                 dialog.data.push(undefined);
-                archive(dialog, channel, message.client);
+                const archiveMessage = await archive(dialog, channel, message.client);
+                notify(dialog.extras.lurkers, archiveMessage);
                 return true;
             }
             workersSelectMenu.components[0].setOptions([]);
@@ -77,7 +78,8 @@ module.exports = {
             interaction.update(utility.buildEmbed('Saved.')).catch(console.error);
             dialog.data.push(interaction.values);
 
-            archive(dialog, interaction.user, interaction.client);
+            const archiveMessage = await archive(dialog, interaction.user, interaction.client);
+            notify(dialog.extras.lurkers, archiveMessage);
 
             return true;
         }
@@ -114,9 +116,8 @@ async function archive(dialog, channel, client) {
         dialog.extras.embed.addField('Made by', workers, false);
     }
 
-    client.channels.fetch(process.env.REQUESTS_ARCHIVE_CHANNEL)
-        .then(c => c.send({ embeds: [dialog.extras.embed], files: files }).catch(console.error))
-        .catch(console.error);
+    const archiveChannel = await client.channels.fetch(process.env.REQUESTS_ARCHIVE_CHANNEL).catch(console.error);
+    const archiveMessage = await archiveChannel.send({ embeds: [dialog.extras.embed], files: files }).catch(console.error);
 
     const avatarRequest = DataStorage.storage.avatar_requests.find(x => x.message == dialog.extras.requestMessage.id);
     const thread = await dialog.extras.requestMessage.channel.threads.fetch(avatarRequest.thread).catch(console.error);
@@ -128,4 +129,18 @@ async function archive(dialog, channel, client) {
     DataStorage.save('storage');
 
     channel.send(utility.buildEmbed('Done!', 'The request is now archived!', [])).catch(console.error);
+
+    return archiveMessage;
+}
+
+/**
+ * Sends DMs to the users to tell
+ * them that the request is finished
+ * @param {Discord.Collection<String,Discord.User>} users 
+ * @param {Discord.Message} message 
+ */
+async function notify(users, message) {
+    users.forEach(user => {
+        if (user.id != message.client.id) user.send(utility.buildEmbed('Request Notification!', `A request you have been watching has been completed! Hooray!\n[${message?.embeds[0]?.title}](${message?.url})`)).catch(console.error);
+    });
 }

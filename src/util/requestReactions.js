@@ -45,6 +45,7 @@ async function createCollector(msg, element) {
             if (user.id != element.user && !isModerator) return; // only the author or a moderator can archive
 
             let workers = await reaction.message.reactions.cache.get('⚙️')?.users.fetch();
+            const lurkers = await reaction.message.reactions.cache.get('👀')?.users.fetch();
 
             if (reaction.message.embeds[0].footer != null) {
                 // if not eligible for leveling
@@ -53,7 +54,7 @@ async function createCollector(msg, element) {
 
             if (canStartDialog(reaction.client, user)) {
                 await user.send(utility.buildEmbed('Archiving the avatar request!', 'Please follow a few steps to finish this request. Type "cancel" at any time to cancel this action.'));
-                startDialog(reaction.client, user, 'archiveAvatarRequest', { workers: workers, embed: reaction.message.embeds[0], requestMessage: reaction.message });
+                startDialog(reaction.client, user, 'archiveAvatarRequest', { workers: workers, lurkers: lurkers, embed: reaction.message.embeds[0], requestMessage: reaction.message });
             }
             else {
                 user.send(utility.buildEmbed('Please finish the current dialog first.'));

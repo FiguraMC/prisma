@@ -114,7 +114,7 @@ module.exports.handle = async function (message, channel, dialog, options) {
 
             if (options.mode == 'create') {
                 const msg = await requestsChannel.send(constructAvatarRequestEmbed(dialog, message.author));
-                msg.react('✅').then(() => msg.react('❌').then(() => msg.react('📝').then(() => msg.react('⚙️'))));
+                msg.react('✅').then(() => msg.react('❌').then(() => msg.react('📝').then(() => msg.react('⚙️').then(() => msg.react('👀')))));
 
                 let threadName = dialog.data[0].substr(0, 99).replace(/[^A-Za-z0-9_+-.,&()]/gi, '');
                 if (threadName == '') threadName = 'Request';
