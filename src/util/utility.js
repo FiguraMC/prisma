@@ -74,25 +74,27 @@ module.exports.escapeRegExp = function (string) {
  */
 module.exports.checkBackendStatus = function (client) {
     return new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
-        const c = new WebSocket(`ws://${process.env.FIGURA_BACKEND_URL}:25500`);
+        const ws = new WebSocket(`ws://${process.env.FIGURA_BACKEND_URL}:25500`);
 
-        c.on('open', () => {
-            c.send(JSON.stringify({
+        ws.on('open', () => {
+            ws.send(JSON.stringify({
                 type: 'auth',
                 token: process.env.FIGURA_BACKEND_TOKEN,
             }));
         });
 
-        c.on('message', (raw) => {
+        ws.on('message', (raw) => {
             const msg = JSON.parse(raw);
             if (msg.type == 'connected') {
                 setBackendStatusChannel(client, true);
+                ws.close();
                 resolve(true);
             }
         });
 
-        c.on('error', () => {
+        ws.on('error', () => {
             setBackendStatusChannel(client, false);
+            ws.close();
             resolve(false);
         });
     });
