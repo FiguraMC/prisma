@@ -14,12 +14,13 @@ async function init(client) {
     if (!DataStorage.storage.avatar_requests) DataStorage.storage.avatar_requests = [];
     DataStorage.storage.avatar_requests.forEach(async element => {
         const msg = await channel.messages.fetch(element.message).catch(console.error);
-        if (!msg) {
-            // delete from storage if message doesnt exist
-            DataStorage.deleteFromArray(DataStorage.storage.avatar_requests, element);
-            DataStorage.save('storage');
-            return;
-        }
+        // note a change here: does no longer delete the message if it's not found
+        // this is because bad internet connections can cause the message to not be fetched
+        // even though it exists
+        // instead, entries in storage are deleted only after the time is up
+        // see deleteOldRequests cronjob
+        // (i didnt bother to check the error if the message doesnt exist or just internet timeout)
+        if (!msg) return;
         createCollector(msg, element);
     });
 }
