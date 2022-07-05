@@ -2,6 +2,8 @@ const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const ContentBlocker = require('../util/contentBlocker');
 const utility = require('../util/utility');
 const DataStorage = require('../util/dataStorage');
+const path = require('path');
+const Canvas = require('canvas');
 
 /**
  * Filters a message using the scam content blocker
@@ -27,13 +29,48 @@ module.exports.filter = async function (message) {
             message.member.roles.add(DataStorage.guildsettings.guilds?.get(message.guild.id)?.get('muted_role')).catch(console.error);
         }
 
-        message.channel.send(
-            '.　。　　　　•　　　ﾟ　　。　　.　　　　•\n' +
-            '　　　.　　　　　.　　　　　。　　。　.　　.\n' +
-            '。　　ඞ　　.　•　　Scammer was ejected...\n' +
-            '。　.　　　　。　　　　　　ﾟ　　　.　　　　.\n' +
-            '　　　　.　.　　　.　　　•　　.　　　　ﾟ　.\n',
-        ).catch(console.error);
+        const amogus1 = await Canvas.loadImage(path.resolve(__dirname, 'img/amogus1.png'));
+        const amogus2 = await Canvas.loadImage(path.resolve(__dirname, 'img/amogus2.png'));
+        const space = await Canvas.loadImage(path.resolve(__dirname, 'img/space.png'));
+        const text = await Canvas.loadImage(path.resolve(__dirname, 'img/text.png'));
+
+        const canvas = Canvas.createCanvas(space.width, space.height);
+        const ctx = canvas.getContext('2d');
+
+        const canvas2 = Canvas.createCanvas(space.width, space.height);
+        const ctx2 = canvas2.getContext('2d');
+
+        ctx2.drawImage(amogus2, 1400, 400, 300, 300);
+        const imgdata = ctx2.getImageData(0, 0, canvas2.width, canvas2.height);
+        const rotation = Math.random() * 360;
+        for (let i = 0; i < imgdata.data.length; i += 4) {
+            const r = imgdata.data[i];
+            const g = imgdata.data[i + 1];
+            const b = imgdata.data[i + 2];
+            const hsv = utility.rgbToHsv(r, g, b);
+            const rgb = utility.hsvToRgb(hsv[0] + rotation, hsv[1], hsv[2]);
+            imgdata.data[i] = rgb[0];
+            imgdata.data[i + 1] = rgb[1];
+            imgdata.data[i + 2] = rgb[2];
+        }
+        ctx2.putImageData(imgdata, 0, 0);
+
+        ctx.drawImage(space, 0, 0);
+        ctx.drawImage(text, 0, 0);
+        ctx.drawImage(amogus1, 1400, 400, 300, 300);
+        ctx.drawImage(canvas2, 0, 0);
+        const buf = Buffer.from(canvas.toBuffer());
+        const sentMessage = await message.channel.send({
+            files: [new Discord.MessageAttachment(
+                buf,
+                'scammer_ejected.png',
+            )],
+        }).catch(console.error);
+
+        // Send special message in showcase channels
+        if (process.env.SHOWCASE_CHANNELS.split(',').find(x => x == message.channel.id)) {
+            sentMessage.react(process.env.UPVOTE_EMOJI).catch(console.error);
+        }
 
         message.guild.channels.fetch(DataStorage.guildsettings.guilds?.get(message.guild.id)?.get('mod_log_channel'))
             .then(channel => {

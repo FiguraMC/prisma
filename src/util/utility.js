@@ -115,3 +115,28 @@ function setBackendStatusChannel(client, status) {
         catch { }
     });
 }
+
+/**
+ * 
+ * @param {number} r 0...1
+ * @param {number} g 0...1
+ * @param {number} b 0...1
+ * @returns number[] h 0...360 s 0...1 v 0...1
+ */
+module.exports.rgbToHsv = (r, g, b) => {
+    const v = Math.max(r, g, b), c = v - Math.min(r, g, b);
+    const h = c && ((v == r) ? (g - b) / c : ((v == g) ? 2 + (b - r) / c : 4 + (r - g) / c));
+    return [60 * (h < 0 ? h + 6 : h), v && c / v, v];
+};
+
+/**
+ * 
+ * @param {number} h 0...360
+ * @param {number} s 0...1
+ * @param {number} v 0...1
+ * @returns number[] rgb 0...1
+ */
+module.exports.hsvToRgb = (h, s, v) => {
+    const f = (n, k = (n + h / 60) % 6) => v - v * s * Math.max(Math.min(k, 4 - k, 1), 0);
+    return [f(5), f(3), f(1)];
+};
