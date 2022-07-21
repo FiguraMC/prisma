@@ -22,7 +22,7 @@ module.exports.filter = async function (message) {
 
         for (const [key, value] of DataStorage.storage.faq.entries()) {
             let includesAll = true;
-            const keywords = key.replaceAll('_', ' ').replaceAll('\\ ', '_').split('%');
+            const keywords = key.split('%');
             keywords.forEach(keyword => {
                 includesAll &= message.content.toLowerCase().includes(keyword);
             });
@@ -31,7 +31,7 @@ module.exports.filter = async function (message) {
                 if (cooldowns.has(key) && cooldowns.get(key) > Date.now()) continue; // still on cooldown
                 cooldowns.set(key, Date.now() + cooldownTime * 1000 * 60); // new cooldown
                 cleanCooldowns();
-                const embed = utility.buildEmbed(value.replaceAll('_', ' ').replaceAll('\\ ', '_').replaceAll('´', '`'));
+                const embed = utility.buildEmbed(value.replaceAll('´', '`'));
                 embed.embeds[0].footer = { text: 'React with ❌ to delete.' };
                 const sentMessage = await message.channel.send(embed);
                 sentMessage.createReactionCollector().on('collect', async (reaction, user) => {

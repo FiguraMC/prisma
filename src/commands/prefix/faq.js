@@ -1,57 +1,73 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const utility = require('../../util/utility');
 const DataStorage = require('../../util/dataStorage');
+const Argument = require('../parser/argument');
 
 module.exports = {
     name: 'faq',
-    usage: '`?faq [question] [answer]` - Add or remove entry to or from the FAQ. Space: `_`, Underscore: `\\_`, Code: `´` (forwardtick!), Split: `%`.',
+    description: 'Add or remove entry to or from the FAQ.',
+    longDescription: 'Add or remove entry to or from the FAQ.\nCode: `´` (forwardtick!), Split: `%`.',
     moderator: true,
     helper: true,
-    /**
-     * 
-     * @param {Discord.Message} message 
-     * @param {String[]} args 
-     */
-    async execute(message, args) {
+    overloads: [
+        {
+            arguments: [],
+            /**
+             * @param {import('discord.js').Message} message
+             */
+            execute: async (message) => {
+                // Show faq
+                if (!DataStorage.storage.faq) DataStorage.storage.faq = new Map();
 
-        if (!DataStorage.storage.faq) DataStorage.storage.faq = new Map();
-
-        // No arguments, show faq
-        if (args.length == 0) {
-            let length = 0;
-            const lists = [''];
-            DataStorage.storage.faq.forEach((value, key, map) => { // eslint-disable-line no-unused-vars
-                const line = `Q:\`${key}\`\nA:\`${value}\`\n\n`;
-                length += line.length;
-                if (length > 4000) {
-                    lists.push('');
-                    length = 0;
+                let length = 0;
+                const lists = [''];
+                DataStorage.storage.faq.forEach((value, key, map) => { // eslint-disable-line no-unused-vars
+                    const line = `Q:\`${key}\`\nA:\`${value}\`\n\n`;
+                    length += line.length;
+                    if (length > 4000) {
+                        lists.push('');
+                        length = 0;
+                    }
+                    lists[lists.length - 1] += line;
+                });
+                for (const list of lists) {
+                    message.reply(utility.buildEmbed(list == '' ? 'FAQ is empty.' : list));
                 }
-                lists[lists.length - 1] += line;
-            });
-            for (const list of lists) {
-                message.reply(utility.buildEmbed(list == '' ? 'FAQ is empty.' : list));
-            }
-        }
-        // One argument, remove question
-        else if (args.length == 1) {
-            if (DataStorage.storage.faq.has(args[0].toLowerCase())) {
-                DataStorage.storage.faq.delete(args[0].toLowerCase());
+            },
+        },
+        {
+            arguments: [new Argument('question', 'string')],
+            /**
+             * @param {import('discord.js').Message} message
+             * @param {import('../parser/argumentContainer')} args
+             */
+            execute: async (message, args) => {
+                // Remove question
+                if (!DataStorage.storage.faq) DataStorage.storage.faq = new Map();
+
+                if (DataStorage.storage.faq.has(args.getValue('question').toLowerCase())) {
+                    DataStorage.storage.faq.delete(args.getValue('question').toLowerCase());
+                    DataStorage.save('storage');
+                    message.reply(`Removed \`${args.getValue('question')}\` from the FAQ.`);
+                }
+                else {
+                    message.reply(utility.buildEmbed(`Could not find \`${args.getValue('question')}\` in the FAQ.`));
+                }
+            },
+        },
+        {
+            arguments: [new Argument('question', 'string'), new Argument('answer', 'string')],
+            /**
+             * @param {import('discord.js').Message} message
+             * @param {import('../parser/argumentContainer')} args
+             */
+            execute: async (message, args) => {
+                // Add question and answer or change an answer
+                if (!DataStorage.storage.faq) DataStorage.storage.faq = new Map();
+
+                DataStorage.storage.faq.set(args.getValue('question').toLowerCase(), args.getValue('answer'));
                 DataStorage.save('storage');
-                message.reply(`Removed \`${args[0]}\` from the FAQ.`);
-            }
-            else {
-                message.reply(utility.buildEmbed(`Could not find \`${args[0]}\` in the FAQ.`));
-            }
-        }
-        // Two arguments, add question and answer (or overwrite existing)
-        else if (args.length == 2) {
-            DataStorage.storage.faq.set(args[0].toLowerCase(), args[1]);
-            DataStorage.save('storage');
-            message.reply(`Added \`${args[0]}\` to the FAQ.`);
-        }
-        else {
-            return message.reply(utility.buildEmbed('Too many arguments.'));
-        }
-    },
+                message.reply(`Added \`${args.getValue('question')}\` to the FAQ.`);
+            },
+        },
+    ],
 };
