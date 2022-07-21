@@ -1,10 +1,9 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const DataStorage = require('../util/dataStorage');
 const roles = process.env.REQUEST_TIER_ROLES.split(',');
 
 /**
  * Increases level of a member by 1
- * @param {Discord.GuildMember} member 
+ * @param {import('discord.js').GuildMember} member 
  */
 function levelup(member) {
     if (!DataStorage.storage.people) DataStorage.storage.people = {};
@@ -21,7 +20,7 @@ function levelup(member) {
 
 /**
  * Sets level of a member to specified amount
- * @param {Discord.GuildMember} member 
+ * @param {import('discord.js').GuildMember} member 
  * @param {Number} level 
  */
 function levelset(member, level) {
@@ -40,7 +39,7 @@ function levelset(member, level) {
 
 /**
  * Uses level to determine Request Tier Role and updates the members roles
- * @param {Discord.GuildMember} member 
+ * @param {import('discord.js').GuildMember} member 
  * @param {Number} level 
  * @returns 
  */

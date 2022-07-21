@@ -1,4 +1,3 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const CronJob = require('cron').CronJob;
 const DataStorage = require('../util/dataStorage');
 

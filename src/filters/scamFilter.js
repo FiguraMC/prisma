@@ -1,4 +1,4 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
+const Discord = require('discord.js');
 const ContentBlocker = require('../util/contentBlocker');
 const utility = require('../util/utility');
 const DataStorage = require('../util/dataStorage');
@@ -7,7 +7,7 @@ const Canvas = require('canvas');
 
 /**
  * Filters a message using the scam content blocker
- * @param {Discord.Message} message 
+ * @param {import('discord.js').Message} message 
  */
 module.exports.filter = async function (message) {
     if (DataStorage.guildsettings.guilds?.get(message.guild.id)?.get('enable_scam_filter') != 'true') return;

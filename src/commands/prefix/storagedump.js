@@ -3,11 +3,11 @@ const DataStorage = require('../../util/dataStorage');
 
 module.exports = {
     name: 'storagedump',
-    usage: '`?storagedump` - Create storage dump.',
+    description: 'Create storage dump.',
     moderator: true,
     /**
      * 
-     * @param {Discord.Message} message 
+     * @param {import('discord.js').Message} message 
      */
     async execute(message) {
         const dump = DataStorage.createDump();

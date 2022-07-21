@@ -1,4 +1,3 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const utility = require('../../util/utility');
 const DataStorage = require('../../util/dataStorage');
 const closeTicketButton = require('../../components/closeTicketButton');
@@ -9,8 +8,8 @@ module.exports = {
     name: 'createTicket',
     /**
      * 
-     * @param {Discord.Message} message 
-     * @param {Discord.TextChannel | Discord.User} channel 
+     * @param {import('discord.js').Message} message 
+     * @param {import('discord.js').TextChannel | import('discord.js').User} channel 
      * @param {*} dialog 
      */
     async handle(message, channel, dialog) {
@@ -97,7 +96,7 @@ module.exports = {
 
 /**
  * Gets the ticket menu from datastorage and puts its at the bottom of the ticket channel
- * @param {Discord.Client} client 
+ * @param {import('discord.js').Client} client 
  */
 async function bringTicketMenuToTheBottom(client) {
     try {

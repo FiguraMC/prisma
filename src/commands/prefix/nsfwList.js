@@ -1,13 +1,12 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const DataStorage = require('../../util/dataStorage');
 
 module.exports = {
     name: 'nsfwlist',
-    usage: '`?nsfwList [domain]` - Adds, removes, or shows elements on the NSFW list.',
+    description: 'Adds, removes, or shows elements on the NSFW list.',
     moderator: true,
     /**
      * 
-     * @param {Discord.Message} message 
+     * @param {import('discord.js').Message} message 
      * @param {String[]} args 
      */
     async execute(message, args) {

@@ -1,4 +1,3 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const { WebSocket } = require('ws');
 const DataStorage = require('./dataStorage');
 
@@ -6,7 +5,7 @@ const DataStorage = require('./dataStorage');
 
 /**
  * Checks if a member has a moderator role
- * @param {Discord.GuildMember} member 
+ * @param {import('discord.js').GuildMember} member 
  */
 module.exports.isModerator = function (member) {
     const moderatorRoles = process.env.MODERATOR_ROLES.split(',');
@@ -15,7 +14,7 @@ module.exports.isModerator = function (member) {
 
 /**
  * Checks if a member has the helper role
- * @param {Discord.GuildMember} member 
+ * @param {import('discord.js').GuildMember} member 
  */
 module.exports.isHelper = function (member) {
     return member.roles.cache.some(r => r.id == process.env.HELPER_ROLE);
@@ -27,8 +26,8 @@ module.exports.isHelper = function (member) {
  * components is optional
  * @param {String} title 
  * @param {String} description 
- * @param {Discord.MessageComponent[]} components 
- * @returns {Discord.Message} Object similar to Discord.Message (just the embed structure)
+ * @param {import('discord.js').MessageComponent[]} components 
+ * @returns {import('discord.js').Message} Object similar to Discord.Message (just the embed structure)
  */
 module.exports.buildEmbed = function (title, description, components) {
     if (!description) {
@@ -69,7 +68,7 @@ module.exports.escapeRegExp = function (string) {
 
 /**
  * Checks if Figura backend is online
- * @param {Discord.Client} client 
+ * @param {import('discord.js').Client} client 
  * @returns boolean
  */
 module.exports.checkBackendStatus = function (client) {
@@ -102,7 +101,7 @@ module.exports.checkBackendStatus = function (client) {
 
 /**
  * Sets the backend status channel to online or offline
- * @param {Discord.Client} client 
+ * @param {import('discord.js').Client} client 
  * @param {boolean} status 
  */
 function setBackendStatusChannel(client, status) {

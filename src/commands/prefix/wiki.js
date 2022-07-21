@@ -1,14 +1,13 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const wiki = require('../../../storage/wiki.json');
 const utility = require('../../util/utility');
 
 module.exports = {
     name: 'wiki',
-    usage: '`?wiki <search>` - Figura wiki command.',
+    description: 'Figura wiki command.',
     allowInOtherGuilds: true,
     /**
      * 
-     * @param {Discord.Message} message 
+     * @param {import('discord.js').Message} message 
      * @param {String[]} args 
      */
     async execute(message, args) {

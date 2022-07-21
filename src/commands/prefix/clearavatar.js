@@ -1,14 +1,13 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const DataStorage = require('../../util/dataStorage');
 const { NodeSSH } = require('node-ssh');
 
 module.exports = {
     name: 'clearavatar',
-    usage: '`?clearavatar` - Clears your Figura avatar from the backend.',
+    description: 'Clears your Figura avatar from the backend.',
     cooldown: 10 * 60 * 1000, // 10 minutes
     /**
      * 
-     * @param {Discord.Message} message 
+     * @param {import('discord.js').Message} message 
      */
     async execute(message) { // eslint-disable-line no-unused-vars
 

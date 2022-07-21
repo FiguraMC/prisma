@@ -1,9 +1,8 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const DataStorage = require('../../util/dataStorage');
 
 /**
  * Shared command for prefix as well as slash command
- * @param {Discord.User} user 
+ * @param {import('discord.js').User} user 
  */
 module.exports = function (user) {
     if (!DataStorage.storage.people) {

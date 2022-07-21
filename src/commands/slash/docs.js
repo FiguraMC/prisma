@@ -1,18 +1,18 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const docs = require('../../../storage/docs.json');
 
 module.exports = {
+    name: 'docs',
     data: new SlashCommandBuilder()
         .setName('docs')
         .setDescription('Display Figura 0.1.0 documentation')
         .addStringOption(option => option.setName('query').setDescription('Class or Class#method or Class.property combination to search for').setAutocomplete(true))
         .addUserOption(option => option.setName('target').setDescription('User to mention').setRequired(false)),
-    usage: '`/docs <query> [target]` - Display Figura documentation.',
+    description: 'Display Figura documentation.',
     allowInOtherGuilds: true,
     /**
      * 
-     * @param {Discord.CommandInteraction} interaction 
+     * @param {import('discord.js').CommandInteraction} interaction 
      */
     async execute(interaction) {
         const name = interaction.options.getString('query');

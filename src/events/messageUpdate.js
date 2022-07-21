@@ -1,4 +1,3 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const DataStorage = require('../util/dataStorage');
 const ScamFilter = require('../filters/scamFilter');
 const NsfwFilter = require('../filters/nsfwFilter');
@@ -7,8 +6,8 @@ module.exports = {
     name: 'messageUpdate',
     /**
      * 
-     * @param {Discord.Message} oldMessage 
-     * @param {Discord.Message} newMessage 
+     * @param {import('discord.js').Message} oldMessage 
+     * @param {import('discord.js').Message} newMessage 
      */
     async execute(oldMessage, newMessage) {
 

@@ -1,4 +1,3 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const path = require('path');
 const shelljs = require('shelljs');
 const fs = require('fs');
@@ -8,11 +7,11 @@ const flag = path.join(__dirname, '../../../storage/restart.json');
 
 module.exports = {
     name: 'update',
-    usage: '`?update` - Update the bot by pulling from the repository.',
+    description: 'Update the bot by pulling from the repository.',
     moderator: true,
     /**
      * 
-     * @param {Discord.Message} message 
+     * @param {import('discord.js').Message} message 
      */
     async execute(message) { // eslint-disable-line no-unused-vars
         await message.reply('Restarting...');

@@ -1,14 +1,14 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
+const Discord = require('discord.js');
 const hexagonalImage = require('../../util/hexagonImage');
 const utility = require('../../util/utility');
 
 module.exports = {
     name: 'hexagon',
-    usage: '`?hexagon [userID|@user|imageURL]` - Create a hexagonal profile picture.',
+    description: 'Create a hexagonal profile picture.',
     allowInOtherGuilds: true,
     /**
      * 
-     * @param {Discord.Message} message 
+     * @param {import('discord.js').Message} message 
      * @param {String[]} args 
      */
     async execute(message, args) { // eslint-disable-line no-unused-vars

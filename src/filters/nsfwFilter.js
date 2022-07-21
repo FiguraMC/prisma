@@ -1,10 +1,9 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const ContentBlocker = require('../util/contentBlocker');
 const DataStorage = require('../util/dataStorage');
 
 /**
  * Filters a message using the nsfw content blocker
- * @param {Discord.Message} message 
+ * @param {import('discord.js').Message} message 
  */
 module.exports.filter = async function (message) {
     if (message.guild.id == process.env.MAIN_GUILD && ContentBlocker.nsfw(message.content)) {

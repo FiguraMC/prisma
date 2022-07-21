@@ -1,4 +1,3 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const utility = require('../../util/utility');
 const workersSelectMenu = require('../../components/workersSelectMenu');
 const DataStorage = require('../../util/dataStorage');
@@ -9,8 +8,8 @@ module.exports = {
     name: 'archiveAvatarRequest',
     /**
      * 
-     * @param {Discord.Message} message 
-     * @param {Discord.TextChannel | Discord.User} channel 
+     * @param {import('discord.js').Message} message 
+     * @param {import('discord.js').TextChannel | import('discord.js').User} channel 
      * @param {*} dialog 
      */
     async handle(message, channel, dialog) {
@@ -68,7 +67,7 @@ module.exports = {
     },
     /**
      * 
-     * @param {Discord.Interaction} interaction 
+     * @param {import('discord.js').Interaction} interaction 
      * @param {*} dialog 
      */
     async handleInteraction(interaction, dialog) {
@@ -90,8 +89,8 @@ module.exports = {
  * Archives the request
  * Also levels up the workers
  * @param {*} dialog 
- * @param {Discord.TextChannel | Discord.User} channel 
- * @param {Discord.Client} client 
+ * @param {import('discord.js').TextChannel | import('discord.js').User} channel 
+ * @param {import('discord.js').Client} client 
  */
 async function archive(dialog, channel, client) {
 
@@ -136,8 +135,8 @@ async function archive(dialog, channel, client) {
 /**
  * Sends DMs to the users to tell
  * them that the request is finished
- * @param {Discord.Collection<String,Discord.User>} users 
- * @param {Discord.Message} message 
+ * @param {import('discord.js').Collection<String,import('discord.js').User>} users 
+ * @param {import('discord.js').Message} message 
  */
 async function notify(users, message) {
     users.forEach(user => {

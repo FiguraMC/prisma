@@ -1,8 +1,8 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const DataStorage = require('../../util/dataStorage');
 
 module.exports = {
+    name: 'settings',
     data: new SlashCommandBuilder()
         .setName('settings')
         .setDescription('Show or change server specific settings.')
@@ -16,11 +16,11 @@ module.exports = {
             ['Enable Message Logging (yes/no)', 'enable_message_logging'],
         ]))
         .addStringOption((option) => option.setName('value').setDescription('The value to set the setting to.').setRequired(false)),
-    usage: '`/settings [name [value]]` - Show or change server specific settings.',
+    description: 'Show or change server specific settings.',
     allowInOtherGuilds: true,
     /**
      * 
-     * @param {Discord.CommandInteraction} interaction 
+     * @param {import('discord.js').CommandInteraction} interaction 
      */
     async execute(interaction) {
         if (!interaction.guild) return interaction.reply('This command can only be used in your server.');

@@ -1,14 +1,13 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const DataStorage = require('../../util/dataStorage');
 const got = require('got');
 
 module.exports = {
     name: 'setign',
-    usage: '`?setign <user> <ign>` - Set a Discord user\'s Minecraft in game name.',
+    description: 'Set a Discord user\'s Minecraft in game name.',
     moderator: true,
     /**
      * 
-     * @param {Discord.Message} message 
+     * @param {import('discord.js').Message} message 
      * @param {String[]} args 
      */
     async execute(message, args) { // eslint-disable-line no-unused-vars

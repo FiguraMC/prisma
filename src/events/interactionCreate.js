@@ -1,4 +1,3 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const levenshtein = require('fastest-levenshtein');
 const { startDialog, canStartDialog } = require('../dialogs/startDialog');
 const DataStorage = require('../util/dataStorage');
@@ -13,7 +12,7 @@ module.exports = {
     name: 'interactionCreate',
     /**
      * 
-     * @param {Discord.Interaction} interaction 
+     * @param {import('discord.js').Interaction} interaction 
      */
     async execute(interaction) {
 

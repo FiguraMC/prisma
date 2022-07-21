@@ -1,15 +1,14 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const DataStorage = require('../../util/dataStorage');
 const utility = require('../../util/utility');
 
 // Command for forwarding messages between moderators and ticket creator
 module.exports = {
     name: 'ticketmessage',
-    usage: '`?ticketmessage <message>` - Forward message through your ticket.',
+    description: 'Forward message through your ticket.',
     dm: true,
     /**
      * 
-     * @param {Discord.Message} message 
+     * @param {import('discord.js').Message} message 
      * @param {String[]} args 
      */
     async execute(message, args) {

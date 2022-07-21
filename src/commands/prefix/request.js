@@ -1,4 +1,3 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const { startDialog, canStartDialog } = require('../../dialogs/startDialog');
 const utility = require('../../util/utility');
 const DataStorage = require('../../util/dataStorage');
@@ -6,10 +5,10 @@ const DataStorage = require('../../util/dataStorage');
 // Command to start a request instead of clicking the new request button
 module.exports = {
     name: 'request',
-    usage: '`?request` - Create new avatar request.',
+    description: 'Create new avatar request.',
     /**
      * 
-     * @param {Discord.Message} message 
+     * @param {import('discord.js').Message} message 
      */
     async execute(message) {
         if (!DataStorage.storage.people) DataStorage.storage.people = {};

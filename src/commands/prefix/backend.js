@@ -1,13 +1,12 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const utility = require('../../util/utility');
 
 module.exports = {
     name: 'backend',
-    usage: '`?backend` - Checks Figura backend status.',
+    description: 'Checks Figura backend status.',
     allowInOtherGuilds: true,
     /**
      * 
-     * @param {Discord.Message} message 
+     * @param {import('discord.js').Message} message 
      */
     async execute(message) {
         const msg = await message.channel.send({

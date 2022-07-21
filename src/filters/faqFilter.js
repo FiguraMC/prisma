@@ -1,4 +1,4 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
+const Discord = require('discord.js');
 const utility = require('../util/utility');
 const DataStorage = require('../util/dataStorage');
 
@@ -7,7 +7,7 @@ const cooldowns = new Discord.Collection();
 
 /**
  * 
- * @param {Discord.Message} message 
+ * @param {import('discord.js').Message} message 
  */
 module.exports.filter = async function (message) {
     if (message.guild.id == process.env.MAIN_GUILD && process.env.HELP_CHANNELS.split(',').find(x => x == message.channel.id)) {
@@ -19,6 +19,7 @@ module.exports.filter = async function (message) {
         // string and therefore acts pretty much as "any characters in between"
 
         if (!DataStorage.storage.faq) DataStorage.storage.faq = new Map();
+
         for (const [key, value] of DataStorage.storage.faq.entries()) {
             let includesAll = true;
             const keywords = key.replaceAll('_', ' ').replaceAll('\\ ', '_').split('%');

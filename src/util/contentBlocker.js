@@ -1,4 +1,3 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const DataStorage = require('./dataStorage');
 const utility = require('./utility');
 const got = require('got');
@@ -48,7 +47,7 @@ module.exports.nsfw = function (text) {
 
 /**
  * Checks if a message contains an attempt to mention @ everyone and has "free nitro" in it.
- * @param {Discord.Message} message 
+ * @param {import('discord.js').Message} message 
  * @returns {boolean} True if it matches
  */
 module.exports.matchesGenericScamMessage = function (message) {

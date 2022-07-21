@@ -1,4 +1,3 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const fs = require('fs');
 const path = require('path');
 const { Collection } = require('discord.js');
@@ -7,7 +6,7 @@ module.exports.handlers = new Collection();
 
 /**
  * Initialization for dialog handlers
- * @param {Discord.Client} client 
+ * @param {import('discord.js').Client} client 
  */
 module.exports.register = function (client) {
 

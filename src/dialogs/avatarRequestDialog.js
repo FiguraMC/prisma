@@ -1,4 +1,3 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const utility = require('../util/utility');
 const tags = require('../components/avatarRequestTags');
 const types = require('../components/avatarRequestTypes');
@@ -19,8 +18,8 @@ const questions = [
 // Which of the two gets decided by options
 
 /**
- * @param {Discord.Message} message 
- * @param {Discord.TextChannel | Discord.User} channel 
+ * @param {import('discord.js').Message} message 
+ * @param {import('discord.js').TextChannel | import('discord.js').User} channel 
  * @param {*} dialog 
  * @param {*} options 
  */
@@ -148,7 +147,7 @@ module.exports.handle = async function (message, channel, dialog, options) {
 
 /**
  * 
- * @param {Discord.Interaction} interaction 
+ * @param {import('discord.js').Interaction} interaction 
  * @param {*} dialog 
  */
 module.exports.handleInteraction = function (interaction, dialog) {
@@ -174,7 +173,7 @@ module.exports.handleInteraction = function (interaction, dialog) {
 /**
  * Utility function that increments dialog step and sends the next element in the questions array
  * @param {*} dialog 
- * @param {Discord.User} user 
+ * @param {import('discord.js').User} user 
  */
 async function next(dialog, user) {
     dialog.step++;
@@ -184,7 +183,7 @@ async function next(dialog, user) {
 
 /**
  * Gets the new request button from datastorage and puts its at the bottom of the requests channel
- * @param {Discord.Client} client 
+ * @param {import('discord.js').Client} client 
  */
 async function bringNewRequestButtonToTheBottom(client) {
     try {
@@ -205,7 +204,7 @@ async function bringNewRequestButtonToTheBottom(client) {
 /**
  * Build the embed for the avatar request
  * @param {*} dialog 
- * @param {Discord.User} user 
+ * @param {import('discord.js').User} user 
  * @returns 
  */
 function constructAvatarRequestEmbed(dialog, user) {
@@ -241,7 +240,7 @@ function constructAvatarRequestEmbed(dialog, user) {
 
 /**
  * Get all the avatar request values back from an embed
- * @param {Discord.MessageEmbed} embed 
+ * @param {import('discord.js').MessageEmbed} embed 
  * @returns 
  */
 function deconstructAvatarRequestEmbed(embed) {

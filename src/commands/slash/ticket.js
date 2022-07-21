@@ -1,18 +1,18 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { startDialog, canStartDialog } = require('../../dialogs/startDialog');
 const DataStorage = require('../../util/dataStorage');
 const utility = require('../../util/utility');
 
 module.exports = {
+    name: 'ticket',
     data: new SlashCommandBuilder()
         .setName('ticket')
         .setDescription('Creates a Modmail Ticket.'),
-    usage: '`/ticket` - Create a Modmail Ticket.',
+    description: 'Create a Modmail Ticket. Check your DMs afterwards!',
     allowInOtherGuilds: true,
     /**
      * 
-     * @param {Discord.CommandInteraction} interaction 
+     * @param {import('discord.js').CommandInteraction} interaction 
      */
     async execute(interaction) {
         // Only allow this comamnd to be used in DM or in main guild

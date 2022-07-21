@@ -1,4 +1,3 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const fs = require('fs');
 const path = require('path');
 const ContentBlocker = require('../util/contentBlocker');
@@ -14,7 +13,7 @@ module.exports = {
     once: true,
     /**
      * 
-     * @param {Discord.Client} client 
+     * @param {import('discord.js').Client} client 
      */
     async execute(client) {
 

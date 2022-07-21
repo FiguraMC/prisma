@@ -1,12 +1,11 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const avatarRequestDialog = require('../avatarRequestDialog');
 
 module.exports = {
     name: 'createAvatarRequest',
     /**
      * 
-     * @param {Discord.Message} message 
-     * @param {Discord.TextChannel | Discord.User} channel 
+     * @param {import('discord.js').Message} message 
+     * @param {import('discord.js').TextChannel | import('discord.js').User} channel 
      * @param {*} dialog 
      */
     async handle(message, channel, dialog) {
@@ -14,7 +13,7 @@ module.exports = {
     },
     /**
      * 
-     * @param {Discord.Interaction} interaction 
+     * @param {import('discord.js').Interaction} interaction 
      * @param {*} dialog 
      */
     async handleInteraction(interaction, dialog) {

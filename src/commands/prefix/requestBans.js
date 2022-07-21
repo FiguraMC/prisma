@@ -1,14 +1,13 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const utility = require('../../util/utility');
 const DataStorage = require('../../util/dataStorage');
 
 module.exports = {
     name: 'requestbans',
-    usage: '`?requestbans` - Shows users that are banned from the requests system.',
+    description: 'Shows users that are banned from the requests system.',
     moderator: true,
     /**
      * 
-     * @param {Discord.Message} message 
+     * @param {import('discord.js').Message} message 
      */
     async execute(message) {
         let bannedUsers = '';

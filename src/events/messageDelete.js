@@ -1,4 +1,3 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const PKAPI = require('pkapi.js');
 const pkapi = new PKAPI();
 const DataStorage = require('../util/dataStorage');
@@ -7,7 +6,7 @@ module.exports = {
     name: 'messageDelete',
     /**
      * 
-     * @param {Discord.Message} message 
+     * @param {import('discord.js').Message} message 
      */
     async execute(message) {
 

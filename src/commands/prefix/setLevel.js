@@ -1,14 +1,13 @@
-const Discord = require('discord.js'); // eslint-disable-line no-unused-vars
 const DataStorage = require('../../util/dataStorage');
 const requestTierRoles = require('../../util/requestTierRoles');
 
 module.exports = {
     name: 'setlevel',
-    usage: '`?setLevel <@user|userId> <amount>` - Sets levels of a user to specified amount.',
+    description: 'Sets levels of a user to specified amount.',
     moderator: true,
     /**
      * 
-     * @param {Discord.Message} message 
+     * @param {import('discord.js').Message} message 
      * @param {String[]} args 
      */
     async execute(message, args) {
