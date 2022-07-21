@@ -27,6 +27,7 @@
         "no-lonely-if": "error",
         "no-multi-spaces": "error",
         "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1, "maxBOF": 0 }],
+        "no-unused-vars": ["warn", { "vars": "all", "args": "none" }],
         "no-warning-comments": ["warn"],
         "no-shadow": ["error", { "allow": ["err", "resolve", "reject"] }],
         "no-var": "error",
