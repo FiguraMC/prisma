@@ -3,6 +3,9 @@ const NsfwFilter = require('../filters/nsfwFilter');
 const ShowcaseFilter = require('../filters/showcaseFilter');
 const FaqFilter = require('../filters/faqFilter');
 const utility = require('../util/utility');
+const parser = require('../commands/parser/argumentParser');
+const CommandParseError = require('../commands/parser/commandParseError');
+const syntax = require('../commands/parser/syntax');
 
 module.exports = {
     name: 'messageCreate',
@@ -19,8 +22,7 @@ module.exports = {
 
             if (message.author.bot) return; // Ignore bots
 
-            const args = message.content.split(/ +/);
-            const commandName = args.shift().toLowerCase().substring(process.env.PREFIX.length);
+            const commandName = message.content.split(/ +/).shift().toLowerCase().substring(process.env.PREFIX.length);
             const command = message.client.prefixCommands.get(commandName);
 
             // If command doesnt exist, return
@@ -79,12 +81,37 @@ module.exports = {
             }
 
             // Execute the command
-            try {
-                command.execute(message, args);
+
+            if (command.overloads) {
+                // Parse arguments and execute correct overload
+                try {
+                    const argumentString = message.content.substring(process.env.PREFIX.length + command.name.length + 1);
+                    const reply = message.reference ? await message.fetchReference() : null;
+
+                    const args = parser.read(argumentString, reply, message.attachments);
+                    const overload = parser.select(command, args);
+                    overload.execute(message, await parser.parse(overload, message.client));
+                }
+                catch (error) {
+                    if (error instanceof CommandParseError) {
+                        message.reply((`**Syntax error: **${error.message}\n${syntax(command)}`));
+                    }
+                    else {
+                        console.error(error);
+                    }
+                }
             }
-            catch (error) {
-                console.error(error);
+            else {
+                // Legacy command, just takes split string
+                try {
+                    const args = message.content.split(/ +/).slice(1);
+                    await command.execute(message, args);
+                }
+                catch (error) {
+                    console.error(error);
+                }
             }
+
         }
         // If not a command and in a guild (not in DM), do some chat filter stuff
         else if (message.guild) {
