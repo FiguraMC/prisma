@@ -18,7 +18,7 @@ module.exports = {
             },
         },
         {
-            arguments: [new Argument('image', 'image'), new Argument('framerate', 'integer', { min: 5, max: 65, clampOutOfBounds: true })],
+            arguments: [new Argument('image', 'image'), new Argument('framerate', 'integer', { min: 5, max: 25, clampOutOfBounds: true })],
             /**
              * @param {import('discord.js').Message} message 
              * @param {import('../parser/argumentContainer')} args
