@@ -49,9 +49,9 @@ async function updateroles(member, level) {
     if (tierindex > roles.length - 1) {
         tierindex = roles.length - 1;
     }
-    await member.roles.remove(roles.filter(role => role != roles[tierindex])).catch(console.error);
+    await member.roles.remove(roles.filter(role => role != roles[tierindex])).catch(console.ignore);
     if (tierindex < 0) return;
-    await member.roles.add(roles[tierindex]).catch(console.error);
+    await member.roles.add(roles[tierindex]).catch(console.ignore);
 }
 
 module.exports = { levelset, levelup };

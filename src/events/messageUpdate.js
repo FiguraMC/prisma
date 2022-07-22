@@ -54,8 +54,8 @@ module.exports = {
                             color: '0875db',
                         },
                     ],
-                }).catch(console.error);
+                }).catch(console.ignore);
             })
-            .catch(console.error);
+            .catch(console.ignore);
     },
 };

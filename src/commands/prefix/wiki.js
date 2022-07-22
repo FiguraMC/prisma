@@ -12,12 +12,12 @@ module.exports = {
      */
     async execute(message, args) {
         if (args.length == 0) {
-            message.channel.send(utility.buildEmbed('Nothing was given as an argument.')).catch(console.error);
+            message.channel.send(utility.buildEmbed('Nothing was given as an argument.')).catch(console.ignore);
             return;
         }
         let result = search(args);
         if (result.length == 0) {
-            message.channel.send(utility.buildEmbed(`Could not find anything about "${args.join(' ')}".`)).catch(console.error);
+            message.channel.send(utility.buildEmbed(`Could not find anything about "${args.join(' ')}".`)).catch(console.ignore);
             return;
         }
         const max = 10;

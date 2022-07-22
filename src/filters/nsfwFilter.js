@@ -7,7 +7,7 @@ const DataStorage = require('../util/dataStorage');
  */
 module.exports.filter = async function (message) {
     if (message.guild.id == process.env.MAIN_GUILD && ContentBlocker.nsfw(message.content)) {
-        message.delete().catch(console.error);
+        message.delete().catch(console.ignore);
         message.channel.send('<@' + message.author.id + '> we don\'t do that here!');
         message.guild.channels.fetch(DataStorage.guildsettings.guilds?.get(message.guild.id)?.get('mod_log_channel'))
             .then(channel => {
@@ -25,8 +25,8 @@ module.exports.filter = async function (message) {
                             color: 'ff1469',
                         },
                     ],
-                }).catch(console.error);
+                }).catch(console.ignore);
             })
-            .catch(console.error);
+            .catch(console.ignore);
     }
 };

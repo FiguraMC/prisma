@@ -37,7 +37,7 @@ module.exports.filter = async function (message) {
                 sentMessage.createReactionCollector().on('collect', async (reaction, user) => {
                     const member = await message.guild.members.fetch(user.id);
                     if (reaction.emoji.name == '❌' && (user.id == message.author.id || utility.isHelper(member))) {
-                        sentMessage.delete().catch(console.error);
+                        sentMessage.delete().catch(console.ignore);
                     }
                 });
                 return;

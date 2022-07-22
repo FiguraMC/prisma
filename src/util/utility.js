@@ -108,7 +108,7 @@ function setBackendStatusChannel(client, status) {
     client.guilds.cache.forEach(async guild => {
         try {
             const channel = await guild.channels.fetch(DataStorage.guildsettings?.guilds?.get(guild.id)?.get('backend_status_channel'));
-            channel.setName('0.1.0 Backend: ' + (status ? 'Online ✅' : 'Offline ❌')).catch(console.error);
+            channel.setName('0.1.0 Backend: ' + (status ? 'Online ✅' : 'Offline ❌')).catch(console.ignore);
         }
         // eslint-disable-next-line no-empty
         catch { }

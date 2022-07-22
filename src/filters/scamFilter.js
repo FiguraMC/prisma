@@ -19,14 +19,14 @@ module.exports.filter = async function (message) {
         ContentBlocker.scam((await ContentBlocker.expandMultipleUrls(utility.getURLs(message.content))).join()) ||
         ContentBlocker.matchesGenericScamMessage(message)
     ) {
-        message.delete().catch(console.error);
+        message.delete().catch(console.ignore);
 
         // Setting for clearing roles on mute, otherwise just going to add the muted role to the existing ones
         if (DataStorage.guildsettings.guilds?.get(message.guild.id)?.get('clear_roles_on_mute') == 'true') {
-            message.member.roles.set([DataStorage.guildsettings.guilds?.get(message.guild.id)?.get('muted_role')]).catch(console.error);
+            message.member.roles.set([DataStorage.guildsettings.guilds?.get(message.guild.id)?.get('muted_role')]).catch(console.ignore);
         }
         else {
-            message.member.roles.add(DataStorage.guildsettings.guilds?.get(message.guild.id)?.get('muted_role')).catch(console.error);
+            message.member.roles.add(DataStorage.guildsettings.guilds?.get(message.guild.id)?.get('muted_role')).catch(console.ignore);
         }
 
         const amogus1 = await Canvas.loadImage(path.resolve(__dirname, 'img/amogus1.png'));
@@ -65,11 +65,11 @@ module.exports.filter = async function (message) {
                 buf,
                 'scammer_ejected.png',
             )],
-        }).catch(console.error);
+        }).catch(console.ignore);
 
         // Send special message in showcase channels
         if (process.env.SHOWCASE_CHANNELS.split(',').find(x => x == message.channel.id)) {
-            sentMessage.react(process.env.UPVOTE_EMOJI).catch(console.error);
+            sentMessage.react(process.env.UPVOTE_EMOJI).catch(console.ignore);
         }
 
         message.guild.channels.fetch(DataStorage.guildsettings.guilds?.get(message.guild.id)?.get('mod_log_channel'))
@@ -91,8 +91,8 @@ module.exports.filter = async function (message) {
                             color: 'ff5114',
                         },
                     ],
-                }).catch(console.error);
+                }).catch(console.ignore);
             })
-            .catch(console.error);
+            .catch(console.ignore);
     }
 };

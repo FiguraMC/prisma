@@ -2,6 +2,8 @@ require('dotenv').config();
 require('./src/util/dataStorage').load();
 const fs = require('fs');
 const { Client, Collection, Intents } = require('discord.js');
+// eslint-disable-next-line no-empty-function
+console.ignore = () => { };
 
 const client = new Client({
     intents: [
@@ -55,3 +57,12 @@ for (const file of eventFiles) {
 }
 
 client.login(process.env.TOKEN);
+
+process.on('unhandledRejection', error => {
+    console.error(`Unhandled rejection at ${ new Date().toISOString() }\n${error}\n\n`);
+});
+
+process.on('uncaughtException', error => {
+    console.error(`Crash at ${ new Date().toISOString() }\n${error}\n\n`);
+    process.exit(1);
+});

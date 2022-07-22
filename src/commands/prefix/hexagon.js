@@ -34,7 +34,7 @@ module.exports = {
             });
         }
         catch (err) {
-            console.error(err);
+            console.log(err);
             message.reply('Couldn\'t find an image.');
         }
     },

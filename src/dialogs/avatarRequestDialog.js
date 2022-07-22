@@ -26,7 +26,7 @@ const questions = [
 module.exports.handle = async function (message, channel, dialog, options) {
 
     if (dialog.step != -1 && (message.content.toLowerCase() == 'cancel' || message.content.toLowerCase() == 'abort')) {
-        channel.send(utility.buildEmbed('Action canceled.')).catch(console.error);
+        channel.send(utility.buildEmbed('Action canceled.')).catch(console.ignore);
         return true;
     }
 
@@ -73,7 +73,7 @@ module.exports.handle = async function (message, channel, dialog, options) {
             next(dialog, channel);
         }
         else {
-            channel.send(utility.buildEmbed('Please select type.')).catch(console.error);
+            channel.send(utility.buildEmbed('Please select type.')).catch(console.ignore);
         }
 
         return false;
@@ -84,7 +84,7 @@ module.exports.handle = async function (message, channel, dialog, options) {
             next(dialog, channel);
         }
         else {
-            channel.send(utility.buildEmbed('Please select tags.')).catch(console.error);
+            channel.send(utility.buildEmbed('Please select tags.')).catch(console.ignore);
         }
 
         return false;
@@ -96,17 +96,17 @@ module.exports.handle = async function (message, channel, dialog, options) {
 
         await next(dialog, channel);
 
-        channel.send(constructAvatarRequestEmbed(dialog, message.author)).catch(console.error);
+        channel.send(constructAvatarRequestEmbed(dialog, message.author)).catch(console.ignore);
 
         return false;
     }
     else if (dialog.step == 5) {
         if (message.content.toLowerCase() != 'confirm') {
-            channel.send(utility.buildEmbed('Please send either "confirm" or "cancel".')).catch(console.error);
+            channel.send(utility.buildEmbed('Please send either "confirm" or "cancel".')).catch(console.ignore);
             return false;
         }
 
-        channel.send(utility.buildEmbed('Done!', 'The request is now completed!\n\nYou can react to your request\'s message for some actions.\n✅ Archive request when completed\n❌ Delete request\n📝 Edit request\n\nOthers can react with ⚙️ to show that they are working on your request.')).catch(console.error);
+        channel.send(utility.buildEmbed('Done!', 'The request is now completed!\n\nYou can react to your request\'s message for some actions.\n✅ Archive request when completed\n❌ Delete request\n📝 Edit request\n\nOthers can react with ⚙️ to show that they are working on your request.')).catch(console.ignore);
 
         try {
             const requestsChannel = await message.client.channels.fetch(process.env.REQUESTS_CHANNEL);
@@ -119,7 +119,7 @@ module.exports.handle = async function (message, channel, dialog, options) {
                 if (threadName == '') threadName = 'Request';
 
                 const thread = await msg.startThread({ name: threadName, autoArchiveDuration: 'MAX' });
-                thread.members.add(message.author).catch(console.error);
+                thread.members.add(message.author).catch(console.ignore);
                 thread.send(utility.buildEmbed('Remember to archive the request when it\'s completed ✅.\nOthers can react with ⚙️ to show that they are working on your request.'));
 
                 await bringNewRequestButtonToTheBottom(message.client);
@@ -153,7 +153,7 @@ module.exports.handle = async function (message, channel, dialog, options) {
 module.exports.handleInteraction = function (interaction, dialog) {
 
     if (dialog.step == 2 && interaction.customId == 'types' && interaction.isSelectMenu()) {
-        interaction.update(utility.buildEmbed('Type saved.')).catch(console.error);
+        interaction.update(utility.buildEmbed('Type saved.')).catch(console.ignore);
         dialog.data.push(interaction.values);
 
         next(dialog, interaction.user);
@@ -161,7 +161,7 @@ module.exports.handleInteraction = function (interaction, dialog) {
         return false;
     }
     else if (dialog.step == 3 && interaction.customId == 'tags' && interaction.isSelectMenu()) {
-        interaction.update(utility.buildEmbed('Tags saved.')).catch(console.error);
+        interaction.update(utility.buildEmbed('Tags saved.')).catch(console.ignore);
         dialog.data.push(interaction.values);
 
         next(dialog, interaction.user);
@@ -177,7 +177,7 @@ module.exports.handleInteraction = function (interaction, dialog) {
  */
 async function next(dialog, user) {
     dialog.step++;
-    await user.send(questions[dialog.step]).catch(console.error);
+    await user.send(questions[dialog.step]).catch(console.ignore);
 }
 
 
@@ -193,7 +193,7 @@ async function bringNewRequestButtonToTheBottom(client) {
         DataStorage.storage.new_request_button = newBtn.id;
         if (oldBtnId) {
             const oldBtn = await channel.messages.fetch(oldBtnId);
-            oldBtn.delete().catch(console.error);
+            oldBtn.delete().catch(console.ignore);
         }
     }
     catch (error) {

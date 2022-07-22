@@ -20,7 +20,7 @@ module.exports = {
         }
 
         if (dialog.step == -1) {
-            channel.send(utility.buildEmbed('Request Files (1/2)', 'You can now send the finished request as a zip file, to attach it to the archive. If you don\'t want that, just type "skip".', [])).catch(console.error);
+            channel.send(utility.buildEmbed('Request Files (1/2)', 'You can now send the finished request as a zip file, to attach it to the archive. If you don\'t want that, just type "skip".', [])).catch(console.ignore);
             dialog.step++;
 
             return false;
@@ -33,7 +33,7 @@ module.exports = {
                 const attachment = message.attachments.values().next().value; // first attachment
 
                 if (!attachment) {
-                    channel.send(utility.buildEmbed('Please send either "skip", "cancel" or a zip file.')).catch(console.error);
+                    channel.send(utility.buildEmbed('Please send either "skip", "cancel" or a zip file.')).catch(console.ignore);
                     return false;
                 }
 
@@ -56,12 +56,12 @@ module.exports = {
             }
             workersSelectMenu.components[0].setOptions([]);
             workersSelectMenu.components[0].addOptions(options);
-            channel.send(utility.buildEmbed('Who worked on this request? (2/2)', '', [workersSelectMenu])).catch(console.error);
+            channel.send(utility.buildEmbed('Who worked on this request? (2/2)', '', [workersSelectMenu])).catch(console.ignore);
 
             return false;
         }
         else if (dialog.step == 1) {
-            channel.send(utility.buildEmbed('Please select a user in the list.')).catch(console.error);
+            channel.send(utility.buildEmbed('Please select a user in the list.')).catch(console.ignore);
             return false;
         }
     },
@@ -74,7 +74,7 @@ module.exports = {
 
         if (dialog.step == 1 && interaction.customId == 'request_workers' && interaction.isSelectMenu()) {
 
-            interaction.update(utility.buildEmbed('Saved.')).catch(console.error);
+            interaction.update(utility.buildEmbed('Saved.')).catch(console.ignore);
             dialog.data.push(interaction.values);
 
             const archiveMessage = await archive(dialog, interaction.user, interaction.client);
@@ -115,19 +115,19 @@ async function archive(dialog, channel, client) {
         dialog.extras.embed.addField('Made by', workers, false);
     }
 
-    const archiveChannel = await client.channels.fetch(process.env.REQUESTS_ARCHIVE_CHANNEL).catch(console.error);
-    const archiveMessage = await archiveChannel.send({ embeds: [dialog.extras.embed], files: files }).catch(console.error);
+    const archiveChannel = await client.channels.fetch(process.env.REQUESTS_ARCHIVE_CHANNEL).catch(console.ignore);
+    const archiveMessage = await archiveChannel.send({ embeds: [dialog.extras.embed], files: files }).catch(console.ignore);
 
     const avatarRequest = DataStorage.storage.avatar_requests.find(x => x.message == dialog.extras.requestMessage.id);
-    const thread = await dialog.extras.requestMessage.channel.threads.fetch(avatarRequest.thread).catch(console.error);
+    const thread = await dialog.extras.requestMessage.channel.threads.fetch(avatarRequest.thread).catch(console.ignore);
 
-    thread.setArchived(true).catch(console.error);
-    dialog.extras.requestMessage.delete().catch(console.error);
+    thread.setArchived(true).catch(console.ignore);
+    dialog.extras.requestMessage.delete().catch(console.ignore);
 
     DataStorage.deleteFromArray(DataStorage.storage.avatar_requests, avatarRequest);
     DataStorage.save('storage');
 
-    channel.send(utility.buildEmbed('Done!', 'The request is now archived!', [])).catch(console.error);
+    channel.send(utility.buildEmbed('Done!', 'The request is now archived!', [])).catch(console.ignore);
 
     return archiveMessage;
 }
@@ -140,6 +140,6 @@ async function archive(dialog, channel, client) {
  */
 async function notify(users, message) {
     users.forEach(user => {
-        if (user.id != message.client.id) user.send(utility.buildEmbed('Request Notification!', `A request you have been watching has been completed! Hooray!\n[${message?.embeds[0]?.title}](${message?.url})`)).catch(console.error);
+        if (user.id != message.client.id) user.send(utility.buildEmbed('Request Notification!', `A request you have been watching has been completed! Hooray!\n[${message?.embeds[0]?.title}](${message?.url})`)).catch(console.ignore);
     });
 }

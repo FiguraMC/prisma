@@ -31,7 +31,7 @@ module.exports = {
             }
             catch (error) {
                 console.error(error);
-                await interaction.reply({ content: 'There was an error while executing this command!' }).catch(console.error);
+                await interaction.reply({ content: 'There was an error while executing this command!' }).catch(console.ignore);
             }
         }
         // Handle buttons
@@ -39,23 +39,23 @@ module.exports = {
             // New avatar request button at the bottom of the requests channel
             if (interaction.customId == 'new_avatar_request') {
                 // Update button so it doesnt timeout
-                interaction.deferUpdate().catch(console.error);
+                interaction.deferUpdate().catch(console.ignore);
                 // Check bans
-                if (DataStorage.storage.people[interaction.user.id]?.requestban) return interaction.user.send(utility.buildEmbed('Sorry, you can\'t create a request at the moment.'));
+                if (DataStorage.storage.people[interaction.user.id]?.requestban) return interaction.user.send(utility.buildEmbed('Sorry, you can\'t create a request at the moment.')).catch(console.ignore);
 
                 // Attempt to start avatar request creation dialog
                 if (canStartDialog(interaction.client, interaction.user)) {
-                    await interaction.user.send(utility.buildEmbed('New Avatar Request', 'We will now fill in the details of the request. Take your time to read the descriptions to ensure to make a high quality request. Low quality ones might get deleted by a moderator. You can type "cancel" at any point if you make a mistake.', []));
+                    await interaction.user.send(utility.buildEmbed('New Avatar Request', 'We will now fill in the details of the request. Take your time to read the descriptions to ensure to make a high quality request. Low quality ones might get deleted by a moderator. You can type "cancel" at any point if you make a mistake.', [])).catch(console.ignore);
                     startDialog(interaction.client, interaction.user, 'createAvatarRequest');
                 }
                 else {
-                    interaction.user.send(utility.buildEmbed('Please finish the current dialog first.'));
+                    interaction.user.send(utility.buildEmbed('Please finish the current dialog first.')).catch(console.ignore);
                 }
             }
             // Close ticket button attached to each ticket
             // Replaces itself with the two confirmation buttons
             else if (interaction.customId == 'close_ticket_button') {
-                interaction.update({ embeds: interaction.message.embeds, components: [confirmationButtons] });
+                interaction.update({ embeds: interaction.message.embeds, components: [confirmationButtons] }).catch(console.ignore);
             }
             // Confirm close ticket
             else if (interaction.customId == 'close_ticket_confirmation_button_yes') {
@@ -63,14 +63,14 @@ module.exports = {
                     // Update visuals and remove buttons
                     const updatedEmbed = interaction.message.embeds[0];
                     if (updatedEmbed) updatedEmbed.title = '🔒' + updatedEmbed.title.substring(1);
-                    interaction.update({ embeds: [updatedEmbed], components: [] }).catch(console.error);
+                    interaction.update({ embeds: [updatedEmbed], components: [] }).catch(console.ignore);
                     // Notify user, archive thread and delete ticket from storage
                     const ticket = DataStorage.storage.tickets?.find(x => x.thread == interaction.message.thread.id);
-                    const author = await interaction.guild.members.fetch(ticket?.author).catch(console.error);
-                    author?.send(utility.buildEmbed('🔒 Your ticket has been closed.')).catch(console.error);
+                    const author = await interaction.guild.members.fetch(ticket?.author).catch(console.ignore);
+                    author?.send(utility.buildEmbed('🔒 Your ticket has been closed.')).catch(console.ignore);
                     DataStorage.storage.tickets = DataStorage.storage.tickets?.filter(x => x.thread != interaction.message.thread.id);
                     DataStorage.save('storage');
-                    await interaction.message.thread.send(utility.buildEmbed('🔒 Ticket has been closed.')).catch(console.error);
+                    await interaction.message.thread.send(utility.buildEmbed('🔒 Ticket has been closed.')).catch(console.ignore);
                     interaction.message.thread.setArchived(true);
                 }
             }
@@ -123,14 +123,14 @@ module.exports = {
             const search = interaction.options.getFocused().toLowerCase(); // the text the user is currently typing
             const results = browseDocs_old(search); // find matching docs entries
             results.sort((a, b) => a.levenshtein - b.levenshtein); // sort by levenshtein distance
-            interaction.respond(results.slice(0, 25)).catch(console.error); // max of 25 autocomplete entries allowed
+            interaction.respond(results.slice(0, 25)).catch(console.ignore); // max of 25 autocomplete entries allowed
         }
         // Handle /docs command autocomplete
         else if (interaction.isAutocomplete() && interaction.commandName == 'docs') {
             const search = interaction.options.getFocused().toLowerCase(); // the text the user is currently typing
             const results = browseDocs(search); // find matching docs entries
             results.sort((a, b) => a.levenshtein - b.levenshtein); // sort by levenshtein distance
-            interaction.respond(results.slice(0, 25)).catch(console.error); // max of 25 autocomplete entries allowed
+            interaction.respond(results.slice(0, 25)).catch(console.ignore); // max of 25 autocomplete entries allowed
         }
     },
 };

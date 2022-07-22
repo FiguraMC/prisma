@@ -8,11 +8,11 @@ const { startDialog, canStartDialog } = require('../dialogs/startDialog');
  */
 async function init(client) {
     // Set up all the reaction collectors for avatar requests
-    const channel = await client.channels.fetch(process.env.REQUESTS_CHANNEL).catch(console.error);
+    const channel = await client.channels.fetch(process.env.REQUESTS_CHANNEL).catch(console.ignore);
     if (!channel) return;
     if (!DataStorage.storage.avatar_requests) DataStorage.storage.avatar_requests = [];
     DataStorage.storage.avatar_requests.forEach(async element => {
-        const msg = await channel.messages.fetch(element.message).catch(console.error);
+        const msg = await channel.messages.fetch(element.message).catch(console.ignore);
         // note a change here: does no longer delete the message if it's not found
         // this is because bad internet connections can cause the message to not be fetched
         // even though it exists
@@ -108,7 +108,7 @@ async function createCollector(msg, element) {
             reaction.message.embeds.forEach(embed => {
                 embed.color = 'f28a2e'; // orange
             });
-            reaction.message.edit({ embeds: reaction.message.embeds }).catch(console.error);
+            reaction.message.edit({ embeds: reaction.message.embeds }).catch(console.ignore);
         }
         else if (reaction.emoji.name == '🔴') {
             reaction.message.reactions.cache.get('🔴').users.remove(user.id);
@@ -117,7 +117,7 @@ async function createCollector(msg, element) {
 
             const edit = reaction.message;
             edit.embeds[0].setFooter('Not eligible for leveling.');
-            reaction.message.edit({ embeds: edit.embeds }).catch(console.error);
+            reaction.message.edit({ embeds: edit.embeds }).catch(console.ignore);
         }
         else if (reaction.emoji.name == '🟢') {
             reaction.message.reactions.cache.get('🟢').users.remove(user.id);
@@ -126,7 +126,7 @@ async function createCollector(msg, element) {
 
             const edit = reaction.message;
             edit.embeds[0].setFooter('');
-            reaction.message.edit({ embeds: edit.embeds }).catch(console.error);
+            reaction.message.edit({ embeds: edit.embeds }).catch(console.ignore);
         }
     });
 
@@ -149,7 +149,7 @@ async function createCollector(msg, element) {
                         embed.color = '2aacf7'; // blue
                     });
                 }
-                reaction.message.edit({ embeds: reaction.message.embeds }).catch(console.error);
+                reaction.message.edit({ embeds: reaction.message.embeds }).catch(console.ignore);
             }
 
             DataStorage.save('storage');

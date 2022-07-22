@@ -16,7 +16,7 @@ module.exports = {
      */
     async execute(interaction) {
         const name = interaction.options.getString('query');
-        if (!name) return interaction.reply({ content: 'Please specify a class or class#method or class.property combination to search for.', ephemeral: true }).catch(console.error);
+        if (!name) return interaction.reply({ content: 'Please specify a class or class#method or class.property combination to search for.', ephemeral: true }).catch(console.ignore);
         const entry = search(name);
         if (entry) {
             const user = interaction.options.getUser('target');
@@ -25,10 +25,10 @@ module.exports = {
                 answer += `*Documentation suggestion for ${user}:*\n`;
             }
             answer += entry;
-            await interaction.reply(answer.substring(0, 2000)).catch(console.error);
+            await interaction.reply(answer.substring(0, 2000)).catch(console.ignore);
         }
         else {
-            await interaction.reply({ content: `Unable to get documentation for \`${name}\`.`, ephemeral: true }).catch(console.error);
+            await interaction.reply({ content: `Unable to get documentation for \`${name}\`.`, ephemeral: true }).catch(console.ignore);
         }
     },
 };

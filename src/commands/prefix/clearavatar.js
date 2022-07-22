@@ -32,7 +32,7 @@ module.exports = {
                         // eslint-disable-next-line no-unused-vars
                         const r = await ssh.execCommand('mysql -e "use figura;DELETE FROM user_data WHERE uuid=\\"' + uuid + '\\";"');
                         // console.log('stdout: ' + r.stdout);
-                        // console.error('stderr: ' + r.stderr);
+                        // console.log('stderr: ' + r.stderr);
                         ssh.dispose();
                         message.reply('Cleared your avatar from the backend.');
                     });

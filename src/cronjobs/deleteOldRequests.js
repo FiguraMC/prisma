@@ -18,24 +18,24 @@ module.exports.start = function (client) {
  * @param {import('discord.js').Client} client 
  */
 async function deleteOldRequests(client) {
-    const channel = await client.channels.fetch(process.env.REQUESTS_CHANNEL).catch(console.error);
+    const channel = await client.channels.fetch(process.env.REQUESTS_CHANNEL).catch(console.ignore);
 
     if (!DataStorage.storage.avatar_requests) DataStorage.storage.avatar_requests = [];
 
     DataStorage.storage.avatar_requests.forEach(async element => {
         if (!element.locked) {
-            const msg = await channel.messages.fetch(element.message).catch(console.error);
+            const msg = await channel.messages.fetch(element.message).catch(console.ignore);
 
             if (element.timestamp + 1000 * 60 * 60 * 24 * 7 < Date.now()) { // older than 7 days
                 // delete message
                 if (msg != undefined) {
-                    const user = await client.users.fetch(element.user).catch(console.error);
-                    if (user != undefined) user.send({ content: 'Your request has been deleted. We delete the ones older than 1 week to keep the channel clean.\nYour request:', embeds: msg.embeds }).catch(console.error);
+                    const user = await client.users.fetch(element.user).catch(console.ignore);
+                    if (user != undefined) user.send({ content: 'Your request has been deleted. We delete the ones older than 1 week to keep the channel clean.\nYour request:', embeds: msg.embeds }).catch(console.ignore);
                     for (const e of msg.embeds) e.setColor('f24671'); // pink
                     client.channels.fetch(process.env.LOG_CHANNEL)
-                        .then(c => c.send({ content: 'Request automatically deleted:', embeds: msg.embeds }).catch(console.error))
-                        .catch(console.error);
-                    msg.delete().catch(console.error);
+                        .then(c => c.send({ content: 'Request automatically deleted:', embeds: msg.embeds }).catch(console.ignore))
+                        .catch(console.ignore);
+                    msg.delete().catch(console.ignore);
                 }
                 // delete from storage
                 DataStorage.deleteFromArray(DataStorage.storage.avatar_requests, element);
@@ -59,7 +59,7 @@ async function deleteOldRequests(client) {
                         }
                     });
                 }
-                if (edit) msg.edit({ embeds: msg.embeds }).catch(console.error);
+                if (edit) msg.edit({ embeds: msg.embeds }).catch(console.ignore);
             }
         }
     });

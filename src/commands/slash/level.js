@@ -17,6 +17,6 @@ module.exports = {
         // Shared command for prefix as well as slash command
         const reply = getLevelReplyOf(interaction.options.getUser('user'));
 
-        await interaction.reply(reply).catch(console.error);
+        await interaction.reply(reply).catch(console.ignore);
     },
 };

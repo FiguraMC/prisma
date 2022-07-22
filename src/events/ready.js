@@ -39,7 +39,7 @@ module.exports = {
             const id = fs.readFileSync(flag).toString();
             fs.unlinkSync(flag);
             if (id) {
-                client.channels.cache.get(id)?.send('Bot started!').catch(console.error);
+                client.channels.cache.get(id)?.send('Bot started!').catch(console.ignore);
             }
         }
     },

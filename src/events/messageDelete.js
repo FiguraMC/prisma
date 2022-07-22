@@ -68,8 +68,8 @@ module.exports = {
                             color: 'ff0000',
                         },
                     ],
-                }).catch(console.error);
+                }).catch(console.ignore);
             })
-            .catch(console.error);
+            .catch(console.ignore);
     },
 };

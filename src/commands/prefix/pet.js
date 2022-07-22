@@ -39,7 +39,7 @@ module.exports = {
 async function sendPetPetGif(message, image, framerate) {
     try {
         const animatedGif = await petPetGif(image, { resolution: 128, framerate: framerate });
-        message.reply({ files: [new Discord.MessageAttachment(animatedGif, 'pet.gif')] }).catch(console.error);
+        message.reply({ files: [new Discord.MessageAttachment(animatedGif, 'pet.gif')] }).catch(console.ignore);
     }
     catch (err) {
         message.reply(err.message);

@@ -13,7 +13,7 @@ module.exports = {
         const memberId = args[0];
 
         let fetchedMember = undefined;
-        if (memberId) fetchedMember = await message.guild.members.fetch(memberId).catch(console.error);
+        if (memberId) fetchedMember = await message.guild.members.fetch(memberId).catch(console.ignore);
 
         const member = message.mentions.members.first() || fetchedMember;
 

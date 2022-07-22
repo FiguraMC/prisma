@@ -18,7 +18,7 @@ module.exports = {
         }
 
         if (dialog.step == -1) {
-            channel.send(utility.buildEmbed('Request Deletion', 'Are you sure you want to delete this request? Type "confirm" to delete, or "cancel" to cancel.')).catch(console.error);
+            channel.send(utility.buildEmbed('Request Deletion', 'Are you sure you want to delete this request? Type "confirm" to delete, or "cancel" to cancel.')).catch(console.ignore);
             dialog.step++;
 
             return false;
@@ -29,14 +29,14 @@ module.exports = {
                 for (const e of dialog.extras.requestMessage.embeds) e.setColor('f24671'); // pink
 
                 message.client.channels.fetch(process.env.LOG_CHANNEL)
-                    .then(c => c.send({ content: 'Request deleted by user:', embeds: dialog.extras.requestMessage.embeds }).catch(console.error))
-                    .catch(console.error);
+                    .then(c => c.send({ content: 'Request deleted by user:', embeds: dialog.extras.requestMessage.embeds }).catch(console.ignore))
+                    .catch(console.ignore);
 
                 const avatarRequest = DataStorage.storage.avatar_requests.find(x => x.message == dialog.extras.requestMessage.id);
-                const thread = await dialog.extras.requestMessage.channel.threads.fetch(avatarRequest.thread).catch(console.error);
+                const thread = await dialog.extras.requestMessage.channel.threads.fetch(avatarRequest.thread).catch(console.ignore);
 
-                thread.setArchived(true).catch(console.error);
-                dialog.extras.requestMessage.delete().catch(console.error);
+                thread.setArchived(true).catch(console.ignore);
+                dialog.extras.requestMessage.delete().catch(console.ignore);
 
                 DataStorage.deleteFromArray(DataStorage.storage.avatar_requests, avatarRequest);
                 DataStorage.save('storage');

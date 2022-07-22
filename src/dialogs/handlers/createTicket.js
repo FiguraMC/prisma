@@ -20,7 +20,7 @@ module.exports = {
         }
 
         if (dialog.step == -1) {
-            channel.send(utility.buildEmbed('Topic/Title (1/2)', 'Could be user report, suggestion, question... just tell us why you are opening this ticket.')).catch(console.error);
+            channel.send(utility.buildEmbed('Topic/Title (1/2)', 'Could be user report, suggestion, question... just tell us why you are opening this ticket.')).catch(console.ignore);
             dialog.step++;
 
             return false;
@@ -32,7 +32,7 @@ module.exports = {
             }
             dialog.data.push(message.content);
 
-            channel.send(utility.buildEmbed('Description (2/2)', 'Describe your problem. This message will be forwarded to our moderators.')).catch(console.error);
+            channel.send(utility.buildEmbed('Description (2/2)', 'Describe your problem. This message will be forwarded to our moderators.')).catch(console.ignore);
             dialog.step++;
 
             return false;
@@ -73,7 +73,7 @@ module.exports = {
                 DataStorage.storage.ticketsubscribers.forEach(async (subscriberID) => {
                     const user = await message.client.users.fetch(subscriberID);
                     if (user) {
-                        thread.members.add(user).catch(console.error);
+                        thread.members.add(user).catch(console.ignore);
                     }
                 });
 
@@ -113,7 +113,7 @@ async function bringTicketMenuToTheBottom(client) {
         DataStorage.storage.ticket_menu = newMenu.id;
         if (oldMenuId) {
             const oldMenu = await channel.messages.fetch(oldMenuId);
-            oldMenu.delete().catch(console.error);
+            oldMenu.delete().catch(console.ignore);
         }
     }
     catch (error) {

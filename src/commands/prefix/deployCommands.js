@@ -29,7 +29,7 @@ module.exports = {
             rest.put(Routes.applicationGuildCommands(message.client.user.id, message.guild.id), { body: commands })
                 .then(() => message.channel.send('Successfully registered local application commands.'))
                 .catch((error) => {
-                    console.error(error);
+                    console.log(error);
                     message.reply('Could not register local application commands.');
                 });
         }
@@ -41,7 +41,7 @@ module.exports = {
             rest.put(Routes.applicationCommands(message.client.user.id), { body: commands })
                 .then(() => message.channel.send('Successfully registered global application commands.'))
                 .catch((error) => {
-                    console.error(error);
+                    console.log(error);
                     message.reply('Could not register global application commands.');
                 });
         }

@@ -20,7 +20,7 @@ module.exports = {
                 const ticketChannel = await message.client.channels.fetch(process.env.TICKET_CHANNEL);
                 const thread = await ticketChannel.threads.fetch(ticket.thread);
                 await thread.send(utility.buildEmbed('📨 Incoming message:', args.join(' ')));
-                message.reply(utility.buildEmbed('Message forwarded. ✉️')).catch(console.error);
+                message.reply(utility.buildEmbed('Message forwarded. ✉️')).catch(console.ignore);
             }
             else {
                 // check thread id for corresponding ticket (moderator->user)
@@ -29,10 +29,10 @@ module.exports = {
                 const ticketUser = await message.guild.members.fetch(ticket.author);
                 try {
                     await ticketUser.send(utility.buildEmbed('↩️ Moderator reply:', args.join(' ')));
-                    message.reply(utility.buildEmbed('Message forwarded. ✉️')).catch(console.error);
+                    message.reply(utility.buildEmbed('Message forwarded. ✉️')).catch(console.ignore);
                 }
                 catch {
-                    message.reply(utility.buildEmbed('Couldn\'t forward message. ❌')).catch(console.error);
+                    message.reply(utility.buildEmbed('Couldn\'t forward message. ❌')).catch(console.ignore);
                 }
             }
         }
