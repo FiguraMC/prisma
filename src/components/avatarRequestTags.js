@@ -50,6 +50,11 @@ module.exports = new Discord.MessageActionRow()
                     value: '[BB Animation]',
                 },
                 {
+                    label: 'Lua Animation',
+                    description: 'Lua Script Animations are needed.',
+                    value: '[Lua Animation]',
+                },
+                {
                     label: 'Figura Alpha 0.0.8',
                     description: 'This request is for Figura version 0.0.8.',
                     value: '[Figura Alpha 0.0.8]',
