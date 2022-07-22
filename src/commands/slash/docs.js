@@ -16,6 +16,7 @@ module.exports = {
      */
     async execute(interaction) {
         const name = interaction.options.getString('query');
+        if (!name) return interaction.reply({ content: 'Please specify a class or class#method or class.property combination to search for.', ephemeral: true }).catch(console.error);
         const entry = search(name);
         if (entry) {
             const user = interaction.options.getUser('target');
