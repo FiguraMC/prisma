@@ -97,6 +97,7 @@ module.exports = {
                         message.reply((`**Syntax error: **${error.message}\n${syntax(command)}`));
                     }
                     else {
+                        message.reply('There was an error while executing this command.');
                         console.error(error);
                     }
                 }
@@ -108,6 +109,7 @@ module.exports = {
                     await command.execute(message, args);
                 }
                 catch (error) {
+                    message.reply('There was an error while executing this command.');
                     console.error(error);
                 }
             }
