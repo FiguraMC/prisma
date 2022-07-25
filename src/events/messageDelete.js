@@ -1,6 +1,5 @@
-const PKAPI = require('pkapi.js');
-const pkapi = new PKAPI();
 const DataStorage = require('../util/dataStorage');
+const pluralkit = require('../util/pluralkit');
 
 module.exports = {
     name: 'messageDelete',
@@ -44,7 +43,7 @@ module.exports = {
             personWhoDeleted = 'an unknown user';
         }
 
-        const pk_message = await pkapi.getMessage({ id: message.id });
+        const pk_message = await pluralkit.getMessage(message.id);
         if (pk_message?.original == message.id) return; // Ignore Pluralkit
 
         if (message.content.length > 1024) {
