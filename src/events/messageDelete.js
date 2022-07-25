@@ -43,8 +43,8 @@ module.exports = {
             personWhoDeleted = 'an unknown user';
         }
 
-        const pk_message = await pluralkit.getMessage(message.id);
-        if (pk_message?.original == message.id) return; // Ignore Pluralkit
+        const pkMessageData = await pluralkit.getMessage(message.id);
+        if (pkMessageData?.original == message.id) return; // Ignore Pluralkit
 
         if (message.content.length > 1024) {
             message.content = message.content.substring(0, 1017) + '`[...]`';

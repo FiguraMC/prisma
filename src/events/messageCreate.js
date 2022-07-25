@@ -23,16 +23,25 @@ module.exports = {
 
             // Wait 1.5 seconds to give PluralKit some time
             await new Promise(resolve => setTimeout(resolve, 1500));
-            const pk_original = await pluralkit.getMessage(message.id);
-            if (pk_original) {
+            const pkMessageData = await pluralkit.getMessage(message.id);
+            if (pkMessageData) {
                 // This either means its a proxied message, or a user message that will be or alrady is deleted
                 // If its a normal message, ignore
                 if (!message.author.bot) return;
                 // If its a proxied message, get the author of the original and attach it to the message
-                const pk_member = await message.guild.members.fetch(pk_original?.sender);
-                const pk_user = pk_member?.user;
-                message.member = pk_member;
-                message.author = pk_user;
+                const member = await message.guild.members.fetch(pkMessageData.sender);
+                const user = member.user;
+                message.member = member;
+                message.author = user;
+                // Get the reference (reply) if there is one, PK attaches that as an embed with clickable link
+                if (message.embeds.length > 0) {
+                    const referenceMessageUrl = /\[Reply to:\]\((.+)\)/.exec(message.embeds[0].description);
+                    const referenceMessageId = referenceMessageUrl[1].substring(referenceMessageUrl[1].lastIndexOf('/') + 1);
+                    const referenceMessage = await message.channel.messages.fetch(referenceMessageId);
+                    message.reference = true;
+                    message.fetchReference = () => Promise.resolve(referenceMessage);
+                }
+                
             }
             else if (message.author.bot) {
                 return; // Ignore bots but allow pluralkit webhooks
