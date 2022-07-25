@@ -6,6 +6,7 @@ const utility = require('../util/utility');
 const parser = require('../commands/parser/argumentParser');
 const CommandParseError = require('../commands/parser/commandParseError');
 const syntax = require('../commands/parser/syntax');
+const pluralkit = require('../util/pluralkit');
 
 module.exports = {
     name: 'messageCreate',
@@ -20,7 +21,22 @@ module.exports = {
         // Prefix commands handling
         if (message.content.startsWith(process.env.PREFIX)) {
 
-            if (message.author.bot) return; // Ignore bots
+            // Wait 1.5 seconds to give PluralKit some time
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            const pk_original = await pluralkit.getMessage(message.id);
+            if (pk_original) {
+                // This either means its a proxied message, or a user message that will be or alrady is deleted
+                // If its a normal message, ignore
+                if (!message.author.bot) return;
+                // If its a proxied message, get the author of the original and attach it to the message
+                const pk_member = await message.guild.members.fetch(pk_original?.sender);
+                const pk_user = pk_member?.user;
+                message.member = pk_member;
+                message.author = pk_user;
+            }
+            else if (message.author.bot) {
+                return; // Ignore bots but allow pluralkit webhooks
+            }
 
             const commandName = message.content.split(/ +/).shift().toLowerCase().substring(process.env.PREFIX.length);
             const command = message.client.prefixCommands.get(commandName);
