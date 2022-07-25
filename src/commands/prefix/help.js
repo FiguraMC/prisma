@@ -1,11 +1,12 @@
 const Argument = require('../parser/argument');
 const utility = require('../../util/utility');
+const syntax = require('../parser/syntax');
 
 // Help command
 // Gets information about other commands to build a reply
 module.exports = {
     name: 'help',
-    description: 'Shows this message.',
+    description: 'Shows help about a command.',
     allowInOtherGuilds: true,
     overloads: [
         {
@@ -41,7 +42,19 @@ module.exports = {
             * @param {import('../parser/argumentContainer')} args
             */
             execute: async (message, args) => {
-                message.reply(utility.buildEmbed(args.getValue('command').longDescription ?? args.getValue('command').description));
+                const command = args.getValue('command');
+                message.reply({ embeds: [{
+                    fields: [
+                        {
+                            name: process.env.PREFIX + command.name,
+                            value: command.longDescription ?? command.description,
+                        },
+                        {
+                            name: 'Syntax',
+                            value: syntax(command),
+                        },
+                    ],
+                }] });
             },
         },
     ],
