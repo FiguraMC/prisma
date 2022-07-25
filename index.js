@@ -59,10 +59,10 @@ for (const file of eventFiles) {
 client.login(process.env.TOKEN);
 
 process.on('unhandledRejection', error => {
-    console.error(`Unhandled rejection at ${ new Date().toISOString() }\n${error}\n\n`);
+    console.error(`Unhandled rejection at ${ new Date().toISOString() }\n${error.stack}\n\n`);
 });
 
 process.on('uncaughtException', error => {
-    console.error(`Crash at ${ new Date().toISOString() }\n${error}\n\n`);
+    console.error(`Crash at ${ new Date().toISOString() }\n${error.stack}\n\n`);
     process.exit(1);
 });
