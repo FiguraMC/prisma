@@ -39,20 +39,20 @@ function load() {
         }
 
         // Attempt reading both files, treat as empty with timestamp 0 on error
-        let st0;
-        let st1;
+        let st0 = {};
+        let st1 = {};
         try {
             st0 = JSON.parse(fs.readFileSync(container.files[0]).toString(), reviver);
         }
-        catch (error) {
-            st0 = { timestamp: 0 };
-        }
+        // eslint-disable-next-line no-empty
+        catch {}
         try {
             st1 = JSON.parse(fs.readFileSync(container.files[1]).toString(), reviver);
         }
-        catch (error) {
-            st1 = { timestamp: 0 };
-        }
+        // eslint-disable-next-line no-empty
+        catch {}
+        st0.timestamp = st0.timestamp ?? 0;
+        st1.timestamp = st1.timestamp ?? 0;
         // Use the newer one of the two files
         if (st0.timestamp > st1.timestamp) {
             exports[container.name] = st0;
