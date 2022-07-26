@@ -177,13 +177,13 @@ function browseDocs(search) {
             if (similar(api.name.toLowerCase(), search)) {
                 results.push({ name: api.name, value: api.name, levenshtein: levenshtein.distance(api.name, search) });
             }
-            api.fields.forEach(field => {
+            api.fields?.forEach(field => {
                 if (similar(api.name.toLowerCase() + field.name.toLowerCase(), search.replaceAll(/[#.]/g, ''))) {
                     const prefix = api.name + '.';
                     results.push({ name: prefix + field.name, value: prefix + field.name, levenshtein: levenshtein.distance(field.name, search) });
                 }
             });
-            api.methods.forEach(method => {
+            api.methods?.forEach(method => {
                 if (similar(api.name.toLowerCase() + method.name.toLowerCase(), search.replaceAll(/[#.]/g, ''))) {
                     const prefix = api.name + '#';
                     results.push({ name: prefix + method.name, value: prefix + method.name, levenshtein: levenshtein.distance(method.name, search) });
