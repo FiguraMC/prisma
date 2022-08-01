@@ -3,6 +3,7 @@ const path = require('path');
 const ContentBlocker = require('../util/contentBlocker');
 const cronJobCheckBackendStatus = require('../cronjobs/checkBackendStatus');
 const cronJobDeleteOldRequests = require('../cronjobs/deleteOldRequests');
+const cronJobSetStatus = require('../cronjobs/setStatus');
 const cronJobUpdateScamList = require('../cronjobs/updateScamList');
 const cronJobStorageBackup = require('../cronjobs/storageBackup');
 const requestReactions = require('../util/requestReactions');
@@ -19,10 +20,9 @@ module.exports = {
 
         console.log(`Ready! Logged in as ${client.user.tag}`);
 
-        client.user.setActivity('/ticket', { type: 'LISTENING' });
-
         cronJobCheckBackendStatus.start(client);
         cronJobDeleteOldRequests.start(client);
+        cronJobSetStatus.start(client);
         cronJobUpdateScamList.start();
         cronJobStorageBackup.start();
 
