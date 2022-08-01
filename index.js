@@ -59,11 +59,31 @@ for (const file of eventFiles) {
 
 client.login(process.env.TOKEN);
 
-process.on('unhandledRejection', error => {
-    console.error(`Unhandled rejection at ${ new Date().toISOString() }\n${error.stack}\n\n`);
+process.on('unhandledRejection', (error, promise) => {
+    const date = new Date().toISOString();
+    const log = `${date} Unhandled Promise Rejection\n` +
+                `${date} Error: ${error}\n` +
+                `${date} Origin: ${promise}\n`;
+    if (!fs.existsSync('./logs')) fs.mkdirSync('./logs');
+    fs.appendFileSync('./logs/rejection.log', log);
+    console.error(log);
 });
 
-process.on('uncaughtException', error => {
-    console.error(`Crash at ${ new Date().toISOString() }\n${error.stack}\n\n`);
+process.on('uncaughtException', (error, origin) => {
+    const date = new Date().toISOString();
+    const log = `${date} Uncaught Exception\n` +
+                `${date} Error: ${error}\n` +
+                `${date} Origin: ${origin}\n`;
+    if (!fs.existsSync('./logs')) fs.mkdirSync('./logs');
+    fs.writeFileSync(`./logs/crash-${date}.log`, log);
+    console.error(log);
+
     process.exit(1);
+});
+
+process.on('exit', (code) => {
+    const date = new Date().toISOString();
+    const log = `Exit at ${date} with code ${code}\n`;
+    if (!fs.existsSync('./logs')) fs.mkdirSync('./logs');
+    fs.appendFileSync('./logs/exit.log', log);
 });
