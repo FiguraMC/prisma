@@ -59,21 +59,19 @@ for (const file of eventFiles) {
 
 client.login(process.env.TOKEN);
 
-process.on('unhandledRejection', (error, promise) => {
+process.on('unhandledRejection', (error) => {
     const date = new Date().toISOString();
     const log = `${date} Unhandled Promise Rejection\n` +
-                `${date} Error: ${error}\n` +
-                `${date} Origin: ${promise}\n`;
+                `${date} Error: ${error.stack}\n\n`;
     if (!fs.existsSync('./logs')) fs.mkdirSync('./logs');
     fs.appendFileSync('./logs/rejection.log', log);
     console.error(log);
 });
 
-process.on('uncaughtException', (error, origin) => {
+process.on('uncaughtException', (error) => {
     const date = new Date().toISOString();
     const log = `${date} Uncaught Exception\n` +
-                `${date} Error: ${error}\n` +
-                `${date} Origin: ${origin}\n`;
+                `${date} Error: ${error.stack}\n\n`;
     if (!fs.existsSync('./logs')) fs.mkdirSync('./logs');
     fs.writeFileSync(`./logs/crash-${date}.log`, log);
     console.error(log);
