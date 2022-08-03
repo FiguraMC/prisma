@@ -7,6 +7,7 @@ const parser = require('../commands/parser/argumentParser');
 const CommandParseError = require('../commands/parser/commandParseError');
 const syntax = require('../commands/parser/syntax');
 const pluralkit = require('../util/pluralkit');
+const DataStorage = require('../util/dataStorage');
 
 module.exports = {
     name: 'messageCreate',
@@ -18,33 +19,48 @@ module.exports = {
 
         if (message.author.id == message.client.user.id) return; // Ignore self
 
+        // Detect if this user is using PK to auto-enable PK support for commands
+        if (message.content.startsWith('pk;')) {
+            DataStorage.pksettings.userlist = DataStorage.pksettings.userlist || new Set();
+            if (!DataStorage.pksettings.userlist.has(message.author.id)) {
+                DataStorage.pksettings.userlist.add(message.author.id);
+                DataStorage.save('pksettings');
+            }
+        }
+
         // Prefix commands handling
         if (message.content.startsWith(process.env.PREFIX)) {
 
-            // Wait 1.5 seconds to give PluralKit some time
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            const pkMessageData = await pluralkit.getMessage(message.id);
-            if (pkMessageData) {
-                // This either means its a proxied message, or a user message that will be or alrady is deleted
-                // If its a normal message, ignore
-                if (!message.author.bot) return;
-                // If its a proxied message, get the author of the original and attach it to the message
-                const member = await message.guild.members.fetch(pkMessageData.sender);
-                const user = member.user;
-                message.member = member;
-                message.author = user;
-                // Get the reference (reply) if there is one, PK attaches that as an embed with clickable link
-                if (message.embeds.length > 0) {
-                    const referenceMessageUrl = /\[Reply to:\]\((.+)\)/.exec(message.embeds[0].description);
-                    const referenceMessageId = referenceMessageUrl[1].substring(referenceMessageUrl[1].lastIndexOf('/') + 1);
-                    const referenceMessage = await message.channel.messages.fetch(referenceMessageId);
-                    message.reference = true;
-                    message.fetchReference = () => Promise.resolve(referenceMessage);
+            // If user has pk support turned on
+            if (DataStorage.pksettings.userlist?.has(message.author.id)) {
+                // Wait 1.5 seconds to give PluralKit some time
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                const pkMessageData = await pluralkit.getMessage(message.id);
+                if (pkMessageData) {
+                    // This either means its a proxied message, or a user message that will be or alrady is deleted
+                    // If its a normal message, ignore
+                    if (!message.author.bot) return;
+                    // If its a proxied message, get the author of the original and attach it to the message
+                    const member = await message.guild.members.fetch(pkMessageData.sender);
+                    const user = member.user;
+                    message.member = member;
+                    message.author = user;
+                    // Get the reference (reply) if there is one, PK attaches that as an embed with clickable link
+                    if (message.embeds.length > 0) {
+                        const referenceMessageUrl = /\[Reply to:\]\((.+)\)/.exec(message.embeds[0].description);
+                        const referenceMessageId = referenceMessageUrl[1].substring(referenceMessageUrl[1].lastIndexOf('/') + 1);
+                        const referenceMessage = await message.channel.messages.fetch(referenceMessageId);
+                        message.reference = true;
+                        message.fetchReference = () => Promise.resolve(referenceMessage);
+                    }
+                    
                 }
-                
+                else if (message.author.bot) {
+                    return; // Ignore bots but allow pluralkit webhooks
+                }
             }
             else if (message.author.bot) {
-                return; // Ignore bots but allow pluralkit webhooks
+                return; // Ignore bots
             }
 
             const commandName = message.content.split(/ +/).shift().toLowerCase().substring(process.env.PREFIX.length);

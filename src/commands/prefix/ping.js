@@ -1,4 +1,3 @@
-
 module.exports = {
     name: 'ping',
     description: 'Ping command for testing.',

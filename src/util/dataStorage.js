@@ -4,7 +4,7 @@ const path = require('path');
 const storageDirectoryPath = path.join(__dirname, '../..', 'storage');
 const backupDirectoryPath = path.join(storageDirectoryPath, 'backups');
 
-const containerNames = ['storage', 'guildsettings', 'rolescache'];
+const containerNames = ['storage', 'guildsettings', 'rolescache', 'pksettings'];
 
 const containers = [];
 
@@ -132,6 +132,12 @@ function replacer(key, value) {
             value: Array.from(value.entries()),
         };
     }
+    else if (value instanceof Set) {
+        return {
+            dataType: 'Set',
+            value: [...value],
+        };
+    }
     else {
         return value;
     }
@@ -144,6 +150,9 @@ function reviver(key, value) {
     if (typeof value == 'object' && value != null) {
         if (value.dataType == 'Map') {
             return new Map(value.value);
+        }
+        else if (value.dataType == 'Set') {
+            return new Set(value.value);
         }
     }
     return value;
