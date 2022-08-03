@@ -16,6 +16,9 @@ const client = new Client({
     partials: [
         'CHANNEL',
     ],
+    allowedMentions: {
+        parse: ['roles', 'users'],
+    },
 });
 
 // Dialogs setup
