@@ -17,7 +17,7 @@ const client = new Client({
         'CHANNEL',
     ],
     allowedMentions: {
-        parse: ['roles', 'users'],
+        parse: ['users'],
     },
 });
 
