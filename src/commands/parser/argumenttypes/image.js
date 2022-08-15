@@ -1,15 +1,15 @@
 const CommandParseError = require('../commandParseError');
 const utility = require('../../../util/utility');
-const user = require('./user');
+const member = require('./member');
 
 module.exports = {
     type: 'image',
-    validate: async (value, options, client) => {
+    validate: async (value, options, client, guild) => {
         const url = utility.getURLs(value)?.at(0);
         if (url) return url;
         try {
-            const validUser = await user.validate(value, options, client);
-            const avatarUrl = validUser.displayAvatarURL({ format: 'png' });
+            const validMember = await member.validate(value, options, client, guild);
+            const avatarUrl = validMember.displayAvatarURL({ format: 'png' });
             return avatarUrl;
         }
         catch {

@@ -2,7 +2,7 @@ const CommandParseError = require('../commandParseError');
 
 module.exports = {
     type: 'channel',
-    validate: async (value, options, client) => {
+    validate: async (value, options, client, guild) => {
         let id = value;
         // get discord channel id from mention string
         if (value.startsWith('<#') && value.endsWith('>')) {

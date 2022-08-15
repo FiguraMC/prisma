@@ -1,7 +1,7 @@
 const CommandParseError = require('../commandParseError');
 
 module.exports = {
-    type: 'user',
+    type: 'member',
     validate: async (value, options, client, guild) => {
         let id = value;
         // get discord user id from mention string
@@ -9,10 +9,10 @@ module.exports = {
             id = value.substring(2, value.length - 1);
         }
         try {
-            return await client.users.fetch(id);
+            return await guild.members.fetch(id);
         }
         catch {
-            throw new CommandParseError(`"${value}" is not a valid user.`);
+            throw new CommandParseError(`"${value}" is not a valid member.`);
         }
     },
 };

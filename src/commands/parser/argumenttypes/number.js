@@ -2,7 +2,7 @@ const CommandParseError = require('../commandParseError');
 
 module.exports = {
     type: 'number',
-    validate: async (value, options = {}, client) => {
+    validate: async (value, options = {}, client, guild) => {
 
         options.min = options.min ?? -Infinity;
         options.max = options.max ?? Infinity;
