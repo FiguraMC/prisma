@@ -215,7 +215,7 @@ function constructAvatarRequestEmbed(dialog, user) {
                 title: dialog.data[0],
                 description: dialog.data[1],
                 author: {
-                    name: user.username,
+                    name: `${user.username} (${user.id})`,
                     iconURL: user.avatarURL(),
                 },
                 image: dialog.data[4],
