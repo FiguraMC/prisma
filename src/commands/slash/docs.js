@@ -5,10 +5,10 @@ module.exports = {
     name: 'docs',
     data: new SlashCommandBuilder()
         .setName('docs')
-        .setDescription('Display Figura 0.1.0 documentation')
+        .setDescription('Display Figura 0.1.0 documentation.')
         .addStringOption(option => option.setName('query').setDescription('Class or Class#method or Class.property combination to search for').setAutocomplete(true))
         .addUserOption(option => option.setName('target').setDescription('User to mention').setRequired(false)),
-    description: 'Display Figura documentation.',
+    description: 'Display Figura 0.1.0 documentation.',
     allowInOtherGuilds: true,
     /**
      * 
@@ -41,56 +41,66 @@ module.exports = {
  * @returns Documentation entry
  */
 function search(name) {
-    if (name.includes('#')) {
-        const parts = name.split('#');
-        const className = parts[0];
-        const methodName = parts[1];
-        // eslint-disable-next-line no-unused-vars
-        for (const [_, group] of Object.entries(docs)) {
-            const api = group.find(a => a.name == className);
-            if (api) {
-                for (const method of api.methods) {
-                    if (method.name == methodName) {
-                        if (method.parameters.length != method.returns.length) return 'Unexpected error occured, please report this to a staff member.';
-                        let lines = '```ansi\n\u001b[0;35mMethod\n';
-                        for (let i = 0; i < method.parameters.length; i++) {
-                            let params = '';
-                            for (let j = 0; j < method.parameters[i].length; j++) {
-                                params += `\u001b[0;33m${method.parameters[i][j].type} \u001b[0;37m${method.parameters[i][j].name}, `;
-                            }
-                            if (method.parameters[i].length > 0) params = params.substring(0, params.length - 2);
-                            lines += `\u001b[0;34m${(className != 'globals' ? className + '.' : '')}${method.name}\u001b[0;35m(${params}\u001b[0;35m): \u001b[0;34mReturns \u001b[0;33m${method.returns[i]}\n`;
-                        }
-                        lines += '\n\u001b[0;35mDescription\n\u001b[0;37m' + method.description + '```';
-                        return lines;
-                    }
+    const isMethod = name.includes('#');
+    const isField = name.includes('.');
+    const isGlobal = !(isField || isMethod);
+    const separator = isMethod ? '#' : '.';
+    const className = name.split(separator)[0];
+    const fieldOrMethod = name.split(separator)[1];
+    if (isGlobal) {
+        const m = docs.globals.methods.find(method => method.name == name);
+        if (m) return constructMethodMessage('globals', m);
+        const f = docs.globals.fields.find(method => method.name == name);
+        return constructFieldMessage('globals', f);
+    }
+    for (const [ , category] of Object.entries(docs)) {
+        if (!isGlobal && category.name == 'globals') {
+            const globalField = category.fields.find(field => field.name == className);
+            if (!globalField) continue;
+            for (const child of globalField.children) {
+                if (isMethod) {
+                    const method = child.methods.find(m => m.name == fieldOrMethod);
+                    if (method) return constructMethodMessage(className, method);
+                }
+                else {
+                    const field = child.fields.find(m => m.name == fieldOrMethod);
+                    if (field) return constructFieldMessage(className, field);
                 }
             }
         }
-    }
-    else if (name.includes('.')) {
-        const parts = name.split('.');
-        const className = parts[0];
-        const fieldName = parts[1];
-        // eslint-disable-next-line no-unused-vars
-        for (const [_, group] of Object.entries(docs)) {
-            const api = group.find(a => a.name == className);
-            if (api) {
-                for (const field of api.fields) {
-                    if (field.name == fieldName) {
-                        return `\`\`\`ansi\n\u001b[0;35mField\n\u001b[0;33m${field.type} \u001b[0;34m${(className != 'globals' ? className + '.' : '')}${field.name} ${(field.editable ? '\u001b[0;32m(Editable)' : '\u001b[0;31m(Not Editable)')}\n\n\u001b[0;35mDescription\n\u001b[0;37m${field.description}\`\`\``;
-                    }
-                }
+        else if (!isGlobal && Array.isArray(category)) {
+            const list = category.find(entry => entry.name == className);
+            if (!list) continue;
+            return '```json\n"' + list.entries.join('",\n"') + '"\n```';
+        }
+        else if (category.name == className) {
+            if (isMethod) {
+                const m = category.methods.find(method => method.name == fieldOrMethod);
+                return constructMethodMessage(className, m);
+            }
+            else {
+                const f = category.fields.find(field => field.name == fieldOrMethod);
+                return constructFieldMessage(className, f);
             }
         }
     }
-    else {
-        // eslint-disable-next-line no-unused-vars
-        for (const [_, group] of Object.entries(docs)) {
-            const api = group.find(a => a.name == name);
-            if (api) {
-                return `\`\`\`ansi\n\u001b[0;35mClass\n\u001b[0;34m${api.name}\n\n\u001b[0;35mDescription\n\u001b[0;37m${api.description}\`\`\``;
-            }
+}
+
+function constructFieldMessage(className, field) {
+    return `\`\`\`ansi\n\u001b[0;35mField\n\u001b[0;33m${field.type} \u001b[0;34m${(className != 'globals' ? className + '.' : '')}${field.name} ${(field.editable ? '\u001b[0;32m(Editable)' : '\u001b[0;31m(Not Editable)')}\n\n\u001b[0;35mDescription\n\u001b[0;37m${field.description}\`\`\``;
+}
+
+function constructMethodMessage(className, method) {
+    if (method.parameters.length != method.returns.length) return 'Unexpected error occured, please report this to a staff member.';
+    let lines = '```ansi\n\u001b[0;35mMethod\n';
+    for (let i = 0; i < method.parameters.length; i++) {
+        let params = '';
+        for (let j = 0; j < method.parameters[i].length; j++) {
+            params += `\u001b[0;33m${method.parameters[i][j].type} \u001b[0;37m${method.parameters[i][j].name}, `;
         }
+        if (method.parameters[i].length > 0) params = params.substring(0, params.length - 2);
+        lines += `\u001b[0;34m${(className != 'globals' ? className + '.' : '')}${method.name}\u001b[0;35m(${params}\u001b[0;35m): \u001b[0;34mReturns \u001b[0;33m${method.returns[i]}\n`;
     }
+    lines += '\n\u001b[0;35mDescription\n\u001b[0;37m' + method.description + '```';
+    return lines;
 }

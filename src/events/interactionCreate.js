@@ -171,28 +171,42 @@ function browseDocs_old(search, branch, results) {
  */
 function browseDocs(search) {
     const results = [];
-    // eslint-disable-next-line no-unused-vars
-    for (const [_, group] of Object.entries(docs)) {
-        group.forEach(api => {
-            if (similar(api.name.toLowerCase(), search)) {
-                results.push({ name: api.name, value: api.name, levenshtein: levenshtein.distance(api.name, search) });
+    function check(category, parent) {
+        parent = parent ?? category;
+        const isGlobal = parent.name == 'globals';
+        const prefix_m = isGlobal ? '' : parent.name + '#';
+        category.methods.forEach(method => {
+            if (similar(prefix_m + method.name.toLowerCase(), search)) {
+                results.push({ name: prefix_m + method.name, value: prefix_m + method.name, levenshtein: levenshtein.distance(prefix_m + method.name, search) });
             }
-            api.fields?.forEach(field => {
-                if (similar(api.name.toLowerCase() + field.name.toLowerCase(), search.replaceAll(/[#.]/g, ''))) {
-                    const prefix = api.name + '.';
-                    results.push({ name: prefix + field.name, value: prefix + field.name, levenshtein: levenshtein.distance(field.name, search) });
-                }
-            });
-            api.methods?.forEach(method => {
-                if (similar(api.name.toLowerCase() + method.name.toLowerCase(), search.replaceAll(/[#.]/g, ''))) {
-                    const prefix = api.name + '#';
-                    results.push({ name: prefix + method.name, value: prefix + method.name, levenshtein: levenshtein.distance(method.name, search) });
-                }
-            });
-
+        });
+        const prefix_f = isGlobal ? '' : category.name + '.';
+        category.fields.forEach(field => {
+            if (similar(prefix_f + field.name.toLowerCase(), search)) {
+                results.push({ name: prefix_f + field.name, value: prefix_f + field.name, levenshtein: levenshtein.distance(prefix_f + field.name, search) });
+            }
+            if (field.children?.length > 0) {
+                field.children.forEach(child => {
+                    check(child, field);
+                });
+            }
         });
     }
-
+    for (const [ , category] of Object.entries(docs)) {
+        if (Array.isArray(category)) {
+            category.forEach(list => {
+                const prefix = list.name + '.';
+                list.entries.forEach(entry => {
+                    if (similar((prefix + entry).toLowerCase(), search)) {
+                        results.push({ name: prefix + entry, value: prefix + entry, levenshtein: levenshtein.distance(prefix + entry, search) });
+                    }
+                });
+            });
+        }
+        else {
+            check(category);
+        }
+    }
     return results;
 }
 

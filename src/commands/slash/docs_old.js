@@ -5,10 +5,10 @@ module.exports = {
     name: 'docs_old',
     data: new SlashCommandBuilder()
         .setName('docs_old')
-        .setDescription('Display Figura 0.0.8 documentation')
+        .setDescription('Display Figura 0.0.8 documentation.')
         .addStringOption(option => option.setName('query').setDescription('Class or Class#method or Class.property combination to search for').setAutocomplete(true))
         .addUserOption(option => option.setName('target').setDescription('User to mention').setRequired(false)),
-    description: 'Display Figura documentation.',
+    description: 'Display Figura 0.0.8 documentation.',
     allowInOtherGuilds: true,
     /**
      * 
