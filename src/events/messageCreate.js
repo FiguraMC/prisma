@@ -70,23 +70,30 @@ module.exports = {
             if (!command) return;
 
             // Only allow commands that have dm property set to true in DMs
-            if (message.channel.type == 'DM' && !command.dm) return message.channel.send(utility.buildEmbed('Commands don\'t work in DMs.'));
+            if (message.channel.type == 'DM') {
+                if (!command.dm) return message.channel.send(utility.buildEmbed('Commands don\'t work in DMs.'));
+            }
+            else {
+                // Guild and Permission check only works in guilds.
+                // Note that this means anyone could use a moderator command
+                // if that command has the dm property set to true.
 
-            // If not in main guild only allow specific commands
-            if (message.guild?.id != process.env.MAIN_GUILD && !command.allowInOtherGuilds) return;
+                // If not in main guild only allow specific commands
+                if (message.guild?.id != process.env.MAIN_GUILD && !command.allowInOtherGuilds) return;
 
-            // Check if command needs moderator or helper perms
-            let isAllowedToUse = false;
-            if (command.moderator) {
-                isAllowedToUse |= utility.isModerator(message.member);
+                // Check if command needs moderator or helper perms
+                let isAllowedToUse = false;
+                if (command.moderator) {
+                    isAllowedToUse |= utility.isModerator(message.member);
+                }
+                if (command.helper) {
+                    isAllowedToUse |= utility.isHelper(message.member);
+                }
+                if (!command.moderator && !command.helper) {
+                    isAllowedToUse = true;
+                }
+                if (!isAllowedToUse) return;
             }
-            if (command.helper) {
-                isAllowedToUse |= utility.isHelper(message.member);
-            }
-            if (!command.moderator && !command.helper) {
-                isAllowedToUse = true;
-            }
-            if (!isAllowedToUse) return;
 
             // Remove any expired cooldowns
             message.client.cooldowns.forEach((userCooldowns) => {
