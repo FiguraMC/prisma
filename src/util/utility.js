@@ -1,4 +1,4 @@
-const { WebSocket } = require('ws');
+const got = require('got');
 const DataStorage = require('./dataStorage');
 
 // Utility functions
@@ -73,29 +73,26 @@ module.exports.escapeRegExp = function (string) {
  */
 module.exports.checkBackendStatus = function (client) {
     return new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
-        const ws = new WebSocket(`ws://${process.env.FIGURA_BACKEND_URL}:25500`);
-
-        ws.on('open', () => {
-            ws.send(JSON.stringify({
-                type: 'auth',
-                token: process.env.FIGURA_BACKEND_TOKEN,
-            }));
-        });
-
-        ws.on('message', (raw) => {
-            const msg = JSON.parse(raw);
-            if (msg.type == 'connected') {
-                setBackendStatusChannel(client, true);
-                ws.close();
+        got(`https://${process.env.FIGURA_BACKEND_URL}/api/status`)
+            .then(res => {
+                const body = JSON.parse(res.body);
+                // Total amount of nodes
+                const total = Object.keys(body.nodes).length;
+                // Count amount of nodes that are online
+                let online = 0;
+                for (const key in body.nodes) {
+                    if (Object.hasOwnProperty.call(body.nodes, key)) {
+                        const node = body.nodes[key];
+                        if (node.online) online++;
+                    }
+                }
+                setBackendStatusChannel(client, true, online, total);
                 resolve(true);
-            }
-        });
-
-        ws.on('error', () => {
-            setBackendStatusChannel(client, false);
-            ws.close();
-            resolve(false);
-        });
+            })
+            .catch(err => {
+                setBackendStatusChannel(client, false, 0, 0);
+                resolve(false);
+            });
     });
 };
 
@@ -103,12 +100,18 @@ module.exports.checkBackendStatus = function (client) {
  * Sets the backend status channel to online or offline
  * @param {import('discord.js').Client} client 
  * @param {boolean} status 
+ * @param {number} onlineNodes 
+ * @param {number} totalNodes 
  */
-function setBackendStatusChannel(client, status) {
+function setBackendStatusChannel(client, status, onlineNodes, totalNodes) {
     client.guilds.cache.forEach(async guild => {
         try {
             const channel = await guild.channels.fetch(DataStorage.guildsettings?.guilds?.get(guild.id)?.get('backend_status_channel'));
-            channel.setName('0.1.0 Backend: ' + (status ? 'Online ✅' : 'Offline ❌')).catch(console.ignore);
+            channel.setName('Backend: ' + (
+                status
+                    ? `[${onlineNodes}/${totalNodes}]` + (onlineNodes < totalNodes ? '📶' : '✅')
+                    : 'Offline ❌'
+            )).catch(console.ignore);
         }
         // eslint-disable-next-line no-empty
         catch { }
