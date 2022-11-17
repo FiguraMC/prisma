@@ -1,3 +1,18 @@
+module.exports = {
+    name: 'clearavatar',
+    description: 'Clears your Figura avatar from the backend.',
+    cooldown: 10 * 60 * 1000, // 10 minutes
+    /**
+     * 
+     * @param {import('discord.js').Message} message 
+     */
+    async execute(message) {
+        message.reply('This command no longer works, as the old Figura backend has shut down.');
+    },
+};
+
+/* // Command disabled for now
+
 const DataStorage = require('../../util/dataStorage');
 const { NodeSSH } = require('node-ssh');
 
@@ -9,6 +24,9 @@ module.exports = {
      * 
      * @param {import('discord.js').Message} message 
      */
+
+/*
+
     async execute(message) { // eslint-disable-line no-unused-vars
 
         if (!DataStorage.storage.people) DataStorage.storage.people = {};
@@ -47,3 +65,5 @@ module.exports = {
         }
     },
 };
+
+*/
