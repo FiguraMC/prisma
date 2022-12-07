@@ -85,6 +85,11 @@ function select(command, args) {
         if (args.reply) rawArgs.push(args.reply.author.id);
     }
 
+    if (command.overloads.find(o => o.arguments.find(a => a.type == 'message') != undefined)) {
+        // if command has a message argument, use reply as argument in addition to text arguments
+        if (args.reply) rawArgs.push(args.reply);
+    }
+
     if (command.overloads.find(o => o.arguments.find(a => a.type == 'image') != undefined)) {
         // if command has an image argument, use attachments and reply (for pfp) as arguments in addition to text arguments
         if (args.reply) rawArgs.push(args.reply.author.id);
