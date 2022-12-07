@@ -138,7 +138,7 @@ module.exports = {
 
                     const args = parser.read(argumentString, reply, message.attachments);
                     const overload = parser.select(command, args);
-                    overload.execute(message, await parser.parse(overload, message.client, message.guild));
+                    overload.execute(message, await parser.parse(overload, message));
                 }
                 catch (error) {
                     if (error instanceof CommandParseError) {

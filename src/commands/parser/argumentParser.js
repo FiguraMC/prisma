@@ -63,7 +63,7 @@ function read(string, repliedMessage, attachments) {
     }
     if (group !== '') groups.push(group);
 
-    const replyGroup = repliedMessage ? repliedMessage.author.id : null;
+    const replyGroup = repliedMessage || null;
     const attachmentsGroups = attachments ? Array.from(attachments.values()).map(a => a.url) : [];
 
     return { textArguments: groups, reply: replyGroup, attachments: attachmentsGroups };
@@ -82,12 +82,12 @@ function select(command, args) {
 
     if (command.overloads.find(o => o.arguments.find(a => a.type == 'user') != undefined)) {
         // if command has a user argument, use reply as argument in addition to text arguments
-        if (args.reply) rawArgs.push(args.reply);
+        if (args.reply) rawArgs.push(args.reply.author.id);
     }
 
     if (command.overloads.find(o => o.arguments.find(a => a.type == 'image') != undefined)) {
         // if command has an image argument, use attachments and reply (for pfp) as arguments in addition to text arguments
-        if (args.reply) rawArgs.push(args.reply);
+        if (args.reply) rawArgs.push(args.reply.author.id);
         rawArgs.push(...args.attachments);
     }
 
@@ -110,18 +110,17 @@ function select(command, args) {
 /**
  * Attempts to parse an array of strings into the correct types that are required by the overload
  * @param {*} overload A command overload with rawArgs attached
- * @param {import('discord.js').Client} client
- * @param {import('discord.js').Guild} guild
+ * @param {import('discord.js').Message} commandMessage The message the user sent that triggered the command
  * @returns {import('./argumentContainer')} ArgumentContainer including the parsed and validated arguments
  * @throws {CommandParseError} If any arguments are not valid
  */
-async function parse(overload, client, guild) {
+async function parse(overload, commandMessage) {
     // parse argument groups into Argument objects according to the overload
     const parsedArgs = [];
     for (let i = 0; i < overload.arguments.length; i++) {
         const arg = overload.arguments[i];
         const group = overload.rawArgs[i];
-        const validated = await argumentTypes.get(arg.type).validate(group, arg.options, client, guild); // validate() throws CommandParseError
+        const validated = await argumentTypes.get(arg.type).validate(group, arg.options, commandMessage); // validate() throws CommandParseError
         parsedArgs.push(new Argument(arg.name, arg.type, {}, validated));
     }
     return new ArgumentContainer(parsedArgs);
