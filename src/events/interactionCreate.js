@@ -4,7 +4,6 @@ const DataStorage = require('../util/dataStorage');
 const utility = require('../util/utility');
 const confirmationButtons = require('../components/confirmationButtons');
 const closeTicketButton = require('../components/closeTicketButton');
-const docs_old = require('../../storage/docs_old.json');
 const docs = require('../../storage/docs.json');
 const ticketMenu = require('../components/ticketMenu');
 
@@ -37,24 +36,24 @@ module.exports = {
         // Handle buttons
         else if (interaction.isButton()) {
             // New avatar request button at the bottom of the requests channel
-            if (interaction.customId == 'new_avatar_request') {
-                // Update button so it doesnt timeout
-                interaction.deferUpdate().catch(console.ignore);
-                // Check bans
-                if (DataStorage.storage.people[interaction.user.id]?.requestban) return interaction.user.send(utility.buildEmbed('Sorry, you can\'t create a request at the moment.')).catch(console.ignore);
+            // if (interaction.customId == 'new_avatar_request') {
+            //     // Update button so it doesnt timeout
+            //     interaction.deferUpdate().catch(console.ignore);
+            //     // Check bans
+            //     if (DataStorage.storage.people[interaction.user.id]?.requestban) return interaction.user.send(utility.buildEmbed('Sorry, you can\'t create a request at the moment.')).catch(console.ignore);
 
-                // Attempt to start avatar request creation dialog
-                if (canStartDialog(interaction.client, interaction.user)) {
-                    await interaction.user.send(utility.buildEmbed('New Avatar Request', 'We will now fill in the details of the request. Take your time to read the descriptions to ensure to make a high quality request. Low quality ones might get deleted by a moderator. You can type "cancel" at any point if you make a mistake.', [])).catch(console.ignore);
-                    startDialog(interaction.client, interaction.user, 'createAvatarRequest');
-                }
-                else {
-                    interaction.user.send(utility.buildEmbed('Please finish the current dialog first.')).catch(console.ignore);
-                }
-            }
+            //     // Attempt to start avatar request creation dialog
+            //     if (canStartDialog(interaction.client, interaction.user)) {
+            //         await interaction.user.send(utility.buildEmbed('New Avatar Request', 'We will now fill in the details of the request. Take your time to read the descriptions to ensure to make a high quality request. Low quality ones might get deleted by a moderator. You can type "cancel" at any point if you make a mistake.', [])).catch(console.ignore);
+            //         startDialog(interaction.client, interaction.user, 'createAvatarRequest');
+            //     }
+            //     else {
+            //         interaction.user.send(utility.buildEmbed('Please finish the current dialog first.')).catch(console.ignore);
+            //     }
+            // }
             // Close ticket button attached to each ticket
             // Replaces itself with the two confirmation buttons
-            else if (interaction.customId == 'close_ticket_button') {
+            if (interaction.customId == 'close_ticket_button') {
                 interaction.update({ embeds: interaction.message.embeds, components: [confirmationButtons] }).catch(console.ignore);
             }
             // Confirm close ticket
@@ -118,13 +117,6 @@ module.exports = {
                 }
             }
         }
-        // Handle /docs_old command autocomplete
-        else if (interaction.isAutocomplete() && interaction.commandName == 'docs_old') {
-            const search = interaction.options.getFocused().toLowerCase(); // the text the user is currently typing
-            const results = browseDocs_old(search); // find matching docs entries
-            results.sort((a, b) => a.levenshtein - b.levenshtein); // sort by levenshtein distance
-            interaction.respond(results.slice(0, 25)).catch(console.ignore); // max of 25 autocomplete entries allowed
-        }
         // Handle /docs command autocomplete
         else if (interaction.isAutocomplete() && interaction.commandName == 'docs') {
             const search = interaction.options.getFocused().toLowerCase(); // the text the user is currently typing
@@ -134,35 +126,6 @@ module.exports = {
         }
     },
 };
-
-/**
- * Finds matches for the search string in the 0.0.8 docs
- * Checks inheritance to provide methods and fields
- * @param {String} search The search string
- * @param {*} branch Used for recursion, just leave it undefined
- * @param {*} results Used for recursion, just leave it undefined
- * @returns Array of possible matches
- */
-function browseDocs_old(search, branch, results) {
-    branch = branch ?? docs_old;
-    results = results ?? [];
-    branch.forEach(entry => {
-        if (similar(entry.name.toLowerCase(), search)) {
-            if (!results.find(e => e.name == entry.name)) {
-                results.push({ name: entry.name, value: entry.name, levenshtein: levenshtein.distance(entry.name, search) });
-            }
-        }
-        if (entry.extends) {
-            let parent = JSON.parse(JSON.stringify(docs_old));
-            parent = parent.filter(e => e.name.match(`^${utility.escapeRegExp(entry.extends)}[#\\.]`) || e.name == entry.extends);
-            parent.forEach(e => {
-                e.name = e.name.replace(entry.extends, entry.name);
-            });
-            results = browseDocs_old(search, parent, results);
-        }
-    });
-    return results;
-}
 
 /**
  * Finds matches for the search string in the 0.1.0 docs
@@ -192,7 +155,7 @@ function browseDocs(search) {
             }
         });
     }
-    for (const [ , category] of Object.entries(docs)) {
+    for (const [, category] of Object.entries(docs)) {
         if (Array.isArray(category)) {
             category.forEach(list => {
                 const prefix = list.name + '.';

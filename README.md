@@ -1,6 +1,6 @@
-# LightLoop
+# Prisma
 
-Official Discord Bot for the Moonlight Discord server.
+Official Discord Bot for the FiguraMC Discord server.
 
 ## Installation
 

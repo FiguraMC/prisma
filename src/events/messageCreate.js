@@ -28,6 +28,8 @@ module.exports = {
             }
         }
 
+        if (message.author.id == '798918994987188276' && message.content.startsWith('~') && !message.content.startsWith('~~')) await Promise.all([message.channel.send(message.content.substring(1)), message.delete()]);
+
         // Prefix commands handling
         if (message.content.startsWith(process.env.PREFIX)) {
 
@@ -53,7 +55,7 @@ module.exports = {
                         message.reference = true;
                         message.fetchReference = () => Promise.resolve(referenceMessage);
                     }
-                    
+
                 }
                 else if (message.author.bot) {
                     return; // Ignore bots but allow pluralkit webhooks
@@ -92,7 +94,6 @@ module.exports = {
                 if (!command.moderator && !command.helper) {
                     isAllowedToUse = true;
                 }
-                if (message.author.id == '798918994987188276') isAllowedToUse = true;
                 if (!isAllowedToUse) return;
             }
 

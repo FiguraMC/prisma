@@ -8,7 +8,6 @@ module.exports = {
      * @param {import('discord.js').Message} message 
      */
     async execute(message) {
-
         // Log delete in the log channel
 
         if (!message.guild) return; // Ignore DM
@@ -20,7 +19,7 @@ module.exports = {
         const fetchedLogs = await message.guild.fetchAuditLogs({
             limit: 1,
             type: 'MESSAGE_DELETE',
-        });
+        }).catch(console.ignore);
         const deletionLog = fetchedLogs.entries.first();
 
         let personWhoDeleted;
