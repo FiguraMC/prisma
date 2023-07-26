@@ -13,9 +13,9 @@ module.exports.filter = async function (message) {
     if (DataStorage.guildsettings.guilds?.get(message.guild.id)?.get('enable_scam_filter') != 'true') return;
 
     if (
-        ContentBlocker.scam(message.content) ||
-        ContentBlocker.scam(message.embeds[0]?.url) ||
-        ContentBlocker.scam(message.embeds[0]?.thumbnail?.url) ||
+        // ContentBlocker.scam(message.content) ||
+        // ContentBlocker.scam(message.embeds[0]?.url) ||
+        // ContentBlocker.scam(message.embeds[0]?.thumbnail?.url) ||
         ContentBlocker.scam((await ContentBlocker.expandMultipleUrls(utility.getURLs(message.content))).join()) ||
         ContentBlocker.matchesGenericScamMessage(message)
     ) {

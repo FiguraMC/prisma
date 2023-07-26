@@ -6,8 +6,6 @@ Official Discord Bot for the FiguraMC Discord server.
 
 Requires a `.env` file in the project root directory, for reference see [template.env](./template.env).
 
-Make sure that the Request Tier Roles are _below_ the bot role.
-
 ## Setup for invite
 
 ### Oauth2 URL Generator

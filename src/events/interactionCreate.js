@@ -1,5 +1,4 @@
 const levenshtein = require('fastest-levenshtein');
-const { startDialog, canStartDialog } = require('../dialogs/startDialog');
 const DataStorage = require('../util/dataStorage');
 const utility = require('../util/utility');
 const confirmationButtons = require('../components/confirmationButtons');
@@ -35,22 +34,6 @@ module.exports = {
         }
         // Handle buttons
         else if (interaction.isButton()) {
-            // New avatar request button at the bottom of the requests channel
-            // if (interaction.customId == 'new_avatar_request') {
-            //     // Update button so it doesnt timeout
-            //     interaction.deferUpdate().catch(console.ignore);
-            //     // Check bans
-            //     if (DataStorage.storage.people[interaction.user.id]?.requestban) return interaction.user.send(utility.buildEmbed('Sorry, you can\'t create a request at the moment.')).catch(console.ignore);
-
-            //     // Attempt to start avatar request creation dialog
-            //     if (canStartDialog(interaction.client, interaction.user)) {
-            //         await interaction.user.send(utility.buildEmbed('New Avatar Request', 'We will now fill in the details of the request. Take your time to read the descriptions to ensure to make a high quality request. Low quality ones might get deleted by a moderator. You can type "cancel" at any point if you make a mistake.', [])).catch(console.ignore);
-            //         startDialog(interaction.client, interaction.user, 'createAvatarRequest');
-            //     }
-            //     else {
-            //         interaction.user.send(utility.buildEmbed('Please finish the current dialog first.')).catch(console.ignore);
-            //     }
-            // }
             // Close ticket button attached to each ticket
             // Replaces itself with the two confirmation buttons
             if (interaction.customId == 'close_ticket_button') {
