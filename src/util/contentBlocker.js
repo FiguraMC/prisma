@@ -10,6 +10,7 @@ module.exports.thirdPartyScamList = [];
  * @returns {boolean} True if scam domain was found
  */
 module.exports.scam = function (text) {
+    if (!text) return false;
     if (DataStorage.storage.scamfilter == undefined) DataStorage.storage.scamfilter = [];
     // Check for local scam domain list
     for (const element of DataStorage.storage.scamfilter) {
