@@ -1,6 +1,7 @@
 const utility = require('../../util/utility');
 const DataStorage = require('../../util/dataStorage');
 const Argument = require('../parser/argument');
+const MessageAttachment = require('discord.js').MessageAttachment;
 
 module.exports = {
     name: 'faq',
@@ -18,20 +19,16 @@ module.exports = {
                 // Show faq
                 if (!DataStorage.storage.faq) DataStorage.storage.faq = new Map();
 
-                let length = 0;
-                const lists = [''];
+                const simplifiedFaq = [];
+
                 DataStorage.storage.faq.forEach((value, key, map) => { // eslint-disable-line no-unused-vars
-                    const line = `Q:\`${key}\`\nA:\`${value}\`\n\n`;
-                    length += line.length;
-                    if (length > 4000) {
-                        lists.push('');
-                        length = 0;
-                    }
-                    lists[lists.length - 1] += line;
+                    simplifiedFaq.push({
+                        Q: key,
+                        A: value,
+                    });
                 });
-                for (const list of lists) {
-                    message.reply(utility.buildEmbed(list == '' ? 'FAQ is empty.' : list));
-                }
+                
+                message.reply({ files: [new MessageAttachment(Buffer.from(JSON.stringify(simplifiedFaq, null, 2)), 'faq.json')] });
             },
         },
         {
