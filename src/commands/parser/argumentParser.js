@@ -8,6 +8,8 @@
  * 
  * If argument type is image, it must be the second (or more) argument in the overload and it will use the attachments (if any) as arguments
  * 
+ * If argument type is textfile, it must be the last argument, or if multiple then all of them at the end (uses string urls or attachments as arguments)
+ * 
  * Other argument types can be used in any order after the above
  * 
  * Maybe this limitation will be removed in the future
@@ -98,6 +100,11 @@ function select(command, args) {
 
     // always use text arguments
     rawArgs.push(...args.textArguments);
+
+    if (command.overloads.find(o => o.arguments.find(a => a.type == 'textOrFile') != undefined)) {
+        // if command has textfile argument, use attachments. are added at the end even after the other text arguments
+        rawArgs.push(...args.attachments);
+    }
 
     // select a command overload based on the number of arguments
     let overload;

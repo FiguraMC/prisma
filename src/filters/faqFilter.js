@@ -31,6 +31,9 @@ module.exports.filter = async function (message) {
                 if (cooldowns.has(key) && cooldowns.get(key) > Date.now()) continue; // still on cooldown
                 cooldowns.set(key, Date.now() + cooldownTime * 1000 * 60); // new cooldown
                 cleanCooldowns();
+
+                if (value.length > 4096) return message.channel.send(utility.buildEmbed('Message too long. Please contact a hellper.'));
+
                 const embed = utility.buildEmbed(value.replaceAll('´', '`'));
                 embed.embeds[0].footer = { text: 'React with ❌ to delete.' };
                 const sentMessage = await message.channel.send(embed);

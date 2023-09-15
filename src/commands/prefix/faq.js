@@ -52,7 +52,7 @@ module.exports = {
             },
         },
         {
-            arguments: [new Argument('question', 'string'), new Argument('answer', 'string')],
+            arguments: [new Argument('question', 'string'), new Argument('answer', 'textOrFile')],
             /**
              * @param {import('discord.js').Message} message
              * @param {import('../parser/argumentContainer')} args
