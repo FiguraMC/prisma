@@ -5,6 +5,7 @@ const cronJobCheckBackendStatus = require('../cronjobs/checkBackendStatus');
 const cronJobSetStatus = require('../cronjobs/setStatus');
 const cronJobUpdateScamList = require('../cronjobs/updateScamList');
 const cronJobStorageBackup = require('../cronjobs/storageBackup');
+const cronJobCheckOnlineHelpers = require('../cronjobs/checkOnlineHelpers');
 const flag = path.join(__dirname, '../../storage/restart.json');
 
 module.exports = {
@@ -22,6 +23,7 @@ module.exports = {
         cronJobSetStatus.start(client);
         cronJobUpdateScamList.start();
         cronJobStorageBackup.start();
+        cronJobCheckOnlineHelpers.start(client);
 
         // Only fetch all if not in dev mode, avoiding spamming the API when using nodemon
         if (process.argv[2] != 'dev') {
