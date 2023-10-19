@@ -1,5 +1,3 @@
-const { memberNicknameMention } = require('@discordjs/builders');
-
 const CronJob = require('cron').CronJob;
 
 /**
