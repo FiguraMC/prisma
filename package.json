@@ -29,7 +29,8 @@
     "dotenv": "^14.2.0",
     "fastest-levenshtein": "^1.0.12",
     "gif-encoder": "^0.7.2",
-    "got": "^11.8.3"
+    "got": "^11.8.3",
+    "luaparse": "^0.3.1"
   },
   "devDependencies": {
     "eslint": "^8.7.0",

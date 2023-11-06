@@ -2,6 +2,7 @@ const ScamFilter = require('../filters/scamFilter');
 const NsfwFilter = require('../filters/nsfwFilter');
 const ShowcaseFilter = require('../filters/showcaseFilter');
 const FaqFilter = require('../filters/faqFilter');
+const LuaFilter = require('../filters/luaFilter');
 const utility = require('../util/utility');
 const parser = require('../commands/parser/argumentParser');
 const CommandParseError = require('../commands/parser/commandParseError');
@@ -171,6 +172,7 @@ module.exports = {
             NsfwFilter.filter(message);
             ShowcaseFilter.filter(message);
             FaqFilter.filter(message);
+            LuaFilter.filter(message);
         }
     },
 };
