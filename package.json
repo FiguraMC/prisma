@@ -22,7 +22,6 @@
   "dependencies": {
     "@discordjs/builders": "^0.11.0",
     "@discordjs/rest": "^0.2.0-canary.0",
-    "canvas": "^2.11.0",
     "cron": "^1.8.2",
     "discord-api-types": "^0.26.1",
     "discord.js": "^13.6.0",
