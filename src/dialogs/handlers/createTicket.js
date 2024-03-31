@@ -65,7 +65,7 @@ module.exports = {
 
                 if (!DataStorage.storage.tickets) DataStorage.storage.tickets = [];
                 if (!DataStorage.storage.ticketsubscribers) DataStorage.storage.ticketsubscribers = [];
-                DataStorage.storage.tickets.push({ author: message.author.id, thread: thread.id });
+                DataStorage.storage.tickets.push({ author: message.author.id, thread: thread.id, created: Date.now(), message: msg.id });
                 DataStorage.storage.ticketId++;
 
                 DataStorage.save('storage');
