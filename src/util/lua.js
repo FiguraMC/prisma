@@ -1,3 +1,5 @@
+const utility = require('../util/utility');
+const luafmt = require('lua-fmt');
 const luaparse = require('luaparse');
 
 /**
@@ -6,7 +8,7 @@ const luaparse = require('luaparse');
  * @returns string[]
  */
 function extractLuaCodeBlocks(text) {
-    const codeBlockRegex = /```(?:lua)?\s+([\s\S]+?)\s*```/ig;
+    const codeBlockRegex = /`{1,3}(?:lua)?\s*([\s\S]+?)\s*`{1,3}/ig;
     const luaCodeBlocks = [];
     let match;
     while ((match = codeBlockRegex.exec(text)) !== null) {
@@ -50,4 +52,56 @@ function checkMessageForLuaError(text) {
     return errors.trim(); // Trim trailing \n\n
 }
 
-module.exports = { checkMessageForLuaError };
+function trimChar(str, char) {
+    return trimCharBack(trimCharFront(str, char), char);
+}
+
+function trimCharFront(str, char) {
+    const escapedChar = char.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // Escape special characters for regex
+    const regex = new RegExp(`^${escapedChar}+`);
+    return str.replace(regex, '');
+}
+
+function trimCharBack(str, char) {
+    const escapedChar = char.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // Escape special characters for regex
+    const regex = new RegExp(`${escapedChar}+$`);
+    return str.replace(regex, '');
+}
+
+/**
+ * @param {string} text 
+ * @returns 
+ */
+function extractAndFormatLuaCode(text) {
+    // Remove potential incorrect discord formatting
+    text = trimCharFront(text, '`');
+    text = trimChar(text, '´');
+    text = trimChar(text, '\'');
+    if (text.toLowerCase().startsWith('lua') || text.toLowerCase().startsWith('lau')) {
+        text = text.substring(3);
+    }
+    const codeBlocks = extractLuaCodeBlocks(text); // If, after trimming ` from the front, there are still code blocks left, means there was non-code text before it, format the code block instead
+    text = trimCharBack(text, '`');
+    text = text.trim();
+    if (codeBlocks.length != 0) {
+        text = codeBlocks[0];
+    }
+
+    // Try format code
+    try {
+        return '```lua\n' + luafmt.formatText(text) + '\n```';
+    }
+    catch {
+        // Couldn't format, find syntax error instead
+        let errorMessage = '';
+        try {
+            luaparse.parse(text, { luaVersion: '5.2' });
+        }
+        catch (error) {
+            errorMessage = error.message; // Syntax error in Lua code
+        }
+        return errorMessage + '\n```lua\n' + text + '\n```';
+    }
+}
+
+module.exports = { checkMessageForLuaError, extractAndFormatLuaCode };
