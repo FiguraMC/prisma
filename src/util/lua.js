@@ -1,4 +1,3 @@
-const utility = require('../util/utility');
 const luafmt = require('lua-fmt');
 const luaparse = require('luaparse');
 
@@ -8,6 +7,21 @@ const luaparse = require('luaparse');
  * @returns string[]
  */
 function extractLuaCodeBlocks(text) {
+    const codeBlockRegex = /```(?:lua)?\s+([\s\S]+?)\s*```{1,3}/ig;
+    const luaCodeBlocks = [];
+    let match;
+    while ((match = codeBlockRegex.exec(text)) !== null) {
+        luaCodeBlocks.push(match[1].trim()); // Extracted Lua code without language specifier and extra whitespace
+    }
+    return luaCodeBlocks;
+}
+
+/**
+ * Returns an array of found code blocks which include inline as well
+ * @param {string} text 
+ * @returns string[]
+ */
+function extractAnySizeCodeBlocks(text) {
     const codeBlockRegex = /`{1,3}(?:lua)?\s*([\s\S]+?)\s*`{1,3}/ig;
     const luaCodeBlocks = [];
     let match;
@@ -80,7 +94,7 @@ function extractAndFormatLuaCode(text) {
     if (text.toLowerCase().startsWith('lua') || text.toLowerCase().startsWith('lau')) {
         text = text.substring(3);
     }
-    const codeBlocks = extractLuaCodeBlocks(text); // If, after trimming ` from the front, there are still code blocks left, means there was non-code text before it, format the code block instead
+    const codeBlocks = extractAnySizeCodeBlocks(text); // If, after trimming ` from the front, there are still code blocks left, means there was non-code text before it, format the code block instead
     text = trimCharBack(text, '`');
     text = text.trim();
     if (codeBlocks.length != 0) {
