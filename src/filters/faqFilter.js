@@ -10,7 +10,8 @@ const cooldowns = new Discord.Collection();
  * @param {import('discord.js').Message} message 
  */
 module.exports.filter = async function (message) {
-    if (message.guild.id == process.env.MAIN_GUILD && (process.env.HELP_CHANNELS.split(',').find(x => x == message.channel.id || x == message.channel.parentId) || message.mentions.users.find(x => x.id == message.client.user.id))) {
+  const pingy = message.mentions.users.find(x => x.id == message.client.user.id)
+    if (message.guild.id == process.env.MAIN_GUILD && (process.env.HELP_CHANNELS.split(',').find(x => x == message.channel.id || x == message.channel.parentId) || pingy)) {
         // if sent in a help channel, check for FAQ keywords
 
         // this is basically a crappy pattern check thing
@@ -28,7 +29,7 @@ module.exports.filter = async function (message) {
             });
             // if all keywords are found in the message and there is no cooldown then send the corresponding answer
             if (includesAll) {
-                if (cooldowns.has(key) && cooldowns.get(key) > Date.now()) continue; // still on cooldown
+                if (cooldowns.has(key) && cooldowns.get(key) > Date.now() && !pingy) continue; // still on cooldown
                 cooldowns.set(key, Date.now() + cooldownTime * 1000 * 60); // new cooldown
                 cleanCooldowns();
 
