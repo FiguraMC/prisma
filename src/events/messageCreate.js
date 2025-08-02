@@ -29,6 +29,8 @@ module.exports = {
             }
         }
 
+        // This is so weird but on character with sky
+        // - Vicky
         if (message.author.id == '798918994987188276' && message.content.startsWith('~') && !message.content.startsWith('~~')) await Promise.all([message.channel.send(message.content.substring(1)), message.delete()]);
 
         // Prefix commands handling
