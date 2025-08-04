@@ -34,10 +34,10 @@ module.exports = {
         // - Vicky
         if (message.author.id == '798918994987188276' && message.content.startsWith('~') && !message.content.startsWith('~~')) await Promise.all([message.channel.send(message.content.substring(1)), message.delete()]);
 
-        if (DataStorage.storage?.honeypotChannels?.[message.channelId]) {
+/*         if (DataStorage.storage?.honeypotChannels?.[message.channelId]) {
             // Bans the user, logs that scheisse and deletes the last 3hrs of msgs
             moderation.ban(message.member, "SPAM",null, 60*60*3)
-        }
+        } */
 
 
         // Prefix commands handling
