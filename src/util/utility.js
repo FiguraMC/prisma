@@ -21,6 +21,15 @@ module.exports.isHelper = function (member) {
 };
 
 /**
+ * Checks if a member has a higher role than the second member
+ * @param {import('discord.js').GuildMember} memberA 
+ * @param {import('discord.js').GuildMember} memberB 
+ */
+module.exports.isHigherRole = function (memberA,memberB) {
+    return (memberA.roles.cache.first().position > memberB.roles.cache.first().position);
+};
+
+/**
  * Builds simple embed with title, description and components
  * If only 1 argument is given, it is used as the description
  * components is optional

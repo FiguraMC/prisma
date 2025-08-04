@@ -22,6 +22,9 @@ const client = new Client({
     },
 });
 
+// Moderation setup
+require('./src/util/moderation').init(client)
+
 // Dialogs setup
 
 client.dialogs = new Collection();
