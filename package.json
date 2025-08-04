@@ -4,9 +4,9 @@
   "description": "Discord Bot for the Figura Discord server",
   "main": "index.js",
   "scripts": {
-    "start": "node --env-file=template.env index.js",
-    "dev": "node --env-file=template.env index.js dev",
-    "nodemon": "nodemon --env-file=template.env index.js dev --ignore ./storage",
+    "start": "node index.js",
+    "dev": "node index.js dev",
+    "nodemon": "nodemon index.js dev --ignore ./storage",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

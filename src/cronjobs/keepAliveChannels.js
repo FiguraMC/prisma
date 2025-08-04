@@ -6,7 +6,7 @@ const DataStorage = require('../util/dataStorage');
  * @param {import('discord.js').Client} client 
  */
 module.exports.start = function (client) {
-	const job = new CronJob('0 0 0 * * *', function () { module.exports.run(client) }, null, true, 'Europe/London');
+	const job = new CronJob('0 0 * * 0', function () { module.exports.run(client) }, null, true, 'Europe/London');
 	job.start();
 	/* 
 	Put a manual one time run on boot here.
